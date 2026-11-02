@@ -1,0 +1,36 @@
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Все файлы подключены в .dme
+        run: bash tools/travis/check_filedirs.sh roguetown.dme
+      - name: Валидность JSON
+        run: find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 -n1 python3 ./tools/json_verifier.py
+
+  compile:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: 32-битные библиотеки для BYOND
+        run: |
+          sudo dpkg --add-architecture i386
+          sudo apt-get update
+          sudo apt-get install -y libstdc++6:i386
+      - name: Кэш BYOND
+        uses: actions/cache@v4
+        with:
+          path: ~/BYOND
+          key: byond-${{ hashFiles('dependencies.sh') }}
+      - name: Установка BYOND
+        run: bash tools/travis/install_byond.sh
+      - name: Компиляция
+        run: |
+          source $HOME/BYOND/byond/bin/byondsetup
+          bash tools/travis/dm.sh -DTRAVISBUILDING roguetown.dme
