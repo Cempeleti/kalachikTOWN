@@ -12,7 +12,7 @@
 	if(calculated >= 3.0)
 		Fail("DELAY_TO_GLIDE_SIZE(2) at 60 FPS clamped prematurely: got [calculated], expected ~2.67")
 	if(calculated < 2.5 || calculated > 2.8)
-		Fail("DELAY_TO_GLIDE_SIZE(2) out of expected range [2.5, 2.8]: got [calculated]")
+		Fail("DELAY_TO_GLIDE_SIZE(2) out of expected range (2.5 to 2.8): got [calculated]")
 
 	if(!(SSincone.flags & SS_TICKER))
 		Fail("SSincone does not have SS_TICKER flag: flags = [SSincone.flags]")
