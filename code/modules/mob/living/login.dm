@@ -16,6 +16,10 @@
 //	update_tod_hud()
 	update_spd()
 
+	update_cone_show()
+	update_vision_cone()
+	update_cone()
+
 //	if (client && (stat == DEAD))
 //		client.ghostize()
 

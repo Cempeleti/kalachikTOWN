@@ -87,6 +87,8 @@ client/
 		mob.update_cone()
 
 /mob/living/update_cone()
+	if(!client)
+		return
 	for(var/hidden_hud in client.hidden_images)
 		client.images -= hidden_hud
 		client.hidden_images -= hidden_hud
@@ -97,8 +99,8 @@ client/
 	I.override = 1
 	I.plane = GAME_PLANE_UPPER
 	I.layer = layer
-	I.pixel_x = 0
-	I.pixel_y = 0
+	I.pixel_x = pixel_x
+	I.pixel_y = pixel_y
 	client.images += I
 	client.hidden_images += I
 	I.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
@@ -107,8 +109,8 @@ client/
 		IB.override = 1
 		IB.plane = GAME_PLANE_UPPER
 		IB.layer = IB.layer
-		IB.pixel_x = 0
-		IB.pixel_y = 0
+		IB.pixel_x = buckled.pixel_x
+		IB.pixel_y = buckled.pixel_y
 		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
 		client.hidden_images += IB
 		client.images += IB
@@ -117,8 +119,8 @@ client/
 		IB.override = 1
 		IB.plane = GAME_PLANE_UPPER
 		IB.layer = IB.layer
-		IB.pixel_x = 0
-		IB.pixel_y = 0
+		IB.pixel_x = pulling.pixel_x
+		IB.pixel_y = pulling.pixel_y
 		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
 		client.hidden_images += IB
 		client.images += IB
@@ -323,7 +325,7 @@ client/
 		hud_used.fov.alpha = 255
 		hud_used.fov_blocker.alpha = 255
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
-	PM.backdrop(src)
+	PM?.backdrop(src)
 
 /mob/proc/hide_cone()
 	if(!client)
@@ -332,7 +334,7 @@ client/
 		hud_used.fov.alpha = 0
 		hud_used.fov_blocker.alpha = 0
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
-	PM.backdrop(src)
+	PM?.backdrop(src)
 
 /obj/screen/fov_blocker
 	icon = 'icons/mob/vision_cone.dmi'
