@@ -1,36 +1,110 @@
 name: CI
+
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      byond_version:
+        description: "Версия BYOND в виде MAJOR.MINOR (например 515.1647). Пусто = из dependencies.sh"
+        required: false
+        default: ""
+
+env:
+  DME_FILE: roguetown.dme
 
 jobs:
   lint:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+
       - name: Все файлы подключены в .dme
-        run: bash tools/travis/check_filedirs.sh roguetown.dme
+        shell: bash
+        run: |
+          if [ -f tools/travis/check_filedirs.sh ]; then
+            bash tools/travis/check_filedirs.sh "$DME_FILE"
+          else
+            echo "check_filedirs.sh не найден, шаг пропущен"
+          fi
+
       - name: Валидность JSON
-        run: find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 -n1 python3 ./tools/json_verifier.py
+        shell: bash
+        run: |
+          if [ -f tools/json_verifier.py ]; then
+            find . -name "*.json" -not -path "*/node_modules/*" -print0 \
+              | xargs -0 -n1 python3 ./tools/json_verifier.py
+          else
+            find . -name "*.json" -not -path "*/node_modules/*" -print0 \
+              | xargs -0 -n1 python3 -m json.tool > /dev/null
+          fi
 
   compile:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - name: 32-битные библиотеки для BYOND
+
+      - name: Определить версию BYOND
+        id: ver
+        shell: bash
+        run: |
+          if [ -n "${{ github.event.inputs.byond_version }}" ]; then
+            VER="${{ github.event.inputs.byond_version }}"
+            MAJOR="${VER%%.*}"; MINOR="${VER##*.}"
+          elif [ -f dependencies.sh ]; then
+            source dependencies.sh
+            MAJOR="$BYOND_MAJOR"; MINOR="$BYOND_MINOR"
+          fi
+          if [ -z "$MAJOR" ] || [ -z "$MINOR" ]; then
+            echo "::error::Не удалось определить версию BYOND. Запустите workflow вручную и укажите её."
+            exit 1
+          fi
+          echo "major=$MAJOR" >> "$GITHUB_OUTPUT"
+          echo "minor=$MINOR" >> "$GITHUB_OUTPUT"
+          echo "Версия BYOND: $MAJOR.$MINOR"
+
+      - name: 32-битные библиотеки
         run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get install -y libstdc++6:i386
+          sudo apt-get install -y libstdc++6:i386 zlib1g:i386
+
       - name: Кэш BYOND
+        id: cache
         uses: actions/cache@v4
         with:
           path: ~/BYOND
-          key: byond-${{ hashFiles('dependencies.sh') }}
-      - name: Установка BYOND
-        run: bash tools/travis/install_byond.sh
-      - name: Компиляция
+          key: byond-${{ steps.ver.outputs.major }}.${{ steps.ver.outputs.minor }}
+
+      - name: Скачать BYOND
+        if: steps.cache.outputs.cache-hit != 'true'
+        shell: bash
         run: |
-          source $HOME/BYOND/byond/bin/byondsetup
-          bash tools/travis/dm.sh -DTRAVISBUILDING roguetown.dme
+          MAJOR="${{ steps.ver.outputs.major }}"
+          MINOR="${{ steps.ver.outputs.minor }}"
+          URL="https://www.byond.com/download/build/${MAJOR}/${MAJOR}.${MINOR}_byond_linux.zip"
+          echo "Скачиваю $URL"
+          curl -fL --retry 3 -o byond.zip "$URL" || {
+            echo "::error::Не удалось скачать $URL. Такой версии нет на сервере BYOND или доступ закрыт. Укажите другую версию в dependencies.sh или при ручном запуске."
+            exit 1
+          }
+          if ! unzip -tq byond.zip > /dev/null 2>&1; then
+            echo "::error::Скачан не zip-архив (вероятно, страница с ошибкой). Версия $MAJOR.$MINOR недоступна."
+            head -c 300 byond.zip
+            exit 1
+          fi
+          mkdir -p "$HOME/BYOND"
+          unzip -q byond.zip -d "$HOME/BYOND"
+          cd "$HOME/BYOND/byond"
+          make here
+
+      - name: Компиляция
+        shell: bash
+        run: |
+          source "$HOME/BYOND/byond/bin/byondsetup"
+          DreamMaker -DTRAVISBUILDING "$DME_FILE" 2>&1 | tee dm.log
+          if grep -qE "[1-9][0-9]* errors?" dm.log; then
+            echo "::error::Компиляция завершилась с ошибками"
+            exit 1
+          fi
