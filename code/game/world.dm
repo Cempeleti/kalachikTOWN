@@ -426,13 +426,18 @@ GLOBAL_VAR(restart_counter)
 //	SSmobs.MaxZDec()
 //	SSidlenpcpool.MaxZdec()
 */
-/world/proc/change_fps(new_value = 20)
+/world/proc/change_fps(new_value = 60)
 	if(new_value <= 0)
 		CRASH("change_fps() called with [new_value] new_value.")
 	if(fps == new_value)
 		return //No change required.
 
 	fps = new_value
+	for(var/client/C in GLOB.clients)
+		if(!C.prefs || C.prefs.clientfps <= 0 || C.prefs.clientfps < new_value)
+			C.fps = 0
+		else
+			C.fps = C.prefs.clientfps
 	on_tickrate_change()
 
 
