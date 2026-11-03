@@ -10,7 +10,7 @@ permissions:
 
 env:
   API_URL: https://integrate.api.nvidia.com/v1
-  MODEL: deepseek-ai/deepseek-v4.1-flash
+  MODEL: mistralai/mistral-large-4-1t-a52b
 
 jobs:
   review:
