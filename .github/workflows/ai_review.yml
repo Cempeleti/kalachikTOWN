@@ -41,7 +41,7 @@ jobs:
             exit 0
           fi
           python3 - << 'PY'
-          import json, os, re, urllib.request
+          import json, os, re, urllib.error, urllib.request
 
           MARKER = "<!-- ai-review -->"
           MAX_CHARS = 80000
@@ -92,8 +92,17 @@ jobs:
                   "Content-Type": "application/json",
               },
           )
-          with urllib.request.urlopen(req, timeout=300) as r:
-              data = json.load(r)
+          try:
+              with urllib.request.urlopen(req, timeout=300) as r:
+                  data = json.load(r)
+          except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
+              open("review.md", "w", encoding="utf-8").write(
+                  MARKER + "\n## 🤖 AI-ревью\n\n"
+                  "Не удалось получить ответ от AI API ("
+                  + str(e) +
+                  ").\n\n<sub>Автоматическая проверка временно недоступна.</sub>"
+              )
+              raise SystemExit(0)
 
           text = data["choices"][0]["message"]["content"].strip()
           note = ""
