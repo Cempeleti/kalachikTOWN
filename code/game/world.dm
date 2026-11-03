@@ -325,11 +325,11 @@ GLOBAL_VAR(restart_counter)
 	var/s = ""
 	s += "<center><a href=\"https://discord.gg/bx9c7ha5Qk\">"
 #ifdef MATURESERVER
-	s += "<big><b>Rogalik1488</b></big></a><br>"
+	s += "<big><b>HalalTown</b></big></a><br>"
 	s += "<b>Server made by Palestine National Corps</b></center><br>"
 #else
-	s += "<big><b>Rogalik1488</b></big></a><br>"
-	s += "<b>made by Palestine National Corps #FREESADAMHUSEIN</b></center><br>"
+	s += "<big><b>HalalTown</b></big></a><br>"
+	s += "<b>made by Palestine National Corps</b></center><br>"
 #endif
 //	s += "<img src=\"https://i.imgur.com/shj547T.jpg\"></a></center>"
 
@@ -337,9 +337,9 @@ GLOBAL_VAR(restart_counter)
 #ifdef MATURESERVER
 	s += "\["
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
-		s += "<b>GAME STATUS:</b> IN YOUR MOM"
+		s += "<b>GAME STATUS:</b> in lobby"
 	else
-		s += "<b>GAME STATUS:</b> SUCK DICK"
+		s += "<b>GAME STATUS:</b> in round"
 #endif
 	status = s
 	return s
