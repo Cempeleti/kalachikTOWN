@@ -1,7 +1,7 @@
 
 /mob/living/simple_animal/hostile/rogue/werewolf
-	name = "WEREWOLF"
-	desc = ""
+	name = "ОБОРОТЕНЬ"
+	desc = "Громадное свирепое чудовище, получеловек-полуволк, жаждущее разорвать всё живое."
 	icon = 'icons/roguetown/mob/monster/werewolf.dmi'
 	icon_state = "wwolf_m"
 	icon_living = "wwolf_m"

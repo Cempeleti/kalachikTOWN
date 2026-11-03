@@ -33,15 +33,15 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
-	desc = ""
+	name = "сайгак"
+	desc = "Быстроногая степная антилопа с характерным горбатым носом."
 	icon_state = "saiga"
 	icon_living = "saiga"
 	icon_dead = "saiga_dead"
 	icon_gib = "saiga_gib"
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	emote_see = list("looks around.", "chews some leaves.")
+	emote_see = list("оглядывается.", "жуёт листья.")
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
@@ -59,8 +59,8 @@
 	footstep_type = FOOTSTEP_MOB_SHOE
 	pooptype = /obj/item/natural/poo/horse
 	faction = list("saiga")
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
+	attack_verb_continuous = "бодает"
+	attack_verb_simple = "боднуть"
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	retreat_distance = 10
@@ -78,7 +78,8 @@
 	remains_type = /obj/effect/decal/remains/saiga
 
 /obj/effect/decal/remains/saiga
-	name = "remains"
+	name = "останки"
+	desc = "Выбеленные кости сайгака."
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
@@ -97,8 +98,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigakid
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
-	desc = ""
+	name = "сайгачонок"
+	desc = "Маленький пугливый сайгачонок."
 	icon_state = "saigakid"
 	icon_living = "saigakid"
 	icon_dead = "saigakid_dead"
@@ -169,13 +170,14 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saigabuck
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
+	name = "сайгак-самец"
+	desc = "Крупный самец сайгака с полупрозрачными ребристыми рогами."
 	icon_state = "buck"
 	icon_living = "buck"
 	icon_dead = "buck_dead"
 	icon_gib = "buck_gib"
 	gender = MALE
-	emote_see = list("stares.")
+	emote_see = list("пристально смотрит.")
 	speak_chance = 1
 	turns_per_move = 3
 	see_in_dark = 6
@@ -186,8 +188,8 @@
 						/obj/item/natural/hide = 4)
 	faction = list("saiga")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
+	attack_verb_continuous = "бодает"
+	attack_verb_simple = "боднуть"
 	health = 200
 	maxHealth = 200
 	melee_damage_lower = 60
@@ -313,8 +315,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/saiga/saigaboy
 	icon = 'icons/roguetown/mob/monster/saiga.dmi'
-	name = "saiga"
-	desc = ""
+	name = "сайгачонок"
+	desc = "Маленький резвый сайгачонок."
 	gender = MALE
 	icon_state = "saigaboy"
 	icon_living = "saigaboy"

@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/mole
 	icon = 'icons/roguetown/mob/monster/mole.dmi'
-	name = "mole"
+	name = "крот"
+	desc = "Крупный подземный зверь с мощными когтистыми лапами и острыми зубами."
 	icon_state = "mole"
 	icon_living = "mole"
 	icon_dead = "mole_dead"
@@ -46,7 +47,8 @@
 	remains_type = /obj/effect/decal/remains/mole
 
 /obj/effect/decal/remains/mole
-	name = "remains"
+	name = "останки"
+	desc = "Кости крота, засыпанные землёй."
 	gender = PLURAL
 	icon_state = "mole_bones"
 	icon = 'icons/roguetown/mob/monster/mole.dmi'

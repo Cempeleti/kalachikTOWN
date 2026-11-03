@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/spider
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
-	name = "beespider"
+	name = "медовый паук"
+	desc = "Странный пушистый паук, выделяющий густой сладкий мёд, но опасный при нападении."
 	icon_state = "honeys"
 	icon_living = "honeys"
 	icon_dead = "honeys-dead"
@@ -42,7 +43,8 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/spider/mutated
 	icon = 'icons/roguetown/mob/monster/spider.dmi'
-	name = "skallax spider"
+	name = "паук-скаллакс"
+	desc = "Мутировавшая и куда более опасная особь паука с крепким хитиновым панцирем."
 	icon_state = "skallax"
 	icon_living = "skallax"
 	icon_dead = "skallax-dead"
@@ -108,7 +110,7 @@
 		if(!target)
 			if(production >= 100)
 				production = 0
-				visible_message("<span class='alertalien'>[src] creates some honey.</span>")
+				visible_message("<span class='alertalien'>[src] выделяет немного мёда.</span>")
 				var/turf/T = get_turf(src)
 				playsound(T, pick('sound/vo/mobs/spider/speak (1).ogg','sound/vo/mobs/spider/speak (2).ogg','sound/vo/mobs/spider/speak (3).ogg','sound/vo/mobs/spider/speak (4).ogg'), 100, TRUE, -1)
 				new /obj/item/reagent_containers/food/snacks/rogue/honey(T)

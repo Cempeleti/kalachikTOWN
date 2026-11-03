@@ -1,6 +1,6 @@
 /obj/structure/boatbell
-	name = "bell"
-	desc = ""
+	name = "колокол"
+	desc = "Тяжёлый бронзовый колокол на причале."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "bell"
 	density = FALSE
@@ -17,7 +17,7 @@
 /obj/structure/boatbell/attack_hand(mob/user)
 	if(world.time < last_ring + 50)
 		return
-	user.visible_message("<span class='info'>[user] rings the bell.</span>")
+	user.visible_message("<span class='info'>[user] звонит в колокол.</span>")
 	SSshuttle.moveShuttle("supply", "supply_away", TRUE)
 	playsound(src, 'sound/misc/boatbell.ogg', 100, extrarange = 5)
 	last_ring = world.time
@@ -25,12 +25,12 @@
 /obj/structure/boatbell/fluff/attack_hand(mob/user)
 	if(world.time < last_ring + 50)
 		return
-	user.visible_message("<span class='info'>[user] rings the bell.</span>")
+	user.visible_message("<span class='info'>[user] звонит в колокол.</span>")
 	playsound(src, 'sound/misc/boatbell.ogg', 100, extrarange = 5)
 	last_ring = world.time
 
 /obj/structure/boatbell/escape
-	desc = "This boat spells the doom of Roguetown. The bell being rung will naturally incite panic in everyone, as many fear the fate of many lordless border settlements should they stay."
+	desc = "Этот челн возвещает гибель Рогтауна. Звон колокола неизбежно посеет панику, ведь многие страшатся участи большинства пограничных поселений без хозяина."
 	var/bribe = 0
 	var/bribeprice = 500
 
@@ -45,7 +45,7 @@
 			bribe += P.get_real_price()
 			qdel(P)
 			if(bribe >= bribeprice)
-				to_chat(user, "<span class='warning'>That should be enough.</span>")
+				to_chat(user, "<span class='warning'>Этого должно хватить.</span>")
 			playsound(loc, 'sound/misc/machinevomit.ogg', 100, TRUE, -1)
 			return
 	..()
@@ -54,7 +54,7 @@
 	if(world.time < last_ring + 50)
 		return
 	last_ring = world.time
-	user.visible_message("<span class='info'>[user] starts ringing the bell.</span>")
+	user.visible_message("<span class='info'>[user] начинает звонить в колокол.</span>")
 	for(var/i in 1 to rand(1,5))
 		playsound(src, 'sound/misc/boatbell.ogg', 100, extrarange = 5)
 		if(!do_after(user, 30, target = src))
@@ -64,7 +64,7 @@
 		if(user.mind.has_antag_datum(/datum/antagonist/skeleton))
 			realbribe = 0
 	if(bribe < realbribe)
-		to_chat(user, "<span class='warning'>Not enough mammon to make the navigators betray the schedule.</span>")
+		to_chat(user, "<span class='warning'>Недостаточно монет, чтобы заставить перевозчиков нарушить расписание.</span>")
 		return
 //	SSshuttle.requestEvac(user, href_list["call"])
 	if(SSshuttle.emergency.mode != SHUTTLE_DOCKED)
@@ -73,12 +73,12 @@
 		SSshuttle.emergency.earlyLaunch = FALSE
 //		SSshuttle.emergency.setTimer(max(SSshuttle.emergency.startTime + ROUNDTIMERBOAT - world.time, 5 MINUTES))
 		//announce delayed
-		priority_announce("The last boat was delayed.")
+		priority_announce("Последняя лодка задерживается.")
 	else
 		if(SSshuttle.emergency.timer < 5 MINUTES)
-			priority_announce("The last boat was delayed.")
+			priority_announce("Последняя лодка задерживается.")
 		else
-			priority_announce("The last boat is leaving early.", null, 'sound/misc/boatleave.ogg')
+			priority_announce("Последняя лодка отплывает раньше времени.", null, 'sound/misc/boatleave.ogg')
 		SSshuttle.emergency.earlyLaunch = TRUE
 		SSshuttle.emergency.setTimer(5 MINUTES)
 //	SSshuttle.moveShuttle("supply", "supply_away", TRUE)
