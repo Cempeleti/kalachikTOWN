@@ -662,81 +662,93 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 /proc/parse_zone(zone)
 	if(zone == BODY_ZONE_PRECISE_R_HAND)
-		return "right hand"
+		return "правая кисть"
 	else if (zone == BODY_ZONE_PRECISE_L_HAND)
-		return "left hand"
+		return "левая кисть"
 	else if (zone == BODY_ZONE_L_ARM)
-		return "left arm"
+		return "левая рука"
 	else if (zone == BODY_ZONE_R_ARM)
-		return "right arm"
+		return "правая рука"
 	else if (zone == BODY_ZONE_L_LEG)
-		return "left leg"
+		return "левая нога"
 	else if (zone == BODY_ZONE_R_LEG)
-		return "right leg"
+		return "правая нога"
 	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
-		return "left foot"
+		return "левая стопа"
 	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
-		return "right foot"
+		return "правая стопа"
 	else if (zone == BODY_ZONE_PRECISE_NECK)
-		return "throat"
+		return "шея"
 	else if (zone == BODY_ZONE_PRECISE_GROIN)
-		return "groin"
-	else if (zone == BODY_ZONE_PRECISE_EARS)	//we want the chatlog to say 'grabbed his ear' not 'grabbed his ears' etc
-		return "ear"
+		return "пах"
+	else if (zone == BODY_ZONE_PRECISE_EARS)
+		return "ухо"
 	else if (zone == BODY_ZONE_PRECISE_R_EYE)
-		return "eyes"
+		return "глаза"
 	else if (zone == BODY_ZONE_PRECISE_L_EYE)
-		return "eyes"
+		return "глаза"
 	else if (zone == BODY_ZONE_PRECISE_NOSE)
-		return "nose"
+		return "нос"
 	else if (zone == BODY_ZONE_R_INHAND)
-		return "right hand"
+		return "правая рука"
 	else if (zone == BODY_ZONE_L_INHAND)
-		return "left hand"
+		return "левая рука"
 	else if (zone == BODY_ZONE_PRECISE_HAIR)
-		return "hair"
+		return "волосы"
 	else if (zone == BODY_ZONE_PRECISE_MOUTH)
-		return "mouth"
+		return "рот"
+	else if (zone == BODY_ZONE_HEAD)
+		return "голова"
+	else if (zone == BODY_ZONE_CHEST)
+		return "грудь"
+	else if (zone == BODY_ZONE_PRECISE_STOMACH)
+		return "живот"
 	else
 		return zone
 
 /mob/living/carbon/proc/parse_zone(zone, mob/living/target)
 	if(zone == BODY_ZONE_PRECISE_R_HAND)
-		return "right hand"
+		return "правая кисть"
 	else if (zone == BODY_ZONE_PRECISE_L_HAND)
-		return "left hand"
+		return "левая кисть"
 	else if (zone == BODY_ZONE_L_ARM)
-		return "left arm"
+		return "левая рука"
 	else if (zone == BODY_ZONE_R_ARM)
-		return "right arm"
+		return "правая рука"
 	else if (zone == BODY_ZONE_L_LEG)
-		return "left leg"
+		return "левая нога"
 	else if (zone == BODY_ZONE_R_LEG)
-		return "right leg"
+		return "правая нога"
 	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
-		return "left foot"
+		return "левая стопа"
 	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
-		return "right foot"
+		return "правая стопа"
 	else if (zone == BODY_ZONE_PRECISE_NECK)
-		return "throat"
+		return "шея"
 	else if (zone == BODY_ZONE_PRECISE_GROIN)
-		return "groin"
-	else if (zone == BODY_ZONE_PRECISE_EARS)	//we want the chatlog to say 'grabbed his ear' not 'grabbed his ears' etc
-		return "ear"
+		return "пах"
+	else if (zone == BODY_ZONE_PRECISE_EARS)
+		return "ухо"
 	else if (zone == BODY_ZONE_PRECISE_R_EYE)
-		return "right eye"
+		return "правый глаз"
 	else if (zone == BODY_ZONE_PRECISE_L_EYE)
-		return "left eye"
+		return "левый глаз"
 	else if (zone == BODY_ZONE_PRECISE_NOSE)
-		return "nose"
+		return "нос"
 	else if (zone == BODY_ZONE_R_INHAND)
 		return parse_inhand(zone)
 	else if (zone == BODY_ZONE_L_INHAND)
 		return parse_inhand(zone)
 	else if (zone == BODY_ZONE_PRECISE_HAIR)
-		return "hair"
+		return "волосы"
 	else if (zone == BODY_ZONE_PRECISE_MOUTH)
-		return "mouth"
+		return "рот"
+	else if (zone == BODY_ZONE_HEAD)
+		return "голова"
+	else if (zone == BODY_ZONE_CHEST)
+		return "грудь"
+	else if (zone == BODY_ZONE_PRECISE_STOMACH)
+		return "живот"
 	else
 		return zone
 
@@ -1254,7 +1266,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 
 //Increases delay as the server gets more overloaded,
 //as sleeps aren't cheap and sleeping only to wake up and sleep again is wasteful
-#define DELTA_CALC max(((max(TICK_USAGE, world.cpu) / 100) * max(Master.sleep_delta-1,1)), 1)
+#define DELTA_CALC clamp(max(((max(TICK_USAGE, world.cpu) / 100) * max(Master.sleep_delta-1,1)), 1), 1, 2)
 
 //returns the number of ticks slept
 /proc/stoplag(initial_delay)
@@ -1269,7 +1281,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 		. += CEILING(i*DELTA_CALC, 1)
 		sleep(i*world.tick_lag*DELTA_CALC)
 		i *= 2
-	while (TICK_USAGE > min(TICK_LIMIT_TO_RUN, Master.current_ticklimit))
+	while (TICK_USAGE > min(TICK_LIMIT_TO_RUN, Master.current_ticklimit) && i <= 8)
 
 #undef DELTA_CALC
 

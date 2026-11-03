@@ -82,6 +82,7 @@
 	allowed_areas = list(/area/rogue/outdoors)
 
 /obj/machinery/light/roguestreet
+	name = "фонарный столб"
 	icon = 'icons/roguetown/misc/tallstructure.dmi'
 	icon_state = "slamp1"
 	base_state = "slamp"
@@ -96,6 +97,7 @@
 	pass_flags = LETPASSTHROW
 
 /obj/machinery/light/roguestreet/midlamp
+	name = "фонарь"
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "midlamp1"
 	base_state = "midlamp"
@@ -147,6 +149,7 @@
 
 //fires
 /obj/machinery/light/rogue
+	name = "светильник"
 	icon = 'icons/roguetown/misc/lighting.dmi'
 	brightness = 8
 	nightshift_allowed = FALSE
@@ -188,13 +191,13 @@
 			var/minsleft = fueluse / 600
 			minsleft = round(minsleft)
 			if(minsleft <= 1)
-				minsleft = "less than a minute"
+				minsleft = "меньше минуты"
 			else
-				minsleft = "[round(minsleft)] minutes"
-			. += "<span class='info'>The fire will last for [minsleft].</span>"
+				minsleft = "[round(minsleft)] мин."
+			. += "<span class='info'>Огонь будет гореть ещё [minsleft].</span>"
 		else
 			if(initial(fueluse) > 0)
-				. += "<span class='warning'>The fire is burned out and hungry...</span>"
+				. += "<span class='warning'>Огонь погас и требует топлива...</span>"
 
 
 /obj/machinery/light/rogue/extinguish()
@@ -327,7 +330,7 @@
 	return
 
 /obj/machinery/light/rogue/firebowl
-	name = "brazier"
+	name = "жаровня"
 	icon = 'icons/roguetown/misc/lighting.dmi'
 	icon_state = "stonefire1"
 	density = TRUE
@@ -385,7 +388,7 @@
 
 
 /obj/machinery/light/rogue/firebowl/standing
-	name = "standing fire"
+	name = "стоячая жаровня"
 	icon_state = "standing1"
 	base_state = "standing"
 	bulb_colour = "#ff9648"
@@ -425,7 +428,7 @@
 				"<span class='warning'>I kick [src]!</span>")
 
 /obj/machinery/light/rogue/wallfire
-	name = "fireplace"
+	name = "камин"
 	icon_state = "wallfire1"
 	base_state = "wallfire"
 	density = FALSE
@@ -434,7 +437,7 @@
 	cookonme = TRUE
 
 /obj/machinery/light/rogue/wallfire/candle
-	name = "candles"
+	name = "настенные свечи"
 	icon_state = "wallcandle1"
 	base_state = "wallcandle"
 	crossfire = FALSE
@@ -469,7 +472,7 @@
 	pixel_x = -32
 
 /obj/machinery/light/rogue/torchholder
-	name = "sconce"
+	name = "настенный факел"
 	icon_state = "torchwall1"
 	base_state = "torchwall"
 	brightness = 5
@@ -584,7 +587,7 @@
 	. = ..()
 
 /obj/machinery/light/rogue/chand
-	name = "chandelier"
+	name = "люстра"
 	icon_state = "chand1"
 	base_state = "chand"
 	icon = 'icons/roguetown/misc/tallwide.dmi'
@@ -607,7 +610,7 @@
 
 
 /obj/machinery/light/rogue/hearth
-	name = "hearth"
+	name = "очаг"
 	icon_state = "hearth1"
 	base_state = "hearth"
 	density = FALSE
@@ -712,7 +715,7 @@
 
 
 /obj/machinery/light/rogue/campfire
-	name = "campfire"
+	name = "костёр"
 	icon_state = "badfire1"
 	base_state = "badfire"
 	density = FALSE
@@ -755,6 +758,7 @@
 		return TRUE //fires that are on always have this interaction with lmb unless its a torch
 
 /obj/machinery/light/rogue/campfire/densefire
+	name = "большой костёр"
 	icon_state = "densefire1"
 	base_state = "densefire"
 	density = TRUE

@@ -8,7 +8,7 @@
  * Beds
  */
 /obj/structure/bed
-	name = "bed"
+	name = "кровать"
 	desc = ""
 	icon_state = "bed"
 	icon = 'icons/obj/objects.dmi'

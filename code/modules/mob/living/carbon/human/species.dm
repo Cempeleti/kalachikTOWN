@@ -1798,7 +1798,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 //				user.do_attack_animation(target, ATTACK_EFFECT_PUNCH)
 
 		var/cached_intent = user.used_intent
-		sleep(user.used_intent.swingdelay)
+		if(user.used_intent?.swingdelay)
+			sleep(user.used_intent.swingdelay)
 		if(user.a_intent != cached_intent)
 			return FALSE
 		if(!target.Adjacent(user))

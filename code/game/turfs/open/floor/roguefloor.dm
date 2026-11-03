@@ -1,4 +1,5 @@
 /turf/open/floor/rogue
+	name = "пол"
 	desc = ""
 	canSmoothWith = null
 	smooth = SMOOTH_FALSE
@@ -93,7 +94,7 @@
 	canSmoothWith = list(/turf/open/floor/rogue/woodturned/nosmooth,/turf/open/floor/carpet)
 
 /turf/open/floor/rogue/rooftop
-	name = "roof"
+	name = "крыша"
 	icon_state = "roof-arw"
 	footstep = FOOTSTEP_WOOD
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
@@ -113,7 +114,8 @@
 	icon_state = "roofg"
 
 /turf/open/floor/rogue/grass
-	name = "grass"
+	name = "трава"
+	name = "пол"
 	desc = ""
 	icon_state = "grass"
 	layer = MID_TURF_LAYER
@@ -131,7 +133,8 @@
 	. = ..()
 
 /turf/open/floor/rogue/dirt/ambush
-	name = "dirt"
+	name = "земля"
+	name = "пол"
 	desc = ""
 	icon_state = "dirt"
 	layer = MID_TURF_LAYER
@@ -146,7 +149,8 @@
 	neighborlay = "dirtedge"
 
 /turf/open/floor/rogue/dirt
-	name = "dirt"
+	name = "земля"
+	name = "пол"
 	desc = ""
 	icon_state = "dirt"
 	layer = MID_TURF_LAYER
@@ -273,7 +277,7 @@
 		water_level = max(water_level-100,0)
 		muddy = TRUE
 		icon_state = "mud[rand (1,3)]"
-		name = "mud"
+		name = "грязь"
 		slowdown = 2
 		footstep = FOOTSTEP_MUD
 		barefootstep = FOOTSTEP_MUD
@@ -281,7 +285,8 @@
 		bloodiness = 20
 
 /turf/open/floor/rogue/dirt/road
-	name = "dirt"
+	name = "земля"
+	name = "пол"
 	desc = ""
 	icon_state = "road"
 	layer = MID_TURF_LAYER
@@ -380,6 +385,7 @@
 
 /turf/open/floor/rogue/underworld/road
 	name = "ash"
+	name = "пол"
 	desc = ""
 	icon_state = "ash"
 	layer = MID_TURF_LAYER
@@ -397,7 +403,8 @@
 	dir = rand(0,8)
 
 /turf/open/floor/rogue/volcanic
-	name = "dirt"
+	name = "земля"
+	name = "пол"
 	desc = ""
 	icon_state = "lavafloor"
 	layer = MID_TURF_LAYER
@@ -614,6 +621,7 @@
 
 /obj/effect/decal/cobbleedge
 	name = ""
+	name = "пол"
 	desc = ""
 	icon = 'icons/turf/roguefloor.dmi'
 	icon_state = "cobblestone_edges"
@@ -731,7 +739,7 @@
 	icon_state = "carpet_r"
 
 /turf/open/floor/rogue/shroud
-	name = "treetop"
+	name = "крона дерева"
 	icon_state = "treetop1"
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 	footstep = null

@@ -1,5 +1,5 @@
 /turf/closed/wall/r_wall
-	name = "reinforced wall"
+	name = "укрепленная стена"
 	desc = ""
 	icon = 'icons/turf/walls/reinforced_wall.dmi'
 	icon_state = "r_wall"

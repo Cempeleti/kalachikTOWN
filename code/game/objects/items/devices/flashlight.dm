@@ -210,7 +210,7 @@
 
 // the desk lamps are a bit special
 /obj/item/flashlight/lamp
-	name = "desk lamp"
+	name = "настольная лампа"
 	desc = ""
 	icon_state = "lamp"
 	item_state = "lamp"
@@ -242,7 +242,7 @@
 
 //Bananalamp
 /obj/item/flashlight/lamp/bananalamp
-	name = "banana lamp"
+	name = "банановая лампа"
 	desc = ""
 	icon_state = "bananalamp"
 	item_state = "bananalamp"
@@ -319,7 +319,7 @@
 	return on * heat
 
 /obj/item/flashlight/flare/torch
-	name = "torch"
+	name = "факел"
 	desc = ""
 	w_class = WEIGHT_CLASS_NORMAL
 	brightness_on = 6
@@ -428,14 +428,14 @@
 	fire_act()
 
 /obj/item/flashlight/flare/torch/metal
-	name = "torch"
+	name = "металлический факел"
 	force = 15
 	icon_state = "mtorch"
 	brightness_on = 6
 	fuel = 9999 MINUTES
 
 /obj/item/flashlight/flare/torch/lantern
-	name = "lamptern"
+	name = "фонарь"
 	icon_state = "lamp"
 	desc = ""
 	brightness_on = 7
@@ -487,7 +487,7 @@
 
 
 /obj/item/flashlight/lantern
-	name = "lantern"
+	name = "фонарь"
 	icon_state = "lantern"
 	item_state = "lantern"
 	lefthand_file = 'icons/mob/inhands/equipment/mining_lefthand.dmi'
@@ -498,12 +498,12 @@
 
 
 /obj/item/flashlight/lantern/heirloom_moth
-	name = "old lantern"
+	name = "старый фонарь"
 	desc = ""
 	brightness_on = 4
 
 /obj/item/flashlight/lantern/syndicate
-	name = "suspicious lantern"
+	name = "подозрительный фонарь"
 	desc = ""
 	icon_state = "syndilantern"
 	item_state = "syndilantern"
