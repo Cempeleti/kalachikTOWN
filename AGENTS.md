@@ -1,7 +1,7 @@
 <!-- autopilot:start -->
-# KalachikTOWN (Rogue Town Fork)
+# HalalTown (Rogue Town Fork)
 
-SS13-based codebase for KalachikTOWN running at 60 FPS.
+SS13-based codebase for HalalTown running at 60 FPS.
 
 ## Команды
 
