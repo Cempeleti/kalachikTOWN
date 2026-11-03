@@ -80,6 +80,13 @@ client/
 		if(hud_used && hud_used.fov)
 			hud_used.fov.dir = src.dir
 			hud_used.fov_blocker.dir = src.dir
+		for(var/image/I in client.hidden_images)
+			if(I.loc == src)
+				I.dir = dir
+			else if(buckled && I.loc == buckled)
+				I.dir = buckled.dir
+			else if(pulling && I.loc == pulling)
+				I.dir = pulling.dir
 		START_PROCESSING(SSincone, client)
 
 /client/proc/update_cone()
@@ -99,6 +106,7 @@ client/
 	img.plane = GAME_PLANE_UPPER
 	img.override = 1
 	img.glide_size = glide_size
+	img.dir = dir
 	client.images += img
 	client.hidden_images += img
 	if(buckled)
@@ -109,6 +117,7 @@ client/
 		IB.plane = GAME_PLANE_UPPER
 		IB.override = 1
 		IB.glide_size = buckled.glide_size
+		IB.dir = buckled.dir
 		client.hidden_images += IB
 		client.images += IB
 	if(pulling)
@@ -119,6 +128,7 @@ client/
 		IP.plane = GAME_PLANE_UPPER
 		IP.override = 1
 		IP.glide_size = pulling.glide_size
+		IP.dir = pulling.dir
 		client.hidden_images += IP
 		client.images += IP
 /*	if(hud_used && hud_used.fov_blocker)

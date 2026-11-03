@@ -17,6 +17,11 @@
 	if(!(SSincone.flags & SS_TICKER))
 		Fail("SSincone does not have SS_TICKER flag: flags = [SSincone.flags]")
 
+	if(!(SSincone.runlevels & RUNLEVEL_LOBBY))
+		Fail("SSincone does not have RUNLEVEL_LOBBY in runlevels")
+	if(!(SSincone.runlevels & RUNLEVEL_GAME))
+		Fail("SSincone does not have RUNLEVEL_GAME in runlevels")
+
 	if(!SStime_track.initialized)
 		Fail("SStime_track is not initialized")
 

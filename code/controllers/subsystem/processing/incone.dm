@@ -4,6 +4,7 @@ SUBSYSTEM_DEF(incone)
 	wait = 1
 	flags = SS_NO_INIT | SS_TICKER
 	priority = FIRE_PRIORITY_INCONE
+	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 	var/list/processing = list()
 	var/list/currentrun = list()
 	processing_flag = PROCESSING_INCONE
