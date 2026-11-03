@@ -1,5 +1,5 @@
 /obj/structure/chair
-	name = "chair"
+	name = "стул"
 	desc = ""
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair"
@@ -131,7 +131,7 @@
 
 /obj/structure/chair/wood
 	icon_state = "chair1"
-	name = "chair"
+	name = "стул"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
 	resistance_flags = FLAMMABLE
@@ -259,7 +259,7 @@
 	item_chair = /obj/item/chair/stool/bar
 
 /obj/item/chair
-	name = "chair"
+	name = "стул"
 	desc = ""
 	icon = 'icons/obj/chairs.dmi'
 	icon_state = "chair_toppled"

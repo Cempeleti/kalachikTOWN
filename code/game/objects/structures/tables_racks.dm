@@ -13,7 +13,7 @@
  */
 
 /obj/structure/table
-	name = "table"
+	name = "стол"
 	desc = ""
 	icon = 'icons/obj/smooth_structures/table.dmi'
 	icon_state = "table"
@@ -304,7 +304,7 @@
  */
 
 /obj/structure/table/wood
-	name = "wooden table"
+	name = "деревянный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "tablewood"
@@ -323,7 +323,7 @@
 		..()
 
 /obj/structure/table/wood
-	name = "wooden table"
+	name = "деревянный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "tablewood"
@@ -334,7 +334,7 @@
 	climb_offset = 10
 
 /obj/structure/table/church
-	name = "stone table"
+	name = "каменный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "churchtable"
@@ -347,7 +347,7 @@
 	icon_state = "churchtable_mid"
 
 /obj/structure/table/vtable
-	name = "ancient wooden table"
+	name = "древний деревянный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "vtable"
@@ -362,7 +362,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/table/fine
-	name = "wooden table"
+	name = "деревянный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "tablefine"
@@ -373,13 +373,13 @@
 	climb_offset = 10
 
 /obj/structure/table/finer
-	name = "wooden table"
+	name = "деревянный стол"
 	desc = ""
 	icon = 'icons/roguetown/misc/tables.dmi'
 	icon_state = "tablefine2"
 
 /obj/structure/table/wood/poker //No specialties, Just a mapping object.
-	name = "gambling table"
+	name = "игорный стол"
 	desc = ""
 	icon = 'icons/obj/smooth_structures/poker_table.dmi'
 	icon_state = "poker_table"
@@ -389,7 +389,7 @@
 	..(FALSE)
 
 /obj/structure/table/wood/fancy
-	name = "fancy table"
+	name = "роскошный стол"
 	desc = ""
 	icon = 'icons/obj/structures.dmi'
 	icon_state = "fancy_table"
@@ -556,9 +556,10 @@
  * Racks
  */
 /obj/structure/rack
-	name = "rack"
+	name = "стойка"
 	desc = ""
 	icon = 'icons/obj/objects.dmi'
+	name = "стойка"
 	icon_state = "rack"
 	layer = TABLE_LAYER
 	density = TRUE
@@ -641,7 +642,9 @@
 
 
 /obj/structure/rack/rogue
+	name = "полка"
 	icon = 'icons/roguetown/misc/structure.dmi'
+	name = "стойка"
 	icon_state = "rack"
 	climbable = TRUE
 	climb_offset = 10
@@ -650,6 +653,7 @@
 	qdel(src)
 
 /obj/structure/rack/rogue/shelf
+	name = "полка"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "shelf"
 	climbable = FALSE
@@ -657,7 +661,9 @@
 	pixel_y = 32
 
 /obj/structure/rack/rogue/shelf/big
+	name = "полка"
 	icon = 'icons/roguetown/misc/structure.dmi'
+	name = "большая полка"
 	icon_state = "shelf_big"
 	climbable = FALSE
 	dir = SOUTH
@@ -667,7 +673,7 @@
  */
 
 /obj/item/rack_parts
-	name = "rack parts"
+	name = "детали стойки"
 	desc = ""
 	icon = 'icons/obj/items_and_weapons.dmi'
 	icon_state = "rack_parts"

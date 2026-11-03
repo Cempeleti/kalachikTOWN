@@ -775,7 +775,7 @@
 						for(var/mob/living/carbon/human/W in world)
 							var/datum/patrongods/patron = W.client.prefs.selected_patron
 							if(patron.name == "Astrata")
-								if(!W.mind.antag_datums)
+								if(!W.mind?.antag_datums)
 									to_chat(W, "<span class='userdanger'>You feel the pain of your Patron!</span>")
 									W.emote_scream()
 

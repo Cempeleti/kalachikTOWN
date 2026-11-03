@@ -1,5 +1,5 @@
 /obj/structure/closet
-	name = "closet"
+	name = "шкаф"
 	desc = ""
 	icon = 'icons/obj/closet.dmi'
 	icon_state = "generic"

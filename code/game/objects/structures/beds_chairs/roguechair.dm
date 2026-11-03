@@ -1,5 +1,5 @@
 /obj/structure/chair/bench
-	name = "bench"
+	name = "скамья"
 	icon_state = "bench"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	buildstackamount = 1
@@ -11,6 +11,7 @@
 	layer = OBJ_LAYER
 
 /obj/structure/chair/bench/church
+	name = "церковная скамья"
 	icon_state = "church_benchleft"
 
 /obj/structure/chair/bench/church/mid
@@ -54,9 +55,11 @@
 	return !density
 
 /obj/structure/chair/bench/couch
+	name = "диван"
 	icon_state = "redcouch"
 
 /obj/structure/chair/bench/church/smallbench
+	name = "небольшая скамья"
 	icon_state = "benchsmall"
 
 /obj/structure/chair/bench/couch/r
@@ -75,6 +78,7 @@
 	icon_state = "coucharight"
 
 /obj/structure/chair/bench/couchablack
+	name = "темный диван"
 	icon_state = "couchablackaleft"
 
 /obj/structure/chair/bench/couchablack/r
@@ -101,6 +105,7 @@
 	GLOB.lordcolor -= src
 
 /obj/structure/chair/wood/rogue
+	name = "деревянный стул"
 	icon_state = "chair2"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	item_chair = /obj/item/chair/rogue
@@ -117,6 +122,7 @@
 	attacked_sound = "woodimpact"
 
 /obj/structure/chair/wood/rogue/throne
+	name = "трон"
 	icon_state = "thronechair"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	blade_dulling = DULLING_BASHCHOP
@@ -124,8 +130,9 @@
 	attacked_sound = "woodimpact"
 
 /obj/item/chair/rogue/
-	name = "chair"
+	name = "стул"
 	icon = 'icons/roguetown/items/chairs.dmi'
+	name = "деревянный стул"
 	icon_state = "chair2"
 	origin_type = /obj/structure/chair/wood/rogue
 	blade_dulling = DULLING_BASHCHOP
@@ -202,10 +209,12 @@
 
 
 /obj/structure/chair/wood/rogue/fancy
+	name = "изящный стул"
 	icon_state = "chair1"
 	item_chair = /obj/item/chair/rogue/fancy
 
 /obj/item/chair/rogue/fancy
+	name = "изящный стул"
 	icon_state = "chair1"
 	origin_type = /obj/structure/chair/wood/rogue/fancy
 
@@ -229,7 +238,7 @@
 
 
 /obj/structure/chair/stool/rogue
-	name = "stool"
+	name = "табурет"
 	desc = ""
 	icon_state = "barstool"
 	icon = 'icons/roguetown/misc/structure.dmi'
@@ -240,7 +249,7 @@
 	attacked_sound = "woodimpact"
 
 /obj/item/chair/stool/bar/rogue
-	name = "stool"
+	name = "табурет"
 	icon_state = "baritem"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	origin_type = /obj/structure/chair/stool/rogue
@@ -262,6 +271,7 @@
 				return list("shrink" = 0.8,"sx" = -20,"sy" = -6,"nx" = 0,"ny" = -7,"wx" = -18,"wy" = -5,"ex" = -4,"ey" = -8,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = -42,"sturn" = 33,"wturn" = 33,"eturn" = -21,"nflip" = 0,"sflip" = 8,"wflip" = 8,"eflip" = 0)
 
 /obj/structure/bed/rogue
+	name = "кровать"
 	icon_state = "bed"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE
@@ -272,6 +282,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/shit
+	name = "убогая постель"
 	icon_state = "shitbed"
 	sleepy = 1
 
@@ -294,6 +305,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/inn/wooldouble
+	name = "двуспальная шерстяная кровать"
 	icon_state = "double_wool"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE
@@ -304,6 +316,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 2)
 
 /obj/structure/bed/rogue/inn/double
+	name = "двуспальная кровать"
 	icon_state = "double"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE
@@ -335,6 +348,7 @@
 		x_offset += 10
 */
 /obj/structure/bed/rogue/inn/hay
+	name = "соломенная кровать"
 	icon_state = "haybed"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE
@@ -345,6 +359,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/inn/wool
+	name = "шерстяная кровать"
 	icon_state = "woolbed"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE
@@ -355,6 +370,7 @@
 	debris = list(/obj/item/grown/log/tree/small = 1)
 
 /obj/structure/bed/rogue/inn/pileofshit
+	name = "убогая подстилка"
 	icon_state = "shitbed2"
 	icon = 'icons/roguetown/misc/structure.dmi'
 	anchored = TRUE

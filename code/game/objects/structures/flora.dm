@@ -10,7 +10,7 @@
 
 //trees
 /obj/structure/flora/tree
-	name = "tree"
+	name = "дерево"
 	desc = ""
 	density = TRUE
 	pixel_x = -16
@@ -30,7 +30,7 @@
 					new /obj/item/grown/log/tree(get_turf(src))
 
 				var/obj/structure/flora/stump/S = new(loc)
-				S.name = "[name] stump"
+				S.name = "пень ([name])"
 
 				qdel(src)
 
@@ -38,7 +38,7 @@
 		return ..()
 
 /obj/structure/flora/stump
-	name = "stump"
+	name = "пень"
 	desc = "" //running naked through the trees
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "tree_stump"
@@ -46,7 +46,7 @@
 	pixel_x = -16
 
 /obj/structure/flora/tree/pine
-	name = "pine tree"
+	name = "сосна"
 	desc = ""
 	icon = 'icons/obj/flora/pinetrees.dmi'
 	icon_state = "pine_1"
@@ -59,7 +59,7 @@
 		icon_state = pick(icon_states)
 
 /obj/structure/flora/tree/pine/xmas
-	name = "xmas tree"
+	name = "новогодняя ель"
 	desc = ""
 	icon_state = "pine_c"
 	icon_states = null
@@ -130,7 +130,7 @@
 	. = ..()
 
 /obj/structure/flora/tree/jungle
-	name = "tree"
+	name = "дерево"
 	icon_state = "tree"
 	desc = ""
 	icon = 'icons/obj/flora/jungletrees.dmi'
@@ -148,7 +148,7 @@
 
 //grass
 /obj/structure/flora/grass
-	name = "grass"
+	name = "трава"
 	desc = ""
 	icon = 'icons/obj/flora/snowflora.dmi'
 	gender = PLURAL	//"this is grass" not "this is a grass"
@@ -178,7 +178,7 @@
 
 //bushes
 /obj/structure/flora/bush
-	name = "bush"
+	name = "куст"
 	desc = ""
 	icon = 'icons/obj/flora/snowflora.dmi'
 	icon_state = "snowbush1"
@@ -191,7 +191,7 @@
 // ausbush
 
 /obj/structure/flora/ausbushes
-	name = "bush"
+	name = "куст"
 	desc = ""
 	icon = 'icons/obj/flora/ausflora.dmi'
 	icon_state = "firstbush_1"
@@ -307,7 +307,7 @@
 	. = ..()
 
 /obj/item/twohanded/required/kirbyplants
-	name = "potted plant"
+	name = "растение в горшке"
 	icon = 'icons/obj/flora/plants.dmi'
 	icon_state = "plant-01"
 	desc = ""
@@ -382,7 +382,7 @@
 //Jungle grass
 
 /obj/structure/flora/grass/jungle
-	name = "jungle grass"
+	name = "джунглевая трава"
 	desc = ""
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "grassa"
@@ -411,7 +411,7 @@
 //Jungle bushes
 
 /obj/structure/flora/junglebush
-	name = "bush"
+	name = "куст"
 	desc = ""
 	icon = 'icons/obj/flora/jungleflora.dmi'
 	icon_state = "busha"

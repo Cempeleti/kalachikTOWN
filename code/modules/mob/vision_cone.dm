@@ -77,9 +77,11 @@ client/
 
 /mob/living/update_vision_cone()
 	if(client)
-		if(hud_used && hud_used.fov)
-			hud_used.fov.dir = src.dir
-			hud_used.fov_blocker.dir = src.dir
+		if(hud_used)
+			if(hud_used.fov)
+				hud_used.fov.dir = src.dir
+			if(hud_used.fov_blocker)
+				hud_used.fov_blocker.dir = src.dir
 		for(var/image/I in client.hidden_images)
 			if(I.loc == src)
 				I.dir = dir
@@ -361,9 +363,11 @@ client/
 /mob/proc/show_cone()
 	if(!client)
 		return
-	if(hud_used?.fov)
-		hud_used.fov.alpha = 255
-		hud_used.fov_blocker.alpha = 255
+	if(hud_used)
+		if(hud_used.fov)
+			hud_used.fov.alpha = 255
+		if(hud_used.fov_blocker)
+			hud_used.fov_blocker.alpha = 255
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
 	PM?.backdrop(src)
 	update_cone()
@@ -371,9 +375,11 @@ client/
 /mob/proc/hide_cone()
 	if(!client)
 		return
-	if(hud_used?.fov)
-		hud_used.fov.alpha = 0
-		hud_used.fov_blocker.alpha = 0
+	if(hud_used)
+		if(hud_used.fov)
+			hud_used.fov.alpha = 0
+		if(hud_used.fov_blocker)
+			hud_used.fov_blocker.alpha = 0
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
 	PM?.backdrop(src)
 

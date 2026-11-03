@@ -1,5 +1,5 @@
 /obj/structure/closet/crate
-	name = "crate"
+	name = "ящик"
 	desc = ""
 	icon = 'icons/obj/crates.dmi'
 	icon_state = "crate"
@@ -73,8 +73,8 @@
 	update_icon()
 
 /obj/structure/closet/crate/coffin
-	name = "casket"
-	desc = "Death basket."
+	name = "гроб"
+	desc = "Деревянный гроб."
 	icon_state = "casket"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -86,8 +86,8 @@
 	close_sound_volume = 50
 
 /obj/structure/closet/crate/coffin/vampire
-	name = "sleep casket"
-	desc = "A fancy coffin."
+	name = "роскошный гроб"
+	desc = "Изысканный гроб."
 	icon_state = "vcasket"
 	resistance_flags = FLAMMABLE
 	max_integrity = 70
@@ -110,12 +110,12 @@
 
 /obj/structure/closet/crate/medical
 	desc = ""
-	name = "medical crate"
+	name = "медицинский ящик"
 	icon_state = "medicalcrate"
 
 /obj/structure/closet/crate/freezer
 	desc = ""
-	name = "freezer"
+	name = "холодильник"
 	icon_state = "freezer"
 
 //Snowflake organ freezer code
@@ -140,7 +140,7 @@
 
 
 /obj/structure/closet/crate/freezer/blood
-	name = "blood freezer"
+	name = "холодильник для крови"
 	desc = ""
 
 /obj/structure/closet/crate/freezer/blood/PopulateContents()
@@ -183,7 +183,7 @@
 	icon_state = "hydrocrate"
 
 /obj/structure/closet/crate/engineering
-	name = "engineering crate"
+	name = "инженерный ящик"
 	icon_state = "engi_crate"
 
 /obj/structure/closet/crate/engineering/electrical
@@ -201,7 +201,7 @@
 	new /obj/item/construction/rcd(src)
 
 /obj/structure/closet/crate/science
-	name = "science crate"
+	name = "научный ящик"
 	desc = ""
 	icon_state = "scicrate"
 
@@ -218,7 +218,7 @@
 	new /obj/item/electronics/tracker(src)
 
 /obj/structure/closet/crate/goldcrate
-	name = "gold crate"
+	name = "золотой ящик"
 
 /obj/structure/closet/crate/goldcrate/PopulateContents()
 	..()
@@ -227,7 +227,7 @@
 	new /obj/item/storage/belt/champion(src)
 
 /obj/structure/closet/crate/silvercrate
-	name = "silver crate"
+	name = "серебряный ящик"
 
 /obj/structure/closet/crate/silvercrate/PopulateContents()
 	..()
