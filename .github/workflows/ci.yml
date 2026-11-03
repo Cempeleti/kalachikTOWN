@@ -83,15 +83,19 @@ jobs:
         run: |
           MAJOR="${{ steps.ver.outputs.major }}"
           MINOR="${{ steps.ver.outputs.minor }}"
-          URL="https://www.byond.com/download/build/516/516.1688_byond_linux.zip"
-          echo "Скачиваю $URL"
-          curl -fL --retry 3 -o byond.zip "$URL" || {
-            echo "::error::Не удалось скачать $URL. Такой версии нет на сервере BYOND или доступ закрыт. Укажите другую версию в dependencies.sh или при ручном запуске."
-            exit 1
-          }
-          if ! unzip -tq byond.zip > /dev/null 2>&1; then
-            echo "::error::Скачан не zip-архив (вероятно, страница с ошибкой). Версия $MAJOR.$MINOR недоступна."
-            head -c 300 byond.zip
+          FILE="${MAJOR}.${MINOR}_byond_linux.zip"
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
+          for URL in \
+            "https://www.byond.com/download/build/${MAJOR}/${FILE}" \
+            "https://spacestation13.github.io/byond-builds/${MAJOR}/${FILE}"
+          do
+            echo "Скачиваю $URL"
+            if curl -fL --retry 3 -A "$UA" -o byond.zip "$URL" && unzip -tq byond.zip >/dev/null 2>&1; then
+              OK=1; break
+            fi
+          done
+          if [ -z "$OK" ]; then
+            echo "::error::Не удалось скачать BYOND $MAJOR.$MINOR ни с одного источника."
             exit 1
           fi
           mkdir -p "$HOME/BYOND"
