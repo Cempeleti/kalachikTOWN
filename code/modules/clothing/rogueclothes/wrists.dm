@@ -6,8 +6,8 @@
 	sleevetype = "shirt"
 
 /obj/item/clothing/wrists/roguetown/bracers
-	name = "bracers"
-	desc = ""
+	name = "наручи"
+	desc = "Стальные наручи для защиты предплечий."
 	body_parts_covered = ARMS
 	icon_state = "bracers"
 	item_state = "bracers"
@@ -17,8 +17,8 @@
 	anvilrepair = /datum/skill/craft/armorsmithing
 
 /obj/item/clothing/wrists/roguetown/bracers/leather
-	name = "leather bracers"
-	desc = ""
+	name = "кожаные наручи"
+	desc = "Наручи из прочной тисненой кожи."
 	icon_state = "lbracers"
 	item_state = "lbracers"
 	armor = list("melee" = 12, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -33,7 +33,8 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/wrists/roguetown/wrappings
-	name = "solar wrappings"
+	name = "солнечные обмотки"
+	desc = "Тканевые обмотки на запястья, освященные культом Солнца."
 	slot_flags = ITEM_SLOT_WRISTS
 	icon_state = "wrappings"
 	item_state = "wrappings"

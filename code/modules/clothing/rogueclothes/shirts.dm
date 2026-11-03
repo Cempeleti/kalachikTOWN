@@ -15,8 +15,8 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt
-	name = "shirt"
-	desc = ""
+	name = "рубаха"
+	desc = "Простая льняная рубаха."
 	icon_state = "undershirt"
 	item_state = "undershirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -24,8 +24,8 @@
 	body_parts_covered = CHEST|ARMS|VITALS
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/priest
-	name = "undervestments"
-	desc = ""
+	name = "исподнее"
+	desc = "Простая монашеская исподняя рубаха."
 	icon_state = "priestunder"
 	sleeved = null
 	allowed_sex = list(MALE)
@@ -79,7 +79,8 @@
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/undershirt/puritan
-	name = "archivists silks"
+	name = "шелка архивариуса"
+	desc = "Строгая рубаха архивариуса из темного шелка."
 	icon_state = "puritan_shirt"
 	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
@@ -103,8 +104,8 @@
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt
-	name = "shirt"
-	desc = ""
+	name = "рубаха"
+	desc = "Рубаха с короткими рукавами."
 	icon_state = "shortshirt"
 	item_state = "shortshirt"
 	r_sleeve_status = SLEEVE_NORMAL
@@ -115,8 +116,8 @@
 	..()
 
 /obj/item/clothing/suit/roguetown/shirt/shortshirt/merc
-	name = "shirt"
-	desc = ""
+	name = "рубаха наемника"
+	desc = "Потрепанная рубаха с оборванными рукавами."
 	icon_state = "shortshirt"
 	item_state = "shortshirt"
 	r_sleeve_status = SLEEVE_TORN
@@ -126,8 +127,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/rags
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "rags"
-	desc = ""
+	name = "лохмотья"
+	desc = "Грязные изодранные тряпки, едва прикрывающие тело."
 	body_parts_covered = CHEST|GROIN|VITALS
 	color = "#b0b0b0"
 	icon_state = "rags"
@@ -137,8 +138,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/dress
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "dress"
-	desc = ""
+	name = "платье"
+	desc = "Длинное женское платье из грубой ткани."
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dress"
 	item_state = "dress"
@@ -148,8 +149,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	name = "dress"
-	desc = ""
+	name = "платье"
+	desc = "Простое повседневное платье."
 	body_parts_covered = CHEST|GROIN|LEGS|VITALS
 	icon_state = "dressgen"
 	item_state = "dressgen"
@@ -170,8 +171,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/dress/gen/sexy
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "dress"
-	desc = ""
+	name = "соблазнительное платье"
+	desc = "Откровенное шелковое платье с глубоким вырезом."
 	body_parts_covered = null
 	icon_state = "sexydress"
 	sleevetype = null
@@ -184,8 +185,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "robe"
-	desc = ""
+	name = "роба"
+	desc = "Длинное просторное одеяние."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "white_robe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -199,8 +200,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/astrata
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "sun robe"
-	desc = ""
+	name = "солнечная роба"
+	desc = "Светлая роба послушников Астраты."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "astratarobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -214,8 +215,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/dendor
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "briar robe"
-	desc = ""
+	name = "терновая роба"
+	desc = "Роба темных оттенков, служителей Дендора."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "dendorrobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -229,8 +230,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/robe/necra
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "mourning robe"
-	desc = ""
+	name = "траурная роба"
+	desc = "Мрачная роба служителей культа Некры."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "necrarobe"
 	icon = 'icons/roguetown/clothing/armor.dmi'
@@ -249,8 +250,8 @@
 	color = null
 
 /obj/item/clothing/suit/roguetown/shirt/robe/priest
-	name = "solar vestments"
-	desc = "Holy vestments sanctified by divine hands. Caution is advised if not a faithful."
+	name = "солнечное облачение"
+	desc = "Священное облачение, освященное божественной десницей. Нечестивцев ждет кара."
 	icon_state = "priestrobe"
 	color = null
 
@@ -271,7 +272,8 @@
 	. = ..()
 
 /obj/item/clothing/suit/roguetown/shirt/robe/merchant
-	name = "guilder jacket"
+	name = "купеческий кафтан"
+	desc = "Добротный кафтан гильдейского торговца."
 	icon_state = "merrobe"
 	sellprice = 30
 	color = null
@@ -283,7 +285,8 @@
 	allowed_sex = list(FEMALE)
 
 /obj/item/clothing/suit/roguetown/shirt/robe/wizard
-	name = "wizard's robe"
+	name = "мантия волшебника"
+	desc = "Широкая мантия, расшитая мистическими знаками."
 	icon_state = "wizardrobes"
 	icon = 'icons/roguetown/clothing/shirts.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/shirts.dmi'
@@ -299,8 +302,8 @@
 
 /obj/item/clothing/suit/roguetown/shirt/jester
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR
-	name = "jester's tunick"
-	desc = ""
+	name = "шутовская туника"
+	desc = "Пестрая туника шута с колокольчиками."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "jestershirt"
 	icon = 'icons/roguetown/clothing/shirts.dmi'

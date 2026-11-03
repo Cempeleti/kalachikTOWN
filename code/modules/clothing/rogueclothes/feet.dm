@@ -1,8 +1,8 @@
 /obj/item/clothing/shoes/roguetown
-	name = "shoes"
+	name = "туфли"
 	icon = 'icons/roguetown/clothing/feet.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/feet.dmi'
-	desc = ""
+	desc = "Простая обувь."
 	gender = PLURAL
 	slot_flags = ITEM_SLOT_SHOES
 	body_parts_covered = FEET
@@ -13,37 +13,37 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/shoes/roguetown/boots
-	name = "dark boots"
+	name = "тёмные сапоги"
 	//dropshrink = 0.75
 	color = "#d5c2aa"
-	desc = ""
+	desc = "Высокие сапоги из темной кожи."
 	gender = PLURAL
 	icon_state = "blackboots"
 	item_state = "blackboots"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/nobleboot
-	name = "noble boots"
+	name = "сапоги дворянина"
 	//dropshrink = 0.75
 	color = "#d5c2aa"
-	desc = "fine dark leather boots."
+	desc = "Изящные сапоги из тонкой темной кожи."
 	gender = PLURAL
 	icon_state = "nobleboots"
 	item_state = "nobleboots"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/shortboots
-	name = "shortboots"
+	name = "ботинки"
 	color = "#d5c2aa"
-	desc = ""
+	desc = "Удобные кожаные ботинки."
 	gender = PLURAL
 	icon_state = "shortboots"
 	item_state = "shortboots"
 
 /obj/item/clothing/shoes/roguetown/ridingboots
-	name = "riding boots"
+	name = "верховые сапоги"
 	color = "#d5c2aa"
-	desc = ""
+	desc = "Прочные высокие сапоги для верховой езды."
 	gender = PLURAL
 	icon_state = "ridingboots"
 	item_state = "ridingboots"
@@ -53,8 +53,8 @@
 //	AddComponent(/datum/component/squeak, list('sound/foley/spurs (1).ogg'sound/blank.ogg'=1), 50)
 
 /obj/item/clothing/shoes/roguetown/simpleshoes
-	name = "shoes"
-	desc = ""
+	name = "туфли"
+	desc = "Простые кожаные туфли."
 	gender = PLURAL
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
@@ -66,13 +66,14 @@
 
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/buckle
-	name = "shoes"
+	name = "туфли с пряжкой"
+	desc = "Кожаные туфли с металлической пряжкой."
 	icon_state = "buckleshoes"
 	color = null
 
 /obj/item/clothing/shoes/roguetown/simpleshoes/lord
-	name = "shoes"
-	desc = ""
+	name = "дворянские туфли"
+	desc = "Роскошные туфли из светлой кожи."
 	gender = PLURAL
 	icon_state = "simpleshoe"
 	item_state = "simpleshoe"
@@ -80,29 +81,29 @@
 	color = "#cbcac9"
 
 /obj/item/clothing/shoes/roguetown/gladiator
-	name = "leather sandals"
-	desc = ""
+	name = "кожаные сандалии"
+	desc = "Сандалии с кожаными ремешками вокруг щиколоток."
 	gender = PLURAL
 	icon_state = "gladiator"
 	item_state = "gladiator"
 
 /obj/item/clothing/shoes/roguetown/sandals
-	name = "sandals"
-	desc = ""
+	name = "сандалии"
+	desc = "Простые плетеные сандалии."
 	gender = PLURAL
 	icon_state = "sandals"
 	item_state = "sandals"
 
 /obj/item/clothing/shoes/roguetown/shalal
-	name = "babouche"
-	desc = ""
+	name = "бабуши"
+	desc = "Мягкие туфли без задников с загнутыми носками."
 	gender = PLURAL
 	icon_state = "shalal"
 	item_state = "shalal"
 
 /obj/item/clothing/shoes/roguetown/boots/armor
-	name = "plated boots"
-	desc = ""
+	name = "латные сапоги"
+	desc = "Стальные кованые сапоги, защищающие ступни."
 	body_parts_covered = FEET
 	icon_state = "armorboots"
 	item_state = "armorboots"
@@ -112,15 +113,16 @@
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/boots/leather
-	name = "leather boots"
+	name = "кожаные сапоги"
 	//dropshrink = 0.75
-	desc = ""
+	desc = "Крепкие сапоги из толстой кожи."
 	gender = PLURAL
 	icon_state = "leatherboots"
 	item_state = "leatherboots"
 	armor = list("melee" = 15, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/shoes/roguetown/jester
-	name = "funny shoes"
+	name = "шутовские башмаки"
+	desc = "Нелепые башмаки с бубенчиками на загнутых носках."
 	icon_state = "jestershoes"
 	resistance_flags = null

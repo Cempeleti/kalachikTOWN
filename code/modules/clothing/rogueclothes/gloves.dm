@@ -10,8 +10,8 @@
 	max_heat_protection_temperature = 361
 
 /obj/item/clothing/gloves/roguetown/leather
-	name = "leather gloves"
-	desc = ""
+	name = "кожаные перчатки"
+	desc = "Пара простых перчаток из мягкой кожи."
 	icon_state = "leather_gloves"
 	armor = list("melee" = 12, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
@@ -27,8 +27,8 @@
 	color = CLOTHING_BLACK
 
 /obj/item/clothing/gloves/roguetown/fingerless
-	name = "fingerless gloves"
-	desc = ""
+	name = "митенки"
+	desc = "Кожаные перчатки без пальцев, удобные для мелкой работы."
 	icon_state = "fingerless_gloves"
 	resistance_flags = null
 	blocksound = SOFTHIT
@@ -40,8 +40,8 @@
 
 
 /obj/item/clothing/gloves/roguetown/angle
-	name = "heavy leather gloves"
-	desc = ""
+	name = "тяжелые кожаные перчатки"
+	desc = "Перчатки из толстой дубленой кожи с крагами."
 	icon_state = "angle"
 	armor = list("melee" = 30, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
@@ -55,8 +55,8 @@
 	sewrepair = TRUE
 
 /obj/item/clothing/gloves/roguetown/chain
-	name = "chain gauntlets"
-	desc = ""
+	name = "кольчужные рукавицы"
+	desc = "Рукавицы, сплетенные из стальных колец."
 	icon_state = "cgloves"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CUT, BCLASS_BLUNT)
@@ -73,8 +73,8 @@
 
 //rogtodo sprites for this
 /obj/item/clothing/gloves/roguetown/plate
-	name = "plate gauntlets"
-	desc = ""
+	name = "латные рукавицы"
+	desc = "Тяжелые стальные рукавицы для защиты кистей и предплечий."
 	icon_state = "gauntlets"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 	prevent_crits = list(BCLASS_CHOP, BCLASS_CUT, BCLASS_BLUNT)

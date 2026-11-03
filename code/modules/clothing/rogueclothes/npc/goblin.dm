@@ -1,5 +1,6 @@
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron/goblin
-	name = "goblin mail"
+	name = "гоблинская кольчуга"
+	desc = "Грубо склепанная кольчуга гоблинской работы."
 	icon_state = "plate_armor_item"
 	item_state = "plate_armor"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
@@ -9,7 +10,8 @@
 	sellprice = 0
 
 /obj/item/clothing/suit/roguetown/armor/leather/goblin
-	name = "goblin armor"
+	name = "гоблинский доспех"
+	desc = "Доспех из дурно пахнущей жесткой кожи гоблинской выделки."
 	icon_state = "leather_armor_item"
 	item_state = "leather_armor"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
@@ -18,7 +20,8 @@
 	sellprice = 0
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide/goblin
-	name = "goblin loincloth"
+	name = "гоблинская набедренная повязка"
+	desc = "Грязная набедренная повязка из рваного тряпья."
 	icon_state = "cloth_armor"
 	item_state = "cloth_armor"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
@@ -27,7 +30,8 @@
 	sellprice = 0
 
 /obj/item/clothing/head/roguetown/helmet/leather/goblin
-	name = "goblin helmet"
+	name = "гоблинский шлем"
+	desc = "Косо сшитый шлем из жесткой кожи."
 	icon_state = "leather_helm_item"
 	item_state = "leather_helm"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'
@@ -35,7 +39,8 @@
 	sellprice = 0
 
 /obj/item/clothing/head/roguetown/helmet/goblin
-	name = "goblin helmet"
+	name = "гоблинский шлем"
+	desc = "Ржавый и помятый шлем гоблинской работы."
 	icon_state = "plate_helm_item"
 	item_state = "plate_helm"
 	icon = 'icons/roguetown/mob/monster/goblins.dmi'

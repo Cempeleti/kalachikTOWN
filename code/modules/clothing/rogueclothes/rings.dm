@@ -1,8 +1,8 @@
 
 
 /obj/item/clothing/ring
-	name = "ring"
-	desc = ""
+	name = "кольцо"
+	desc = "Небольшое металлическое кольцо."
 	w_class = WEIGHT_CLASS_TINY
 	icon = 'icons/roguetown/clothing/rings.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/rings.dmi'
@@ -13,18 +13,20 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/ring/silver
-	name = "silver ring"
+	name = "серебряное кольцо"
+	desc = "Изящное кольцо из чистого серебра."
 	icon_state = "ring_s"
 	sellprice = 33
 
 /obj/item/clothing/ring/gold
-	name = "gold ring"
+	name = "золотое кольцо"
+	desc = "Блестящее кольцо из червонного золота."
 	icon_state = "ring_g"
 	sellprice = 70
 
 /obj/item/clothing/ring/active
 	var/active = FALSE
-	desc = "Unfortunately, like most magic rings, it must be used sparingly. (Right-click me to activate)"
+	desc = "Увы, как и большинство магических колец, его силу нужно беречь. (ПКМ для активации)"
 	var/cooldowny
 	var/cdtime
 	var/activetime
@@ -35,9 +37,9 @@
 		return
 	if(cooldowny)
 		if(world.time < cooldowny + cdtime)
-			to_chat(user, "<span class='warning'>Nothing happens.</span>")
+			to_chat(user, "<span class='warning'>Ничего не происходит.</span>")
 			return
-	user.visible_message("<span class='warning'>[user] twists the [src]!</span>")
+	user.visible_message("<span class='warning'>[user] поворачивает [src]!</span>")
 	if(activate_sound)
 		playsound(user, activate_sound, 100, FALSE, -1)
 	cooldowny = world.time
@@ -54,12 +56,13 @@
 	update_icon()
 	if(ismob(loc))
 		var/mob/user = loc
-		user.visible_message("<span class='warning'>The ring settles down.</span>")
+		user.visible_message("<span class='warning'>Кольцо затихает.</span>")
 		user.update_inv_wear_id()
 
 
 /obj/item/clothing/ring/active/nomag
-	name = "ring of null magic"
+	name = "кольцо рассеивания магии"
+	desc = "Магическое кольцо с рубином, рассеивающее чары вокруг владельца. (ПКМ для активации)"
 	icon_state = "ruby"
 	activate_sound = 'sound/magic/antimagic.ogg'
 	cdtime = 90 MINUTES

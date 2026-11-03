@@ -30,8 +30,8 @@
 	..()
 
 /obj/item/storage/belt/rogue/leather
-	name = "belt"
-	desc = ""
+	name = "пояс"
+	desc = "Прочный кожаный пояс с латунной пряжкой."
 	icon_state = "leather"
 	item_state = "leather"
 	equip_sound = 'sound/blank.ogg'
@@ -46,41 +46,46 @@
 			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/storage/belt/rogue/leather/plaquegold
-	name = "plaque belt"
+	name = "пояс с золотой бляхой"
+	desc = "Широкий кожаный пояс с массивной золоченой бляхой."
 	icon_state = "goldplaque"
 	sellprice = 50
 
 /obj/item/storage/belt/rogue/leather/shalal
-	name = "shalal belt"
+	name = "пустынный пояс"
+	desc = "Пояс в восточном стиле с декоративным тиснением."
 	icon_state = "shalal"
 	sellprice = 5
 
 /obj/item/storage/belt/rogue/leather/black
-	name = "black belt"
+	name = "черный пояс"
+	desc = "Ремень из черной дубленой кожи."
 	icon_state = "blackbelt"
 	sellprice = 10
 
 /obj/item/storage/belt/rogue/leather/plaquesilver
-	name = "plaque belt"
+	name = "пояс с серебряной бляхой"
+	desc = "Кожаный пояс с полированной серебряной бляхой."
 	icon_state = "silverplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/hand
-	name = "steel belt"
+	name = "стальной пояс"
+	desc = "Пояс стражи Десницы со стальными пластинами."
 	icon_state = "steelplaque"
 	sellprice = 30
 
 /obj/item/storage/belt/rogue/leather/rope
-	name = "rope belt"
-	desc = ""
+	name = "веревочный пояс"
+	desc = "Простая крепкая веревка, подпоясывающая талию."
 	icon_state = "rope"
 	item_state = "rope"
 	color = "#b9a286"
 	heldz_items = 1
 
 /obj/item/storage/belt/rogue/leather/cloth
-	name = "cloth sash"
-	desc = ""
+	name = "тканевый кушак"
+	desc = "Широкий пояс из мягкой ткани."
 	icon_state = "cloth"
 	heldz_items = 1
 
@@ -91,8 +96,8 @@
 	color = "#ff0000"
 
 /obj/item/storage/belt/rogue/pouch
-	name = "pouch"
-	desc = ""
+	name = "кошель"
+	desc = "Кожаный кошель на шнурке для монет и мелочей."
 	icon = 'icons/roguetown/clothing/storage.dmi'
 	mob_overlay_icon = null
 	icon_state = "pouch"
@@ -158,8 +163,8 @@
 
 
 /obj/item/storage/backpack/rogue/satchel
-	name = "satchel"
-	desc = ""
+	name = "сумка"
+	desc = "Кожаная наплечная сумка."
 	icon_state = "satchel"
 	item_state = "satchel"
 	icon = 'icons/roguetown/clothing/storage.dmi'
@@ -197,8 +202,8 @@
 
 
 /obj/item/storage/backpack/rogue/backpack
-	name = "backpack"
-	desc = ""
+	name = "рюкзак"
+	desc = "Вместительный походный рюкзак из плотной кожи."
 	icon_state = "backpack"
 	item_state = "backpack"
 	icon = 'icons/roguetown/clothing/storage.dmi'

@@ -1,7 +1,7 @@
 
 /obj/item/quiver
-	name = "quiver"
-	desc = ""
+	name = "колчан"
+	desc = "Кожаный колчан для стрел или болтов."
 	icon_state = "quiver0"
 	item_state = "quiver"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -25,7 +25,7 @@
 			arrows += A
 			update_icon()
 		else
-			to_chat(loc, "<span class='warning'>Full!</span>")
+			to_chat(loc, "<span class='warning'>Заполнен!</span>")
 		return
 	if(istype(A, /obj/item/gun/ballistic/revolver/grenadelauncher/bow))
 		var/obj/item/gun/ballistic/revolver/grenadelauncher/bow/B = A
@@ -50,7 +50,7 @@
 /obj/item/quiver/examine(mob/user)
 	. = ..()
 	if(arrows.len)
-		. += "<span class='notice'>[arrows.len] inside.</span>"
+		. += "<span class='notice'>Внутри [arrows.len] шт.</span>"
 
 /obj/item/quiver/update_icon()
 	if(arrows.len)

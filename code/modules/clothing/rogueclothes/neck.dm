@@ -1,12 +1,13 @@
 /obj/item/clothing/neck/roguetown
-	name = "necklace"
-	desc = ""
+	name = "ожерелье"
+	desc = "Украшение на шею."
 	icon = 'icons/roguetown/clothing/neck.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/neck.dmi'
 	bloody_icon_state = "bodyblood"
 
 /obj/item/clothing/neck/roguetown/coif
-	name = "coif"
+	name = "койф"
+	desc = "Плотный тканевый подшлемник, защищающий голову и шею."
 	icon_state = "coif"
 	item_state = "coif"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -41,7 +42,8 @@
 
 
 /obj/item/clothing/neck/roguetown/chaincoif
-	name = "chain coif"
+	name = "кольчужный койф"
+	desc = "Капюшон из стальных колец для защиты головы и шеи."
 	icon_state = "chaincoif"
 	item_state = "chaincoif"
 	flags_inv = HIDEEARS|HIDEHAIR
@@ -85,7 +87,8 @@
 	smeltresult = /obj/item/ingot/iron
 
 /obj/item/clothing/neck/roguetown/bervor
-	name = "bervor"
+	name = "бувигер"
+	desc = "Латный подбородник, защищающий нижнюю часть лица, шею и подбородок."
 	icon_state = "bervor"
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -98,7 +101,8 @@
 	blocksound = PLATEHIT
 
 /obj/item/clothing/neck/roguetown/gorget
-	name = "gorget"
+	name = "горжет"
+	desc = "Стальной воротник для защиты горла и шеи."
 	icon_state = "gorget"
 	flags_inv = HIDEFACIALHAIR
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -111,8 +115,8 @@
 	blocksound = PLATEHIT
 
 /obj/item/clothing/neck/roguetown/psicross/original
-	name = "psycross"
-	desc = ""
+	name = "пси-крест"
+	desc = "Священный символ в виде железного пси-креста."
 	icon_state = "psicrossiron"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
@@ -121,8 +125,8 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/astrata
-	name = "amulet of Astrata"
-	desc = ""
+	name = "амулет Астраты"
+	desc = "Священный амулет, посвященный богине Астрате."
 	icon_state = "astrata"
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -130,8 +134,8 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/noc
-	name = "amulet of Noc"
-	desc = ""
+	name = "амулет Нока"
+	desc = "Темный амулет бога Нока."
 	icon_state = "noc"
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -139,8 +143,8 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/dendor
-	name = "amulet of Dendor"
-	desc = ""
+	name = "амулет Дендора"
+	desc = "Оберег, посвященный богу Дендору."
 	icon_state = "dendor"
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -148,8 +152,8 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/necra
-	name = "amulet of Necra"
-	desc = ""
+	name = "амулет Некры"
+	desc = "Мрачный амулет культа богини Некры."
 	icon_state = "necra"
 	resistance_flags = FIRE_PROOF
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HIP|ITEM_SLOT_WRISTS
@@ -157,7 +161,8 @@
 	experimental_onhip = TRUE
 
 /obj/item/clothing/neck/roguetown/psicross/s
-	name = "silver psycross"
+	name = "серебряный пси-крест"
+	desc = "Освященный серебряный символ веры. Губителен для нечисти."
 	icon_state = "psicross"
 	sellprice = 50
 
@@ -186,15 +191,15 @@
 		return FALSE
 
 /obj/item/clothing/neck/roguetown/psicross/g
-	name = "golden psycross"
-	desc = ""
+	name = "золотой пси-крест"
+	desc = "Роскошный золотой символ веры."
 	icon_state = "psicrossg"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/necra
-	name = "golden psycross"
+	name = "золотой пси-крест"
 	desc = ""
 	icon_state = "psicrossg"
 	//dropshrink = 0.75
@@ -202,7 +207,7 @@
 	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/psicross/noc
-	name = "golden psycross"
+	name = "золотой пси-крест"
 	desc = ""
 	icon_state = "psicrossg"
 	//dropshrink = 0.75
@@ -210,8 +215,8 @@
 	sellprice = 100
 
 /obj/item/clothing/neck/roguetown/talkstone
-	name = "talkstone"
-	desc = ""
+	name = "камень связи"
+	desc = "Магический камень, позволяющий слышать голос на расстоянии."
 	icon_state = "talkstone"
 	item_state = "talkstone"
 	//dropshrink = 0.75
@@ -219,16 +224,16 @@
 	sellprice = 98
 
 /obj/item/clothing/neck/roguetown/horus
-	name = "eye of horuz"
-	desc = ""
+	name = "око Хоруса"
+	desc = "Мистический амулет с изображением всевидящего ока."
 	icon_state = "horus"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
 	sellprice = 30
 
 /obj/item/clothing/neck/roguetown/shalal
-	name = "desert rider medal"
-	desc = ""
+	name = "медаль пустынного всадника"
+	desc = "Наградной знак воинов пустыни."
 	icon_state = "shalal"
 	//dropshrink = 0.75
 	resistance_flags = FIRE_PROOF
