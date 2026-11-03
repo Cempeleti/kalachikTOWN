@@ -1,8 +1,8 @@
 /obj/item/natural/fibers
-	name = "fibers"
+	name = "волокна"
 	icon_state = "fibers"
 	possible_item_intents = list(/datum/intent/use)
-	desc = ""
+	desc = "Растительные волокна, используемые для плетения и изготовления нитей."
 	force = 0
 	throwforce = 0
 	obj_flags = null
@@ -20,13 +20,13 @@
 	if(istype(W, /obj/item/natural/fibers))
 		var/obj/item/natural/bundle/fibers/F = new(src.loc)
 		H.put_in_hands(F)
-		H.visible_message("[user] weaves the fibers into a bundle.")
+		H.visible_message("[user] сплетает волокна в связку.")
 		qdel(W)
 		qdel(src)
 	if(istype(W, /obj/item/natural/bundle/fibers))
 		var/obj/item/natural/bundle/fibers/B = W
 		if(B.amount <= 5)
-			H.visible_message("[user] adds the [src] to the bundle.")
+			H.visible_message("[user] добавляет [src] в связку.")
 			B.amount += 1
 			qdel(src)
 
@@ -48,10 +48,10 @@
 #endif
 
 /obj/item/natural/cloth
-	name = "cloth"
+	name = "ткань"
 	icon_state = "cloth"
 	possible_item_intents = list(/datum/intent/use)
-	desc = ""
+	desc = "Отрез грубой материи, пригодный для перевязки или уборки."
 	force = 0
 	throwforce = 0
 	obj_flags = null
@@ -71,20 +71,20 @@
 	if(istype(W, /obj/item/natural/cloth))
 		var/obj/item/natural/bundle/cloth/F = new(src.loc)
 		H.put_in_hands(F)
-		H.visible_message("[user] rolls the cloth into a bundle.")
+		H.visible_message("[user] сворачивает ткань в тюк.")
 		qdel(W)
 		qdel(src)
 	if(istype(W, /obj/item/natural/bundle/cloth))
 		var/obj/item/natural/bundle/cloth/B = W
 		if(B.amount <= 5)
-			H.visible_message("[user] adds the [src] to the bundle.")
+			H.visible_message("[user] добавляет [src] в тюк.")
 			B.amount += 1
 			qdel(src)
 
 /obj/item/natural/cloth/examine(mob/user)
 	. = ..()
 	if(wet)
-		. += "<span class='notice'>It's wet!</span>"
+		. += "<span class='notice'>Она влажная!</span>"
 
 /obj/item/natural/cloth/bandit
 	color = "#ff0000"
@@ -94,7 +94,7 @@
 /obj/item/natural/cloth/attack_obj(obj/O, mob/living/user)
 	testing("attackobj")
 	if(user.client && ((O in user.client.screen) && !user.is_holding(O)))
-		to_chat(user, "<span class='warning'>I need to take that [O.name] off before cleaning it!</span>")
+		to_chat(user, "<span class='warning'>Нужно снять [O.name] перед тем, как чистить!</span>")
 		return
 	if(istype(O, /obj/effect/decal/cleanable))
 		var/cleanme = TRUE
@@ -104,14 +104,14 @@
 			add_blood_DNA(O.return_blood_DNA())
 		if(prob(33 + (wet*10)) && cleanme)
 			wet = max(wet-1, 0)
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message("<span class='notice'>[user] вытирает [O.name] при помощи [src].</span>", "<span class='notice'>Я вытираю [O.name] при помощи [src].</span>")
 			qdel(O)
 		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message("<span class='warning'>[user] вытирает [O.name] при помощи [src].</span>", "<span class='warning'>Я вытираю [O.name] при помощи [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
 	else
 		if(prob(30 + (wet*10)))
-			user.visible_message("<span class='notice'>[user] wipes \the [O.name] with [src].</span>", "<span class='notice'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message("<span class='notice'>[user] вытирает [O.name] при помощи [src].</span>", "<span class='notice'>Я вытираю [O.name] при помощи [src].</span>")
 
 			if(O.return_blood_DNA())
 				add_blood_DNA(O.return_blood_DNA())
@@ -123,20 +123,20 @@
 				SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_STRONG)
 			wet = max(wet-1, 0)
 		else
-			user.visible_message("<span class='warning'>[user] wipes \the [O.name] with [src].</span>", "<span class='warning'>I wipe \the [O.name] with [src].</span>")
+			user.visible_message("<span class='warning'>[user] вытирает [O.name] при помощи [src].</span>", "<span class='warning'>Я вытираю [O.name] при помощи [src].</span>")
 		playsound(user, "clothwipe", 100, TRUE)
 
 /obj/item/natural/cloth/attack_turf(turf/T, mob/living/user)
 	if(istype(T, /turf/open/water))
 		return ..()
 	if(prob(30 + (wet*10)))
-		user.visible_message("<span class='notice'>[user] wipes \the [T.name] with [src].</span>", "<span class='notice'>I wipe \the [T.name] with [src].</span>")
+		user.visible_message("<span class='notice'>[user] протирает [T.name] при помощи [src].</span>", "<span class='notice'>Я протираю [T.name] при помощи [src].</span>")
 		if(wet)
 			for(var/obj/effect/decal/cleanable/C in T)
 				qdel(C)
 			wet = max(wet-1, 0)
 	else
-		user.visible_message("<span class='warning'>[user] wipes \the [T.name] with [src].</span>", "<span class='warning'>I wipe \the [T.name] with [src].</span>")
+		user.visible_message("<span class='warning'>[user] протирает [T.name] при помощи [src].</span>", "<span class='warning'>Я протираю [T.name] при помощи [src].</span>")
 	playsound(user, "clothwipe", 100, TRUE)
 
 
@@ -159,10 +159,10 @@
 	if(!affecting)
 		return
 	if(!get_location_accessible(H, check_zone(user.zone_selected)))
-		to_chat(user, "<span class='warning'>Something in the way.</span>")
+		to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 		return
 	if(affecting.bandage)
-		to_chat(user, "<span class='warning'>There is already a bandage.</span>")
+		to_chat(user, "<span class='warning'>Здесь уже есть повязка.</span>")
 		return
 	var/used_time = 70
 	if(H.mind)
@@ -177,14 +177,14 @@
 	H.update_damage_overlays()
 
 	if(M == user)
-		user.visible_message("<span class='notice'>[user] bandages [user.p_their()] [affecting].</span>", "<span class='notice'>I bandage my [affecting].</span>")
+		user.visible_message("<span class='notice'>[user] перевязывает своё [affecting].</span>", "<span class='notice'>Я перевязываю своё [affecting].</span>")
 	else
-		user.visible_message("<span class='notice'>[user] bandages [M]'s [affecting].</span>", "<span class='notice'>I bandage [M]'s [affecting].</span>")
+		user.visible_message("<span class='notice'>[user] перевязывает [affecting] [M].</span>", "<span class='notice'>Я перевязываю [affecting] [M].</span>")
 
 /obj/item/natural/thorn
-	name = "thorn"
+	name = "шип"
 	icon_state = "thorn"
-	desc = ""
+	desc = "Острый растительный шип."
 	force = 10
 	throwforce = 0
 	possible_item_intents = list(/datum/intent/stab)
@@ -193,7 +193,7 @@
 	resistance_flags = FLAMMABLE
 	max_integrity = 20
 /obj/item/natural/thorn/attack_self(mob/living/user)
-	user.visible_message("<span class='warning'>[user] snaps [src].</span>")
+	user.visible_message("<span class='warning'>[user] ломает [src].</span>")
 	playsound(user,'sound/items/seedextract.ogg', 100, FALSE)
 	qdel(src)
 
@@ -211,10 +211,10 @@
 			L.consider_ambush()
 
 /obj/item/natural/bundle/fibers
-	name = "fiber bundle"
+	name = "связка волокон"
 	icon_state = "fibersroll1"
 	possible_item_intents = list(/datum/intent/use)
-	desc = ""
+	desc = "Связка растительных волокон."
 	force = 0
 	throwforce = 0
 	obj_flags = null
@@ -229,10 +229,10 @@
 	var/amount = 2
 
 /obj/item/natural/bundle/cloth
-	name = "bundle of cloth"
+	name = "тюк ткани"
 	icon_state = "clothroll1"
 	possible_item_intents = list(/datum/intent/use)
-	desc = ""
+	desc = "Свёрнутый в тюк отрез ткани."
 	force = 0
 	throwforce = 0
 	obj_flags = null
@@ -245,24 +245,24 @@
 
 /obj/item/natural/bundle/cloth/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>Cloth in roll: [amount]</span>")
+	to_chat(user, "<span class='notice'>Ткани в тюке: [amount]</span>")
 
 /obj/item/natural/bundle/cloth/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/natural/cloth))
 		if(amount >= 10)
-			to_chat(user, "There's not enough space in the roll.")
+			to_chat(user, "В тюке больше нет места.")
 			return
 		amount += 1
-		user.visible_message("[user] adds [W] to [src]")
+		user.visible_message("[user] добавляет [W] в [src]")
 		qdel(W)
 	if(istype(W, /obj/item/natural/bundle/cloth))
 		var/obj/item/natural/bundle/cloth/B = W
 		if(B.amount + amount <= 10)
-			user.visible_message("[user] adds [B] to [src]")
+			user.visible_message("[user] добавляет [B] в [src]")
 			amount += B.amount
 			qdel(B)
 		else
-			to_chat(user, "There's not enough space in the roll.")
+			to_chat(user, "В тюке больше нет места.")
 	update_bundle()
 
 /obj/item/natural/bundle/cloth/attack_right(mob/user)
@@ -279,7 +279,7 @@
 			amount -= 1
 			var/obj/item/natural/cloth/F = new (src.loc)
 			H.put_in_hands(F)
-			user.visible_message("[user] removes [F] from [src]")
+			user.visible_message("[user] вынимает [F] из [src]")
 	update_bundle()
 
 /obj/item/natural/bundle/cloth/proc/update_bundle()
@@ -291,24 +291,24 @@
 
 /obj/item/natural/bundle/fibers/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>Fibers in bundle: [amount]</span>")
+	to_chat(user, "<span class='notice'>Волокон в связке: [amount]</span>")
 
 /obj/item/natural/bundle/fibers/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/natural/fibers))
 		if(amount >= 6)
-			to_chat(user, "There's not enough space in the bundle.")
+			to_chat(user, "В связке больше нет места.")
 			return
 		amount += 1
-		user.visible_message("[user] adds [W] to [src]")
+		user.visible_message("[user] добавляет [W] в [src]")
 		qdel(W)
 	if(istype(W, /obj/item/natural/bundle/fibers))
 		var/obj/item/natural/bundle/fibers/B = W
 		if(B.amount + amount <= 6)
-			user.visible_message("[user] adds [B] to [src]")
+			user.visible_message("[user] добавляет [B] в [src]")
 			amount += B.amount
 			qdel(B)
 		else
-			to_chat(user, "There's not enough space in the bundle.")
+			to_chat(user, "В связке больше нет места.")
 	update_bundle()
 
 /obj/item/natural/bundle/fibers/attack_right(mob/user)
@@ -325,7 +325,7 @@
 			amount -= 1
 			var/obj/item/natural/fibers/F = new (src.loc)
 			H.put_in_hands(F)
-			user.visible_message("[user] removes [F] from [src]")
+			user.visible_message("[user] вынимает [F] из [src]")
 	update_bundle()
 
 /obj/item/natural/bundle/fibers/proc/update_bundle()
@@ -336,10 +336,10 @@
 			icon_state = "fibersroll2"
 
 /obj/item/natural/bundle/stick
-	name = "bundle of sticks"
+	name = "вязанка хвороста"
 	icon_state = "stickbundle1"
 	possible_item_intents = list(/datum/intent/use)
-	desc = ""
+	desc = "Аккуратно связанный пучок хвороста."
 	force = 0
 	throwforce = 0
 	obj_flags = null
@@ -351,24 +351,24 @@
 
 /obj/item/natural/bundle/stick/examine(mob/user)
 	. = ..()
-	to_chat(user, "<span class='notice'>Sticks in bundle: [amount]</span>")
+	to_chat(user, "<span class='notice'>Палок в вязанке: [amount]</span>")
 
 /obj/item/natural/bundle/stick/attackby(obj/item/W, mob/living/user)
 	if(istype(W, /obj/item/grown/log/tree/stick))
 		if(amount >= 7)
-			to_chat(user, "There's not enough space in the bundle.")
+			to_chat(user, "В вязанке больше нет места.")
 			return
 		amount += 1
-		user.visible_message("[user] adds [W] to [src]")
+		user.visible_message("[user] добавляет [W] в [src]")
 		qdel(W)
 	if(istype(W, /obj/item/natural/bundle/stick))
 		var/obj/item/natural/bundle/stick/B = W
 		if(B.amount + amount <= 7)
-			user.visible_message("[user] adds [B] to [src]")
+			user.visible_message("[user] добавляет [B] в [src]")
 			amount += B.amount
 			qdel(B)
 		else
-			to_chat(user, "There's not enough space in the bundle.")
+			to_chat(user, "В вязанке больше нет места.")
 	update_bundle()
 
 /obj/item/natural/bundle/stick/attack_right(mob/user)
@@ -385,7 +385,7 @@
 			amount -= 1
 			var/obj/item/grown/log/tree/stick/F = new (src.loc)
 			H.put_in_hands(F)
-			user.visible_message("[user] removes [F] from [src]")
+			user.visible_message("[user] вынимает [F] из [src]")
 	update_bundle()
 
 /obj/item/natural/bundle/stick/proc/update_bundle()

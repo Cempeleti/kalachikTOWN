@@ -1,7 +1,7 @@
 
 /obj/item/bait
-	name = "bag of bait"
-	desc = ""
+	name = "мешочек с наживкой"
+	desc = "Мешочек со смесью, используемой для приманки животных."
 	icon_state = "bait"
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -23,19 +23,19 @@
 
 /obj/item/bait/attack_self(mob/user)
 	. = ..()
-	user.visible_message("<span class='notice'>[user] begins deploying the bait...</span>", \
-						"<span class='notice'>I begin deploying the bait...</span>")
+	user.visible_message("<span class='notice'>[user] начинает раскладывать наживку...</span>", \
+						"<span class='notice'>Я начинаю раскладывать наживку...</span>")
 	if(do_after(user, 100, target = src)) //rogtodo hunting skill
 		user.dropItemToGround(src)
 		START_PROCESSING(SSobj, src)
-		name = "bait"
+		name = "наживка"
 		icon_state = "[icon_state]1"
 		deployed = 1
 
 /obj/item/bait/attack_hand(mob/user)
 	if(deployed)
-		user.visible_message("<span class='notice'>[user] begins gathering up the bait...</span>", \
-							"<span class='notice'>I begin gathering up the bait...</span>")
+		user.visible_message("<span class='notice'>[user] начинает собирать наживку...</span>", \
+							"<span class='notice'>Я начинаю собирать наживку...</span>")
 		if(do_after(user, 100, target = src)) //rogtodo hunting skill
 			STOP_PROCESSING(SSobj, src)
 			name = initial(name)
@@ -85,7 +85,8 @@
 	..()
 
 /obj/item/bait/sweet
-	name = "bag of sweetbait"
+	name = "мешочек со сладкой наживкой"
+	desc = "Сладкая приманка, привлекающая травоядных животных."
 	icon_state = "baitp"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/goat = 33,
 							/mob/living/simple_animal/hostile/retaliate/rogue/goatmale = 33,
@@ -95,7 +96,8 @@
 
 
 /obj/item/bait/bloody
-	name = "bag of bloodbait"
+	name = "мешочек с кровавой наживкой"
+	desc = "Кровавая приманка, привлекающая хищников и падальщиков."
 	icon_state = "baitb"
 	attracted_types = list(/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 20,
 						/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 10)

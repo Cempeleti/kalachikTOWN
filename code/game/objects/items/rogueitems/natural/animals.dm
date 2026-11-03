@@ -1,9 +1,9 @@
 
 
 /obj/item/natural/hide
-	name = "hide"
+	name = "шкура"
 	icon_state = "hide"
-	desc = "Hide from one of Gott's creachers."
+	desc = "Шкура одной из тварей Господних."
 	dropshrink = 0.50
 	force = 0
 	throwforce = 0
@@ -13,9 +13,9 @@
 	sellprice = 20
 
 /obj/item/natural/fur
-	name = "fur"
+	name = "мех"
 	icon_state = "wool1"
-	desc = "Fur from one of Gott's creachers."
+	desc = "Мех одной из тварей Господних."
 	force = 0
 	throwforce = 0
 	w_class = WEIGHT_CLASS_SMALL
@@ -26,7 +26,8 @@
 
 //RTD make this a storage item and make clickign on animals with things put it in storage
 /obj/item/natural/saddle
-	name = "saddle"
+	name = "седло"
+	desc = "Кожаное седло для верховой езды."
 	icon_state = "saddle"
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK_L
@@ -44,7 +45,7 @@
 		if(S.can_saddle && !S.ssaddle)
 			testing("yea2")
 			if(!target.has_buckled_mobs())
-				user.visible_message("<span class='warning'>[user] tries to saddle [target]...</span>")
+				user.visible_message("<span class='warning'>[user] пытается оседлать [target]...</span>")
 				if(do_after(user, 40, target = target))
 					playsound(loc, 'sound/foley/saddledismount.ogg', 100, FALSE)
 					user.dropItemToGround(src)

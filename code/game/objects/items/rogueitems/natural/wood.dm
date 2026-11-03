@@ -1,8 +1,8 @@
 /obj/item/grown/log/tree
 	icon = 'icons/roguetown/items/natural.dmi'
 	seed = null
-	name = "log"
-	desc = ""
+	name = "бревно"
+	desc = "Тяжёлое древесное бревно."
 	icon_state = "log"
 	blade_dulling = DULLING_CUT
 	max_integrity = 30
@@ -16,7 +16,8 @@
 	w_class = WEIGHT_CLASS_HUGE
 
 /obj/item/grown/log/tree/small
-	name = "small log"
+	name = "полено"
+	desc = "Небольшое деревянное полено для растопки или ремесла."
 	icon_state = "logsmall"
 	max_integrity = 30
 	static_debris = list(/obj/item/grown/log/tree/stick = 3)
@@ -28,9 +29,9 @@
 
 /obj/item/grown/log/tree/stick
 	seed = null
-	name = "stick"
+	name = "палка"
 	icon_state = "stick1"
-	desc = ""
+	desc = "Простая деревянная ветка или палка."
 	blade_dulling = 0
 	max_integrity = 20
 	static_debris = null
@@ -59,7 +60,7 @@
 	..()
 
 /obj/item/grown/log/tree/stick/attack_self(mob/living/user)
-	user.visible_message("<span class='warning'>[user] snaps [src].</span>")
+	user.visible_message("<span class='warning'>[user] ломает [src].</span>")
 	playsound(user,'sound/items/seedextract.ogg', 100, FALSE)
 	qdel(src)
 
@@ -69,33 +70,33 @@
 	if(user.used_intent?.blade_class == BCLASS_CUT)
 		playsound(get_turf(src.loc), 'sound/items/wood_sharpen.ogg', 100)
 		if(do_after(user, 20))
-			user.visible_message("<span class='notice'>[user] sharpens [src].</span>")
+			user.visible_message("<span class='notice'>[user] затачивает [src].</span>")
 			var/obj/item/grown/log/tree/stake/S = new /obj/item/grown/log/tree/stake(get_turf(src.loc))
 			if(user.is_holding(src))
 				user.dropItemToGround(src)
 				user.put_in_hands(S)
 			qdel(src)
 		else
-			user.visible_message("<span class='warning'>[user] sharpens [src].</span>")
+			user.visible_message("<span class='warning'>[user] затачивает [src].</span>")
 		return
 	if(istype(I, /obj/item/grown/log/tree/stick))
 		var/obj/item/natural/bundle/stick/F = new(src.loc)
 		H.put_in_hands(F)
-		H.visible_message("[user] ties the sticks into a bundle.")
+		H.visible_message("[user] связывает палки в вязанку.")
 		qdel(I)
 		qdel(src)
 	if(istype(I, /obj/item/natural/bundle/stick))
 		var/obj/item/natural/bundle/stick/B = I
 		if(B.amount <= 9)
-			H.visible_message("[user] adds the [src] to the bundle.")
+			H.visible_message("[user] добавляет [src] в вязанку.")
 			B.amount += 1
 			qdel(src)
 	..()
 
 /obj/item/grown/log/tree/stake
-	name = "stake"
+	name = "кол"
 	icon_state = "stake"
-	desc = ""
+	desc = "Заострённый деревянный кол."
 	force = 10
 	throwforce = 5
 	possible_item_intents = list(/datum/intent/stab, /datum/intent/pick)
@@ -111,9 +112,9 @@
 
 /obj/item/grown/log/tree/lumber
 	seed = null
-	name = "lumber"
+	name = "доски"
 	icon_state = "lumber"
-	desc = ""
+	desc = "Обработанная древесина, пригодная для строительства."
 	blade_dulling = 0
 	max_integrity = 50
 	firefuel = 5 MINUTES

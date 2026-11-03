@@ -1,9 +1,9 @@
 
 
 /obj/item/natural/stone
-	name = "stone"
+	name = "камень"
 	icon_state = "stone1"
-	desc = ""
+	desc = "Обычный небольшой камень."
 	gripped_intents = null
 	dropshrink = 0.75
 	possible_item_intents = list(INTENT_GENERIC)
@@ -22,7 +22,7 @@
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(istype(W, /obj/item/natural/stone))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
-		user.visible_message("<span class='info'>[user] strikes the stones together.</span>")
+		user.visible_message("<span class='info'>[user] ударяет камни друг о друга.</span>")
 		if(prob(10))
 			var/datum/effect_system/spark_spread/S = new()
 			var/turf/front = get_step(user,user.dir)
@@ -32,8 +32,8 @@
 		..()
 
 /obj/item/natural/rock
-	name = "rock"
-	desc = ""
+	name = "булыжник"
+	desc = "Тяжёлый булыжник."
 	icon_state = "stonebig1"
 	dropshrink = 0
 	throwforce = 25
@@ -60,7 +60,7 @@
 /obj/item/natural/rock/Crossed(mob/living/L)
 	if(istype(L) && !L.throwing)
 		if(L.m_intent == MOVE_INTENT_RUN)
-			L.visible_message("<span class='warning'>[L] trips over the rock!</span>","<span class='warning'>I trip over the rock!</span>")
+			L.visible_message("<span class='warning'>[L] спотыкается о булыжник!</span>","<span class='warning'>Я спотыкаюсь о булыжник!</span>")
 			L.Knockdown(10)
 			L.consider_ambush()
 	..()
@@ -88,7 +88,7 @@
 /obj/item/natural/rock/attackby(obj/item/W, mob/user, params)
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(istype(W, /obj/item/natural/stone))
-		user.visible_message("<span class='info'>[user] strikes the stone against the rock.</span>")
+		user.visible_message("<span class='info'>[user] ударяет камнем о булыжник.</span>")
 		playsound(src.loc, 'sound/items/stonestone.ogg', 100)
 		if(prob(35))
 			var/datum/effect_system/spark_spread/S = new()
@@ -98,7 +98,7 @@
 		return
 	if(istype(W, /obj/item/natural/rock))
 		playsound(src.loc, pick('sound/items/stonestone.ogg'), 100)
-		user.visible_message("<span class='info'>[user] strikes the rocks together.</span>")
+		user.visible_message("<span class='info'>[user] ударяет булыжники друг о друга.</span>")
 		if(prob(10))
 			var/datum/effect_system/spark_spread/S = new()
 			var/turf/front = get_turf(src)

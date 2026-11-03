@@ -1,5 +1,6 @@
 /obj/item/ash
-	name = "ash"
+	name = "пепел"
+	desc = "Горстка серого пепла."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "ash"
 	w_class = WEIGHT_CLASS_TINY

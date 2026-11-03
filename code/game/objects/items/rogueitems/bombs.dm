@@ -1,7 +1,7 @@
 
 /obj/item/bomb
-	name = "bottle bomb"
-	desc = ""
+	name = "бутылочная бомба"
+	desc = "Стеклянная бутылка, наполненная взрывоопасной смесью, с фитилём на конце."
 	icon_state = "bbomb"
 	icon = 'icons/roguetown/items/misc.dmi'
 	w_class = WEIGHT_CLASS_NORMAL

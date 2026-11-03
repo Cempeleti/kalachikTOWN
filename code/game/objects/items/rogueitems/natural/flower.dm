@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/food/snacks/grown/poppy
 	seed = /obj/item/seeds/poppy
-	name = "poppy"
-	desc = ""
+	name = "мак"
+	desc = "Алый цветок мака."
 	icon_state = "poppy"
 	slot_flags = ITEM_SLOT_HEAD
 	filling_color = "#FF6347"
