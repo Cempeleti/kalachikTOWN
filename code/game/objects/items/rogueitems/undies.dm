@@ -1,5 +1,6 @@
 /obj/item/undies
-	name = "smallclothes"
+	name = "исподнее"
+	desc = "Простое нижнее бельё из льна."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "undies"
 	resistance_flags = FLAMMABLE
@@ -14,7 +15,8 @@
 	var/cached_undies
 
 /obj/item/undies/f
-	name = "women's smallclothes"
+	name = "женское исподнее"
+	desc = "Женское нижнее бельё из ткани."
 	icon_state = "girlundies"
 	gendered = FEMALE
 
@@ -24,7 +26,7 @@
 		if(H.gender != gendered)
 			return
 		if(H.underwear == "Nude" && H.cached_underwear != "Nude")
-			user.visible_message("<span class='notice'>[user] tries to put [src] on [H]...</span>")
+			user.visible_message("<span class='notice'>[user] пытается надеть [src] на [H]...</span>")
 			if(do_after(user, 50, needhand = 1, target = H))
 				get_location_accessible(H, BODY_ZONE_PRECISE_GROIN)
 				H.underwear = H.cached_underwear

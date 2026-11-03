@@ -3,8 +3,8 @@
 	force_wielded = 15
 	possible_item_intents = list(MACE_STRIKE)
 	gripped_intents = list(MACE_STRIKE,/datum/intent/flailthresh)
-	name = "thresher"
-	desc = ""
+	name = "молотилка"
+	desc = "Тяжёлый деревянный молотильный цеп для обмолота снопов."
 	icon_state = "flail"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	item_state = "mace_greyscale"
@@ -18,7 +18,7 @@
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
 /datum/intent/flailthresh
-	name = "thresh"
+	name = "молотьба"
 	icon_state = "inthresh"
 	chargetime = 0
 	noaa = TRUE
@@ -88,16 +88,16 @@
 			if(found)
 				playsound(loc,"plantcross", 100, FALSE)
 				playsound(loc,"smashlimb", 50, FALSE)
-				user.visible_message("<span class='notice'>[user] threshes the stalks!</span>", \
-									"<span class='notice'>I thresh the stalks.</span>")
+				user.visible_message("<span class='notice'>[user] обмолачивает стебли!</span>", \
+									"<span class='notice'>Я обмолачиваю стебли.</span>")
 			return
 	..()
 
 /obj/item/rogueweapon/sickle
 	force = 10
 	possible_item_intents = list(DAGGER_CUT)
-	name = "sickle"
-	desc = ""
+	name = "серп"
+	desc = "Острый изогнутый серп для срезания колосьев и трав."
 	icon_state = "sickle"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	item_state = "crysknife"
@@ -154,8 +154,8 @@
 	force_wielded = 15
 	possible_item_intents = list(/datum/intent/pick)
 	gripped_intents = list(/datum/intent/pick,SPEAR_BASH,TILL_INTENT)
-	name = "hoe"
-	desc = ""
+	name = "мотыга"
+	desc = "Тяжёлая мотыга для рыхления земли и прополки сорняков."
 	icon_state = "hoe"
 	slot_flags = ITEM_SLOT_BACK
 	icon = 'icons/roguetown/weapons/tools.dmi'
@@ -236,7 +236,7 @@
 	. = ..()
 
 /datum/intent/till
-	name = "hoe"
+	name = "вспахать"
 	icon_state = "inhoe"
 	chargetime = 0
 	noaa = TRUE
@@ -269,8 +269,8 @@
 	force_wielded = 15
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,SPEAR_THRUST,DUMP_INTENT)
-	name = "pitchfork"
-	desc = ""
+	name = "вилы"
+	desc = "Острые железные вилы на длинном черенке для переноски сена и снопов."
 	icon_state = "pitchfork"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	item_state = "pitchfork"
@@ -335,7 +335,7 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /datum/intent/pforkdump
-	name = "scoop"
+	name = "зачерпнуть"
 	icon_state = "inscoop"
 	chargetime = 0
 	noaa = TRUE
@@ -352,7 +352,7 @@
 			for(var/obj/item/I in forked)
 				I.forceMove(target)
 				forked -= I
-			to_chat(user, "<span class='warning'>I dump the stalks.</span>")
+			to_chat(user, "<span class='warning'>Я сбрасываю стебли.</span>")
 		update_icon()
 		return
 	..()

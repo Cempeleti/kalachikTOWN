@@ -16,8 +16,8 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	return
 
 /obj/structure/lever
-	name = "lever"
-	desc = "I want to pull it."
+	name = "рычаг"
+	desc = "Тянет за него дёрнуть."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "leverfloor0"
 	density = FALSE
@@ -30,7 +30,7 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 		var/mob/living/L = user
 		L.changeNext_move(CLICK_CD_MELEE)
 		var/used_time = 100 - (L.STASTR * 10)
-		user.visible_message("<span class='warning'>[user] pulls the lever.</span>")
+		user.visible_message("<span class='warning'>[user] тянет рычаг.</span>")
 		if(do_after(user, used_time, target = user))
 			for(var/obj/structure/O in redstone_attached)
 				addtimer(CALLBACK(O, /obj/structure.proc/redstone_triggered, 0))
@@ -48,8 +48,8 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 
 
 /obj/structure/floordoor
-	name = "floorhatch"
-	desc = ""
+	name = "люк в полу"
+	desc = "Металлический люк, встроенный в пол."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "floorhatch1"
 	density = FALSE
@@ -132,8 +132,8 @@ GLOBAL_LIST_EMPTY(redstone_objs)
 	delay2close = 10
 
 /obj/structure/kybraxor
-	name = "Kybraxor the Devourer"
-	desc = "The mad duke's hungriest pet."
+	name = "Кибраксор Пожиратель"
+	desc = "Самый ненасытный питомец безумного герцога."
 	density = FALSE
 	nomouseover = TRUE
 	icon = 'icons/roguetown/misc/96x96.dmi'

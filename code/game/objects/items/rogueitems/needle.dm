@@ -1,8 +1,8 @@
 
 /obj/item/needle
-	name = "needle"
+	name = "игла"
 	icon_state = "needle"
-	desc = ""
+	desc = "Швейная игла с нитью для зашивания ран и починки одежды."
 	icon = 'icons/roguetown/items/misc.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
@@ -17,7 +17,7 @@
 
 /obj/item/needle/examine()
 	. = ..()
-	. += "<span class='bold'>It has [stringamt] uses left.</span>"
+	. += "<span class='bold'>Осталось использований: [stringamt].</span>"
 
 /obj/item/needle/New()
 	..()
@@ -42,13 +42,13 @@
 		var/obj/item/I = O
 		if(I.sewrepair && I.max_integrity && !I.obj_broken)
 			if(I.obj_integrity == I.max_integrity)
-				to_chat(user, "<span class='warning'>This is not broken.</span>")
+				to_chat(user, "<span class='warning'>Это не сломано.</span>")
 				return
 			if(user.mind.get_skill_level(/datum/skill/misc/sewing) < I.required_repair_skill)
-				to_chat(user, "<span class='warning'>I don't know how to repair this...</span>")
+				to_chat(user, "<span class='warning'>Я не умею это чинить...</span>")
 				return
 			if(!I.ontable())
-				to_chat(user, "<span class='warning'>I should put this on a table first.</span>")
+				to_chat(user, "<span class='warning'>Сначала нужно положить это на стол.</span>")
 				return
 			playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
 			var/sewtime = 70
@@ -56,13 +56,13 @@
 				sewtime = (70 - ((user.mind.get_skill_level(/datum/skill/misc/sewing)) * 10))
 			if(do_after(user, sewtime, target = I))
 				playsound(loc, 'sound/foley/sewflesh.ogg', 100, TRUE, -2)
-				user.visible_message("<span class='info'>[user] repairs [I]!</span>")
+				user.visible_message("<span class='info'>[user] чинит [I]!</span>")
 				I.obj_integrity = I.max_integrity
 				return
 
 /obj/item/needle/proc/sew(mob/living/M, mob/user)
 	if(!get_location_accessible(M, check_zone(user.zone_selected)))
-		to_chat(user, "<span class='warning'>Something in the way.</span>")
+		to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 		return
 	if(!ishuman(M))
 		return
@@ -73,13 +73,13 @@
 	if(!affecting)
 		return
 	if(affecting.bandage)
-		to_chat(user, "<span class='warning'>There is a bandage.</span>")
+		to_chat(user, "<span class='warning'>Здесь уже есть повязка.</span>")
 		return
 	var/list/sewable = affecting.get_sewable()
 	if(!sewable || !sewable.len)
-		to_chat(user, "<span class='warning'>There aren't any wounds large enough to sew.</span>")
+		to_chat(user, "<span class='warning'>Здесь нет ран, требующих зашивания.</span>")
 		return
-	var/datum/wound/W = input(user, "Which wound?", "Roguetown", name) as null|anything in sortList(sewable)
+	var/datum/wound/W = input(user, "Какую рану зашить?", "KalachikTOWN", name) as null|anything in sortList(sewable)
 	if(!W)
 		return
 	if(!W || !W.can_sew)
@@ -96,15 +96,15 @@
 		H.update_damage_overlays()
 
 		if(M == user)
-			user.visible_message("<span class='notice'>[user] sews \a [W.name] on [user.p_them()]self.</span>", "<span class='notice'>I stitch \a [W.name] on my [affecting].</span>")
+			user.visible_message("<span class='notice'>[user] зашивает [W.name] на себе.</span>", "<span class='notice'>Я зашиваю [W.name] на своём [affecting].</span>")
 		else
-			user.visible_message("<span class='notice'>[user] sews \a [W.name] on [M]'s [affecting].</span>", "<span class='notice'>I stitch \a [W.name] on [M]'s [affecting].</span>")
+			user.visible_message("<span class='notice'>[user] зашивает [W.name] на [affecting] [M].</span>", "<span class='notice'>Я зашиваю [W.name] на [affecting] [M].</span>")
 		log_combat(user, H, "sew", "needle")
 		if(prob(50))
 			use(1)
 
 /obj/item/needle/thorn
-	name = "needle"
+	name = "игла из шипа"
 	icon_state = "thornneedle"
-	desc = ""
+	desc = "Примитивная швейная игла, сделанная из острого растительного шипа с нитью."
 	stringamt = 3

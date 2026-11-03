@@ -1,6 +1,6 @@
 /obj/structure/target_stake
-	name = "target stake"
-	desc = ""
+	name = "мишень для тренировок"
+	desc = "Деревянная стойка для крепления стрелковых мишеней."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = "target_stake"
 	density = FALSE
@@ -46,7 +46,7 @@
 		T.density = TRUE
 		T.layer = OBJ_LAYER + 0.01
 		handle_density()
-		to_chat(user, "<span class='notice'>I slide the target into the stake.</span>")
+		to_chat(user, "<span class='notice'>Я вставляю мишень в стойку.</span>")
 
 /obj/structure/target_stake/attack_hand(mob/user)
 	. = ..()
@@ -64,10 +64,10 @@
 	if(ishuman(user))
 		if(!user.get_active_held_item())
 			user.put_in_hands(pinned_target)
-			to_chat(user, "<span class='notice'>I take the target out of the stake.</span>")
+			to_chat(user, "<span class='notice'>Я вынимаю мишень из стойки.</span>")
 	else
 		pinned_target.forceMove(user.drop_location())
-		to_chat(user, "<span class='notice'>I take the target out of the stake.</span>")
+		to_chat(user, "<span class='notice'>Я вынимаю мишень из стойки.</span>")
 
 /obj/structure/target_stake/bullet_act(obj/projectile/P)
 	if(pinned_target)

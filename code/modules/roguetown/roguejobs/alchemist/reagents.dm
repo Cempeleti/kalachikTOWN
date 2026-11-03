@@ -1,6 +1,6 @@
 /datum/reagent/medicine/healthpot
-	name = "Health Potion"
-	description = "Gradually regenerates all types of damage."
+	name = "Зелье здоровья"
+	description = "Постепенно исцеляет все виды повреждений."
 	reagent_state = LIQUID
 	color = "#ff0000"
 	taste_description = "red"
@@ -20,8 +20,8 @@
 	. = 1
 
 /datum/reagent/medicine/manapot
-	name = "Manna Potion"
-	description = "Gradually regenerates stamina."
+	name = "Зелье маны"
+	description = "Постепенно восстанавливает выносливость."
 	reagent_state = LIQUID
 	color = "#0000ff"
 	taste_description = "manna"
@@ -35,8 +35,8 @@
 	. = 1
 
 /datum/reagent/berrypoison
-	name = "Berry Poison"
-	description = "f"
+	name = "Ягодный яд"
+	description = "Опасный природный яд из лесных ягод."
 	reagent_state = LIQUID
 	color = "#00B4FF"
 	metabolization_rate = 0.1

@@ -1,7 +1,7 @@
 
 /obj/item/roguekey
-	name = "key"
-	desc = ""
+	name = "ключ"
+	desc = "Обычный металлический ключ."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -28,7 +28,8 @@
 		qdel(src)
 
 /obj/item/roguekey/lord
-	name = "master key"
+	name = "главный ключ"
+	desc = "Особый ключ, способный подойти ко многим замкам."
 	icon_state = "bosskey"
 	lockid = "lord"
 
@@ -45,168 +46,168 @@
 
 
 /obj/item/roguekey/manor
-	name = "manor key"
+	name = "ключ от поместья"
 	icon_state = "mazekey"
 	lockid = "manor"
 
 /obj/item/roguekey/garrison
-	name = "town watch key"
+	name = "ключ городской стражи"
 	icon_state = "spikekey"
 	lockid = "garrison"
 
 /obj/item/roguekey/dungeon
-	name = "dungeon key"
+	name = "ключ от темницы"
 	icon_state = "rustkey"
 	lockid = "dungeon"
 
 /obj/item/roguekey/vault
-	name = "vault key"
+	name = "ключ от хранилища"
 	icon_state = "cheesekey"
 	lockid = "vault"
 
 /obj/item/roguekey/sheriff
-	name = "bailiff's key"
+	name = "ключ бейлифа"
 	icon_state = "cheesekey"
 	lockid = "sheriff"
 
 /obj/item/roguekey/merchant
-	name = "merchant's key"
+	name = "ключ торговца"
 	icon_state = "cheesekey"
 	lockid = "merchant"
 
 /obj/item/roguekey/shop
-	name = "shop key"
+	name = "ключ от лавки"
 	icon_state = "ekey"
 	lockid = "shop"
 
 /obj/item/roguekey/tavern
-	name = "tavern key"
+	name = "ключ от таверны"
 	icon_state = "hornkey"
 	lockid = "tavern"
 
 /obj/item/roguekey/roomi
-	name = "room I key"
+	name = "ключ от комнаты I"
 	icon_state = "brownkey"
 	lockid = "roomi"
 
 /obj/item/roguekey/roomii
-	name = "room II key"
+	name = "ключ от комнаты II"
 	icon_state = "brownkey"
 	lockid = "roomii"
 
 /obj/item/roguekey/roomiii
-	name = "room III key"
+	name = "ключ от комнаты III"
 	icon_state = "brownkey"
 	lockid = "roomiii"
 
 /obj/item/roguekey/roomiv
-	name = "room IV key"
+	name = "ключ от комнаты IV"
 	icon_state = "brownkey"
 	lockid = "roomiv"
 
 /obj/item/roguekey/roomv
-	name = "room V key"
+	name = "ключ от комнаты V"
 	icon_state = "brownkey"
 	lockid = "roomv"
 
 /obj/item/roguekey/roomvi
-	name = "room VI key"
+	name = "ключ от комнаты VI"
 	icon_state = "brownkey"
 	lockid = "roomvi"
 
 /obj/item/roguekey/roomhunt
-	name = "room HUNT key"
+	name = "ключ от охотничьей комнаты"
 	icon_state = "brownkey"
 	lockid = "roomhunt"
 
 //vampire mansion//
 /obj/item/roguekey/vampire
-	name = "mansion key"
+	name = "ключ от особняка"
 	icon_state = "vampkey"
 	lockid = "mansionvampire"
 //
 
 /obj/item/roguekey/blacksmith
-	name = "blacksmith key"
+	name = "ключ кузнеца"
 	icon_state = "brownkey"
 	lockid = "blacksmith"
 
 /obj/item/roguekey/walls
-	name = "walls key"
+	name = "ключ от городских стен"
 	icon_state = "rustkey"
 	lockid = "walls"
 
 /obj/item/roguekey/church
-	name = "church key"
+	name = "ключ от церкви"
 	icon_state = "brownkey"
 	lockid = "priest"
 
 /obj/item/roguekey/priest
-	name = "priest's key"
+	name = "ключ священника"
 	icon_state = "cheesekey"
 	lockid = "hpriest"
 
 /obj/item/roguekey/tower
-	name = "tower key"
+	name = "ключ от башни"
 	icon_state = "greenkey"
 	lockid = "tower"
 
 /obj/item/roguekey/mage
-	name = "magicians's key"
+	name = "ключ мага"
 	icon_state = "eyekey"
 	lockid = "mage"
 
 /obj/item/roguekey/graveyard
-	name = "crypt key"
+	name = "ключ от склепа"
 	icon_state = "rustkey"
 	lockid = "graveyard"
 
 /obj/item/roguekey/mason
-	name = "mason's key"
+	name = "ключ каменщика"
 	icon_state = "brownkey"
 	lockid = "mason"
 
 /obj/item/roguekey/nightman
-	name = "nightmaster's key"
+	name = "ключ ночного мастера"
 	icon_state = "greenkey"
 	lockid = "nightman"
 
 /obj/item/roguekey/nightmaiden
-	name = "nightmaiden's key"
+	name = "ключ ночной девы"
 	icon_state = "brownkey"
 	lockid = "nightmaiden"
 
 /obj/item/roguekey/mercenary
-	name = "mercenary key"
+	name = "ключ наёмника"
 	icon_state = "greenkey"
 	lockid = "merc"
 
 /obj/item/roguekey/puritan
-	name = "puritan's key"
+	name = "ключ пуританина"
 	icon_state = "mazekey"
 	lockid = "puritan"
 
 /obj/item/roguekey/confession
-	name = "confessional key"
+	name = "ключ от исповедальни"
 	icon_state = "brownkey"
 	lockid = "confession"
 
 /obj/item/roguekey/hand
-	name = "hand's key"
+	name = "ключ десницы"
 	icon_state = "cheesekey"
 	lockid = "hand"
 
 /obj/item/roguekey/steward
-	name = "steward's key"
+	name = "ключ управляющего"
 	icon_state = "cheesekey"
 	lockid = "steward"
 
 /obj/item/roguekey/archive
-	name = "archive key"
+	name = "ключ от архива"
 	icon_state = "ekey"
 	lockid = "archive"
 //grenchensnacker
 /obj/item/roguekey/porta
-	name = "strange key"
+	name = "странный ключ"
 	icon_state = "eyekey"
 	lockid = "porta"

@@ -1,6 +1,6 @@
 /obj/item/bodypart/l_arm/rproesthetic
-	name = "wooden larm"
-	desc = "A left arm of wood."
+	name = "деревянный левый протез"
+	desc = "Деревянный протез левой руки."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prarm"
 	resistance_flags = FLAMMABLE
@@ -22,16 +22,16 @@
 	if(affecting)
 		return
 	if(user.zone_selected != body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
-		to_chat(user, "<span class='warning'>[src] isn't the right type for [parse_zone(user.zone_selected)].</span>")
+		to_chat(user, "<span class='warning'>[src] не подходит для [parse_zone(user.zone_selected)].</span>")
 		return -1
 	if(user.temporarilyRemoveItemFromInventory(src))
 		attach_limb(H)
-		user.visible_message("<span class='notice'>[user] attaches [src] to [H].</span>")
+		user.visible_message("<span class='notice'>[user] прикрепляет [src] к [H].</span>")
 		return 1
 
 /obj/item/bodypart/r_arm/rproesthetic
-	name = "wooden rarm"
-	desc = "A right arm of wood."
+	name = "деревянный правый протез"
+	desc = "Деревянный протез правой руки."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "prarm"
 	resistance_flags = FLAMMABLE
@@ -53,9 +53,9 @@
 	if(affecting)
 		return
 	if(user.zone_selected != body_zone) //so we can't replace a leg with an arm, or a human arm with a monkey arm.
-		to_chat(user, "<span class='warning'>[src] isn't the right type for [parse_zone(user.zone_selected)].</span>")
+		to_chat(user, "<span class='warning'>[src] не подходит для [parse_zone(user.zone_selected)].</span>")
 		return -1
 	if(user.temporarilyRemoveItemFromInventory(src))
 		attach_limb(H)
-		user.visible_message("<span class='notice'>[user] attaches [src] to [H].</span>")
+		user.visible_message("<span class='notice'>[user] прикрепляет [src] к [H].</span>")
 		return 1

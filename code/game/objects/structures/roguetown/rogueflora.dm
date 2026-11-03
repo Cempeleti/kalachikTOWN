@@ -2,8 +2,8 @@
 //newtree
 
 /obj/structure/flora/roguetree
-	name = "old tree"
-	desc = "An old, wicked tree that not even elves could love."
+	name = "старое дерево"
+	desc = "Старое корявое дерево, которое не полюбили бы даже эльфы."
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "t1"
 	opacity = 1
@@ -23,7 +23,7 @@
 /obj/structure/flora/roguetree/attack_right(mob/user)
 	if(user.mind && isliving(user))
 		if(user.mind.special_items && user.mind.special_items.len)
-			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
+			var/item = input(user, "Что мне взять?", "ТАЙНИК") as null|anything in user.mind.special_items
 			if(item)
 				if(user.Adjacent(src))
 					if(user.mind.special_items[item])
@@ -100,7 +100,8 @@
 	var/datum/spacevine_controller/controller
 
 /obj/structure/flora/roguetree/wise
-	name = "wise tree"
+	name = "мудрое дерево"
+	desc = "Древнее мистическое дерево, словно обладающее собственным разумом."
 	icon_state = "mystical"
 
 /obj/structure/flora/roguetree/wise/Initialize()
@@ -113,8 +114,8 @@
 */
 
 /obj/structure/flora/roguetree/burnt
-	name = "burnt tree"
-	desc = ""
+	name = "горелое дерево"
+	desc = "Обугленный ствол сгоревшего дерева."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "t1"
 	stump_type = /obj/structure/flora/roguetree/stump/burnt
@@ -125,7 +126,8 @@
 	icon_state = "t[rand(1,4)]"
 
 /obj/structure/flora/roguetree/stump/burnt
-	name = "tree stump"
+	name = "горелый пень"
+	desc = "Обугленный пень сгоревшего дерева."
 	icon_state = "st1"
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	stump_type = null
@@ -136,8 +138,8 @@
 	icon_state = "st[rand(1,2)]"
 
 /obj/structure/flora/roguetree/underworld
-	name = "screaming tree"
-	desc = "human faces everywhere."
+	name = "кричащее дерево"
+	desc = "Человеческие лица повсюду на коре, застывшие в безмолвном крике."
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "screaming1"
 	opacity = 1
@@ -148,7 +150,8 @@
 	icon_state = "screaming[rand(1,3)]"
 
 /obj/structure/flora/roguetree/stump
-	name = "tree stump"
+	name = "пень"
+	desc = "Спиленный или срубленный пень дерева."
 	icon_state = "t1stump"
 	opacity = 0
 	max_integrity = 100
@@ -169,7 +172,8 @@
 	icon_state = "t[rand(1,4)]stump"
 
 /obj/structure/flora/roguetree/stump/log
-	name = "ancient log"
+	name = "древнее бревно"
+	desc = "Покрытое мхом старое поваленное бревно."
 	icon_state = "log1"
 	opacity = 0
 	max_integrity = 200
@@ -186,8 +190,8 @@
 //newbushes
 
 /obj/structure/flora/roguegrass
-	name = "grass"
-	desc = ""
+	name = "трава"
+	desc = "Дикая высокая трава."
 	icon = 'icons/roguetown/misc/foliage.dmi'
 	icon_state = "grass1"
 	attacked_sound = "plantcross"
@@ -209,12 +213,14 @@
 	icon_state = "grass[rand(1, 6)]"
 
 /obj/structure/flora/roguegrass/water
-	name = "grass"
+	name = "болотная трава"
+	desc = "Высокая влажная болотная трава."
 	icon_state = "swampgrass"
 	max_integrity = 5
 
 /obj/structure/flora/roguegrass/water/reeds
-	name = "reeds"
+	name = "камыш"
+	desc = "Высокие заросли камыша у воды."
 	icon_state = "reeds"
 	opacity = 1
 	max_integrity = 10
@@ -245,8 +251,8 @@
 
 
 /obj/structure/flora/roguegrass/bush
-	name = "bush"
-	desc = "A bush, I think I can see some spiders crawling in it."
+	name = "куст"
+	desc = "Куст. Кажется, внутри ползают пауки."
 	icon_state = "bush1"
 	layer = ABOVE_ALL_MOB_LAYER
 	var/res_replenish
@@ -281,7 +287,7 @@
 		var/mob/living/L = AM
 		if(L.m_intent == MOVE_INTENT_RUN && !L.lying)
 			if(!ishuman(L))
-				to_chat(L, "<span class='warning'>I'm cut on a thorn!</span>")
+				to_chat(L, "<span class='warning'>Я оцарапался о шип!</span>")
 				L.apply_damage(5, BRUTE)
 
 			else
@@ -295,7 +301,7 @@
 						TH.add_mob_blood(H)//it embedded itself in you, of course it's bloody!
 						TH.forceMove(H)
 						BP.receive_damage(10)
-						to_chat(H, "<span class='danger'>\A [TH] impales my [BP.name]!</span>")
+						to_chat(H, "<span class='danger'>[TH] вонзается мне в [BP.name]!</span>")
 						SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "embedded", /datum/mood_event/embedded)
 				else
 					var/obj/item/bodypart/BP = pick(H.bodyparts)
@@ -319,15 +325,15 @@
 				if(B)
 					B = new B(user.loc)
 					user.put_in_hands(B)
-					user.visible_message("<span class='notice'>[user] finds [B] in [src].</span>")
+					user.visible_message("<span class='notice'>[user] находит [B] в [src].</span>")
 					return
-			user.visible_message("<span class='warning'>[user] searches through [src].</span>")
+			user.visible_message("<span class='warning'>[user] обыскивает [src].</span>")
 #ifdef MATURESERVER
 			if(!looty.len)
-				to_chat(user, "<span class='warning'>Picked clean.</span>")
+				to_chat(user, "<span class='warning'>Оборвано начисто.</span>")
 #else
 			if(!looty.len)
-				to_chat(user, "<span class='warning'>Picked clean... I should try later.</span>")
+				to_chat(user, "<span class='warning'>Оборвано начисто... Стоит попробовать позже.</span>")
 #endif
 /obj/structure/flora/roguegrass/bush/update_icon()
 	icon_state = "bush[rand(1, 4)]"
@@ -347,8 +353,8 @@
 	return 1
 
 /obj/structure/flora/roguegrass/bush/wall
-	name = "great bush"
-	desc = "A bush, this one's roots are thick and block the way."
+	name = "густой куст"
+	desc = "Куст с толстыми переплетёнными корнями и ветвями, преграждающими путь."
 	opacity = TRUE
 	density = 1
 	climbable = FALSE
@@ -388,8 +394,8 @@
 
 
 /obj/structure/flora/rogueshroom
-	name = "shroom"
-	desc = ""
+	name = "гриб"
+	desc = "Огромный шляпочный гриб."
 	icon = 'icons/roguetown/misc/foliagetall.dmi'
 	icon_state = "mush1"
 	opacity = 0
@@ -406,7 +412,7 @@
 /obj/structure/flora/rogueshroom/attack_right(mob/user)
 	if(user.mind && isliving(user))
 		if(user.mind.special_items && user.mind.special_items.len)
-			var/item = input(user, "What will I take?", "STASH") as null|anything in user.mind.special_items
+			var/item = input(user, "Что мне взять?", "ТАЙНИК") as null|anything in user.mind.special_items
 			if(item)
 				if(user.Adjacent(src))
 					if(user.mind.special_items[item])
@@ -449,7 +455,8 @@
 
 
 /obj/structure/flora/shroomstump
-	name = "shroom stump"
+	name = "ножка гриба"
+	desc = "Срезанная толстая ножка гигантского гриба."
 	icon_state = "mush1stump"
 	opacity = 0
 	max_integrity = 100
@@ -470,7 +477,8 @@
 	icon_state = "t[rand(1,4)]stump"
 
 /obj/structure/roguerock
-	name = "rock"
+	name = "камень"
+	desc = "Тяжёлый каменный валун."
 	icon_state = "rock1"
 	icon = 'icons/roguetown/misc/foliage.dmi'
 	opacity = 0
@@ -495,8 +503,8 @@
 //Thorn bush
 
 /obj/structure/flora/roguegrass/thorn_bush
-    name = "thorn bush"
-    desc = "A thorny bush, watch your step!"
+    name = "терновый куст"
+    desc = "Колючий кустарник, берегитесь шипов!"
     icon_state = "thornbush"
     layer = ABOVE_ALL_MOB_LAYER
     blade_dulling = DULLING_CUT

@@ -97,7 +97,7 @@ n
 /obj/item/roguecoin/examine(mob/user)
 	. = ..()
 	if(held.len)
-		. += "<span class='info'>\Roman [held.len + 1] coins.</span>"
+		. += "<span class='info'>\Roman [held.len + 1] монет.</span>"
 
 /obj/item/roguecoin/proc/merge(obj/item/roguecoin/G, mob/user)
 	if(!G)
@@ -129,7 +129,7 @@ n
 		var/numbers = list()
 		for(var/i = 1, i < based.len, i++)
 			numbers += i
-		var/amount = input(user,"How many?") as null|anything in sortList(numbers)
+		var/amount = input(user,"Сколько взять?") as null|anything in sortList(numbers)
 		if(!amount)
 			return
 		if(amount == based.len)
@@ -183,8 +183,8 @@ n
 //GOLD
 
 /obj/item/roguecoin/gold
-	name = "zenar"
-	desc = "A gold coin bearing the symbol of the Taurus and the pre-kingdom psycross. These were in the best condition of the provincial gold mints, the rest were melted down."
+	name = "зенар"
+	desc = "Золотая монета с изображением Тельца и древнего псикреста. Сохранилась со времён провинциального чекана, остальные были переплавлены."
 	icon_state = "g1"
 	sellprice = 10
 	base_type = CTYPE_GOLD
@@ -198,15 +198,15 @@ n
 	playsound(user, 'sound/foley/coinphy (1).ogg', 100, FALSE)
 	if(prob(50))
 		icon_state = "g1"
-		user.visible_message("<span class='info'>[user] flips the coin. Heads!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Орёл!</span>")
 	else
 		icon_state = "g0"
-		user.visible_message("<span class='info'>[user] flips the coin. Tails!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Решка!</span>")
 
 /obj/item/roguecoin/gold/update_icon()
 	..()
 	if(held.len)
-		name = "zenarii"
+		name = "зенары"
 		desc = ""
 		switch(held.len)
 			if(1)
@@ -238,8 +238,8 @@ n
 
 
 /obj/item/roguecoin/silver
-	name = "ziliqua"
-	desc = "An ancient silver coin still in use due to their remarkable ability to last the ages."
+	name = "силиква"
+	desc = "Древняя серебряная монета, всё ещё в ходу благодаря своей удивительной долговечности."
 	icon_state = "s1"
 	sellprice = 5
 	base_type = CTYPE_SILV
@@ -253,15 +253,15 @@ n
 	playsound(user, 'sound/foley/coinphy (1).ogg', 100, FALSE)
 	if(prob(50))
 		icon_state = "s1"
-		user.visible_message("<span class='info'>[user] flips the coin. Heads!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Орёл!</span>")
 	else
 		icon_state = "s0"
-		user.visible_message("<span class='info'>[user] flips the coin. Tails!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Решка!</span>")
 
 /obj/item/roguecoin/silver/update_icon()
 	..()
 	if(held.len)
-		name = "ziliquae"
+		name = "силиквы"
 		desc = ""
 		switch(held.len)
 			if(1)
@@ -292,8 +292,8 @@ n
 
 
 /obj/item/roguecoin/copper
-	name = "zenny"
-	desc = "A brand-new bronze coin minted by the capital in an effort to be rid of the financial use of silver."
+	name = "зенни"
+	desc = "Новая бронзовая монета, отчеканенная в столице в попытке вытеснить серебро из денежного обращения."
 	icon_state = "c1"
 	sellprice = 1
 	base_type = CTYPE_COPP
@@ -307,15 +307,15 @@ n
 	playsound(user, 'sound/foley/coinphy (1).ogg', 100, FALSE)
 	if(prob(50))
 		icon_state = "c1"
-		user.visible_message("<span class='info'>[user] flips the coin. Heads!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Орёл!</span>")
 	else
 		icon_state = "c0"
-		user.visible_message("<span class='info'>[user] flips the coin. Tails!</span>")
+		user.visible_message("<span class='info'>[user] подбрасывает монетку. Решка!</span>")
 
 /obj/item/roguecoin/copper/update_icon()
 	..()
 	if(held.len)
-		name = "zennies"
+		name = "зенни"
 		desc = ""
 		switch(held.len)
 			if(1)

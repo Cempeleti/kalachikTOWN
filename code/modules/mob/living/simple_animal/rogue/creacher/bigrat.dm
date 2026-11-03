@@ -1,12 +1,13 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/bigrat
 	icon = 'icons/roguetown/mob/monster/bigrat.dmi'
-	name = "rous"
+	name = "гигантская крыса"
+	desc = "Крупная откормленная тварь с красными глазами и длинным голым хвостом."
 	icon_state = "rat"
 	icon_living = "rat"
 	icon_dead = "rat1"
 	gender = MALE
-	emote_hear = list("squeaks.")
-	emote_see = list("cleans its nose.")
+	emote_hear = list("пищит.")
+	emote_see = list("чистит морду.")
 	speak_chance = 1
 	turns_per_move = 3
 	see_in_dark = 6
@@ -45,7 +46,8 @@
 	remains_type = /obj/effect/decal/remains/bigrat
 
 /obj/effect/decal/remains/bigrat
-	name = "remains"
+	name = "останки"
+	desc = "Оглоданные кости гигантской крысы."
 	gender = PLURAL
 	icon_state = "ratbones"
 	icon = 'icons/roguetown/mob/monster/bigrat.dmi'

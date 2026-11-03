@@ -5,8 +5,8 @@
 	force_wielded = 25
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
-	name = "sword"
-	desc = "A simple steel sord."
+	name = "меч"
+	desc = "Простой стальной меч."
 	icon_state = "sword1"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	lefthand_file = 'icons/mob/inhands/weapons/rogue_lefthand.dmi'
@@ -34,6 +34,8 @@
 		icon_state = "sword[rand(1,3)]"
 
 /obj/item/rogueweapon/sword/decorated
+	name = "украшенный меч"
+	desc = "Изысканный меч с декоративной отделкой рукояти."
 	icon_state = "decsword1"
 	sellprice = 140
 
@@ -85,8 +87,8 @@
 	item_state = "longsword"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "bastard sword"
-	desc = ""
+	name = "полуторный меч"
+	desc = "Универсальный длинный меч, которым можно владеть как одной, так и двумя руками."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -105,6 +107,8 @@
 	smeltresult = /obj/item/ingot/steel
 
 /obj/item/rogueweapon/sword/long/death
+	name = "чёрный полуторный меч"
+	desc = "Зловещий полуторный меч из чернёного металла."
 	color = CLOTHING_BLACK
 
 /obj/item/rogueweapon/sword/long/getonmobprop(tag)
@@ -127,8 +131,8 @@
 	item_state = "longsword"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "old sword"
-	desc = "A old steel sword with a green leather grip."
+	name = "старый меч"
+	desc = "Старый стальной меч с рукоятью, обтянутой зелёной кожей."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -166,8 +170,8 @@
 	item_state = "judgement"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "judgement"
-	desc = "A sword with a silver grip, a topaz gem hilt and a steel blade, what more could a noble ask for."
+	name = "правосудие"
+	desc = "Меч с серебряной рукоятью, эфесом с топазом и стальным клинком — о чём ещё может мечтать благородный господин?"
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -206,8 +210,8 @@
 	item_state = "vlord"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "crimson fang"
-	desc = "A strange long sword with a green metal composition."
+	name = "багровый клык"
+	desc = "Странный длинный меч из зеленоватого металла."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -246,8 +250,8 @@
 	item_state = "tabi"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "kilij scimitar"
-	desc = ""
+	name = "кылыч"
+	desc = "Тяжёлая восточная сабля с расширением у острия."
 	parrysound = "bladedmedium"
 	swingsound = BLADEWOOSH_LARGE
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -286,8 +290,8 @@
 	item_state = "marlin"
 	lefthand_file = 'icons/mob/inhands/weapons/roguebig_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/roguebig_righthand.dmi'
-	name = "shalal saber"
-	desc = ""
+	name = "шалальская сабля"
+	desc = "Изящная и лёгкая сабля восточной работы."
 	parrysound = list('sound/combat/parry/bladed/bladedthin (1).ogg', 'sound/combat/parry/bladed/bladedthin (2).ogg', 'sound/combat/parry/bladed/bladedthin (3).ogg')
 	swingsound = BLADEWOOSH_SMALL
 	pickup_sound = 'sound/foley/equip/swordlarge2.ogg'
@@ -345,8 +349,8 @@
 	possible_item_intents = list(/datum/intent/sword/strike)
 	gripped_intents = list(/datum/intent/sword/chop)
 	icon_state = "exe"
-	name = "execution sword"
-	desc = ""
+	name = "меч палача"
+	desc = "Тяжёлый двуручный клинок без острия, созданный специально для казней."
 	minstr = 10
 	slot_flags = ITEM_SLOT_BACK
 
@@ -363,7 +367,8 @@
 
 /obj/item/rogueweapon/sword/long/exe/cloth
 	icon_state = "terminusest"
-	name = "Terminus Est"
+	name = "Терминус Эст"
+	desc = "Торжественный меч палача с тканью для протирки лезвия."
 
 /obj/item/rogueweapon/sword/long/exe/cloth/rmb_self(mob/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -373,8 +378,8 @@
 	return
 
 /obj/item/rogueweapon/sword/iron
-	name = "sword"
-	desc = "A simple iron sword."
+	name = "железный меч"
+	desc = "Простой железный меч."
 	icon_state = "isword"
 	minstr = 6
 	smeltresult = /obj/item/ingot/iron
@@ -382,8 +387,8 @@
 	sellprice = 10
 
 /obj/item/rogueweapon/sword/sabre
-	name = "sabre"
-	desc = "A swift saber."
+	name = "сабля"
+	desc = "Быстрая и манёвренная изогнутая сабля."
 	icon_state = "saber"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/cut/sabre, /datum/intent/sword/thrust)
@@ -398,12 +403,14 @@
 	clickcd = 10
 
 /obj/item/rogueweapon/sword/sabre/dec
+	name = "украшенная сабля"
+	desc = "Богато отделанная сабля с гравированным клинком и позолоченной гардой."
 	icon_state = "decsaber"
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/rapier
-	name = "rapier"
-	desc = "A precise raper."
+	name = "рапира"
+	desc = "Острое и тонкое колющее оружие с развитой гардой."
 	icon_state = "rapier"
 	smeltresult = /obj/item/ingot/steel
 	possible_item_intents = list(/datum/intent/sword/thrust/rapier, /datum/intent/sword/cut/rapier)
@@ -422,13 +429,15 @@
 	clickcd = 8
 
 /obj/item/rogueweapon/sword/rapier/dec
+	name = "украшенная рапира"
+	desc = "Изящная рапира с позолоченным эфесом искусной работы."
 	icon_state = "decrapier"
 	sellprice = 140
 
 /obj/item/rogueweapon/sword/rapier/lord
 	force = 20
-	name = "sword of the Mad Duke"
-	desc = "Passed down through the ages, this decorative sword was recovered from the ashes of Roguetown when it was last destroyed... clutched in the bony fingers of the Mad Duke."
+	name = "меч Безумного Герцога"
+	desc = "Передававшийся сквозь века, этот украшенный меч был извлечён из пепла Рогтауна после его последнего разрушения... из костлявых пальцев Безумного Герцога."
 	icon_state = "lordrap"
 	sellprice = 300
 	max_integrity = 300
@@ -436,8 +445,8 @@
 	wdefense = 7
 
 /obj/item/rogueweapon/sword/cutlass
-	name = "cutlass"
-	desc = "Used by pirates and deckhands."
+	name = "абордажная сабля"
+	desc = "Короткая и широкая сабля с закрытой гардой, излюбленное оружие пиратов и матросов."
 	icon_state = "cutlass"
 	possible_item_intents = list(/datum/intent/sword/cut, /datum/intent/sword/thrust)
 	gripped_intents = null

@@ -1,8 +1,8 @@
 
-
 /obj/machinery/light/rogue/oven
 	icon = 'icons/roguetown/misc/lighting.dmi'
-	name = "oven"
+	name = "печь"
+	desc = "Тяжёлая каменная печь для выпечки хлеба и приготовления пищи."
 	icon_state = "oven1"
 	base_state = "oven"
 	density = FALSE
@@ -32,7 +32,7 @@
 			donefoods = FALSE
 			W.forceMove(src)
 			food += W
-			user.visible_message("<span class='warning'>[user] puts something in the oven.</span>")
+			user.visible_message("<span class='warning'>[user] кладёт что-то в печь.</span>")
 			need_underlay_update = TRUE
 			update_icon()
 			return
@@ -48,7 +48,7 @@
 				food -= I
 				qdel(I)
 				food += C
-				visible_message("<span class='notice'>Something smells good!</span>")
+				visible_message("<span class='notice'>Вкусно пахнет!</span>")
 				need_underlay_update = TRUE
 		update_icon()
 

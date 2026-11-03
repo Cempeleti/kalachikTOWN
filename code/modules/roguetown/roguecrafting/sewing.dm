@@ -3,21 +3,21 @@
 	skillcraft = /datum/skill/misc/sewing
 
 /datum/crafting_recipe/roguetown/sewing/tabard
-	name = "tabard"
+	name = "табард"
 	result = list(/obj/item/clothing/cloak/tabard)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/stabard
-	name = "surcoat"
+	name = "сюрко"
 	result = list(/obj/item/clothing/cloak/stabard)
 	reqs = list(/obj/item/natural/cloth = 3,
 				/obj/item/natural/fibers = 1)
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/sewing/jupon
-	name = "jupon"
+	name = "жюпон"
 	result = list(/obj/item/clothing/cloak/stabard/surcoat)
 	reqs = list(/obj/item/natural/cloth = 4,
 				/obj/item/natural/fibers = 1)

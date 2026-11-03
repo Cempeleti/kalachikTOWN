@@ -1,8 +1,8 @@
 GLOBAL_LIST_EMPTY(biggates)
 
 /obj/structure/gate
-	name = "gate"
-	desc = ""
+	name = "ворота"
+	desc = "Массивные укреплённые ворота, преграждающие путь."
 	icon = 'icons/roguetown/misc/gate.dmi'
 	icon_state = "gate1"
 	density = TRUE
@@ -124,8 +124,8 @@ GLOBAL_LIST_EMPTY(biggates)
 	update_icon()
 
 /obj/structure/winch
-	name = "winch"
-	desc = ""
+	name = "лебёдка"
+	desc = "Механический ворот с цепью для подъёма и опускания ворот."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "winch"
 	density = TRUE
@@ -154,7 +154,7 @@ GLOBAL_LIST_EMPTY(biggates)
 /obj/structure/winch/attack_hand(mob/user)
 	. = ..()
 	if(!attached_gate)
-		to_chat(user, "<span class='warning'>The chain is not attached to anything.</span>")
+		to_chat(user, "<span class='warning'>Цепь ни к чему не прикреплена.</span>")
 		return
 	if(attached_gate.isSwitchingStates)
 		return
@@ -162,7 +162,7 @@ GLOBAL_LIST_EMPTY(biggates)
 		var/mob/living/L = user
 		L.changeNext_move(CLICK_CD_MELEE)
 		var/used_time = 105 - (L.STASTR * 10)
-		user.visible_message("<span class='warning'>[user] cranks the winch.</span>")
+		user.visible_message("<span class='warning'>[user] крутит лебёдку.</span>")
 		playsound(src, 'sound/foley/winch.ogg', 100, extrarange = 3)
 		if(do_after(user, used_time, target = user))
 			attached_gate.toggle()

@@ -1,13 +1,13 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/chicken
-	name = "\improper chicken"
-	desc = ""
+	name = "курица"
+	desc = "Обыкновенная домашняя курица, клюющая всё подряд."
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	icon_state = "chicken_brown"
 	icon_living = "chicken_brown"
 	icon_dead = "chicken_brown_dead"
-	emote_see = list("pecks at the ground.","flaps its wings viciously.")
+	emote_see = list("клюёт землю.","яростно хлопает крыльями.")
 	density = FALSE
 	base_intents = list(/datum/intent/simple/claw)
 	speak_chance = 2
@@ -16,12 +16,12 @@
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/fat = 1, /obj/item/reagent_containers/food/snacks/rogue/meat/poultry = 1)
 	var/egg_type = /obj/item/reagent_containers/food/snacks/egg
 	food_type = list(/obj/item/reagent_containers/food/snacks/grown/berries/rogue,/obj/item/natural/worms,/obj/item/reagent_containers/food/snacks/grown/wheat,/obj/item/reagent_containers/food/snacks/grown/oat)
-	response_help_continuous = "pets"
-	response_help_simple = "pet"
-	response_disarm_continuous = "gently pushes aside"
-	response_disarm_simple = "gently push aside"
-	response_harm_continuous = "kicks"
-	response_harm_simple = "kick"
+	response_help_continuous = "гладит"
+	response_help_simple = "погладить"
+	response_disarm_continuous = "аккуратно отталкивает"
+	response_disarm_simple = "аккуратно оттолкнуть"
+	response_harm_continuous = "пинает"
+	response_harm_simple = "пнуть"
 	melee_damage_lower = 1
 	melee_damage_upper = 8
 	pooptype = /obj/item/natural/poo/horse
@@ -130,13 +130,13 @@
 				if(CH)
 					qdel(CH)
 					new /obj/structure/fluff/nest(loc)
-					visible_message("<span class='notice'>[src] builds a nest.</span>")
+					visible_message("<span class='notice'>[src] вьёт гнездо.</span>")
 				else
 					CH = locate(/obj/item/grown/log/tree/stick) in loc
 					if(CH)
 						qdel(CH)
 						new /obj/structure/fluff/nest(loc)
-						visible_message("<span class='notice'>[src] builds a nest.</span>")
+						visible_message("<span class='notice'>[src] вьёт гнездо.</span>")
 				//if cant find, look for chaff in view and move to it
 				var/list/foundchaff = list()
 				for(var/obj/item/natural/fibers/C in oview(src))
@@ -155,8 +155,8 @@
 
 
 /obj/structure/fluff/nest
-	name = "nest"
-	desc = ""
+	name = "гнездо"
+	desc = "Небольшое птичье гнездо из веток и сухой травы."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "nest"
 	density = FALSE

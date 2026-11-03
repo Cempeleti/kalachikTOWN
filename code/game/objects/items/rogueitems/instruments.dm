@@ -45,7 +45,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(!playing)
-		var/curfile = input(user, "Which song?", "Roguetown", name) as null|anything in song_list
+		var/curfile = input(user, "Какую мелодию сыграть?", "KalachikTOWN", name) as null|anything in song_list
 		if(!user)
 			return
 		if(user.mind)
@@ -86,56 +86,62 @@
 		soundloop.stop()
 
 /obj/item/rogue/instrument/lute
-	name = "lute"
+	name = "лютня"
+	desc = "Струнный щипковый музыкальный инструмент."
 	icon_state = "lute"
-	song_list = list("Song 1" = 'sound/music/instruments/lute (1).ogg',
-	"Song 2" = 'sound/music/instruments/lute (2).ogg',
-	"Song 3" = 'sound/music/instruments/lute (3).ogg',
-	"Song 4" = 'sound/music/instruments/lute (4).ogg',
-	"Song 5" = 'sound/music/instruments/lute (5).ogg',
-	"Song 6" = 'sound/music/instruments/lute (6).ogg',
-	"Song 7" = 'sound/music/instruments/lute (7).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/lute (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/lute (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/lute (3).ogg',
+	"Мелодия 4" = 'sound/music/instruments/lute (4).ogg',
+	"Мелодия 5" = 'sound/music/instruments/lute (5).ogg',
+	"Мелодия 6" = 'sound/music/instruments/lute (6).ogg',
+	"Мелодия 7" = 'sound/music/instruments/lute (7).ogg')
 
 /obj/item/rogue/instrument/accord
-	name = "accordion"
+	name = "аккордеон"
+	desc = "Язычковый клавишно-пневматический музыкальный инструмент."
 	icon_state = "accordion"
-	song_list = list("Song 1" = 'sound/music/instruments/accord (1).ogg',
-	"Song 2" = 'sound/music/instruments/accord (2).ogg',
-	"Song 3" = 'sound/music/instruments/accord (3).ogg',
-	"Song 4" = 'sound/music/instruments/accord (4).ogg',
-	"Song 5" = 'sound/music/instruments/accord (5).ogg',
-	"Song 6" = 'sound/music/instruments/accord (6).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/accord (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/accord (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/accord (3).ogg',
+	"Мелодия 4" = 'sound/music/instruments/accord (4).ogg',
+	"Мелодия 5" = 'sound/music/instruments/accord (5).ogg',
+	"Мелодия 6" = 'sound/music/instruments/accord (6).ogg')
 
 /obj/item/rogue/instrument/guitar
-	name = "guitar"
+	name = "гитара"
+	desc = "Акустический струнный инструмент."
 	icon_state = "guitar"
-	song_list = list("Song 1" = 'sound/music/instruments/guitar (1).ogg',
-	"Song 2" = 'sound/music/instruments/guitar (2).ogg',
-	"Song 3" = 'sound/music/instruments/guitar (3).ogg',
-	"Song 4" = 'sound/music/instruments/guitar (4).ogg',
-	"Song 5" = 'sound/music/instruments/guitar (5).ogg',
-	"Song 6" = 'sound/music/instruments/guitar (6).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/guitar (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/guitar (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/guitar (3).ogg',
+	"Мелодия 4" = 'sound/music/instruments/guitar (4).ogg',
+	"Мелодия 5" = 'sound/music/instruments/guitar (5).ogg',
+	"Мелодия 6" = 'sound/music/instruments/guitar (6).ogg')
 
 /obj/item/rogue/instrument/harp
-	name = "harp"
+	name = "арфа"
+	desc = "Изящный щипковый музыкальный инструмент со струнами."
 	icon_state = "harp"
-	song_list = list("Song 1" = 'sound/music/instruments/harb (1).ogg',
-	"Song 2" = 'sound/music/instruments/harb (2).ogg',
-	"Song 3" = 'sound/music/instruments/harb (3).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/harb (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/harb (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/harb (3).ogg')
 
 /obj/item/rogue/instrument/flute
-	name = "flute"
+	name = "флейта"
+	desc = "Деревянный духовой инструмент с нежным звучанием."
 	icon_state = "flute"
-	song_list = list("Song 1" = 'sound/music/instruments/flute (1).ogg',
-	"Song 2" = 'sound/music/instruments/flute (2).ogg',
-	"Song 3" = 'sound/music/instruments/flute (3).ogg',
-	"Song 4" = 'sound/music/instruments/flute (4).ogg',
-	"Song 5" = 'sound/music/instruments/flute (5).ogg',
-	"Song 6" = 'sound/music/instruments/flute (6).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/flute (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/flute (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/flute (3).ogg',
+	"Мелодия 4" = 'sound/music/instruments/flute (4).ogg',
+	"Мелодия 5" = 'sound/music/instruments/flute (5).ogg',
+	"Мелодия 6" = 'sound/music/instruments/flute (6).ogg')
 
 /obj/item/rogue/instrument/drum
-	name = "drum"
+	name = "барабан"
+	desc = "Ударный инструмент, задающий ритм."
 	icon_state = "drum"
-	song_list = list("Song 1" = 'sound/music/instruments/drum (1).ogg',
-	"Song 2" = 'sound/music/instruments/drum (2).ogg',
-	"Song 3" = 'sound/music/instruments/drum (3).ogg')
+	song_list = list("Мелодия 1" = 'sound/music/instruments/drum (1).ogg',
+	"Мелодия 2" = 'sound/music/instruments/drum (2).ogg',
+	"Мелодия 3" = 'sound/music/instruments/drum (3).ogg')

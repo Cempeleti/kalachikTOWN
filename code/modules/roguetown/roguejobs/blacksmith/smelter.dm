@@ -4,7 +4,8 @@
 
 /obj/machinery/light/rogue/smelter
 	icon = 'icons/roguetown/misc/forge.dmi'
-	name = "furnace"
+	name = "плавильня"
+	desc = "Каменная плавильная печь для переплавки руды в слитки."
 	icon_state = "cavesmelter0"
 	base_state = "cavesmelter"
 	anchored = TRUE
@@ -27,7 +28,7 @@
 			ore -= I
 			I.forceMove(T)
 			T.hingot = I
-			user.visible_message("<span class='info'>[user] retrieves [I] from [src].</span>")
+			user.visible_message("<span class='info'>[user] достаёт [I] из [src].</span>")
 			if(on)
 				var/tyme = world.time
 				T.hott = tyme
@@ -41,7 +42,7 @@
 	if((ore.len < maxore) && W.smeltresult)
 		W.forceMove(src)
 		ore += W
-		user.visible_message("<span class='warning'>[user] puts something in the smelter.</span>")
+		user.visible_message("<span class='warning'>[user] кладёт что-то в плавильню.</span>")
 		cooking = 0
 		return
 	return ..()
@@ -49,14 +50,14 @@
 
 /obj/machinery/light/rogue/smelter/attack_hand(mob/user, params)
 	if(on)
-		to_chat(user, "<span class='warning'>It's too hot.</span>")
+		to_chat(user, "<span class='warning'>Слишком горячо.</span>")
 		return
 	if(ore.len)
 		var/obj/item/I = ore[ore.len]
 		ore -= I
 		I.loc = user.loc
 		user.put_in_active_hand(I)
-		user.visible_message("<span class='info'>[user] retrieves [I] from [src].</span>")
+		user.visible_message("<span class='info'>[user] достаёт [I] из [src].</span>")
 	else
 		return ..()
 
@@ -87,7 +88,8 @@
 
 /obj/machinery/light/rogue/smelter/great
 	icon = 'icons/roguetown/misc/forge.dmi'
-	name = "great furnace"
+	name = "большая плавильня"
+	desc = "Массивная кузнечная плавильня, способная переплавлять руду и создавать сплавы."
 	icon_state = "smelter0"
 	base_state = "smelter"
 	anchored = TRUE

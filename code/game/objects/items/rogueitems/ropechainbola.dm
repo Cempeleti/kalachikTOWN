@@ -1,7 +1,7 @@
 
 /obj/item/rope
-	name = "rope"
-	desc = ""
+	name = "верёвка"
+	desc = "Прочная пеньковая верёвка, которую можно использовать для связывания."
 	gender = PLURAL
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "rope"
@@ -20,7 +20,7 @@
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 
 /datum/intent/tie
-	name = "tie"
+	name = "путы"
 	chargetime = 0
 	noaa = TRUE
 	candodge = FALSE
@@ -51,40 +51,40 @@
 	if(user.aimheight > 4)
 		if(!C.handcuffed)
 			if(C.get_num_arms(TRUE))
-				C.visible_message("<span class='warning'>[user] is trying to tie [C]'s arms with [src.name]!</span>", \
-									"<span class='userdanger'>[user] is trying to tie my arms with [src.name]!</span>")
+				C.visible_message("<span class='warning'>[user] пытается связать руки [C] при помощи [src.name]!</span>", \
+									"<span class='userdanger'>[user] пытается связать мне руки при помощи [src.name]!</span>")
 
 				playsound(loc, cuffsound, 100, TRUE, -2)
 				if(do_mob(user, C, 60) && C.get_num_arms(FALSE))
 					apply_cuffs(C, user)
-					C.visible_message("<span class='warning'>[user] ties [C] with [src.name].</span>", \
-										"<span class='danger'>[user] ties me up with [src.name].</span>")
+					C.visible_message("<span class='warning'>[user] связывает руки [C] при помощи [src.name].</span>", \
+										"<span class='danger'>[user] связывает мне руки при помощи [src.name].</span>")
 					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
 
 					log_combat(user, C, "handcuffed")
 				else
-					to_chat(user, "<span class='warning'>I fail to tie up [C]!</span>")
+					to_chat(user, "<span class='warning'>Мне не удалось связать [C]!</span>")
 			else
-				to_chat(user, "<span class='warning'>[C] has no arms to tie up.</span>")
+				to_chat(user, "<span class='warning'>У [C] нет рук, чтобы их связать.</span>")
 
 	if(user.aimheight <= 4)
 		if(!C.legcuffed)
 			if(C.get_num_legs(TRUE) == 2)
-				C.visible_message("<span class='warning'>[user] is trying to tie [C]'s legs with [src.name]!</span>", \
-									"<span class='userdanger'>[user] is trying to tie my legs with [src.name]!</span>")
+				C.visible_message("<span class='warning'>[user] пытается связать ноги [C] при помощи [src.name]!</span>", \
+									"<span class='userdanger'>[user] пытается связать мне ноги при помощи [src.name]!</span>")
 
 				playsound(loc, cuffsound, 30, TRUE, -2)
 				if(do_mob(user, C, 60) && (C.get_num_legs(FALSE) < 2))
 					apply_cuffs(C, user)
-					C.visible_message("<span class='warning'>[user] ties [C]'s legs with [src.name].</span>", \
-										"<span class='danger'>[user] ties my legs with [src.name].</span>")
+					C.visible_message("<span class='warning'>[user] связывает ноги [C] при помощи [src.name].</span>", \
+										"<span class='danger'>[user] связывает мне ноги при помощи [src.name].</span>")
 					SSblackbox.record_feedback("tally", "legcuffs", 1, type)
 
 					log_combat(user, C, "legcuffed", TRUE)
 				else
-					to_chat(user, "<span class='warning'>I fail to tie up [C]!</span>")
+					to_chat(user, "<span class='warning'>Мне не удалось связать [C]!</span>")
 			else
-				to_chat(user, "<span class='warning'>[C] is missing two or one legs.</span>")
+				to_chat(user, "<span class='warning'>У [C] недостаточно ног для связывания.</span>")
 
 /obj/item/rope/proc/apply_cuffs(mob/living/carbon/target, mob/user, leg = FALSE)
 	if(!leg)
@@ -118,15 +118,15 @@
 
 
 /datum/intent/whip
-	name = "strike"
+	name = "удар"
 	blade_class = BCLASS_BLUNT
-	attack_verb = list("whips", "strikes", "smacks")
+	attack_verb = list("хлещет", "стегает", "бьёт")
 	penfactor = 40
 	chargetime = 5
 
 /obj/item/rope/chain
-	name = "chain"
-	desc = ""
+	name = "цепь"
+	desc = "Крепкая железная цепь, способная надёжно сковать пленника."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "chain"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_WRISTS

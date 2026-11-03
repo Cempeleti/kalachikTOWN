@@ -1,16 +1,16 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
-	name = "cow"
-	desc = ""
+	name = "корова"
+	desc = "Крупное домашнее животное, дающее свежее молоко."
 	icon_state = "cow"
 	icon_living = "cow"
 	icon_dead = "cow_dead"
 	icon_gib = "cow_gib"
 	gender = FEMALE
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
-	emote_hear = list("brays.")
-	emote_see = list("shakes its head.", "chews her cud.")
+	emote_hear = list("мычит.")
+	emote_see = list("трясёт головой.", "жуёт жвачку.")
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
@@ -28,8 +28,8 @@
 	pooptype = /obj/item/natural/poo/cow
 	milkies = TRUE
 	faction = list("cows")
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
+	attack_verb_continuous = "бодает"
+	attack_verb_simple = "боднуть"
 	melee_damage_lower = 10
 	melee_damage_upper = 25
 	STASPD = 2
@@ -39,7 +39,8 @@
 	remains_type = /obj/effect/decal/remains/cow
 
 /obj/effect/decal/remains/cow
-	name = "remains"
+	name = "останки"
+	desc = "Выбеленные кости коровы."
 	gender = PLURAL
 	icon_state = "skele"
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
@@ -57,8 +58,8 @@
 
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/cowlet
-	name = "calf"
-	desc = ""
+	name = "телёнок"
+	desc = "Маленький неуклюжий телёнок, держащийся поближе к матери."
 	icon_state = "cowlet"
 	icon_living = "cowlet"
 	icon_dead = "cowlet_dead"
@@ -125,9 +126,9 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/attack_hand(mob/living/carbon/M)
 	if(!stat && M.used_intent.type == INTENT_DISARM && icon_state != icon_dead && !has_buckled_mobs())
-		M.visible_message("<span class='warning'>[M] tips over [src].</span>",
-			"<span class='notice'>I tip over [src].</span>")
-		to_chat(src, "<span class='danger'>I am tipped over by [M]!</span>")
+		M.visible_message("<span class='warning'>[M] сбивает с ног [src].</span>",
+			"<span class='notice'>Я сбиваю с ног [src].</span>")
+		to_chat(src, "<span class='danger'>[M] сбивает меня с ног!</span>")
 		Paralyze(60, ignore_canstun = TRUE)
 		icon_state = "[initial(icon_state)]_tip"
 		spawn(60)
@@ -138,14 +139,15 @@
 
 /mob/living/simple_animal/hostile/retaliate/rogue/bull
 	icon = 'icons/roguetown/mob/monster/cow.dmi'
-	name = "cow"
+	name = "бык"
+	desc = "Мощный мускулистый бык с грозными рогами."
 	icon_state = "bull"
 	icon_living = "bull"
 	icon_dead = "bull_dead"
 	icon_gib = "bull_gib"
 	gender = MALE
-	emote_hear = list("chews.")
-	emote_see = list("shakes his head.", "chews his cud.")
+	emote_hear = list("жуёт.")
+	emote_see = list("трясёт головой.", "жуёт жвачку.")
 	speak_chance = 1
 	turns_per_move = 5
 	see_in_dark = 6
@@ -155,8 +157,8 @@
 	faction = list("cows")
 	mob_biotypes = MOB_ORGANIC|MOB_BEAST
 	attack_same = 0
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
+	attack_verb_continuous = "бодает"
+	attack_verb_simple = "боднуть"
 	health = 150
 	maxHealth = 150
 	melee_damage_lower = 25
@@ -236,8 +238,8 @@
 	return
 
 /mob/living/simple_animal/hostile/retaliate/rogue/cow/bullet
-	name = "calf"
-	desc = ""
+	name = "бычок"
+	desc = "Маленький резвый бычок."
 	gender = MALE
 	icon_state = "bullet"
 	icon_living = "bullet"

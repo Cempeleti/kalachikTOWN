@@ -1,6 +1,7 @@
 /mob/living/simple_animal/hostile/retaliate/rogue/wolf
 	icon = 'icons/roguetown/mob/monster/vol.dmi'
-	name = "volf"
+	name = "волк"
+	desc = "Дикий свирепый хищник с горящими в темноте глазами."
 	icon_state = "vv"
 	icon_living = "vv"
 	icon_dead = "vvd"
@@ -46,7 +47,8 @@
 	remains_type = /obj/effect/decal/remains/wolf
 
 /obj/effect/decal/remains/wolf
-	name = "remains"
+	name = "останки"
+	desc = "Оглоданные кости волка."
 	gender = PLURAL
 	icon_state = "bones"
 	icon = 'icons/roguetown/mob/monster/vol.dmi'

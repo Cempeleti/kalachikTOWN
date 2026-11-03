@@ -1,7 +1,7 @@
 // meat pies etc
 /obj/item/reagent_containers/food/snacks/rogue/pie
-	name = "pie"
-	desc = ""
+	name = "сырой пирог"
+	desc = "Сырой пирог перед выпеканием."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "pieuncooked"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -15,8 +15,9 @@
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked
+	name = "пирог"
 	icon_state = "pie"
-	desc = ""
+	desc = "Ароматный свежевыпеченный пирог с румяной корочкой."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/pieslice
 	slices_num = 6
@@ -41,7 +42,7 @@
 		if(stunning)
 			L.Paralyze(20) //splat!
 		L.adjust_blurriness(1)
-		L.visible_message("<span class='warning'>[L] is hit by [src]!</span>", "<span class='danger'>I'm hit by [src]!</span>")
+		L.visible_message("<span class='warning'>В [L] попадает [src]!</span>", "<span class='danger'>В меня попал [src]!</span>")
 	if(is_type_in_typecache(hit_atom, GLOB.creamable))
 		hit_atom.AddComponent(/datum/component/creamed, src)
 	qdel(src)
@@ -63,8 +64,8 @@
 	icon = 'icons/roguetown/items/food.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
 	tastes = list("pie" = 1)
-	name = "pie slice"
-	desc = ""
+	name = "кусок пирога"
+	desc = "Аппетитный кусок пирога."
 	icon_state = "slice"
 	filling_color = "#FFFFFF"
 	foodtype = GRAIN | DAIRY | SUGAR
@@ -73,8 +74,8 @@
 	eat_effect = /datum/status_effect/buff/foodbuff
 
 /obj/item/reagent_containers/food/snacks/rogue/piedough
-	name = "pie dough"
-	desc = ""
+	name = "тесто для пирога"
+	desc = "Песочное тесто с добавлением сливочного масла."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "piedough"
 	slices_num = 0
@@ -86,7 +87,7 @@
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /datum/crafting_recipe/roguetown/cooking/piedough
-	name = "pie dough"
+	name = "тесто для пирога"
 	reqs = list(
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/powder/flour= 2,
@@ -97,7 +98,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/berrypie
-	name = "berry pie"
+	name = "ягодный пирог"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/berries/rogue = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1)
@@ -107,7 +108,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/applepie
-	name = "apple pie"
+	name = "яблочный пирог"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/grown/apple = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1)
@@ -116,32 +117,34 @@
 	result = /obj/item/reagent_containers/food/snacks/rogue/pie/apple
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/berry
-	name = "berry pie"
+	name = "сырой ягодный пирог"
+	desc = "Сырой ягодный пирог перед выпеканием."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/berry
-	name = "berry pie"
-	desc = ""
+	name = "ягодный пирог"
+	desc = "Свежевыпеченный пирог с начинкой из сладких лесных ягод."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("berries" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/apple
-	name = "apple pie"
+	name = "сырой яблочный пирог"
+	desc = "Сырой яблочный пирог перед выпеканием."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/apple
-	name = "apple pie"
-	desc = ""
+	name = "яблочный пирог"
+	desc = "Ароматный пирог с сочными яблоками и хрустящей корочкой."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("apples" = 1)
 
 /datum/crafting_recipe/roguetown/cooking/meatpie
-	name = "meat pie"
+	name = "пирог с мясом"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1)
@@ -152,20 +155,21 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/meat
-	name = "meat pie"
+	name = "сырой пирог с мясом"
+	desc = "Сырой пирог с мясной начинкой."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	filling_color = "#8f433a"
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat
-	name = "meat pie"
-	desc = ""
+	name = "пирог с мясом"
+	desc = "Сытный пирог с сочной мясной начинкой."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("meat" = 1)
 
 /datum/crafting_recipe/roguetown/cooking/meatpie/fish
-	name = "fish pie"
+	name = "рыбный пирог"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1
@@ -177,16 +181,18 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/meat/fish
-	name = "fish pie"
+	name = "сырой рыбный пирог"
+	desc = "Сырой пирог с рыбной начинкой."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
 	tastes = list("fish" = 1)
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/fish
-	name = "fish pie"
+	name = "рыбный пирог"
+	desc = "Традиционный пирог с нежной рыбной начинкой."
 	tastes = list("fish" = 1)
 
 /datum/crafting_recipe/roguetown/cooking/meatpie/poultry
-	name = "pot pie"
+	name = "пирог с птицей"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1
@@ -198,15 +204,17 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/meat/poultry
-	name = "pot pie"
+	name = "сырой пирог с птицей"
+	desc = "Сырой пирог с начинкой из мяса птицы."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/poultry
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/meat/poultry
-	name = "pot pie"
+	name = "пирог с птицей"
+	desc = "Вкусный сытный пирог с нежным мясом птицы."
 	tastes = list("chicken" = 1)
 
 /datum/crafting_recipe/roguetown/cooking/eggpie
-	name = "egg pie"
+	name = "яичный пирог"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/egg = 3,
 		/obj/item/reagent_containers/food/snacks/rogue/piedough = 1)
@@ -216,13 +224,14 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/egg
-	name = "egg pie"
+	name = "сырой яичный пирог"
+	desc = "Сырой пирог с яичной начинкой."
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/egg
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/egg
-	name = "egg pie"
-	desc = ""
+	name = "яичный пирог"
+	desc = "Нежный запечённый пирог с яйцом."
 	list_reagents = list(/datum/reagent/consumable/nutriment = 30)
 	eat_effect = /datum/status_effect/buff/foodbuff
 	tastes = list("eggs" = 1)

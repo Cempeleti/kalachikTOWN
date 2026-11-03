@@ -3,7 +3,7 @@ GLOBAL_LIST_EMPTY(chosen_music)
 GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town,/area/rogue/outdoors/town,/area/rogue/under/town)) //hey
 
 /area/rogue
-	name = "roguetown"
+	name = "Роугтаун"
 	icon_state = "invi"
 	has_gravity = STANDARD_GRAVITY
 	ambientsounds = null
@@ -17,7 +17,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 //	var/previous_ambient = ""
 
 /area/rogue/indoors
-	name = "indoors rt"
+	name = "Помещение Роугтауна"
 	icon_state = "green"
 	ambientrain = RAIN_IN
 	ambientsounds = AMB_INGEN
@@ -32,7 +32,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors
 
 /area/rogue/indoors/cave
-	name = "latejoin cave"
+	name = "Пещера прибытия"
 	icon_state = "green"
 	ambientsounds = AMB_GENCAVE
 	ambientnight = AMB_GENCAVE
@@ -45,7 +45,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 ///// OUTDOORS AREAS //////
 
 /area/rogue/outdoors
-	name = "outdoors roguetown"
+	name = "Улица Роугтауна"
 	icon_state = "purple"
 	outdoors = TRUE
 	ambientrain = RAIN_OUT
@@ -66,7 +66,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/outdoors/mountains
-	name = "mountains"
+	name = "Горы"
 	ambientsounds = AMB_MOUNTAIN
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
@@ -82,11 +82,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/outdoors/mountains/deception
-	name = "deception"
-	first_time_text = "THE CANYON OF DECEPTION"
+	name = "Каньон обмана"
+	first_time_text = "КАНЬОН ОБМАНА"
 
 /area/rogue/outdoors/mountains/decap
-	name = "mt decapitation"
+	name = "Гора Обезглавливания"
 	ambush_types = list(
 				/turf/open/floor/rogue/dirt)
 	ambush_mobs = list(
@@ -96,7 +96,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/decap.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "MOUNT DECAPITATION"
+	first_time_text = "ГОРА ОБЕЗГЛАВЛИВАНИЯ"
 	ambush_times = list("night","dawn","dusk","day")
 	converted_type = /area/rogue/indoors/shelter/mountains/decap
 /area/rogue/indoors/shelter/mountains/decap
@@ -105,7 +105,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/outdoors/rtfield
-	name = "rockhill basin"
+	name = "Каменистая котловина"
 	soundenv = 19
 	ambush_times = list("night")
 	ambush_types = list(
@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 30,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 50)
-	first_time_text = "ROCKHILL BASIN"
+	first_time_text = "КАМЕНИСТАЯ КОТЛОВИНА"
 	droning_sound = 'sound/music/area/field.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 
 /area/rogue/outdoors/woods
-	name = "wilderness"
+	name = "Дикоземье"
 	ambientsounds = AMB_FORESTDAY
 	ambientnight = AMB_FORESTNIGHT
 	spookysounds = SPOOKY_CROWS
@@ -143,7 +143,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/wolf = 40,
 				/mob/living/carbon/human/species/skeleton/npc/ambush = 10,
 				/mob/living/carbon/human/species/goblin/npc/ambush = 30)
-	first_time_text = "THE MURDERWOOD"
+	first_time_text = "КРОВОЖАДНЫЙ ЛЕС"
 	converted_type = /area/rogue/indoors/shelter/woods
 /area/rogue/indoors/shelter/woods
 	droning_sound = 'sound/music/area/forest.ogg'
@@ -152,7 +152,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 
 /area/rogue/outdoors/river
-	name = "river"
+	name = "Река"
 	ambientsounds = AMB_RIVERDAY
 	ambientnight = AMB_RIVERNIGHT
 	spookysounds = SPOOKY_FROG
@@ -163,7 +163,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/indoors/shelter/woods
 
 /area/rogue/outdoors/bog
-	name = "the bog"
+	name = "Топи"
 	ambientsounds = AMB_BOGDAY
 	ambientnight = AMB_BOGNIGHT
 	spookysounds = SPOOKY_FROG
@@ -180,7 +180,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 				/mob/living/simple_animal/hostile/retaliate/rogue/bigrat = 60,
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 40,
 				/mob/living/carbon/human/species/goblin/npc/ambush/cave = 30)
-	first_time_text = "THE TERRORBOG"
+	first_time_text = "ТОПЬ УЖАСА"
 	converted_type = /area/rogue/indoors/shelter/bog
 /area/rogue/indoors/shelter/bog
 	droning_sound = 'sound/music/area/bog.ogg'
@@ -188,7 +188,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/outdoors/beach
-	name = "sophia's cry"
+	name = "Плач Софии"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
 	droning_sound = 'sound/music/area/townstreets.ogg'
@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 // these don't get a rain sound because they're underground
 /area/rogue/under
-	name = "basement"
+	name = "Подвал"
 	icon_state = "yellow"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
@@ -214,7 +214,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/under/cave
-	name = "cave"
+	name = "Пещера"
 	ambientsounds = AMB_GENCAVE
 	ambientnight = AMB_GENCAVE
 	spookysounds = SPOOKY_CAVE
@@ -236,9 +236,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/cavewet
-	name = "cavewet"
+	name = "Затопленная пещера"
 	icon_state = "blueold"
-	first_time_text = "The Undersea"
+	first_time_text = "Подземное море"
 	ambientsounds = AMB_CAVEWATER
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_CAVE
@@ -256,7 +256,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/caves
 
 /area/rogue/under/cave/spider
-	first_time_text = "ARAIGNÉE"
+	first_time_text = "ПАУЧЬЕ ЛОГОВО"
 	ambush_mobs = list(
 				/mob/living/simple_animal/hostile/retaliate/rogue/spider = 100)
 	droning_sound = 'sound/music/area/spidercave.ogg'
@@ -269,7 +269,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/spiderbase
-	name = "spiderbase"
+	name = "Паучий подвал"
 	ambientsounds = AMB_BASEMENT
 	ambientnight = AMB_BASEMENT
 	icon_state = "blueold"
@@ -283,9 +283,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/cavelava
-	name = "cavelava"
+	name = "Лавовая пещера"
 	icon_state = "red"
-	first_time_text = "MOUNT DECAPITATION"
+	first_time_text = "ГОРА ОБЕЗГЛАВЛИВАНИЯ"
 	ambientsounds = AMB_CAVELAVA
 	ambientnight = AMB_CAVELAVA
 	spookysounds = SPOOKY_CAVE
@@ -307,7 +307,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/lake
-	name = "underground lake"
+	name = "Подземное озеро"
 	icon_state = "green"
 	ambientsounds = AMB_BEACH
 	ambientnight = AMB_BEACH
@@ -324,7 +324,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 
 /area/rogue/indoors/town
-	name = "indoors"
+	name = "Помещение"
 	icon_state = "blueold"
 	droning_sound = 'sound/music/area/towngen.ogg'
 	droning_sound_dusk = 'sound/music/area/septimus.ogg'
@@ -336,7 +336,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/indoors/town/manor
-	name = "Manor"
+	name = "Поместье"
 	droning_sound = 'sound/music/area/manorgarri.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -347,7 +347,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/indoors/town/magician
-	name = "Wizard's Tower"
+	name = "Башня мага"
 	spookysounds = SPOOKY_MYSTICAL
 	spookynight = SPOOKY_MYSTICAL
 	droning_sound = 'sound/music/area/magiciantower.ogg'
@@ -360,7 +360,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/indoors/town/shop
-	name = "Shop"
+	name = "Лавка"
 	droning_sound = 'sound/music/area/shop.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -369,7 +369,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/shop.ogg'
 
 /area/rogue/indoors/town/bath
-	name = "Baths"
+	name = "Бани"
 	droning_sound = 'sound/music/area/bath.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -378,7 +378,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound = 'sound/music/area/bath.ogg'
 
 /area/rogue/indoors/town/garrison
-	name = "Garrison"
+	name = "Гарнизон"
 	droning_sound = 'sound/music/area/manorgarri.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
@@ -387,7 +387,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
 /area/rogue/indoors/town/cell
-	name = "dungeon cell"
+	name = "Тюремная камера"
 	icon_state = "orange"
 	spookysounds = SPOOKY_DUNGEON
 	spookynight = SPOOKY_DUNGEON
@@ -397,7 +397,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	converted_type = /area/rogue/outdoors/exposed/manorgarri
 
 /area/rogue/indoors/town/tavern
-	name = "tavern"
+	name = "Таверна"
 	ambientsounds = AMB_INGEN
 	ambientnight = AMB_INGEN
 	droning_sound = 'sound/music/jukeboxes/tav3.ogg'
@@ -410,7 +410,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/indoors/town/church
-	name = "church"
+	name = "Церковь"
 	icon_state = "blueold"
 	droning_sound = 'sound/music/area/church.ogg'
 	droning_sound_dusk = null
@@ -425,35 +425,35 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	icon_state = "orange"
 
 /area/rogue/indoors/town/fire_chamber
-	name = "incinerator"
+	name = "Крематорий"
 	icon_state = "red"
 
 /area/rogue/indoors/town/fire_chamber/can_craft_here()
 	return FALSE
 
 /area/rogue/indoors/town/warehouse
-	name = "dock warehouse import"
+	name = "Портовый склад"
 	icon_state = "blueold"
 
 /area/rogue/indoors/town/warehouse/can_craft_here()
 	return FALSE
 
 /area/rogue/indoors/town/vault
-	name = "vault"
+	name = "Хранилище"
 	icon_state = "blueold"
 
 /area/rogue/indoors/town/vault/can_craft_here()
 	return FALSE
 
 /area/rogue/indoors/town/entrance
-	first_time_text = "Roguetown"
+	first_time_text = "Роугтаун"
 
 /area/rogue/indoors/town/dwarfin
-	name = "dwarven quarter"
+	name = "Дворфийский квартал"
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Dwarven Quarter"
+	first_time_text = "Дворфийский квартал"
 	converted_type = /area/rogue/outdoors/exposed/dwarf
 /area/rogue/outdoors/exposed/dwarf
 	droning_sound = 'sound/music/area/dwarf.ogg'
@@ -463,7 +463,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 ///// outside
 
 /area/rogue/outdoors/town
-	name = "outdoors"
+	name = "Улица"
 	icon_state = "red"
 	soundenv = 16
 	droning_sound = 'sound/music/area/townstreets.ogg'
@@ -476,22 +476,22 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/outdoors/town/sargoth
-	name = "outdoors"
+	name = "Улица"
 	icon_state = "red"
 	soundenv = 16
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
 	converted_type = /area/rogue/indoors/shelter/town/sargoth
-	first_time_text = "SARGOTH"
+	first_time_text = "САРГОТ"
 /area/rogue/indoors/shelter/town/sargoth
 	droning_sound = 'sound/music/area/sargoth.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "SARGOTH"
+	first_time_text = "САРГОТ"
 
 /area/rogue/outdoors/town/roofs
-	name = "roofs"
+	name = "Крыши"
 	ambientsounds = AMB_MOUNTAIN
 	ambientnight = AMB_MOUNTAIN
 	spookysounds = SPOOKY_GEN
@@ -507,11 +507,11 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = 'sound/music/area/sleeping.ogg'
 
 /area/rogue/outdoors/town/dwarf
-	name = "dwarven quarter"
+	name = "Дворфийский квартал"
 	droning_sound = 'sound/music/area/dwarf.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Dwarven Quarter"
+	first_time_text = "Дворфийский квартал"
 	soundenv = 16
 	converted_type = /area/rogue/indoors/shelter/town/dwarf
 /area/rogue/indoors/shelter/town/dwarf
@@ -523,7 +523,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 
 /area/rogue/under/town
-	name = "basement"
+	name = "Подвал"
 	icon_state = "pink"
 	droning_sound = 'sound/music/area/catacombs.ogg'
 	droning_sound_dusk = null
@@ -535,7 +535,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/town/sewer
-	name = "sewer"
+	name = "Канализация"
 	ambientsounds = AMB_CAVEWATER
 	ambientnight = AMB_CAVEWATER
 	spookysounds = SPOOKY_RATS
@@ -552,7 +552,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/town/caverogue
-	name = "miningcave (roguetown)"
+	name = "Шахтёрская пещера"
 	ambientsounds = AMB_GENCAVE
 	ambientnight = AMB_GENCAVE
 	spookysounds = SPOOKY_CAVE
@@ -567,7 +567,7 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 	droning_sound_night = null
 
 /area/rogue/under/town/basement
-	name = "basement"
+	name = "Подвал"
 	ambientsounds = AMB_BASEMENT
 	ambientnight = AMB_BASEMENT
 	spookysounds = SPOOKY_DUNGEON
@@ -584,9 +584,9 @@ GLOBAL_LIST_INIT(roguetown_areas_typecache, typecacheof(/area/rogue/indoors/town
 
 // underworld
 /area/rogue/underworld
-	name = "underworld"
+	name = "Подземный мир"
 	icon_state = "pink"
 	droning_sound = 'sound/music/area/underworlddrone.ogg'
 	droning_sound_dusk = null
 	droning_sound_night = null
-	first_time_text = "The Forest of Repentence"
+	first_time_text = "Лес покаяния"

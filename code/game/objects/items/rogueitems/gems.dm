@@ -1,9 +1,9 @@
 
 /obj/item/roguegem
-	name = "rontz"
+	name = "ронц"
 	icon_state = "ruby_cut"
 	icon = 'icons/roguetown/items/gems.dmi'
-	desc = ""
+	desc = "Огранённый красный драгоценный камень."
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	desc = ""
@@ -28,25 +28,29 @@
 	..()
 
 /obj/item/roguegem/green
-	name = "gemerald"
+	name = "изумруд"
+	desc = "Огранённый зелёный драгоценный камень."
 	icon_state = "emerald_cut"
 	sellprice = 22
 	desc = ""
 
 /obj/item/roguegem/blue
-	name = "blortz"
+	name = "блорц"
+	desc = "Огранённый лазурный драгоценный камень."
 	icon_state = "quartz_cut"
 	sellprice = 88
 	desc = ""
 
 /obj/item/roguegem/yellow
-	name = "toper"
+	name = "топаз"
+	desc = "Огранённый жёлтый драгоценный камень."
 	icon_state = "topaz_cut"
 	sellprice = 14
 	desc = ""
 
 /obj/item/roguegem/violet
-	name = "saffira"
+	name = "сапфир"
+	desc = "Огранённый фиолетовый драгоценный камень."
 	icon_state = "sapphire_cut"
 	sellprice = 56
 	desc = ""
@@ -56,10 +60,10 @@
 
 
 /obj/item/riddleofsteel
-	name = "riddle of steel"
+	name = "тайна стали"
 	icon_state = "ros"
 	icon = 'icons/roguetown/items/gems.dmi'
-	desc = "Flesh, mind."
+	desc = "Плоть, разум."
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
 	desc = ""

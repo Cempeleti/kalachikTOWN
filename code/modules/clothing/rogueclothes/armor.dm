@@ -27,8 +27,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/chainmail
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	name = "haubergeon"
-	desc = "A steel maille shirt."
+	name = "хаубержеон"
+	desc = "Кольчужная рубаха из стали."
 	body_parts_covered = CHEST|GROIN|ARMS|VITALS
 	icon_state = "haubergeon"
 	armor = list("melee" = 100, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -49,15 +49,15 @@
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/iron
 	icon_state = "ichainmail"
-	name = "chainmaille"
-	desc = "A chain vest made of heavy iron rings. Better than nothing."
+	name = "кольчуга"
+	desc = "Кольчужный жилет из тяжелых железных колец. Лучше, чем ничего."
 	body_parts_covered = CHEST|GROIN|VITALS
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/hauberk
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	name = "hauberk"
-	desc = "A longer steel maille that protects the legs."
+	name = "хауберк"
+	desc = "Длинная стальная кольчуга, прикрывающая ноги."
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|VITALS
 	icon_state = "hauberk"
 	item_state = "hauberk"
@@ -68,8 +68,8 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/chainmail/chainkini
-	name = "amazon mail"
-	desc = ""
+	name = "амазонская кольчуга"
+	desc = "Открытый кольчужный доспех воительниц."
 	icon_state = "chainkini"
 	item_state = "chainkini"
 	allowed_sex = list(FEMALE)
@@ -80,8 +80,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "steel half-plate"
-	desc = "\'Adventurer-fit\' plate armor with polldrons."
+	name = "стальной полудоспех"
+	desc = "Латный полудоспех с наплечниками, подогнанный для авантюристов."
 	body_parts_covered = CHEST|GROIN|VITALS
 	icon_state = "halfplate"
 	item_state = "halfplate"
@@ -105,8 +105,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/half
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "steel cuirass"
-	desc = "A basic cuirass of steel. Lightweight and durable."
+	name = "стальная кираса"
+	desc = "Простая кираса из стали. Легкая и прочная."
 	body_parts_covered = CHEST|VITALS
 	icon_state = "cuirass"
 	item_state = "cuirass"
@@ -121,14 +121,15 @@
 	armor_class = ARMOR_CLASS_MEDIUM
 
 /obj/item/clothing/suit/roguetown/armor/plate/full
-	name = "plate armor"
-	desc = "Full plate. Leg protecting tassets, groin cup, armored vambraces."
+	name = "латный доспех"
+	desc = "Полные латы: набедренники, гульфик и латные наручи."
 	icon_state = "plate"
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	equip_delay_self = 80
 
 /obj/item/clothing/suit/roguetown/armor/plate/half/iron
-	name = "iron breastplate"
+	name = "железный нагрудник"
+	desc = "Простой железный нагрудник. Тяжелый и надежный."
 	icon_state = "ibreastplate"
 	max_integrity = 200
 	smeltresult = /obj/item/ingot/iron
@@ -136,8 +137,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "scalemail"
-	desc = ""
+	name = "чешуйчатый доспех"
+	desc = "Чешуйчатый панцирь из перекрывающихся стальных пластин."
 	body_parts_covered = CHEST|VITALS|GROIN|LEGS
 	allowed_sex = list(MALE, FEMALE)
 	icon_state = "lamellar"
@@ -148,8 +149,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/lord
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "coat of armor"
-	desc = "A lordly coat of armor."
+	name = "панцырь"
+	desc = "Благородный господский панцирь."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	icon_state = "heartfelt"
 	item_state = "heartfelt"
@@ -164,8 +165,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/heartfelt/hand
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "coat of armor"
-	desc = "A lordly coat of armor."
+	name = "панцырь"
+	desc = "Благородный господский панцирь."
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
 	icon_state = "heartfelt_hand"
 	item_state = "heartfelt_hand"
@@ -180,8 +181,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/brigandine
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "brigandine"
-	desc = "A coat with plates concealed inside an exterior fabric."
+	name = "бригантина"
+	desc = "Доспех из металлических пластин, подклепанных под суконную основу."
 	icon_state = "brigandine"
 	blocksound = SOFTHIT
 	body_parts_covered = CHEST|GROIN|VITALS|LEGS|ARMS
@@ -229,8 +230,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/armordress
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "padded dress"
-	desc = ""
+	name = "стеганое платье"
+	desc = "Плотное стеганое платье для защиты в бою."
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	icon_state = "armordress"
 	armor = list("melee" = 50, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -251,8 +252,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/gambeson
 	slot_flags = ITEM_SLOT_ARMOR|ITEM_SLOT_SHIRT
-	name = "gambeson"
-	desc = ""
+	name = "гамбезон"
+	desc = "Многослойный стеганый доспех из плотной ткани."
 	icon_state = "gambeson"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS|VITALS
 	armor = list("melee" = 40, "bullet" = 0, "laser" = 0,"energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
@@ -267,14 +268,15 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/gambeson/lord
-	name = "arming jacket"
+	name = "поддоспешник"
+	desc = "Искусно сшитый дворянский поддоспешник."
 	icon_state = "dgamb"
 	allowed_sex = list(MALE)
 	allowed_race = list("human", "tiefling", "aasimar")
 
 /obj/item/clothing/suit/roguetown/armor/leather
-	name = "leather armor"
-	desc = ""
+	name = "кожаный доспех"
+	desc = "Доспех из плотной дубленой кожи."
 	icon_state = "leather"
 //	color = "#514339"
 	body_parts_covered = CHEST|GROIN|VITALS
@@ -291,14 +293,15 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/hide
-	name = "hide armor"
-	desc = ""
+	name = "доспех из шкур"
+	desc = "Грубо сшитый доспех из толстых звериных шкур."
 	icon_state = "hidearmor"
 	max_integrity = 230
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded
-	name = "studded leather armor"
+	name = "клепаная кожаная броня"
+	desc = "Кожаный доспех, усиленный металлическими заклепками."
 	icon_state = "studleather"
 	item_state = "studleather"
 	blocksound = SOFTHIT
@@ -310,8 +313,8 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest
-	name = "leather vest"
-	desc = ""
+	name = "кожаный жилет"
+	desc = "Простой жилет из плотной кожи."
 	icon_state = "vest"
 	item_state = "vest"
 	color = "#514339"
@@ -329,7 +332,8 @@
 	armor_class = ARMOR_CLASS_LIGHT
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor
-	name = "sea jacket"
+	name = "морская куртка"
+	desc = "Прочная куртка моряка, защищающая от соленых ветров."
 	icon_state = "sailorvest"
 	color = null
 	slot_flags = ITEM_SLOT_ARMOR
@@ -354,7 +358,8 @@
 			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/sailor/nightman
-	name = "silk jacket"
+	name = "шелковая куртка"
+	desc = "Тонкая куртка из черного шелка."
 	icon_state = "nightman"
 	sleeved = 'icons/roguetown/clothing/onmob/armor.dmi'
 	allowed_sex = list(MALE)
@@ -362,7 +367,8 @@
 
 
 /obj/item/clothing/suit/roguetown/armor/leather/vest/hand
-	name = "Hand's vest"
+	name = "жилет Десницы"
+	desc = "Форменный кожаный жилет слуги Десницы."
 	icon_state = "handcoat"
 	color = null
 	allowed_sex = list(MALE, FEMALE)
@@ -372,8 +378,8 @@
 	color = "#3c3a38"
 
 /obj/item/clothing/suit/roguetown/armor/workervest
-	name = "striped tunic"
-	desc = ""
+	name = "полосатая туника"
+	desc = "Простая полосатая туника из грубой ткани."
 	icon_state = "workervest"
 	armor = null
 	blocksound = SOFTHIT

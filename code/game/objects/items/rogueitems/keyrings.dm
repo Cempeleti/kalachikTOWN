@@ -1,8 +1,8 @@
 /////////////////// KEYRING ////////////////////
 
 /obj/item/keyring
-	name = "keyring"
-	desc = ""
+	name = "связка ключей"
+	desc = "Кольцо для хранения ключей."
 	icon_state = "keyring0"
 	icon = 'icons/roguetown/items/keys.dmi'
 	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
@@ -86,7 +86,7 @@
 /obj/item/keyring/attackby(obj/item/I, mob/user)
 	if(istype(I,/obj/item/roguekey))
 		if(keys.len >= 10)
-			to_chat(user, "<span class='warning'>Too many keys.</span>")
+			to_chat(user, "<span class='warning'>Слишком много ключей.</span>")
 			return
 		user.dropItemToGround(I)
 		addtoring(I)
@@ -95,7 +95,7 @@
 
 /obj/item/keyring/attack_right(mob/user)
 	if(keys.len)
-		to_chat(user, "<span class='notice'>I steal a key off the ring.</span>")
+		to_chat(user, "<span class='notice'>Я снимаю ключ со связки.</span>")
 		var/obj/item/roguekey/K = removefromring(user)
 		user.put_in_active_hand(K)
 
@@ -119,7 +119,7 @@
 
 /obj/item/keyring/proc/update_desc()
 	if(keys.len)
-		desc = "<span class='info'>\Roman [keys.len] keys.</span>"
+		desc = "<span class='info'>Ключей на связке: \Roman [keys.len].</span>"
 	else
 		desc = ""
 

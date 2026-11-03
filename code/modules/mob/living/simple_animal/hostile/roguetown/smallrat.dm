@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/smallrat
-	name = "rat"
-	desc = ""
+	name = "крыса"
+	desc = "Мелкий юркий грызун, вечно ищущий крошки."
 	icon_state = "srat"
 	icon = 'icons/roguetown/mob/monster/rat.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
@@ -20,12 +20,12 @@
 	if(loc == user)
 		if(user.mind && user.mind.has_antag_datum(/datum/antagonist/vampirelord))
 			if(dead)
-				to_chat(user, "<span class='warning'>It's dead.</span>")
+				to_chat(user, "<span class='warning'>Она мертва.</span>")
 				return
 			var/datum/antagonist/vampirelord/VD = user.mind.has_antag_datum(/datum/antagonist/vampirelord)
 			if(do_after(user, 30, target = src))
-				user.visible_message("<span class='warning'>[user] drinks from [src]!</span>",\
-				"<span class='warning'>I drink from [src]!</span>")
+				user.visible_message("<span class='warning'>[user] пьёт кровь из [src]!</span>",\
+				"<span class='warning'>Я пью кровь из [src]!</span>")
 				playsound(user.loc, 'sound/misc/drink_blood.ogg', 100, FALSE, -4)
 				VD.handle_vitae(50)
 				dead = TRUE
@@ -37,14 +37,14 @@
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/rogue/friedrat
-	name = "fried rat"
-	desc = ""
+	name = "жареная крыса"
+	desc = "Зажаренная на огне тушка крысы. Мясо жестковато, но с голоду сойдёт."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cookedrat"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	w_class = WEIGHT_CLASS_TINY
-	tastes = list("burnt flesh" = 1)
+	tastes = list("горелое мясо" = 1)
 	eat_effect = null
 	rotprocess = 15 MINUTES
 	sellprice = 0
@@ -97,7 +97,7 @@
 				else
 					dir = pick(GLOB.cardinals)
 					step(src, dir)
-					to_chat(user, "<span class='warning'>I fail to snatch it by the tail!</span>")
+					to_chat(user, "<span class='warning'>Мне не удаётся схватить её за хвост!</span>")
 					playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
 					return
 	..()
@@ -145,7 +145,7 @@
 				if(isturf(loc))
 					dir = pick(GLOB.cardinals)
 					step(src, dir)
-					to_chat(user, "<span class='warning'>The vermin dodges my attack.</span>")
+					to_chat(user, "<span class='warning'>Паразит уворачивается от моей атаки.</span>")
 					playsound(src, pick('sound/vo/mobs/rat/rat_life.ogg','sound/vo/mobs/rat/rat_life2.ogg','sound/vo/mobs/rat/rat_life3.ogg'), 100, TRUE, -1)
 					return
 	..()
