@@ -41,11 +41,15 @@ jobs:
             exit 0
           fi
           python3 - << 'PY'
-          import json, os, re, urllib.request
+          import json, os, re, urllib.error, urllib.request
 
           MARKER = "<!-- ai-review -->"
           MAX_CHARS = 80000
           SKIP = re.compile(r'\.(dmm|dmi|json|ogg|zip|rsc)$|package-lock\.json$')
+
+          def write(body):
+              with open("review.md", "w", encoding="utf-8") as f:
+                  f.write(MARKER + "\n## 🤖 AI-ревью\n\n" + body)
 
           raw = open("pr.diff", encoding="utf-8", errors="replace").read()
           parts = re.split(r'(?m)^(?=diff --git )', raw)
@@ -55,8 +59,7 @@ jobs:
           )
 
           if not diff.strip():
-              open("review.md", "w", encoding="utf-8").write(
-                  MARKER + "\n## 🤖 AI-ревью\n\nНет изменений кода для проверки.")
+              write("Нет изменений кода для проверки.")
               raise SystemExit(0)
 
           truncated = len(diff) > MAX_CHARS
@@ -91,13 +94,27 @@ jobs:
               os.environ["API_URL"].rstrip("/") + "/chat/completions",
               data=json.dumps(payload).encode("utf-8"),
               headers={
-                  "Authorization": "Bearer " + os.environ["API_KEY"],
+                  "Authorization": "Bearer " + os.environ["API_KEY"].strip(),
                   "Content-Type": "application/json",
                   "Accept": "application/json",
+                  "User-Agent": "Mozilla/5.0 (compatible; ai-review-bot/1.0)",
               },
           )
-          with urllib.request.urlopen(req, timeout=300) as r:
-              data = json.load(r)
+
+          try:
+              with urllib.request.urlopen(req, timeout=300) as r:
+                  data = json.load(r)
+          except urllib.error.HTTPError as e:
+              # Тело ответа только в лог, в PR уходит лишь код ошибки
+              print("HTTP", e.code, e.read().decode("utf-8", "replace")[:1000])
+              write("Не удалось получить ответ от AI API (HTTP %d).\n\n"
+                    "<sub>Автоматическая проверка временно недоступна.</sub>" % e.code)
+              raise SystemExit(0)
+          except Exception as e:
+              print("ERROR", repr(e))
+              write("Не удалось получить ответ от AI API.\n\n"
+                    "<sub>Автоматическая проверка временно недоступна.</sub>")
+              raise SystemExit(0)
 
           text = (data["choices"][0]["message"].get("content") or "").strip()
           if not text:
@@ -106,9 +123,8 @@ jobs:
           if truncated:
               note = ("\n\n> ⚠️ Diff слишком большой, проверена только "
                       "его первая часть.")
-          body = (MARKER + "\n## 🤖 AI-ревью\n\n" + text + note +
-                  "\n\n<sub>Автоматическая проверка, может ошибаться.</sub>")
-          open("review.md", "w", encoding="utf-8").write(body)
+          write(text + note +
+                "\n\n<sub>Автоматическая проверка, может ошибаться.</sub>")
           PY
 
       - name: Опубликовать комментарий
