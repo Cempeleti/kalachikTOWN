@@ -30,7 +30,7 @@
 	var/atom/movable/moving_from_pull		//attempt to resume grab after moving instead of before.
 	var/list/client_mobs_in_contents // This contains all the client mobs within this container
 	var/list/acted_explosions	//for explosion dodging
-	glide_size = 6
+	glide_size = 3
 	appearance_flags = TILE_BOUND|PIXEL_SCALE
 	var/datum/forced_movement/force_moving = null	//handled soley by forced_movement.dm
 	var/movement_type = GROUND		//Incase you have multiple types, you automatically use the most useful one. IE: Skating on ice, flippers on water, flying over chasm/space, etc.
@@ -226,6 +226,12 @@
 
 	for(var/atom/movable/AM in buckled_mobs)
 		AM.set_glide_size(target)
+
+	if(isliving(src))
+		var/mob/living/L = src
+		if(L.client)
+			for(var/image/HI in L.client.hidden_images)
+				HI.glide_size = target
 ////////////////////////////////////////
 // Here's where we rewrite how byond handles movement except slightly different
 // To be removed on step_ conversion

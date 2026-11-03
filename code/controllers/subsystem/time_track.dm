@@ -1,7 +1,7 @@
 SUBSYSTEM_DEF(time_track)
 	name = "Time Tracking"
 	wait = 100
-	flags = SS_NO_INIT|SS_NO_TICK_CHECK
+	flags = SS_NO_TICK_CHECK
 	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
 
 	var/time_dilation_current = 0
@@ -16,13 +16,21 @@ SUBSYSTEM_DEF(time_track)
 	var/last_tick_byond_time = 0
 	var/last_tick_tickcount = 0
 
+/datum/controller/subsystem/time_track/Initialize()
+	last_tick_realtime = REALTIMEOFDAY
+	last_tick_byond_time = world.time
+	last_tick_tickcount = world.time/world.tick_lag
+	first_run = TRUE
+	GLOB.glide_size_multiplier = 1.0
+	return ..()
+
 /datum/controller/subsystem/time_track/fire()
 
 	var/current_realtime = REALTIMEOFDAY
 	var/current_byondtime = world.time
 	var/current_tickcount = world.time/world.tick_lag
 
-	if (!first_run)
+	if (!first_run && (current_realtime - last_tick_realtime <= 150))
 		var/tick_drift = max(0, (((current_realtime - last_tick_realtime) - (current_byondtime - last_tick_byond_time)) / world.tick_lag))
 
 		time_dilation_current = tick_drift / (current_tickcount - last_tick_tickcount) * 100
@@ -30,9 +38,11 @@ SUBSYSTEM_DEF(time_track)
 		time_dilation_avg_fast = MC_AVERAGE_FAST(time_dilation_avg_fast, time_dilation_current)
 		time_dilation_avg = MC_AVERAGE(time_dilation_avg, time_dilation_avg_fast)
 		time_dilation_avg_slow = MC_AVERAGE_SLOW(time_dilation_avg_slow, time_dilation_avg)
-		GLOB.glide_size_multiplier = (current_byondtime - last_tick_byond_time) / (current_realtime - last_tick_realtime)
+		var/ratio = (current_realtime - last_tick_realtime) > 0 ? (current_byondtime - last_tick_byond_time) / (current_realtime - last_tick_realtime) : 1.0
+		GLOB.glide_size_multiplier = clamp(ratio, 0.75, 1.25)
 	else
 		first_run = FALSE
+		GLOB.glide_size_multiplier = 1.0
 	last_tick_realtime = current_realtime
 	last_tick_byond_time = current_byondtime
 	last_tick_tickcount = current_tickcount

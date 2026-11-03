@@ -16,3 +16,9 @@
 
 	if(!(SSincone.flags & SS_TICKER))
 		Fail("SSincone does not have SS_TICKER flag: flags = [SSincone.flags]")
+
+	if(!SStime_track.initialized)
+		Fail("SStime_track is not initialized")
+
+	if(GLOB.glide_size_multiplier < 0.75 || GLOB.glide_size_multiplier > 1.25)
+		Fail("GLOB.glide_size_multiplier ([GLOB.glide_size_multiplier]) out of expected range \[0.75, 1.25\]")

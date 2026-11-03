@@ -92,35 +92,35 @@ client/
 	for(var/hidden_hud in client.hidden_images)
 		client.images -= hidden_hud
 		client.hidden_images -= hidden_hud
-	var/image/I = image(src, src)
-	I.override = 1
-	I.plane = GAME_PLANE_UPPER
-	I.layer = layer
-	I.pixel_x = pixel_x
-	I.pixel_y = pixel_y
-	client.images += I
-	client.hidden_images += I
-	I.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
+	if(flags_1 & OVERLAY_QUEUED_1)
+		COMPILE_OVERLAYS(src)
+	var/image/img = image(loc = src)
+	img.appearance = src.appearance
+	img.plane = GAME_PLANE_UPPER
+	img.override = 1
+	img.glide_size = glide_size
+	client.images += img
+	client.hidden_images += img
 	if(buckled)
-		var/image/IB = image(buckled, buckled)
-		IB.override = 1
+		if(buckled.flags_1 & OVERLAY_QUEUED_1)
+			COMPILE_OVERLAYS(buckled)
+		var/image/IB = image(loc = buckled)
+		IB.appearance = buckled.appearance
 		IB.plane = GAME_PLANE_UPPER
-		IB.layer = IB.layer
-		IB.pixel_x = buckled.pixel_x
-		IB.pixel_y = buckled.pixel_y
-		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
+		IB.override = 1
+		IB.glide_size = buckled.glide_size
 		client.hidden_images += IB
 		client.images += IB
 	if(pulling)
-		var/image/IB = image(pulling, pulling)
-		IB.override = 1
-		IB.plane = GAME_PLANE_UPPER
-		IB.layer = IB.layer
-		IB.pixel_x = pulling.pixel_x
-		IB.pixel_y = pulling.pixel_y
-		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
-		client.hidden_images += IB
-		client.images += IB
+		if(pulling.flags_1 & OVERLAY_QUEUED_1)
+			COMPILE_OVERLAYS(pulling)
+		var/image/IP = image(loc = pulling)
+		IP.appearance = pulling.appearance
+		IP.plane = GAME_PLANE_UPPER
+		IP.override = 1
+		IP.glide_size = pulling.glide_size
+		client.hidden_images += IP
+		client.images += IP
 /*	if(hud_used && hud_used.fov_blocker)
 		fov_blocker
 
