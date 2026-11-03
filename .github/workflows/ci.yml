@@ -83,7 +83,7 @@ jobs:
         run: |
           MAJOR="${{ steps.ver.outputs.major }}"
           MINOR="${{ steps.ver.outputs.minor }}"
-          URL="https://www.byond.com/download/build/${MAJOR}/${MAJOR}.${MINOR}_byond_linux.zip"
+          URL="https://www.byond.com/download/build/516/516.1688_byond_linux.zip"
           echo "Скачиваю $URL"
           curl -fL --retry 3 -o byond.zip "$URL" || {
             echo "::error::Не удалось скачать $URL. Такой версии нет на сервере BYOND или доступ закрыт. Укажите другую версию в dependencies.sh или при ручном запуске."
