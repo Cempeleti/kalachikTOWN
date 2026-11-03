@@ -7,7 +7,7 @@
 	hotkey_keys = list("Q")
 	classic_keys = list("Q") // PAGEUP
 	name = "swap_left"
-	full_name = "Swap to left hand"
+	full_name = "Переключить на левую руку"
 	description = ""
 
 /datum/keybinding/living/swap_left/down(client/user)
@@ -28,7 +28,7 @@
 	hotkey_keys = list("E")
 	classic_keys = list("E") // PAGEUP
 	name = "swap_right"
-	full_name = "Swap to right hand"
+	full_name = "Переключить на правую руку"
 	description = ""
 
 /datum/keybinding/living/swap_right/down(client/user)
@@ -49,7 +49,7 @@
 	hotkey_keys = list()
 	classic_keys = list()
 	name = "swap_hands"
-	full_name = "Swap hands"
+	full_name = "Сменить руку"
 	description = ""
 
 /datum/keybinding/living/swap_hands/down(client/user)
@@ -65,8 +65,8 @@
 	hotkey_keys = list()
 	classic_keys = list()
 	name = "activate_inhand"
-	full_name = "Activate in-hand"
-	description = "Uses whatever item you have inhand"
+	full_name = "Использовать предмет в руке"
+	description = "Использует предмет в активной руке."
 
 /datum/keybinding/living/activate_inhand/down(client/user)
 	var/mob/M = user.mob
@@ -80,7 +80,7 @@
 /datum/keybinding/living/drop_item
 	hotkey_keys = list("Z")
 	name = "drop_item"
-	full_name = "Drop Item"
+	full_name = "Бросить предмет"
 	description = ""
 
 /datum/keybinding/living/drop_item/down(client/user)
@@ -97,8 +97,8 @@
 /datum/keybinding/living/sprint
 	hotkey_keys = list()
 	name = "sprint"
-	full_name = "Sprint"
-	description = "Sprinting can be dangerous to your health if you aren't careful."
+	full_name = "Спринт"
+	description = "Спринт может быть опасен для здоровья, если не соблюдать осторожность."
 
 /datum/keybinding/living/sprint/down(client/user)
 	var/mob/M = user.mob
@@ -113,8 +113,8 @@
 /datum/keybinding/living/sneak
 	hotkey_keys = list()
 	name = "sneak"
-	full_name = "Sneak"
-	description = "Press this hotkey to sneak around, which has many uses."
+	full_name = "Скрытность"
+	description = "Перейти в режим скрытного передвижения."
 
 /datum/keybinding/living/sneak/down(client/user)
 	var/mob/M = user.mob
@@ -130,8 +130,8 @@
 /datum/keybinding/living/submit
 	hotkey_keys = list("ShiftX")
 	name = "yield"
-	full_name = "Yield"
-	description = "Yield to your enemy, which may save your life or end it quicker."
+	full_name = "Сдаться"
+	description = "Сдаться врагу, что может спасти вам жизнь или ускорить её конец."
 
 /datum/keybinding/living/submit/down(client/user)
 	if(!isliving(user))
@@ -146,8 +146,8 @@
 /datum/keybinding/living/resist
 	hotkey_keys = list("X")
 	name = "cancelresist"
-	full_name = "Cancel/Resist"
-	description = "Stop an action such as a charged attack or spam this to resist against a grab."
+	full_name = "Отмена/Сопротивление"
+	description = "Прервать действие (например, зарядку атаки) или освободиться из захвата."
 
 /datum/keybinding/living/resist/down(client/user)
 	var/mob/living/L = user.mob
@@ -161,8 +161,8 @@
 /datum/keybinding/living/defendtoggle
 	hotkey_keys = list("C")
 	name = "defendtoggle"
-	full_name = "Combat Mode"
-	description = "Initiates combat mode. Enables certain RMB intents. Allows to dodge and parry."
+	full_name = "Боевой режим"
+	description = "Включить боевой режим. Позволяет уклоняться и парировать атаки."
 
 /datum/keybinding/living/defendtoggle/down(client/user)
 	var/mob/living/L = user.mob
@@ -173,8 +173,8 @@
 /datum/keybinding/living/dodgeparry
 	hotkey_keys = list("ShiftC")
 	name = "dodgeparry"
-	full_name = "Dodge/Parry"
-	description = "Change between dodging and parrying."
+	full_name = "Уклонение/Парирование"
+	description = "Переключение между уклонением и парированием."
 
 /datum/keybinding/living/dodgeparry/down(client/user)
 	var/mob/living/L = user.mob
@@ -188,8 +188,8 @@
 /datum/keybinding/living/restd
 	hotkey_keys = list("V")
 	name = "standrest"
-	full_name = "Toggle Stand/Rest"
-	description = "Toggle between standing and laying on the floor."
+	full_name = "Встать/Лечь"
+	description = "Переключение между положением стоя и лежа на полу."
 	var/lastrest = 0
 
 /datum/keybinding/living/restd/down(client/user)
@@ -206,8 +206,8 @@
 /datum/keybinding/living/standu
 	hotkey_keys = list()
 	name = "stand"
-	full_name = "Stand Up"
-	description = "Stand up from a prone position."
+	full_name = "Встать"
+	description = "Подняться из положения лежа."
 	var/lastrest = 0
 
 /datum/keybinding/living/standu/down(client/user)
@@ -224,8 +224,8 @@
 /datum/keybinding/living/rest
 	hotkey_keys = list()
 	name = "rest"
-	full_name = "Lay Down"
-	description = "Lay down on the floor."
+	full_name = "Лечь"
+	description = "Лечь на землю или пол."
 	var/lastrest = 0
 
 /datum/keybinding/living/rest/down(client/user)
@@ -242,8 +242,8 @@
 /datum/keybinding/living/lookup
 	hotkey_keys = list("ShiftF")
 	name = "lookup"
-	full_name = "Look up"
-	description = "Look at what's above you, if you are under an open space."
+	full_name = "Посмотреть наверх"
+	description = "Посмотреть вверх, если над вами открытое пространство."
 	var/lastrest = 0
 
 /datum/keybinding/living/lookup/down(client/user)

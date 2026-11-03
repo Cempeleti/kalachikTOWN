@@ -116,19 +116,19 @@
 //To appropriately fluff things like "they are holding [I] in their [get_held_index_name(get_held_index_of_item(I))]"
 //Can be overridden to pass off the fluff to something else (eg: science allowing people to add extra robotic limbs, and having this proc react to that
 // with say "they are holding [I] in their Nanotrasen Brand Utility Arm - Right Edition" or w/e
-/mob/proc/get_held_index_name(i)
+/mob/proc/get_held_index_name(i, prep = FALSE)
 	var/list/hand = list()
 	if(i > 2)
-		hand += "upper "
+		hand += prep ? "верхней " : "верхняя "
 	var/num = 0
 	if(!(i % 2))
 		num = i-2
-		hand += "right hand"
+		hand += prep ? "правой руке" : "правая рука"
 	else
 		num = i-1
-		hand += "left hand"
+		hand += prep ? "левой руке" : "левая рука"
 	num -= (num*0.5)
-	if(num > 1) //"upper left hand #1" seems weird, but "upper left hand #2" is A-ok
+	if(num > 1)
 		hand += " #[num]"
 	return hand.Join()
 

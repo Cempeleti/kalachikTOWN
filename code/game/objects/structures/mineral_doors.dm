@@ -2,7 +2,7 @@
 //machineryness
 
 /obj/structure/mineral_door
-	name = "metal door"
+	name = "металлическая дверь"
 	density = TRUE
 	anchored = TRUE
 	opacity = TRUE
@@ -53,8 +53,8 @@
 		return
 	if(door_opened)
 		playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
-		user.visible_message("<span class='warning'>[user] kicks [src] shut!</span>", \
-			"<span class='notice'>I kick [src] shut!</span>")
+		user.visible_message("<span class='warning'>[user] захлопывает [src] пинком!</span>", \
+			"<span class='notice'>Я захлопываю [src] пинком!</span>")
 		force_closed()
 	else
 		if(locked)
@@ -64,19 +64,19 @@
 					kickthresh--
 				if((prob(L.STASTR * 0.5) || kickthresh == 0) && (L.STASTR >= initial(kickthresh)))
 					playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
-					user.visible_message("<span class='warning'>[user] kicks open [src]!</span>", \
-						"<span class='notice'>I kick open [src]!</span>")
+					user.visible_message("<span class='warning'>[user] распахивает [src] пинком!</span>", \
+						"<span class='notice'>Я распахиваю [src] пинком!</span>")
 					locked = 0
 					force_open()
 				else
 					playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
-					user.visible_message("<span class='warning'>[user] kicks [src]!</span>", \
-						"<span class='notice'>I kick [src]!</span>")
+					user.visible_message("<span class='warning'>[user] пинает [src]!</span>", \
+						"<span class='notice'>Я пинаю [src]!</span>")
 			//try to kick open, destroy lock
 		else
 			playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
-			user.visible_message("<span class='warning'>[user] kicks open [src]!</span>", \
-				"<span class='notice'>I kick open [src]!</span>")
+			user.visible_message("<span class='warning'>[user] распахивает [src] пинком!</span>", \
+				"<span class='notice'>Я распахиваю [src] пинком!</span>")
 			force_open()
 
 /obj/structure/mineral_door/proc/force_open()
@@ -143,12 +143,12 @@
 		var/mob/user = AM
 		if(HAS_TRAIT(user, TRAIT_BASHDOORS))
 			if(locked)
-				user.visible_message("<span class='warning'>[user] bashes into [src]!</span>")
+				user.visible_message("<span class='warning'>[user] врезается в [src]!</span>")
 				take_damage(200, "brute", "melee", 1)
 			else
 				playsound(src, 'sound/combat/hits/onwood/woodimpact (1).ogg', 100)
 				force_open()
-				user.visible_message("<span class='warning'>[user] smashes through [src]!</span>")
+				user.visible_message("<span class='warning'>[user] проламывает [src]!</span>")
 			return
 		if(locked)
 			playsound(src, rattlesound, 100)
@@ -188,13 +188,13 @@
 		if(isliving(user))
 			var/mob/living/L = user
 			if(L.m_intent == MOVE_INTENT_SNEAK)
-				to_chat(user, "<span class='warning'>This door is locked.</span>")
+				to_chat(user, "<span class='warning'>Эта дверь заперта.</span>")
 				return
 		if(world.time >= last_bump+20)
 			last_bump = world.time
 			playsound(src, 'sound/foley/doors/knocking.ogg', 100)
-			user.visible_message("<span class='warning'>[user] knocks on [src].</span>", \
-				"<span class='notice'>I knock on [src].</span>")
+			user.visible_message("<span class='warning'>[user] стучит в [src].</span>", \
+				"<span class='notice'>Я стучу в [src].</span>")
 		return
 	return TryToSwitchState(user)
 
@@ -286,7 +286,7 @@
 	if(!keylock)
 		return
 	if(lockbroken)
-		to_chat(user, "<span class='warning'>The lock to this door is broken.</span>")
+		to_chat(user, "<span class='warning'>Замок этой двери сломан.</span>")
 	user.changeNext_move(CLICK_CD_MELEE)
 	if(istype(I,/obj/item/keyring))
 		var/obj/item/keyring/R = I
@@ -326,13 +326,13 @@
 	if(isSwitchingStates || door_opened)
 		return
 	if(locked)
-		user.visible_message("<span class='warning'>[user] unlocks [src].</span>", \
-			"<span class='notice'>I unlock [src].</span>")
+		user.visible_message("<span class='warning'>[user] отпирает [src].</span>", \
+			"<span class='notice'>Я отпираю [src].</span>")
 		playsound(src, unlocksound, 100)
 		locked = 0
 	else
-		user.visible_message("<span class='warning'>[user] locks [src].</span>", \
-			"<span class='notice'>I lock [src].</span>")
+		user.visible_message("<span class='warning'>[user] запирает [src].</span>", \
+			"<span class='notice'>Я запираю [src].</span>")
 		playsound(src, locksound, 100)
 		locked = 1
 
@@ -414,24 +414,24 @@
 
 
 /obj/structure/mineral_door/iron
-	name = "iron door"
+	name = "железная дверь"
 	max_integrity = 300
 
 /obj/structure/mineral_door/silver
-	name = "silver door"
+	name = "серебряная дверь"
 	icon_state = "silver"
 	sheetType = /obj/item/stack/sheet/mineral/silver
 	max_integrity = 300
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/gold
-	name = "gold door"
+	name = "золотая дверь"
 	icon_state = "gold"
 	sheetType = /obj/item/stack/sheet/mineral/gold
 	rad_insulation = RAD_HEAVY_INSULATION
 
 /obj/structure/mineral_door/uranium
-	name = "uranium door"
+	name = "урановая дверь"
 	icon_state = "uranium"
 	sheetType = /obj/item/stack/sheet/mineral/uranium
 	max_integrity = 300
@@ -441,7 +441,7 @@
 	return
 
 /obj/structure/mineral_door/sandstone
-	name = "sandstone door"
+	name = "дверь из песчаника"
 	icon_state = "sandstone"
 	sheetType = /obj/item/stack/sheet/mineral/sandstone
 	max_integrity = 100
@@ -455,7 +455,7 @@
 	set_opacity(FALSE)
 
 /obj/structure/mineral_door/transparent/plasma
-	name = "plasma door"
+	name = "плазменная дверь"
 	icon_state = "plasma"
 	sheetType = /obj/item/stack/sheet/mineral/plasma
 
@@ -483,7 +483,7 @@
 	deconstruct(FALSE)
 
 /obj/structure/mineral_door/transparent/diamond
-	name = "diamond door"
+	name = "алмазная дверь"
 	icon_state = "diamond"
 	sheetType = /obj/item/stack/sheet/mineral/diamond
 	max_integrity = 1000
@@ -493,7 +493,7 @@
 
 
 /obj/structure/mineral_door/paperframe
-	name = "paper frame door"
+	name = "бумажная дверь"
 	icon_state = "paperframe"
 	openSound = 'sound/foley/doors/creak.ogg'
 	closeSound = 'sound/foley/doors/shut.ogg'
@@ -547,7 +547,7 @@
 //ROGUEDOOR
 
 /obj/structure/mineral_door/wood
-	name = "door"
+	name = "дверь"
 	desc = ""
 	icon_state = "woodhandle"
 	openSound = 'sound/foley/doors/creak.ogg'
@@ -604,8 +604,8 @@
 	..()
 
 /obj/structure/mineral_door/swing_door
-	name = "swing door"
-	desc = "A door that swings."
+	name = "распашная дверь"
+	desc = "Дверь, которая распахивается."
 	icon_state = "woodhandle"
 	openSound = 'sound/foley/doors/creak.ogg'
 	closeSound = 'sound/foley/doors/shut.ogg'
@@ -660,15 +660,15 @@
 	if(door_opened || isSwitchingStates)
 		return
 	if(lockbroken)
-		to_chat(user, "<span class='warning'>The lock to this door is broken.</span>")
+		to_chat(user, "<span class='warning'>Замок этой двери сломан.</span>")
 		return
 	if(brokenstate)
-		to_chat(user, "<span class='warning'>There isn't much left of this door.</span>")
+		to_chat(user, "<span class='warning'>От этой двери мало что осталось.</span>")
 		return
 	if(get_dir(src,user) == lockdir)
 		lock_toggle(user)
 	else
-		to_chat(user, "<span class='warning'>The door doesn't lock from this side.</span>")
+		to_chat(user, "<span class='warning'>Дверь не закрывается с этой стороны.</span>")
 
 /obj/structure/mineral_door/wood/donjon
 	desc = ""
@@ -708,29 +708,29 @@
 	if(door_opened || isSwitchingStates)
 		return
 	if(brokenstate)
-		to_chat(user, "<span class='warning'>There isn't much left of this door.</span>")
+		to_chat(user, "<span class='warning'>От этой двери мало что осталось.</span>")
 		return
 	if(get_dir(src,user) == viewportdir)
 		view_toggle(user)
 	else
-		to_chat(user, "<span class='warning'>The viewport doesn't toggle from this side.</span>")
+		to_chat(user, "<span class='warning'>Смотровое окошко не открывается с этой стороны.</span>")
 		return
 
 /obj/structure/mineral_door/wood/donjon/proc/view_toggle(mob/user)
 	if(door_opened)
 		return
 	if(opacity)
-		to_chat(user, "<span class='info'>I slide the viewport open.</span>")
+		to_chat(user, "<span class='info'>Я открываю смотровое окошко.</span>")
 		opacity = FALSE
 		playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 	else
-		to_chat(user, "<span class='info'>I slide the viewport closed.</span>")
+		to_chat(user, "<span class='info'>Я закрываю смотровое окошко.</span>")
 		opacity = TRUE
 		playsound(src, 'sound/foley/doors/windowup.ogg', 100, FALSE)
 
 
 /obj/structure/mineral_door/bars
-	name = "iron door"
+	name = "решётчатая дверь"
 	desc = ""
 	icon_state = "bars"
 	openSound = 'sound/foley/doors/ironopen.ogg'
@@ -754,7 +754,7 @@
 	swing_closed = FALSE
 
 /obj/structure/mineral_door/barsold
-	name = "iron door"
+	name = "старая решётчатая дверь"
 	desc = ""
 	icon_state = "barsold"
 
@@ -764,5 +764,5 @@
 
 
 /obj/structure/mineral_door/bars/onkick(mob/user)
-	user.visible_message("<span class='warning'>[user] kicks [src]!</span>")
+	user.visible_message("<span class='warning'>[user] пинает [src]!</span>")
 	return

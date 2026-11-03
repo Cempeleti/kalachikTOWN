@@ -105,7 +105,7 @@
 //FENCE DOORS
 
 /obj/structure/fence/door
-	name = "fence door"
+	name = "калитка"
 	desc = ""
 	icon_state = "door_closed"
 	cuttable = FALSE

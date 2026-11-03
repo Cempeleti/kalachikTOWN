@@ -195,7 +195,7 @@
 	build_hand_slots()
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "ring"
+	inv_box.name = "кольцо"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "ring"
 	inv_box.screen_loc = rogueui_ringr
@@ -204,7 +204,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "wrists"
+	inv_box.name = "запястья"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "wrist"
 	inv_box.screen_loc = rogueui_wrists
@@ -213,7 +213,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "mask"
+	inv_box.name = "маска"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
 	inv_box.screen_loc = rogueui_mask
@@ -222,7 +222,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "neck"
+	inv_box.name = "шея"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "neck"
 	inv_box.screen_loc = rogueui_neck
@@ -231,7 +231,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "backl"
+	inv_box.name = "спина (слева)"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "back"
 	inv_box.screen_loc = rogueui_backl
@@ -240,7 +240,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "backr"
+	inv_box.name = "спина (справа)"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "back"
 	inv_box.screen_loc = rogueui_backr
@@ -249,7 +249,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "gloves"
+	inv_box.name = "перчатки"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "gloves"
 	inv_box.screen_loc = rogueui_gloves
@@ -258,7 +258,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "head"
+	inv_box.name = "голова"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "head"
 	inv_box.screen_loc = rogueui_head
@@ -267,7 +267,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "shoes"
+	inv_box.name = "обувь"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "shoes"
 	inv_box.screen_loc = rogueui_shoes
@@ -276,7 +276,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "belt"
+	inv_box.name = "пояс"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "belt"
 	inv_box.screen_loc = rogueui_belt
@@ -285,7 +285,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "hip r"
+	inv_box.name = "правое бедро"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "hip"
 	inv_box.screen_loc = rogueui_beltr
@@ -294,7 +294,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "hip l"
+	inv_box.name = "левое бедро"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "hip"
 	inv_box.screen_loc = rogueui_beltl
@@ -303,7 +303,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "shirt"
+	inv_box.name = "рубаха"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "shirt"
 	inv_box.screen_loc = rogueui_shirt
@@ -312,7 +312,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "trou"
+	inv_box.name = "штаны"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pants"
 	inv_box.screen_loc = rogueui_pants
@@ -321,7 +321,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "armor"
+	inv_box.name = "броня"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "armor"
 	inv_box.screen_loc = rogueui_armor
@@ -330,7 +330,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "cloak"
+	inv_box.name = "плащ"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "cloak"
 	inv_box.screen_loc = rogueui_cloak
@@ -339,7 +339,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "mouth"
+	inv_box.name = "рот"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mouth"
 	inv_box.screen_loc = rogueui_mouth
@@ -472,7 +472,7 @@
 	static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "i_clothing"
+	inv_box.name = "штаны"
 	inv_box.icon = ui_style
 	inv_box.slot_id = SLOT_PANTS
 	inv_box.icon_state = "uniform"
@@ -480,7 +480,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "o_clothing"
+	inv_box.name = "броня"
 	inv_box.icon = ui_style
 	inv_box.slot_id = SLOT_ARMOR
 	inv_box.icon_state = "suit"
@@ -502,7 +502,7 @@
 	static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "id"
+	inv_box.name = "жетон"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "id"
 	inv_box.screen_loc = ui_id
@@ -510,7 +510,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "mask"
+	inv_box.name = "маска"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "mask"
 	inv_box.screen_loc = ui_mask
@@ -518,7 +518,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "neck"
+	inv_box.name = "шея"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "neck"
 	inv_box.screen_loc = ui_neck
@@ -526,7 +526,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "back"
+	inv_box.name = "спина"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "back"
 	inv_box.screen_loc = ui_back
@@ -534,7 +534,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage1"
+	inv_box.name = "карман 1"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage1
@@ -542,7 +542,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "storage2"
+	inv_box.name = "карман 2"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "pocket"
 	inv_box.screen_loc = ui_storage2
@@ -550,7 +550,7 @@
 	static_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "suit storage"
+	inv_box.name = "крепление брони"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "suit_storage"
 	inv_box.screen_loc = ui_sstore1
@@ -573,7 +573,7 @@
 	static_inventory += using
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "gloves"
+	inv_box.name = "перчатки"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "gloves"
 	inv_box.screen_loc = ui_gloves
@@ -597,7 +597,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "head"
+	inv_box.name = "голова"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "head"
 	inv_box.screen_loc = ui_head
@@ -605,7 +605,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "shoes"
+	inv_box.name = "обувь"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "shoes"
 	inv_box.screen_loc = ui_shoes
@@ -613,7 +613,7 @@
 	toggleable_inventory += inv_box
 
 	inv_box = new /obj/screen/inventory()
-	inv_box.name = "belt"
+	inv_box.name = "пояс"
 	inv_box.icon = ui_style
 	inv_box.icon_state = "belt"
 //	inv_box.icon_full = "template_small"

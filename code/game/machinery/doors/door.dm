@@ -1,5 +1,5 @@
 /obj/machinery/door
-	name = "door"
+	name = "дверь"
 	desc = ""
 	icon = 'icons/obj/doors/Doorint.dmi'
 	icon_state = "door1"

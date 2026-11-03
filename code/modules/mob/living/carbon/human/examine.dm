@@ -114,7 +114,7 @@
 
 	//head
 	if(head && !(SLOT_HEAD in obscured))
-		. += "[m3] [head.get_examine_string(user)] on [m2] head."
+		. += "[m3] [head.get_examine_string(user)] на голове."
 	//suit/armor
 	if(wear_armor && !(SLOT_ARMOR in obscured))
 		. += "[m3] [wear_armor.get_examine_string(user)]."
@@ -126,23 +126,23 @@
 //		. += "[m3] [back.get_examine_string(user)] on [m2] back."
 
 	if(cloak && !(SLOT_CLOAK in obscured))
-		. += "[m3] [cloak.get_examine_string(user)] on [m2] shoulders."
+		. += "[m3] [cloak.get_examine_string(user)] на плечах."
 
 	if(backr && !(SLOT_BACK_R in obscured))
-		. += "[m3] [backr.get_examine_string(user)] on [m2] back."
+		. += "[m3] [backr.get_examine_string(user)] на спине."
 
 	if(backl && !(SLOT_BACK_L in obscured))
-		. += "[m3] [backl.get_examine_string(user)] on [m2] back."
+		. += "[m3] [backl.get_examine_string(user)] на спине."
 
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "[m1] holding [I.get_examine_string(user)] in [m2] [get_held_index_name(get_held_index_of_item(I))]."
+			. += "[m1] держит [I.get_examine_string(user)] в [get_held_index_name(get_held_index_of_item(I), TRUE)]."
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
 	if(gloves && !(SLOT_GLOVES in obscured))
-		. += "[m3] [gloves.get_examine_string(user)] on [m2] hands."
+		. += "[m3] [gloves.get_examine_string(user)] на руках."
 	else if(FR && length(FR.blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
@@ -150,38 +150,38 @@
 
 	//belt
 	if(belt && !(SLOT_BELT in obscured))
-		. += "[m3] [belt.get_examine_string(user)] about [m2] waist."
+		. += "[m3] [belt.get_examine_string(user)] на поясе."
 
 	if(beltr && !(SLOT_BELT_R in obscured))
-		. += "[m3] [beltr.get_examine_string(user)] on [m2] belt."
+		. += "[m3] [beltr.get_examine_string(user)] на поясе."
 
 	if(beltl && !(SLOT_BELT_L in obscured))
-		. += "[m3] [beltl.get_examine_string(user)] on [m2] belt."
+		. += "[m3] [beltl.get_examine_string(user)] на поясе."
 
 	//shoes
 	if(shoes && !(SLOT_SHOES in obscured))
-		. += "[m3] [shoes.get_examine_string(user)] on [m2] feet."
+		. += "[m3] [shoes.get_examine_string(user)] на ногах."
 
 	//mask
 	if(wear_mask && !(SLOT_WEAR_MASK in obscured))
-		. += "[m3] [wear_mask.get_examine_string(user)] on [m2] face."
+		. += "[m3] [wear_mask.get_examine_string(user)] на лице."
 
 	if(mouth && !(SLOT_MOUTH in obscured))
-		. += "[m3] [mouth.get_examine_string(user)] in [m2] mouth."
+		. += "[m3] [mouth.get_examine_string(user)] во рту."
 
 	if(wear_neck && !(SLOT_NECK in obscured))
-		. += "[m3] [wear_neck.get_examine_string(user)] around [m2] neck."
+		. += "[m3] [wear_neck.get_examine_string(user)] на шее."
 
 	//eyes
 	if(!(SLOT_GLASSES in obscured))
 		if(glasses)
-			. += "[m3] [glasses.get_examine_string(user)] covering [m2] eyes."
+			. += "[m3] [glasses.get_examine_string(user)] на глазах."
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
 			. += "<span class='warning'><B>[m2] eyes are glowing an unnatural red!</B></span>"
 
 	//ears
 	if(ears && !(SLOT_HEAD in obscured))
-		. += "[m3] [ears.get_examine_string(user)] on [m2] ears."
+		. += "[m3] [ears.get_examine_string(user)] в ушах."
 
 	//ID
 	if(wear_ring && !(SLOT_RING in obscured))
@@ -247,9 +247,9 @@
 	var/list/missing = get_missing_limbs()
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<B>[capitalize(m2)] [parse_zone(t)] is gone.</B>\n"
+			msg += "<B>[capitalize(m2)] [parse_zone(t)] отсутствует.</B>\n"
 			continue
-		msg += "<B>[capitalize(m2)] [parse_zone(t)] is gone.</B>\n"
+		msg += "<B>[capitalize(m2)] [parse_zone(t)] отсутствует.</B>\n"
 
 	if(pulledby && pulledby.grab_state)
 		msg += "[m1] being grabbed by [pulledby].\n"
@@ -359,12 +359,12 @@
 				. += "<span class='warning'>[t_He] look[p_s()] weaker.</span>"
 
 	if(Adjacent(user))
-		. += "<a href='?src=[REF(src)];inspect_limb=1'>Inspect [parse_zone(check_zone(user.zone_selected))]</a>"
+		. += "<a href='?src=[REF(src)];inspect_limb=1'>Осмотреть [parse_zone(check_zone(user.zone_selected))]</a>"
 
 		if(lying && user != src)
 			if(user.zone_selected == "chest")
 				if(!wear_armor)
-					. += "<a href='?src=[REF(src)];check_hb=1'>Listen to Heartbeat</a>"
+					. += "<a href='?src=[REF(src)];check_hb=1'>Послушать сердцебиение</a>"
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))

@@ -152,13 +152,13 @@
 		if(I.can_parry)
 			return I.name
 		else
-			return "right hand"
+			return "правая рука"
 	else if (zone == BODY_ZONE_L_INHAND)
 		var/obj/item/I = target.get_item_for_held_index(1)
 		if(I.can_parry)
 			return I.name
 		else
-			return "left hand"
+			return "левая рука"
 
 /mob/proc/check_arm_grabbed()
 	return

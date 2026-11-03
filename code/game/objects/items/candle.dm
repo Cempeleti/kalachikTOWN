@@ -1,6 +1,6 @@
 #define CANDLE_LUMINOSITY	3
 /obj/item/candle
-	name = "candle"
+	name = "свеча"
 	desc = ""
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
