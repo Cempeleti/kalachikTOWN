@@ -2,8 +2,8 @@
 	slot_flags = ITEM_SLOT_HIP
 	force = 12
 	possible_item_intents = list(/datum/intent/axe/chop/stone)
-	name = "stone axe"
-	desc = ""
+	name = "каменный топор"
+	desc = "Грубо обтёсанный камень, привязанный к деревянной рукояти."
 	icon_state = "stoneaxe"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "axe"
@@ -98,7 +98,8 @@
 	slot_flags = ITEM_SLOT_HIP
 	force = 33
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "battle axe"
+	name = "боевой топор"
+	desc = "Тяжёлый топор, созданный для сокрушения врагов и пробивания брони."
 	icon_state = "battleaxe"
 	max_blade_int = 300
 	smeltresult = /obj/item/ingot/steel
@@ -121,7 +122,8 @@
 	slot_flags = ITEM_SLOT_HIP
 	force = 18
 	possible_item_intents = list(/datum/intent/axe/cut,/datum/intent/axe/chop)
-	name = "axe"
+	name = "топор"
+	desc = "Простой железный топор для рубки дров и повседневной работы."
 	icon_state = "axe"
 	max_blade_int = 400
 	smeltresult = /obj/item/ingot/iron
@@ -129,6 +131,8 @@
 	wdefense = 2
 
 /obj/item/rogueweapon/stoneaxe/woodcut/steel
+	name = "стальной топор"
+	desc = "Прочный топор из закалённой стали с острой режущей кромкой."
 	icon_state = "saxe"
 	force = 20
 	max_blade_int = 500

@@ -1,6 +1,6 @@
 /obj/item/ammo_casing/caseless/rogue/bolt
-	name = "bolt"
-	desc = ""
+	name = "болт"
+	desc = "Тяжёлый арбалетный болт со стальным наконечником."
 	projectile_type = /obj/projectile/bullet/reusable/bolt
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust)
 	caliber = "regbolt"
@@ -11,7 +11,7 @@
 	force = 10
 
 /obj/projectile/bullet/reusable/bolt
-	name = "bolt"
+	name = "болт"
 	damage = 80
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -25,8 +25,8 @@
 	speed = 0.3
 
 /obj/item/ammo_casing/caseless/rogue/arrow
-	name = "arrow"
-	desc = ""
+	name = "стрела"
+	desc = "Деревянная стрела со стальным наконечником и оперением."
 	projectile_type = /obj/projectile/bullet/reusable/arrow
 	caliber = "arrow"
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -37,7 +37,7 @@
 	max_integrity = 20
 
 /obj/projectile/bullet/reusable/arrow
-	name = "arrow"
+	name = "стрела"
 	damage = 35
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -51,11 +51,13 @@
 	speed = 0.4
 
 /obj/item/ammo_casing/caseless/rogue/arrow/stone
+	name = "каменная стрела"
+	desc = "Простая стрела с грубым кремневым наконечником."
 	icon_state = "stonearrow"
 	max_integrity = 5
 
 /obj/projectile/bullet/reusable/bullet
-	name = "lead ball"
+	name = "свинцовая пуля"
 	damage = 50
 	damage_type = BRUTE
 	icon = 'icons/roguetown/weapons/ammo.dmi'
@@ -70,8 +72,8 @@
 	speed = 0.1
 
 /obj/item/ammo_casing/caseless/rogue/bullet
-	name = "lead ball"
-	desc = ""
+	name = "свинцовая пуля"
+	desc = "Тяжёлая круглая свинцовая пуля."
 	projectile_type = /obj/projectile/bullet/reusable/bullet
 	caliber = "musketball"
 	icon = 'icons/roguetown/weapons/ammo.dmi'

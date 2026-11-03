@@ -33,8 +33,8 @@
 	force_wielded = 15
 	possible_item_intents = list(SPEAR_BASH)
 	gripped_intents = list(SPEAR_BASH,/datum/intent/mace/smash/wood)
-	name = "wooden staff"
-	desc = ""
+	name = "деревянный посох"
+	desc = "Длинный посох из крепкой древесины. Опора при ходьбе и надёжное оружие защиты."
 	icon_state = "woodstaff"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	wlength = WLENGTH_LONG
@@ -64,8 +64,8 @@
 
 
 /obj/item/rogueweapon/woodstaff/aries
-	name = "staff of the shepherd"
-	desc = ""
+	name = "посох пастуха"
+	desc = "Традиционный пастуший посох с закруглённым концом."
 	force = 25
 	force_wielded = 28
 	icon_state = "aries"
@@ -93,8 +93,8 @@
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, SPEAR_BASH)
-	name = "spear"
-	desc = ""
+	name = "копьё"
+	desc = "Длинное копьё с острым наконечником. Простое и смертоносное оружие строя."
 	icon_state = "spear"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -127,8 +127,8 @@
 				return list("shrink" = 0.6,"sx" = 5,"sy" = -3,"nx" = -5,"ny" = -2,"wx" = -5,"wy" = -1,"ex" = 3,"ey" = -2,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0,"nturn" = 7,"sturn" = -7,"wturn" = 16,"eturn" = -22,"nflip" = 8,"sflip" = 0,"wflip" = 8,"eflip" = 0)
 
 /obj/item/rogueweapon/spear/billhook
-	name = "billhook"
-	desc = ""
+	name = "билхук"
+	desc = "Оружие на длинном древке с загнутым крюком и остриём, созданное для стягивания всадников с коней."
 	icon_state = "billhook"
 	smeltresult = /obj/item/ingot/steel
 	max_blade_int = 200
@@ -139,7 +139,8 @@
 /obj/item/rogueweapon/spear/stone
 	force = 15
 	force_wielded = 18
-	name = "simple spear"
+	name = "примитивное копьё"
+	desc = "Грубое копьё с кремневым наконечником, примотанным к шесту."
 	icon_state = "stonespear"
 	pixel_y = -16
 	pixel_x = -16
@@ -164,8 +165,8 @@
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_THRUST, SPEAR_BASH) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_THRUST, SPEAR_CUT, /datum/intent/axe/chop, SPEAR_BASH)
-	name = "halbert"
-	desc = ""
+	name = "алебарда"
+	desc = "Длинное древковое оружие, сочетающее наконечник копья, топорное лезвие и крюк."
 	icon_state = "halberd"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -199,8 +200,8 @@
 
 
 /obj/item/rogueweapon/halberd/bardiche
-	name = "bardiche"
-	desc = ""
+	name = "бердыш"
+	desc = "Широкое полулунное топорное лезвие на длинном древке."
 	icon_state = "bardiche"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
@@ -210,8 +211,8 @@
 	force_wielded = 30
 	possible_item_intents = list(SPEAR_BASH, SPEAR_THRUST) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(SPEAR_BASH, SPEAR_THRUST, /datum/intent/mace/smash)
-	name = "eagle's beak"
-	desc = ""
+	name = "орлиный клюв"
+	desc = "Древковое оружие с острым кривым шипом-клевецом, без труда пробивающим железную броню."
 	icon_state = "eaglebeak"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -244,8 +245,8 @@
 
 
 /obj/item/rogueweapon/eaglebeak/lucerne
-	name = "lucerne"
-	desc = ""
+	name = "люцернский молот"
+	desc = "Тяжёлый боевой молот на длинном древке с четырёхзубым бойком и колющим остриём."
 	icon_state = "polehammer"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
@@ -255,8 +256,8 @@
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/sword/chop,/datum/intent/sword/strike) //bash is for nonlethal takedowns, only targets limbs
 	gripped_intents = list(/datum/intent/sword/cut/zwei, /datum/intent/sword/chop, /datum/intent/sword/thrust/zwei, /datum/intent/sword/strike)
-	name = "greatsword"
-	desc = ""
+	name = "двуручный меч"
+	desc = "Огромный стальной меч внушительной длины, требующий силы обеих рук."
 	icon_state = "gsw"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	pixel_y = -16
@@ -288,8 +289,8 @@
 
 
 /obj/item/rogueweapon/greatsword/zwei
-	name = "zweihander"
-	desc = ""
+	name = "цвайхендер"
+	desc = "Массивный двуручный меч с длинным рикассо и развитой гардой с боковыми упорами."
 	icon_state = "zwei"
 	smeltresult = /obj/item/ingot/iron
 	max_blade_int = 200
