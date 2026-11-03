@@ -1,0 +1,118 @@
+name: AI Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  API_URL: https://vyceai.com/v1
+  MODEL: deepseek-v4.1
+
+jobs:
+  review:
+    name: AI code review
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    continue-on-error: true
+    # Секреты недоступны для PR из форков, поэтому такие PR пропускаем
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Собрать diff
+        shell: bash
+        run: |
+          git diff "origin/${{ github.base_ref }}...HEAD" -- . \
+            ':(exclude)*.dmm' ':(exclude)*.dmi' ':(exclude)*.json' \
+            ':(exclude)*.ogg' ':(exclude)*.zip' ':(exclude)*.rsc' \
+            ':(exclude)package-lock.json' > pr.diff
+          wc -c pr.diff
+
+      - name: Запросить ревью у ИИ
+        shell: bash
+        env:
+          API_KEY: ${{ secrets.VYCE_API_KEY }}
+        run: |
+          if [ -z "$API_KEY" ]; then
+            echo "::warning::Секрет VYCE_API_KEY не задан, ревью пропущено"
+            exit 0
+          fi
+          python3 - << 'PY'
+          import json, os, urllib.request
+
+          MARKER = "<!-- ai-review -->"
+          MAX_CHARS = 80000
+
+          diff = open("pr.diff", encoding="utf-8", errors="replace").read()
+          if not diff.strip():
+              open("review.md", "w", encoding="utf-8").write(
+                  MARKER + "\n## 🤖 AI-ревью\n\nНет изменений кода для проверки.")
+              raise SystemExit(0)
+
+          truncated = len(diff) > MAX_CHARS
+          diff = diff[:MAX_CHARS]
+
+          system = (
+              "Ты опытный ревьюер кода на BYOND DM (форк SS13 /tg/station). "
+              "Проверь diff pull request. Ищи: баги, runtime-ошибки, "
+              "обращения к null, утечки ссылок (qdel/GC), проблемы "
+              "производительности (циклы в Process, лишние спавны), "
+              "нарушения стиля кода проекта, забытые файлы в .dme. "
+              "Отвечай на русском, кратко и по делу. Формат: список "
+              "замечаний с указанием файла и строки, затем краткий вывод. "
+              "Если серьёзных проблем нет, так и скажи. Не придумывай "
+              "проблем, которых нет в diff."
+          )
+          user = "Вот diff pull request:\n\n```diff\n" + diff + "\n```"
+
+          payload = {
+              "model": os.environ["MODEL"],
+              "messages": [
+                  {"role": "system", "content": system},
+                  {"role": "user", "content": user},
+              ],
+              "temperature": 0.2,
+          }
+          req = urllib.request.Request(
+              os.environ["API_URL"].rstrip("/") + "/chat/completions",
+              data=json.dumps(payload).encode("utf-8"),
+              headers={
+                  "Authorization": "Bearer " + os.environ["API_KEY"],
+                  "Content-Type": "application/json",
+              },
+          )
+          with urllib.request.urlopen(req, timeout=300) as r:
+              data = json.load(r)
+
+          text = data["choices"][0]["message"]["content"].strip()
+          note = ""
+          if truncated:
+              note = ("\n\n> ⚠️ Diff слишком большой, проверена только "
+                      "его первая часть.")
+          body = (MARKER + "\n## 🤖 AI-ревью\n\n" + text + note +
+                  "\n\n<sub>Автоматическая проверка, может ошибаться.</sub>")
+          open("review.md", "w", encoding="utf-8").write(body)
+          PY
+
+      - name: Опубликовать комментарий
+        if: hashFiles('review.md') != ''
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          ID=$(gh api "repos/$REPO/issues/$PR/comments" \
+            --jq '.[] | select(.body | contains("<!-- ai-review -->")) | .id' \
+            | head -n1)
+          if [ -n "$ID" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$ID" -F body=@review.md
+          else
+            gh api -X POST "repos/$REPO/issues/$PR/comments" -F body=@review.md
+          fi
