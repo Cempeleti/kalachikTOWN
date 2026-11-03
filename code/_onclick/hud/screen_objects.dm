@@ -62,7 +62,7 @@
 /obj/screen/swap_hand
 	layer = HUD_LAYER
 	plane = HUD_PLANE
-	name = "swap hand"
+	name = "сменить руку"
 
 /obj/screen/swap_hand/Click()
 	// At this point in client Click() code we have passed the 1/10 sec check and little else
@@ -76,7 +76,7 @@
 	return 1
 
 /obj/screen/skills
-	name = "skills"
+	name = "навыки"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "skills"
 	screen_loc = ui_skill_menu
@@ -117,7 +117,7 @@
 		H.mind.print_levels(H)
 
 /obj/screen/craft
-	name = "crafting menu"
+	name = "меню создания"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "craft"
 	screen_loc = rogueui_craft
@@ -321,7 +321,7 @@
 	return TRUE
 
 /obj/screen/drop
-	name = "drop"
+	name = "бросить"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "act_drop"
 	layer = HUD_LAYER
@@ -559,7 +559,7 @@
 
 
 /obj/screen/give_intent
-	name = "give/take"
+	name = "отдать/взять"
 	icon_state = "take0"
 	icon = 'icons/mob/roguehud.dmi'
 	screen_loc = rogueui_give
@@ -590,7 +590,7 @@
 //
 
 /obj/screen/def_intent
-	name = "defense intent"
+	name = "защита"
 	icon_state = "def1n"
 	icon = 'icons/mob/roguehud.dmi'
 	screen_loc = rogueui_def
@@ -608,7 +608,7 @@
 
 
 /obj/screen/cmode
-	name = "combat mode"
+	name = "боевой режим"
 	icon_state = "combat0"
 	icon = 'icons/mob/roguehud.dmi'
 	screen_loc = rogueui_cmode
@@ -716,7 +716,7 @@
 	user.toggle_move_intent(user)
 
 /obj/screen/rogmove
-	name = "sneak mode"
+	name = "скрытность"
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "sneak0"
 	screen_loc = rogueui_moves
@@ -741,7 +741,7 @@
 		icon_state = "sneak0"
 
 /obj/screen/rogmove/sprint
-	name = "sprint mode"
+	name = "спринт"
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "sprint0"
 	screen_loc = rogueui_moves
@@ -808,7 +808,7 @@
 
 
 /obj/screen/eye_intent
-	name = "eye intent"
+	name = "прицеливание"
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "eye"
 
@@ -873,7 +873,7 @@
 	user.toggle_eye_intent(user)
 
 /obj/screen/pull
-	name = "stop pulling"
+	name = "отпустить"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "pull"
 
@@ -889,7 +889,7 @@
 		icon_state = "pull0"
 
 /obj/screen/rest
-	name = "rest"
+	name = "отдых"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "act_rest"
 	layer = HUD_LAYER
@@ -911,7 +911,7 @@
 		icon_state = "act_rest0"
 
 /obj/screen/restup
-	name = "stand up"
+	name = "встать"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "act_rest_up"
 	layer = HUD_LAYER
@@ -923,7 +923,7 @@
 		L.stand_up()
 
 /obj/screen/restdown
-	name = "lay down"
+	name = "лечь"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "act_rest_down"
 	layer = HUD_LAYER
@@ -959,7 +959,7 @@
 	return TRUE
 
 /obj/screen/throw_catch
-	name = "throw/catch"
+	name = "бросок/ловля"
 	icon = 'icons/mob/screen_midnight.dmi'
 	icon_state = "catch0"
 	var/throwy = 0
@@ -979,7 +979,7 @@
 			icon_state = "catch[throwy]"
 
 /obj/screen/zone_sel
-	name = "damage zone"
+	name = "выбор цели"
 	icon_state = "m-zone_sel"
 	screen_loc = rogueui_targetdoll
 	var/overlay_icon = 'icons/mob/roguehud64.dmi'
@@ -1648,7 +1648,7 @@
 
 
 /obj/screen/stress
-	name = "sanity"
+	name = "рассудок"
 	icon = 'icons/mob/roguehud.dmi'
 	icon_state = "stressback"
 

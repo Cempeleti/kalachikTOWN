@@ -95,7 +95,7 @@
 //	if(force)
 //		user.emote("attackgrunt")
 	var/datum/intent/cached_intent = user.used_intent
-	if(user.used_intent.swingdelay)
+	if(user.used_intent?.swingdelay)
 		if(!user.used_intent.noaa)
 			user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		sleep(user.used_intent.swingdelay)
@@ -111,7 +111,7 @@
 		return
 	if((M.mobility_flags & MOBILITY_STAND))
 		if(M.checkmiss(user))
-			if(!user.used_intent.swingdelay)
+			if(!user.used_intent?.swingdelay)
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 			return
 	if(istype(user.rmb_intent, /datum/rmb_intent/strong))
@@ -135,7 +135,7 @@
 				log_combat(user, M, "attacked", src.name, "(INTENT: [uppertext(user.used_intent.name)]) (DAMTYPE: [uppertext(damtype)])")
 				add_fingerprint(user)
 		if(M.d_intent == INTENT_DODGE)
-			if(!user.used_intent.swingdelay)
+			if(!user.used_intent?.swingdelay)
 				user.do_attack_animation(M, visual_effect_icon = user.used_intent.animname)
 		return
 

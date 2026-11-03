@@ -1,5 +1,5 @@
 /turf/closed/wall/mineral
-	name = "mineral wall"
+	name = "минеральная стена"
 	desc = ""
 	icon_state = ""
 	var/last_event = 0
@@ -8,7 +8,7 @@
 	smooth = SMOOTH_TRUE
 
 /turf/closed/wall/mineral/gold
-	name = "gold wall"
+	name = "золотая стена"
 	desc = ""
 	icon = 'icons/turf/walls/gold_wall.dmi'
 	icon_state = "gold"
@@ -17,7 +17,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/gold, /obj/structure/falsewall/gold)
 
 /turf/closed/wall/mineral/silver
-	name = "silver wall"
+	name = "серебряная стена"
 	desc = ""
 	icon = 'icons/turf/walls/silver_wall.dmi'
 	icon_state = "silver"
@@ -25,7 +25,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/silver, /obj/structure/falsewall/silver)
 
 /turf/closed/wall/mineral/diamond
-	name = "diamond wall"
+	name = "алмазная стена"
 	desc = ""
 	icon = 'icons/turf/walls/diamond_wall.dmi'
 	icon_state = "diamond"
@@ -35,7 +35,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/diamond, /obj/structure/falsewall/diamond)
 
 /turf/closed/wall/mineral/bananium
-	name = "bananium wall"
+	name = "бананиумовая стена"
 	desc = ""
 	icon = 'icons/turf/walls/bananium_wall.dmi'
 	icon_state = "bananium"
@@ -43,7 +43,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/bananium, /obj/structure/falsewall/bananium)
 
 /turf/closed/wall/mineral/sandstone
-	name = "sandstone wall"
+	name = "стена из песчаника"
 	desc = ""
 	icon = 'icons/turf/walls/sandstone_wall.dmi'
 	icon_state = "sandstone"
@@ -53,7 +53,7 @@
 
 /turf/closed/wall/mineral/uranium
 	article = "a"
-	name = "uranium wall"
+	name = "урановая стена"
 	desc = ""
 	icon = 'icons/turf/walls/uranium_wall.dmi'
 	icon_state = "uranium"
@@ -85,7 +85,7 @@
 	..()
 
 /turf/closed/wall/mineral/plasma
-	name = "plasma wall"
+	name = "плазменная стена"
 	desc = ""
 	icon = 'icons/turf/walls/plasma_wall.dmi'
 	icon_state = "plasma"
@@ -123,7 +123,7 @@
 	. = ..()
 
 /turf/closed/wall/mineral/wood
-	name = "wooden wall"
+	name = "деревянная стена"
 	desc = ""
 	icon = 'icons/turf/walls/wood_wall.dmi'
 	icon_state = "wood"
@@ -149,7 +149,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/falsewall/wood, /turf/closed/wall/mineral/wood/nonmetal)
 
 /turf/closed/wall/mineral/iron
-	name = "rough metal wall"
+	name = "грубая металлическая стена"
 	desc = ""
 	icon = 'icons/turf/walls/iron_wall.dmi'
 	icon_state = "iron"
@@ -157,7 +157,7 @@
 	canSmoothWith = list(/turf/closed/wall/mineral/iron, /obj/structure/falsewall/iron)
 
 /turf/closed/wall/mineral/snow
-	name = "packed snow wall"
+	name = "стена из плотного снега"
 	desc = ""
 	icon = 'icons/turf/walls/snow_wall.dmi'
 	icon_state = "snow"
@@ -171,7 +171,7 @@
 	bullet_bounce_sound = null
 
 /turf/closed/wall/mineral/abductor
-	name = "alien wall"
+	name = "чужеродная стена"
 	desc = ""
 	icon = 'icons/turf/walls/abductor_wall.dmi'
 	icon_state = "abductor"
@@ -231,7 +231,7 @@
 	T.transform = transform
 
 /turf/closed/wall/mineral/titanium/survival
-	name = "pod wall"
+	name = "стена капсулы"
 	desc = ""
 	icon = 'icons/turf/walls/survival_pod_walls.dmi'
 	icon_state = "smooth"

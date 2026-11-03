@@ -16,7 +16,7 @@
 
 
 /turf/closed/wall/mineral/rogue/stone
-	name = "stone wall"
+	name = "каменная стена"
 	icon = 'icons/turf/walls/stone_wall.dmi'
 	icon_state = "stone"
 	smooth = SMOOTH_MORE
@@ -56,7 +56,7 @@
 	climbdiff = 4
 
 /turf/closed/wall/mineral/rogue/craftstone
-	name = "stone wall"
+	name = "каменная стена"
 	icon = 'icons/turf/walls/craftstone.dmi'
 	icon_state = "box"
 	smooth = SMOOTH_MORE
@@ -74,7 +74,7 @@
 
 
 /turf/closed/wall/mineral/rogue/stonebrick
-	name = "brick wall"
+	name = "кирпичная стена"
 	icon = 'icons/turf/walls/stonebrick.dmi'
 	icon_state = "stonebrick"
 	smooth = SMOOTH_MORE
@@ -92,7 +92,7 @@
 	damage_deflection = 20
 
 /turf/closed/wall/mineral/rogue/wood
-	name = "wall"
+	name = "деревянная стена"
 	icon = 'icons/turf/walls/roguewood.dmi'
 	icon_state = "wood"
 	smooth = SMOOTH_MORE
@@ -122,7 +122,7 @@
 	add_overlay(M)
 
 /turf/closed/wall/mineral/rogue/tent
-	name = "tent"
+	name = "палатка"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "tent"
 	smooth = SMOOTH_FALSE
@@ -143,7 +143,7 @@
 	return
 
 /turf/closed/wall/mineral/rogue/wooddark
-	name = "wall"
+	name = "деревянная стена"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "corner"
 	smooth = SMOOTH_FALSE
@@ -158,23 +158,23 @@
 	climbdiff = 3
 
 /turf/closed/wall/mineral/rogue/wooddark/horizontal
-	name = "wall"
+	name = "деревянная стена"
 	icon_state = "horizwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/vertical
-	name = "wall"
+	name = "деревянная стена"
 	icon_state = "vertwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/end
-	name = "wall"
+	name = "деревянная стена"
 	icon_state = "endwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/slitted
-	name = "wall"
+	name = "деревянная стена"
 	icon_state = "slittedwooddark"
 
 /turf/closed/wall/mineral/rogue/wooddark/window
-	name = "wall"
+	name = "деревянная стена с окном"
 	icon_state = "subwindow"
 	opacity = FALSE
 
@@ -184,7 +184,7 @@
 	return ..()
 
 /turf/closed/wall/mineral/rogue/roofwall
-	name = "wall"
+	name = "крыша"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = ""
 	smooth = SMOOTH_FALSE
@@ -210,7 +210,7 @@
 	icon_state = "roofTurf_IC"
 
 /turf/closed/wall/mineral/rogue/decowood
-	name = "wall"
+	name = "деревянная стена"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decowood"
 	smooth = SMOOTH_FALSE
@@ -232,7 +232,7 @@
 	icon_state = "decowood-vert"
 
 /turf/closed/wall/mineral/rogue/decostone
-	name = "stone wall"
+	name = "каменная стена"
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "decostone-b"
 	smooth = SMOOTH_MORE
@@ -251,7 +251,7 @@
 	icon_state = "decostone-l"
 
 /obj/structure/thronething
-	name = "stone wall"
+	name = "каменная стена"
 	icon = 'icons/turf/roguewall.dmi'
 	max_integrity = 0
 	opacity = 0
@@ -273,7 +273,7 @@
 
 
 /turf/closed/wall/shroud //vines
-	name = "thick treetop"
+	name = "густая крона"
 	desc = ""
 	icon = 'icons/turf/roguewall.dmi'
 	icon_state = "shroud1"
@@ -326,7 +326,7 @@
 		target.ChangeTurf(/turf/open/floor/rogue/dirt/road)
 
 /turf/closed/wall/mineral/rogue/pipe
-	name = "metal wall"
+	name = "металлическая стена"
 	icon = 'icons/turf/pipewall.dmi'
 	icon_state = "iron_box"
 	smooth = SMOOTH_MORE

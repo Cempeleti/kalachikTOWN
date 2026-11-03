@@ -265,7 +265,8 @@
 						src.do_attack_animation(M, visual_effect_icon = src.used_intent.animname)
 						playsound(src, pick(PUNCHWOOSH), 100, FALSE, -1)
 
-						sleep(src.used_intent.swingdelay)
+						if(src.used_intent?.swingdelay)
+							sleep(src.used_intent.swingdelay)
 						if(QDELETED(src) || QDELETED(M))
 							return
 						if(!M.Adjacent(src))

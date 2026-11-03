@@ -1,5 +1,5 @@
 /obj/structure/closet/crate/chest
-	name = "chest"
+	name = "сундук"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "chestweird2"
@@ -25,6 +25,7 @@
 //	update_icon()
 
 /obj/structure/closet/crate/chest/merchant
+	name = "сундук торговца"
 	lockid = "shop"
 	locked = TRUE
 	masterkey = TRUE
@@ -60,7 +61,7 @@
 		new I(src)
 
 /obj/structure/closet/crate/roguecloset
-	name = "closet"
+	name = "шкаф"
 	desc = ""
 	icon = 'icons/roguetown/misc/structure.dmi'
 	base_icon_state = "closet"
@@ -86,6 +87,7 @@
 	icon_state = "closet3"
 
 /obj/structure/closet/crate/roguecloset/inn/chest
+	name = "деревянный сундук"
 	base_icon_state = "woodchest"
 	icon_state = "woodchest"
 
@@ -95,14 +97,15 @@
 
 /obj/structure/closet/crate/roguecloset/lord
 	keylock = TRUE
+	name = "шкаф лорда"
 	lockid = "lord"
 	locked = TRUE
 	base_icon_state = "closetlord"
 	icon_state = "closetlord"
 
 /obj/structure/closet/crate/drawer
-	name = "drawer"
-	desc = "a wooden drawer."
+	name = "комод"
+	desc = "Деревянный комод."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer5"
 	base_icon_state = "drawer5"
@@ -118,8 +121,8 @@
 	allow_dense = FALSE
 
 /obj/structure/closet/crate/drawer/inn
-	name = "drawer"
-	desc = "a wooden drawer."
+	name = "комод"
+	desc = "Деревянный комод."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "drawer5"
 	base_icon_state = "drawer5"

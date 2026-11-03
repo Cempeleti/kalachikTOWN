@@ -1,5 +1,5 @@
 /obj/structure/life_candle
-	name = "life candle"
+	name = "свеча жизни"
 	desc = ""
 	icon = 'icons/obj/candle.dmi'
 	icon_state = "candle1"
