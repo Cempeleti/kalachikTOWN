@@ -1,6 +1,6 @@
 /obj/structure/fluff/millstone
-	name = "millstone"
-	desc = ""
+	name = "жернов"
+	desc = "Каменный жернов для помола зерна в муку."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "millstone"
 	density = TRUE

@@ -1,8 +1,8 @@
 /obj/item/cooking/skewer
 	force = 15
 	possible_item_intents = list(INTENT_GENERIC)
-	name = "skewer"
-	desc = ""
+	name = "вертел"
+	desc = "Металлический вертел для жарки мяса на огне."
 	icon_state = "skewer"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	item_state = "rods"

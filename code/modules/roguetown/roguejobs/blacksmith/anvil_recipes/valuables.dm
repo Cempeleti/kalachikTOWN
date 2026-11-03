@@ -2,22 +2,22 @@
 	appro_skill = /datum/skill/craft/blacksmithing
 
 /datum/anvil_recipe/valuables/gold
-	name = "gold statue"
+	name = "золотая статуя"
 	req_bar = /obj/item/ingot/gold
 	created_item = /obj/item/roguestatue/gold
 
 /datum/anvil_recipe/valuables/silver
-	name = "silver statue"
+	name = "серебряная статуя"
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/roguestatue/silver
 
 /datum/anvil_recipe/valuables/iron
-	name = "iron statue"
+	name = "железная статуя"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/roguestatue/iron
 
 /datum/anvil_recipe/valuables/steel
-	name = "steel statue"
+	name = "стальная статуя"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/roguestatue/steel
 
@@ -37,14 +37,14 @@
 						/obj/item/rogueacc/earsilver)*/
 
 /datum/anvil_recipe/valuables/ringg
-	name = "gold rings"
+	name = "золотые кольца"
 	req_bar = /obj/item/ingot/gold
 	created_item = list(/obj/item/clothing/ring/gold,
 						/obj/item/clothing/ring/gold,
 						/obj/item/clothing/ring/gold)
 
 /datum/anvil_recipe/valuables/rings
-	name = "silver rings"
+	name = "серебряные кольца"
 	req_bar = /obj/item/ingot/silver
 	created_item = list(/obj/item/clothing/ring/silver,
 						/obj/item/clothing/ring/silver,

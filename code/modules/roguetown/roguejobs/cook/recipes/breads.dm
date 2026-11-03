@@ -1,5 +1,5 @@
 /datum/crafting_recipe/roguetown/cooking/dough
-	name = "dough"
+	name = "тесто"
 	reqs = list(
 		/datum/reagent/water = 10,
 		/obj/item/reagent_containers/powder/flour= 2)
@@ -8,7 +8,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/cooking/doughslice
-	name = "smalldough"
+	name = "кусок теста"
 	reqs = list(
 		/datum/reagent/water = 5,
 		/obj/item/reagent_containers/powder/flour= 1)
@@ -17,7 +17,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/cooking/comdough
-	name = "combine dough"
+	name = "соединить тесто"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice=2)
 	result = /obj/item/reagent_containers/food/snacks/rogue/dough
@@ -25,7 +25,7 @@
 	skillcraft = null
 
 /datum/crafting_recipe/roguetown/cooking/spldough
-	name = "split dough"
+	name = "разделить тесто"
 	reqs = list(/obj/item/reagent_containers/food/snacks/rogue/dough=1)
 	result = list(/obj/item/reagent_containers/food/snacks/rogue/doughslice=2)
 	subtype_reqs = FALSE
@@ -33,7 +33,7 @@
 	skillcraft = null
 
 /datum/crafting_recipe/roguetown/cooking/crackers
-	name = "crackers"
+	name = "галеты"
 	reqs = list(
 		/obj/item/reagent_containers/powder/flour/salt = 1,
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice= 1)
@@ -41,8 +41,8 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/dough
-	name = "dough"
-	desc = ""
+	name = "тесто"
+	desc = "Шар замешанного из муки и воды сырого теста."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "dough"
 	slices_num = 2
@@ -57,8 +57,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/doughslice
-	name = "smalldough"
-	desc = ""
+	name = "кусок теста"
+	desc = "Небольшой кусочек сырого теста."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "doughslice"
 	slices_num = 0
@@ -71,8 +71,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/crackers
-	name = "crackers"
-	desc = ""
+	name = "сырые галеты"
+	desc = "Формованные кусочки теста перед выпечкой."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "crackercook"
 	slices_num = 0
@@ -85,8 +85,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/crackerscooked
-	name = "crackers"
-	desc = ""
+	name = "галеты"
+	desc = "Сухие хрустящие хлебные галеты."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cracker6"
 	slices_num = 0
@@ -112,7 +112,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/cheeseegg
-	name = "cheeseegg"
+	name = "сыр с яйцом в тесте"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/egg = 1,
 		/obj/item/reagent_containers/food/snacks/rogue/cheddarslice = 3,
@@ -122,8 +122,8 @@
 	subtype_reqs = TRUE
 
 /obj/item/reagent_containers/food/snacks/rogue/cheeseegg
-	name = "cheeseegg"
-	desc = ""
+	name = "сырое яйцо в тесте"
+	desc = "Сырое тесто с начинкой из яйца и сыра."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cheeseegg"
 	slices_num = 0
@@ -136,8 +136,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/cheeseeggcooked
-	name = "cheeseegg"
-	desc = ""
+	name = "запечённое яйцо с сыром"
+	desc = "Ароматная горячая лепёшка с запечённым яйцом и расплавленным сыром."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cheeseeggfinish"
 	bitesize = 4
@@ -151,8 +151,8 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/bread
-	name = "bread"
-	desc = ""
+	name = "хлеб"
+	desc = "Ароматный свежеиспечённый каравай хлеба."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "loaf6"
 	slices_num = 6
@@ -186,8 +186,8 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/breadslice
-	name = "sliced bread"
-	desc = ""
+	name = "ломоть хлеба"
+	desc = "Отрезанный ломоть свежего хлеба."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "loaf_slice"
 	slices_num = 0
@@ -198,9 +198,10 @@
 	foodtype = GRAIN
 	bitesize = 1
 //this is a child so we can be used in sammies
+
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/toast
-	name = "toast"
-	desc = ""
+	name = "гренок"
+	desc = "Поджаренный хрустящий ломоть хлеба."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "toast"
 	slices_num = 0
@@ -213,8 +214,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/bun
-	name = "bun"
-	desc = ""
+	name = "булочка"
+	desc = "Пышная сдобная булочка."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "bun"
 	slices_num = 0
@@ -226,7 +227,7 @@
 	rotprocess = 30 MINUTES
 
 /datum/crafting_recipe/roguetown/cooking/hbun
-	name = "honey bun"
+	name = "медовая булочка"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/bun = 1,
 		/obj/item/reagent_containers/food/snacks/rogue/honey = 1)
@@ -235,8 +236,8 @@
 	craftdiff = 0
 
 /obj/item/reagent_containers/food/snacks/rogue/hbun
-	name = "bun of honey"
-	desc = ""
+	name = "медовая булочка"
+	desc = "Сладкая булочка, щедро политая мёдом."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "honeybun"
 	slices_num = 0
@@ -248,7 +249,7 @@
 	rotprocess = 30 MINUTES
 
 /datum/crafting_recipe/roguetown/cooking/btoast
-	name = "buttered toast"
+	name = "гренок с маслом"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/breadslice/toast = 1,
 		/obj/item/reagent_containers/food/snacks/butterslice = 1)
@@ -258,8 +259,8 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/breadslice/toastbuttered
-	name = "toast that is buttered"
-	desc = ""
+	name = "гренок с маслом"
+	desc = "Поджаренный гренок, намазанный сливочным маслом."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "toastb"
 	slices_num = 0
@@ -271,7 +272,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/raisinloaf
-	name = "raisin loaf"
+	name = "хлеб с изюмом"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/dough = 1,
 		/obj/item/reagent_containers/food/snacks/rogue/raisins = 2)
@@ -281,8 +282,8 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/rbreaduncooked
-	name = "loaf of raisins"
-	desc = ""
+	name = "сырой хлеб с изюмом"
+	desc = "Сформированное тесто с изюмом перед выпечкой."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "raisinbreaduncooked"
 	slices_num = 0
@@ -295,8 +296,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbread
-	name = "raisin loaf"
-	desc = ""
+	name = "хлеб с изюмом"
+	desc = "Сладкий каравай с сочным изюмом."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "raisinbread6"
 	slices_num = 6
@@ -330,8 +331,8 @@
 			changefood(slice_path, eater)
 
 /obj/item/reagent_containers/food/snacks/rogue/raisinbreadslice
-	name = "raisin loaf slice"
-	desc = ""
+	name = "ломоть хлеба с изюмом"
+	desc = "Отрезанный ломоть сладкого хлеба с изюмом."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "raisinbread_slice"
 	slices_num = 0
@@ -345,7 +346,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/biscuit
-	name = "biscuit"
+	name = "сдобная лепёшка"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/doughslice = 1,
 		/obj/item/reagent_containers/food/snacks/butterslice = 1)
@@ -355,8 +356,8 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/biscuituncooked
-	name = "biscuit"
-	desc = ""
+	name = "сырая сдобная лепёшка"
+	desc = "Сдобное масляное тесто перед выпечкой."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "uncookbiscuit"
 	slices_num = 0
@@ -369,8 +370,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/biscuitcooked
-	name = "biscuit"
-	desc = ""
+	name = "сдобная лепёшка"
+	desc = "Рассыпчатая ароматная лепёшка на сливочном масле."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "biscuit"
 	slices_num = 0
@@ -384,7 +385,7 @@
 //=-=================================================================
 
 /datum/crafting_recipe/roguetown/cooking/cheesecake
-	name = "cheesecake"
+	name = "ватрушка"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/dough = 1,
 		/obj/item/reagent_containers/food/snacks/egg = 1,
@@ -394,8 +395,8 @@
 	subtype_reqs = FALSE
 
 /obj/item/reagent_containers/food/snacks/rogue/ccakeuncooked
-	name = "cake of cheese"
-	desc = ""
+	name = "сырая ватрушка"
+	desc = "Сырое тесто с творожно-сырной начинкой."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cheesecakeuncook"
 	slices_num = 0
@@ -408,8 +409,8 @@
 	rotprocess = 30 MINUTES
 
 /obj/item/reagent_containers/food/snacks/rogue/ccake
-	name = "cheesecake"
-	desc = ""
+	name = "ватрушка"
+	desc = "Большая подрумяненная ватрушка со сладким сыром."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cheesecake"
 	slices_num = 8
@@ -424,8 +425,8 @@
 	bitesize = 16
 
 /obj/item/reagent_containers/food/snacks/rogue/ccakeslice
-	name = "cheesecake slice"
-	desc = ""
+	name = "кусок ватрушки"
+	desc = "Аппетитный кусок ватрушки со сладким сыром."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "cheesecake_slice"
 	slices_num = 0

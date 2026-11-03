@@ -1,8 +1,8 @@
 /obj/item/fishingrod
 	force = 12
 	possible_item_intents = list(SPEAR_BASH,ROD_CAST)
-	name = "fishing rod"
-	desc = ""
+	name = "удочка"
+	desc = "Прочная деревянная удочка с леской и крючком."
 	icon_state = "rod"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
@@ -12,7 +12,7 @@
 	w_class = WEIGHT_CLASS_BULKY
 
 /datum/intent/cast
-	name = "cast"
+	name = "забросить"
 	chargetime = 0
 	noaa = TRUE
 	misscost = 0
@@ -28,8 +28,8 @@
 
 /obj/item/fishingrod/attackby(obj/item/I, mob/user, params)
 	if(I.baitchance && !baited)
-		user.visible_message("<span class='notice'>[user] hooks something to the line.</span>", \
-							"<span class='notice'>I hook [I] to my line.</span>")
+		user.visible_message("<span class='notice'>[user] насаживает наживку на крючок.</span>", \
+							"<span class='notice'>Я насаживаю [I] на крючок.</span>")
 		playsound(src.loc, 'sound/foley/pierce.ogg', 50, FALSE)
 		if(istype(I,/obj/item/natural/worms))
 			var/obj/item/natural/worms/W = I
@@ -66,8 +66,8 @@
 	if(istype(target, /turf/open/water))
 		if(user.used_intent.type == ROD_CAST && !user.doing)
 			if(target in range(user,5))
-				user.visible_message("<span class='warning'>[user] casts a line!</span>", \
-									"<span class='notice'>I cast a line.</span>")
+				user.visible_message("<span class='warning'>[user] забрасывает удочку!</span>", \
+									"<span class='notice'>Я забрасываю удочку.</span>")
 				playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
 				if(do_after(user,rand(80,150), target = target)) //rogtodo based on fishing skill
 					if(baited)
@@ -82,7 +82,7 @@
 								bc += (sl * 10)
 						if(prob(bc))
 							var/A = pickweight(baited.fishloot)
-							to_chat(user, "<span class='notice'>Something tugs the line!</span>")
+							to_chat(user, "<span class='notice'>Что-то дёргает леску!</span>")
 							playsound(src.loc, 'sound/items/fishing_plouf.ogg', 100, TRUE)
 							if(!do_after(user,ft, target = target)) //rogtodo based on fishing skill
 								if(ismob(A))
@@ -95,13 +95,13 @@
 									new A(user.loc)
 								playsound(src.loc, 'sound/items/Fish_out.ogg', 100, TRUE)
 							else
-								to_chat(user, "<span class='warning'>Damn, got away...</span>")
+								to_chat(user, "<span class='warning'>Чёрт, сорвалось...</span>")
 						else
-							to_chat(user, "<span class='warning'>Damn, got away...</span>")
+							to_chat(user, "<span class='warning'>Чёрт, сорвалось...</span>")
 						qdel(baited)
 						baited = null
 					else
-						to_chat(user, "<span class='warning'>This seems pointless.</span>")
+						to_chat(user, "<span class='warning'>Без наживки ничего не поймать.</span>")
 			update_icon()
 
 /obj/item/fishingrod/update_icon()

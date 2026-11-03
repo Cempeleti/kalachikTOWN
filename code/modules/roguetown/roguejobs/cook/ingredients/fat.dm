@@ -1,7 +1,7 @@
 /obj/item/reagent_containers/food/snacks/butter
 	icon = 'icons/roguetown/items/food.dmi'
-	name = "butter"
-	desc = ""
+	name = "сливочное масло"
+	desc = "Брусок свежего сливочного масла."
 	icon_state = "butter6"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
 	foodtype = DAIRY
@@ -42,22 +42,23 @@
 /obj/item/reagent_containers/food/snacks/butterslice
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "butter_slice"
-	name = "butter"
-	desc = ""
+	name = "кусочек сливочного масла"
+	desc = "Небольшой кусочек сливочного масла."
 	foodtype = DAIRY
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	slices_num = 0
 
 /obj/item/reagent_containers/food/snacks/fat
 	icon = 'icons/roguetown/items/food.dmi'
-	name = "fat"
-	desc = ""
+	name = "жир"
+	desc = "Кусок сырого животного жира."
 	icon_state = "fat"
 	list_reagents = list(/datum/reagent/consumable/nutriment = 8)
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 
 /obj/item/reagent_containers/food/snacks/fat/salo
-	name = "salo"
+	name = "сало"
+	desc = "Аппетитный кусок солёного сала."
 	icon_state = "suet4"
 	eat_effect = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = 12)
@@ -85,7 +86,8 @@
 
 
 /obj/item/reagent_containers/food/snacks/fat/salo/slice
-	name = "salo"
+	name = "кусочек сала"
+	desc = "Тонкий ломтик солёного сала."
 	icon_state = "suetslice"
 	eat_effect = null
 	slices_num = 0

@@ -1,7 +1,8 @@
 
 /obj/machinery/anvil
 	icon = 'icons/roguetown/misc/forge.dmi'
-	name = "anvil"
+	name = "наковальня"
+	desc = "Тяжёлая железная наковальня для ковки изделий."
 	icon_state = "anvil"
 	var/hott = null
 	var/obj/item/ingot/hingot
@@ -87,7 +88,7 @@
 							continue
 						M.playsound_local(M_turf, null, 100, 1, get_rand_frequency(), falloff = 5, S = far_smith_sound)
 			else
-				to_chat(user, "<span class='warning'>It's too cold.</span>")
+				to_chat(user, "<span class='warning'>Слишком остыло.</span>")
 				return
 			return
 	if(hingot && hingot.currecipe && hingot.currecipe.needed_item && istype(W, hingot.currecipe.needed_item))
@@ -95,7 +96,7 @@
 		qdel(W)
 		return
 	if(W.anvilrepair)
-		user.visible_message("<span class='info'>[user] places [W] on the anvil.</span>")
+		user.visible_message("<span class='info'>[user] кладёт [W] на наковальню.</span>")
 		W.forceMove(src.loc)
 		return
 	..()
@@ -111,7 +112,7 @@
 		if(!istype(hingot, R.req_bar))
 			appro_recipe -= R
 	if(appro_recipe.len)
-		var/datum/chosen_recipe = input(user, "Choose A Creation", "Anvil") as null|anything in sortNames(appro_recipe.Copy())
+		var/datum/chosen_recipe = input(user, "Выберите изделие", "Наковальня") as null|anything in sortNames(appro_recipe.Copy())
 		if(!hingot.currecipe && chosen_recipe)
 			hingot.currecipe = new chosen_recipe.type(hingot)
 			return TRUE
@@ -120,7 +121,7 @@
 /obj/machinery/anvil/attack_hand(mob/user, params)
 	if(hingot)
 		if(hott)
-			to_chat(user, "<span class='warning'>It's too hot.</span>")
+			to_chat(user, "<span class='warning'>Слишком горячо.</span>")
 			return
 		else
 			var/obj/item/I = hingot

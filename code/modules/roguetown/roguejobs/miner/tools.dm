@@ -1,8 +1,8 @@
 /obj/item/rogueweapon/pick
 	force = 21
 	possible_item_intents = list(/datum/intent/pick)
-	name = "pick"
-	desc = ""
+	name = "кирка"
+	desc = "Тяжёлая рудокопная кирка для дробления каменных пород."
 	icon_state = "pick"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT

@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/fish
-	name = "fish"
-	desc = ""
+	name = "рыба"
+	desc = "Свежевыловленная рыба."
 	icon_state = "carp"
 	icon = 'icons/roguetown/misc/fish.dmi'
 	verb_say = "glubs"
@@ -25,15 +25,15 @@
 	switch(rarity)
 		if("gold")
 			sellprice = sellprice * 10
-			name = "legendary [initial(name)]"
+			name = "легендарный [initial(name)]"
 		if("ultra")
 			sellprice = sellprice * 4
-			name = "ultra-rare [initial(name)]"
+			name = "редчайший [initial(name)]"
 		if("rare")
 			sellprice = sellprice * 2
-			name = "rare [initial(name)]"
+			name = "редкий [initial(name)]"
 		if("com")
-			name = "common [initial(name)]"
+			name = "обычный [initial(name)]"
 	if(!dead)
 		START_PROCESSING(SSobj, src)
 
@@ -48,7 +48,7 @@
 	else
 		if(isturf(user.loc))
 			src.forceMove(user.loc)
-		to_chat(user, "<span class='warning'>Too slippery!</span>")
+		to_chat(user, "<span class='warning'>Слишком скользкая!</span>")
 		return
 
 /obj/item/reagent_containers/food/snacks/fish/process()
@@ -72,27 +72,31 @@
 
 
 /obj/item/reagent_containers/food/snacks/fish/carp
-	name = "carp"
+	name = "карп"
+	desc = "Крупный чешуйчатый речной карп."
 	icon_state = "carp"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/carp
 
 /obj/item/reagent_containers/food/snacks/fish/clownfish
-	name = "clownfish"
+	name = "рыба-клоун"
+	desc = "Яркая оранжево-белая рыба-клоун."
 	icon_state = "clownfish"
 	sellprice = 40
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/clownfish
 
 /obj/item/reagent_containers/food/snacks/fish/angler
-	name = "anglerfish"
+	name = "морской чёрт"
+	desc = "Глубоководный морской чёрт с зубастой пастью и светящейся приманкой."
 	icon_state = "angler"
 	sellprice = 15
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/angler
 
 /obj/item/reagent_containers/food/snacks/fish/eel
-	name = "eel"
+	name = "угорь"
+	desc = "Длинный извивающийся угорь с гладкой кожей."
 	icon_state = "eel"
 	sellprice = 5
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/fryfish/eel
@@ -103,8 +107,8 @@
 	trash = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = 10)
 	tastes = list("fish" = 1)
-	name = "cooked fish"
-	desc = ""
+	name = "жареная рыба"
+	desc = "Аппетитная рыба, обжаренная до золотистой корочки."
 	icon_state = "carpcooked"
 	foodtype = MEAT
 	warming = 5 MINUTES

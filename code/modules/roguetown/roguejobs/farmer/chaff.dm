@@ -1,19 +1,19 @@
 /obj/item/natural/chaff
 	icon = 'icons/roguetown/items/produce.dmi'
 	var/foodextracted = null
-	name = "chaff"
+	name = "сено"
 	icon_state = "chaff1"
-	desc = ""
+	desc = "Сухие стебли собранных злаков."
 	var/chafftype = 1
 	var/canthresh = TRUE
 	//dropshrink = 0.75
 
 /obj/item/natural/chaff/attack_right(mob/user)
 	if(foodextracted && !user.get_active_held_item())
-		to_chat(user, "<span class='warning'>I start to shuck [src]...</span>")
+		to_chat(user, "<span class='warning'>Я начинаю шелушить [src]...</span>")
 		if(move_after(user,40, target = src)) //ROGTODO make this based on farming skill and speed
-			user.visible_message("<span class='notice'>[user] shucks [src].</span>", \
-								"<span class='notice'>I shuck [src].</span>")
+			user.visible_message("<span class='notice'>[user] очищает [src].</span>", \
+								"<span class='notice'>Я очищаю [src].</span>")
 			testing("1")
 			var/obj/item/G = new foodextracted(get_turf(src))
 			user.put_in_active_hand(G)
@@ -40,9 +40,9 @@
 							W.forked += R
 							stuff++
 					if(stuff)
-						to_chat(user, "<span class='notice'>I pick up the stalks with the pitchfork.</span>")
+						to_chat(user, "<span class='notice'>Я подбираю стебли вилами.</span>")
 					else
-						to_chat(user, "<span class='warning'>I'm carrying enough with the pitchfork.</span>")
+						to_chat(user, "<span class='warning'>На вилах больше не поместится.</span>")
 					W.update_icon()
 					return
 /*
