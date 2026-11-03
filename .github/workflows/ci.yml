@@ -128,24 +128,47 @@ jobs:
           fi
 
       - name: Запуск сервера и проверка на runtime-ошибки
+        timeout-minutes: 8
         shell: bash
         run: |
           source "$HOME/BYOND/byond/bin/byondsetup"
           mkdir -p data/logs/ci
-          set +e
-          timeout 120 DreamDaemon "$DMB_FILE" -close -trusted -verbose \
-            -params "log-directory=ci" 2>&1 | tee run.log
-          set -e
 
-          echo "---- Поиск ошибок в логах ----"
+          DreamDaemon "$DMB_FILE" -close -trusted -verbose \
+            -params "log-directory=ci" > run.log 2>&1 &
+          DD_PID=$!
+
+          # Ждём окончания инициализации, максимум 300 секунд
+          for i in $(seq 1 150); do
+            if grep -q "Initializations complete" run.log; then
+              sleep 5
+              break
+            fi
+            if ! kill -0 "$DD_PID" 2>/dev/null; then
+              echo "::error::Сервер упал до окончания инициализации"
+              break
+            fi
+            sleep 2
+          done
+
+          kill -9 "$DD_PID" 2>/dev/null || true
+          pkill -9 DreamDaemon 2>/dev/null || true
+
+          echo "---- run.log (последние 100 строк) ----"
+          tail -n 100 run.log || true
+
+          if ! grep -q "Initializations complete" run.log; then
+            echo "::error::Инициализация не завершилась"
+            exit 1
+          fi
+
           cat data/logs/ci/*.log run.log > all.log 2>/dev/null || true
-          if grep -qiE "runtime error|runtime in|proc name:" all.log; then
+          if grep -qiE "runtime error|runtime in" all.log; then
             echo "::error::Во время запуска найдены runtime-ошибки"
             grep -iE -B2 -A6 "runtime error|runtime in" all.log | head -n 80
             exit 1
           fi
           echo "Сервер запустился без runtime-ошибок"
-
       - name: Сохранить логи
         if: always()
         uses: actions/upload-artifact@v4
