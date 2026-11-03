@@ -409,4 +409,5 @@
 			return "vampire"
 	if(werewolves.len)
 		if(vampires.len)
-			return "werewolf"*/
+			return "werewolf"
+*/
