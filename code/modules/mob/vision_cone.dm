@@ -92,9 +92,6 @@ client/
 	for(var/hidden_hud in client.hidden_images)
 		client.images -= hidden_hud
 		client.hidden_images -= hidden_hud
-	if(hud_used?.fov)
-		if(hud_used.fov.alpha == 0)
-			return
 	var/image/I = image(src, src)
 	I.override = 1
 	I.plane = GAME_PLANE_UPPER
@@ -326,6 +323,7 @@ client/
 		hud_used.fov_blocker.alpha = 255
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
 	PM?.backdrop(src)
+	update_cone()
 
 /mob/proc/hide_cone()
 	if(!client)

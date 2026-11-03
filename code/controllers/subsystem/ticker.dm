@@ -625,6 +625,11 @@ SUBSYSTEM_DEF(ticker)
 	for(var/I in livings)
 		var/mob/living/L = I
 		L.notransform = FALSE
+		if(L.client)
+			L.reset_perspective(null)
+			L.update_cone_show()
+			L.update_vision_cone()
+			L.update_cone()
 
 /datum/controller/subsystem/ticker/proc/send_tip_of_the_round()
 	return
