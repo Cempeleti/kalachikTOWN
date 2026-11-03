@@ -5,14 +5,11 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      byond_version:
-        description: "Версия BYOND в виде MAJOR.MINOR (например 515.1647). Пусто = из dependencies.sh"
-        required: false
-        default: ""
 
 env:
   DME_FILE: roguetown.dme
+  BYOND_ZIP: 516.1688_byond_linux.zip
+  BYOND_VERSION: "516.1688"
 
 jobs:
   lint:
@@ -45,25 +42,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Определить версию BYOND
-        id: ver
-        shell: bash
-        run: |
-          if [ -n "${{ github.event.inputs.byond_version }}" ]; then
-            VER="${{ github.event.inputs.byond_version }}"
-            MAJOR="${VER%%.*}"; MINOR="${VER##*.}"
-          elif [ -f dependencies.sh ]; then
-            source dependencies.sh
-            MAJOR="$BYOND_MAJOR"; MINOR="$BYOND_MINOR"
-          fi
-          if [ -z "$MAJOR" ] || [ -z "$MINOR" ]; then
-            echo "::error::Не удалось определить версию BYOND. Запустите workflow вручную и укажите её."
-            exit 1
-          fi
-          echo "major=$MAJOR" >> "$GITHUB_OUTPUT"
-          echo "minor=$MINOR" >> "$GITHUB_OUTPUT"
-          echo "Версия BYOND: $MAJOR.$MINOR"
-
       - name: 32-битные библиотеки
         run: |
           sudo dpkg --add-architecture i386
@@ -75,31 +53,18 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/BYOND
-          key: byond-${{ steps.ver.outputs.major }}.${{ steps.ver.outputs.minor }}
+          key: byond-${{ env.BYOND_VERSION }}
 
-      - name: Скачать BYOND
+      - name: Установить BYOND
         if: steps.cache.outputs.cache-hit != 'true'
         shell: bash
         run: |
-          MAJOR="${{ steps.ver.outputs.major }}"
-          MINOR="${{ steps.ver.outputs.minor }}"
-          FILE="${MAJOR}.${MINOR}_byond_linux.zip"
-          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
-          for URL in \
-            "https://www.byond.com/download/build/${MAJOR}/${FILE}" \
-            "https://spacestation13.github.io/byond-builds/${MAJOR}/${FILE}"
-          do
-            echo "Скачиваю $URL"
-            if curl -fL --retry 3 -A "$UA" -o byond.zip "$URL" && unzip -tq byond.zip >/dev/null 2>&1; then
-              OK=1; break
-            fi
-          done
-          if [ -z "$OK" ]; then
-            echo "::error::Не удалось скачать BYOND $MAJOR.$MINOR ни с одного источника."
+          if [ ! -f "$BYOND_ZIP" ]; then
+            echo "::error::Файл $BYOND_ZIP не найден в корне репозитория."
             exit 1
           fi
           mkdir -p "$HOME/BYOND"
-          unzip -q byond.zip -d "$HOME/BYOND"
+          unzip -q "$BYOND_ZIP" -d "$HOME/BYOND"
           cd "$HOME/BYOND/byond"
           make here
 
