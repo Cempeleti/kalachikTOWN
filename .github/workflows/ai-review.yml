@@ -1,0 +1,49 @@
+name: AI Review
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, ready_for_review]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number || github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    name: AI review bot
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    continue-on-error: true
+    if: >-
+      (github.event_name == 'pull_request_target' && !github.event.pull_request.draft) ||
+      (github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request &&
+        github.event.sender.type != 'Bot' &&
+        contains(github.event.comment.body, '/ai') &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association)) ||
+      (github.event_name == 'pull_request_review_comment' &&
+        github.event.sender.type != 'Bot' &&
+        contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.comment.author_association))
+    steps:
+      # Забираем ТОЛЬКО скрипт из основной ветки. Код из PR не чекаутим и не запускаем.
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: .github/scripts
+          persist-credentials: false
+
+      - name: Запустить бота
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          LLM_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          LLM_API_URL: https://integrate.api.nvidia.com/v1
+          LLM_MODEL: mistralai/mistral-large-4-1t-a52b
+        run: python3 .github/scripts/ai_review.py
