@@ -9,8 +9,8 @@ permissions:
   pull-requests: write
 
 env:
-  API_URL: https://vyceai.com/v1
-  MODEL: gpt-6-luna
+  API_URL: https://integrate.api.nvidia.com/v1
+  MODEL: deepseek-ai/deepseek-v4.1-flash
 
 jobs:
   review:
@@ -34,14 +34,14 @@ jobs:
       - name: Запросить ревью у ИИ
         shell: bash
         env:
-          API_KEY: ${{ secrets.VYCE_API_KEY }}
+          API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           if [ -z "$API_KEY" ]; then
-            echo "::warning::Секрет VYCE_API_KEY не задан, ревью пропущено"
+            echo "::warning::Секрет NVIDIA_API_KEY не задан, ревью пропущено"
             exit 0
           fi
           python3 - << 'PY'
-          import json, os, re, urllib.error, urllib.request
+          import json, os, re, urllib.request
 
           MARKER = "<!-- ai-review -->"
           MAX_CHARS = 80000
@@ -83,6 +83,9 @@ jobs:
                   {"role": "user", "content": user},
               ],
               "temperature": 0.2,
+              "top_p": 0.95,
+              "max_tokens": 4096,
+              "stream": False,
           }
           req = urllib.request.Request(
               os.environ["API_URL"].rstrip("/") + "/chat/completions",
@@ -90,21 +93,15 @@ jobs:
               headers={
                   "Authorization": "Bearer " + os.environ["API_KEY"],
                   "Content-Type": "application/json",
+                  "Accept": "application/json",
               },
           )
-          try:
-              with urllib.request.urlopen(req, timeout=300) as r:
-                  data = json.load(r)
-          except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError) as e:
-              open("review.md", "w", encoding="utf-8").write(
-                  MARKER + "\n## 🤖 AI-ревью\n\n"
-                  "Не удалось получить ответ от AI API ("
-                  + str(e) +
-                  ").\n\n<sub>Автоматическая проверка временно недоступна.</sub>"
-              )
-              raise SystemExit(0)
+          with urllib.request.urlopen(req, timeout=300) as r:
+              data = json.load(r)
 
-          text = data["choices"][0]["message"]["content"].strip()
+          text = (data["choices"][0]["message"].get("content") or "").strip()
+          if not text:
+              text = "Модель вернула пустой ответ."
           note = ""
           if truncated:
               note = ("\n\n> ⚠️ Diff слишком большой, проверена только "
