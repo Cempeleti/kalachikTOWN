@@ -893,6 +893,13 @@
 		if(doing)
 			doing = 0
 		if(client)
+			for(var/image/I in client.hidden_images)
+				if(I.loc == src)
+					I.dir = dir
+				else if(buckled && I.loc == buckled)
+					I.dir = buckled.dir
+				else if(pulling && I.loc == pulling)
+					I.dir = pulling.dir
 			update_vision_cone()
 
 /mob/living/proc/makeTrail(turf/target_turf, turf/start, direction)

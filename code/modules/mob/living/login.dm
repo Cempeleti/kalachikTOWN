@@ -16,6 +16,7 @@
 //	update_tod_hud()
 	update_spd()
 
+	set_glide_size(DELAY_TO_GLIDE_SIZE(cached_multiplicative_slowdown || 2))
 	update_cone_show()
 	update_vision_cone()
 	update_cone()

@@ -80,6 +80,13 @@ client/
 		if(hud_used && hud_used.fov)
 			hud_used.fov.dir = src.dir
 			hud_used.fov_blocker.dir = src.dir
+		for(var/image/I in client.hidden_images)
+			if(I.loc == src)
+				I.dir = dir
+			else if(buckled && I.loc == buckled)
+				I.dir = buckled.dir
+			else if(pulling && I.loc == pulling)
+				I.dir = pulling.dir
 		START_PROCESSING(SSincone, client)
 
 /client/proc/update_cone()
@@ -89,41 +96,74 @@ client/
 /mob/living/update_cone()
 	if(!client)
 		return
-	for(var/hidden_hud in client.hidden_images)
-		client.images -= hidden_hud
-		client.hidden_images -= hidden_hud
-	if(hud_used?.fov)
-		if(hud_used.fov.alpha == 0)
-			return
-	var/image/I = image(src, src)
-	I.override = 1
-	I.plane = GAME_PLANE_UPPER
-	I.layer = layer
-	I.pixel_x = pixel_x
-	I.pixel_y = pixel_y
-	client.images += I
-	client.hidden_images += I
-	I.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
+
+	var/image/img = null
+	var/image/IB = null
+	var/image/IP = null
+	var/list/to_remove = null
+
+	for(var/image/I in client.hidden_images)
+		if(I.loc == src)
+			if(!img)
+				img = I
+			else
+				LAZYADD(to_remove, I)
+		else if(buckled && I.loc == buckled)
+			if(!IB)
+				IB = I
+			else
+				LAZYADD(to_remove, I)
+		else if(pulling && I.loc == pulling)
+			if(!IP)
+				IP = I
+			else
+				LAZYADD(to_remove, I)
+		else
+			LAZYADD(to_remove, I)
+
+	if(to_remove)
+		client.images -= to_remove
+		client.hidden_images -= to_remove
+
+	if(flags_1 & OVERLAY_QUEUED_1)
+		COMPILE_OVERLAYS(src)
+
+	if(!img)
+		img = image(loc = src)
+		client.images += img
+		client.hidden_images += img
+
+	img.appearance = src.appearance
+	img.plane = GAME_PLANE_UPPER
+	img.override = 1
+	img.glide_size = glide_size
+	img.dir = dir
+
 	if(buckled)
-		var/image/IB = image(buckled, buckled)
-		IB.override = 1
+		if(buckled.flags_1 & OVERLAY_QUEUED_1)
+			COMPILE_OVERLAYS(buckled)
+		if(!IB)
+			IB = image(loc = buckled)
+			client.images += IB
+			client.hidden_images += IB
+		IB.appearance = buckled.appearance
 		IB.plane = GAME_PLANE_UPPER
-		IB.layer = IB.layer
-		IB.pixel_x = buckled.pixel_x
-		IB.pixel_y = buckled.pixel_y
-		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
-		client.hidden_images += IB
-		client.images += IB
+		IB.override = 1
+		IB.glide_size = buckled.glide_size
+		IB.dir = buckled.dir
+
 	if(pulling)
-		var/image/IB = image(pulling, pulling)
-		IB.override = 1
-		IB.plane = GAME_PLANE_UPPER
-		IB.layer = IB.layer
-		IB.pixel_x = pulling.pixel_x
-		IB.pixel_y = pulling.pixel_y
-		IB.appearance_flags = RESET_TRANSFORM|KEEP_TOGETHER
-		client.hidden_images += IB
-		client.images += IB
+		if(pulling.flags_1 & OVERLAY_QUEUED_1)
+			COMPILE_OVERLAYS(pulling)
+		if(!IP)
+			IP = image(loc = pulling)
+			client.images += IP
+			client.hidden_images += IP
+		IP.appearance = pulling.appearance
+		IP.plane = GAME_PLANE_UPPER
+		IP.override = 1
+		IP.glide_size = pulling.glide_size
+		IP.dir = pulling.dir
 /*	if(hud_used && hud_used.fov_blocker)
 		fov_blocker
 
@@ -326,6 +366,7 @@ client/
 		hud_used.fov_blocker.alpha = 255
 	var/obj/screen/plane_master/game_world_fov_hidden/PM = locate(/obj/screen/plane_master/game_world_fov_hidden) in client.screen
 	PM?.backdrop(src)
+	update_cone()
 
 /mob/proc/hide_cone()
 	if(!client)

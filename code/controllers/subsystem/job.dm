@@ -823,10 +823,20 @@ SUBSYSTEM_DEF(job)
 	// By default, just place the mob on the same turf as the marker or whatever.
 	M.forceMove(get_turf(src))
 	M.dir = dir
+	if(M.client)
+		M.reset_perspective(null)
+		M.update_cone_show()
+		M.update_vision_cone()
+		M.update_cone()
 
 /obj/structure/chair/JoinPlayerHere(mob/M, buckle)
 	// Placing a mob in a chair will attempt to buckle it, or else fall back to default.
 	if (buckle && isliving(M) && buckle_mob(M, FALSE, FALSE))
+		if(M.client)
+			M.reset_perspective(null)
+			M.update_cone_show()
+			M.update_vision_cone()
+			M.update_cone()
 		return
 	..()
 
