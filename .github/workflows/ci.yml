@@ -13,6 +13,7 @@ env:
 
 jobs:
   lint:
+    name: Lint check
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -42,6 +43,7 @@ jobs:
           fi
 
   compile:
+    name: Compile check
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
