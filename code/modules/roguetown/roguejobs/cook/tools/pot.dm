@@ -1,8 +1,8 @@
 /obj/item/cooking/pot
 	force = 10
 	possible_item_intents = list(INTENT_GENERIC)
-	name = "pot"
-	desc = ""
+	name = "котелок"
+	desc = "Глубокий металлический котелок для варки похлёбок."
 	icon_state = "pote"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	item_state = "rods"

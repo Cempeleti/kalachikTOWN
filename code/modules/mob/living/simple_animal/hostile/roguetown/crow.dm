@@ -1,6 +1,6 @@
 /obj/item/reagent_containers/food/snacks/crow
-	name = "zad"
-	desc = "Pesky bird."
+	name = "зад"
+	desc = "Надоедливая птица."
 	icon_state = "crow"
 	icon = 'icons/roguetown/mob/monster/crow.dmi'
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
@@ -19,14 +19,14 @@
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/friedcrow
 
 /obj/item/reagent_containers/food/snacks/rogue/friedcrow
-	name = "fried zad"
-	desc = ""
+	name = "жареный зад"
+	desc = "Зажаренная до хрустящей корочки птица."
 	icon = 'icons/roguetown/items/food.dmi'
 	icon_state = "fcrow"
 	bitesize = 2
 	list_reagents = list(/datum/reagent/consumable/nutriment = 4)
 	w_class = WEIGHT_CLASS_TINY
-	tastes = list("burnt flesh" = 1)
+	tastes = list("горелое мясо" = 1)
 	eat_effect = null
 	rotprocess = 12 MINUTES
 	sellprice = 0
@@ -64,7 +64,7 @@
 				..()
 			else
 				if(isturf(loc))
-					to_chat(user, "<span class='warning'>I fail to snatch [src]!</span>")
+					to_chat(user, "<span class='warning'>Мне не удаётся схватить [src]!</span>")
 					playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE, -1)
 					qdel(src)
 					return
@@ -103,7 +103,7 @@
 			if(prob(L.STASPD * 2))
 				..()
 			else
-				to_chat(user, "<span class='warning'>[src] gets away!</span>")
+				to_chat(user, "<span class='warning'>[src] улетает!</span>")
 				playsound(src, 'sound/vo/mobs/bird/birdfly.ogg', 100, TRUE, -1)
 				qdel(src)
 				return

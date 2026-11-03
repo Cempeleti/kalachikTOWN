@@ -1,5 +1,5 @@
 /datum/crafting_recipe/roguetown/gravemarker
-	name = "grave marker"
+	name = "могильный крест"
 	result = /obj/structure/gravemarker
 	reqs = list(/obj/item/grown/log/tree/stick = 1)
 	time = 10 SECONDS
@@ -10,19 +10,20 @@
 
 /datum/crafting_recipe/roguetown/gravemarker/TurfCheck(mob/user, turf/T)
 	if(!(locate(/obj/structure/closet/dirthole) in T))
-		to_chat(user, "<span class='warning'>There is no grave here.</span>")
+		to_chat(user, "<span class='warning'>Здесь нет могилы.</span>")
 		return FALSE
 	for(var/obj/structure/closet/dirthole/D in T)
 		if(D.stage != 4)
-			to_chat(user, "<span class='warning'>I can't.</span>")
+			to_chat(user, "<span class='warning'>Не получится.</span>")
 			return FALSE
 	if(locate(/obj/structure/gravemarker) in T)
-		to_chat(user, "<span class='warning'>This grave is already hallowed.</span>")
+		to_chat(user, "<span class='warning'>Эта могила уже освящена.</span>")
 		return FALSE
 	return TRUE
 
 /obj/structure/gravemarker
-	name = "grave marker"
+	name = "могильный крест"
+	desc = "Простой деревянный крест, отмечающий место упокоения."
 	icon = 'icons/turf/roguefloor.dmi'
 	icon_state = "gravemarker1"
 	density = FALSE
@@ -42,7 +43,7 @@
 		if(amt)
 			if(GLOB.respawntimes[ckey])
 				GLOB.respawntimes[ckey] = GLOB.respawntimes[ckey] + amt
-				to_chat(src, "<span class='rose'>My soul finds peace buried in creation.</span>")
+				to_chat(src, "<span class='rose'>Моя душа обретает покой в освящённой земле.</span>")
 
 
 /obj/structure/gravemarker/OnCrafted(dir)
@@ -63,13 +64,13 @@
 			var/mob/dead/observer/O = L.ghostize(force_respawn = TRUE)
 			if(O)
 				testing("bur1")
-				to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+				to_chat(O, "<span class='rose'>Моя душа обретает покой в освящённой земле.</span>")
 				O.returntolobby(RESPAWNTIME*-1)
 			else
 				O = L.get_ghost()
 				if(istype(O))
 					testing("bur2")
-					to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+					to_chat(O, "<span class='rose'>Моя душа обретает покой в освящённой земле.</span>")
 					O.returntolobby(RESPAWNTIME*-1)
 				else
 					testing("bur8")
@@ -86,13 +87,13 @@
 				var/mob/dead/observer/O = B.ghostize()
 				if(O)
 					testing("bur4")
-					to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+					to_chat(O, "<span class='rose'>Моя душа обретает покой в освящённой земле.</span>")
 					O.returntolobby(RESPAWNTIME*-1)
 				else
 					O = B.get_ghost()
 					if(istype(O))
 						testing("bur5")
-						to_chat(O, "<span class='rose'>My soul finds peace buried in creation.</span>")
+						to_chat(O, "<span class='rose'>Моя душа обретает покой в освящённой земле.</span>")
 						O.returntolobby(RESPAWNTIME*-1)
 					else
 						testing("bur7")

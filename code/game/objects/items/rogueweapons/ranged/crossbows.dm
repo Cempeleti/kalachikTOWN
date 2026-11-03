@@ -1,7 +1,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
-	name = "crossbow"
-	desc = ""
+	name = "арбалет"
+	desc = "Механический лук на деревянном ложе со стременем для натяжения тетивы."
 	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "crossbow0"
 	item_state = "crossbow"

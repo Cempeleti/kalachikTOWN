@@ -8,7 +8,7 @@
 	return ..()
 
 /datum/crafting_recipe/roguetown/structure/handcart
-	name = "handcart"
+	name = "ручная тележка"
 	result = /obj/structure/handcart
 	reqs = list(/obj/item/grown/log/tree/small = 3,
 				/obj/item/rope = 1)
@@ -16,7 +16,7 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/psycrss
-	name = "wooden cross"
+	name = "деревянный крест"
 	result = /obj/structure/fluff/psycross/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/grown/log/tree/stake = 3)
@@ -24,7 +24,7 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/door
-	name = "wooden door"
+	name = "деревянная дверь"
 	result = /obj/structure/mineral_door/wood/deadbolt
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "carpents"
@@ -32,7 +32,7 @@
 	skillcraft = /datum/skill/craft/carpentry
 
 /datum/crafting_recipe/roguetown/structure/barrel
-	name = "wooden barrel"
+	name = "деревянная бочка"
 	result = /obj/structure/fermenting_barrel/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "barrelmakes"
@@ -43,7 +43,7 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/roguebin
-	name = "wooden bin"
+	name = "деревянный ящик"
 	result = /obj/item/roguebin
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "barrelmakes"
@@ -52,7 +52,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/chair
-	name = "wooden chair"
+	name = "деревянный стул"
 	result = /obj/item/chair/rogue/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpents"
@@ -63,7 +63,7 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/stool
-	name = "wooden stool"
+	name = "деревянный табурет"
 	result = /obj/item/chair/stool/bar/rogue/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
@@ -74,7 +74,7 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/anvil
-	name = "anvil"
+	name = "наковальня"
 	result = /obj/machinery/anvil
 	reqs = list(/obj/item/ingot/iron = 1)
 
@@ -82,7 +82,7 @@
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/smelter
-	name = "ore furnace"
+	name = "плавильня"
 	result = /obj/machinery/light/rogue/smelter
 	reqs = list(/obj/item/natural/stone = 4,
 			/obj/item/rogueore/coal = 1)
@@ -90,7 +90,7 @@
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/greatsmelter
-	name = "great furnace"
+	name = "большая плавильня"
 	result = /obj/machinery/light/rogue/smelter/great
 	reqs = list(/obj/item/ingot/iron = 2,
 				/obj/item/riddleofsteel = 1,
@@ -99,7 +99,7 @@
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/forge
-	name = "forge"
+	name = "горн"
 	result = /obj/machinery/light/rogue/forge
 	reqs = list(/obj/item/natural/stone = 4,
 				/obj/item/rogueore/coal = 1)
@@ -108,7 +108,7 @@
 	craftsound = null
 
 /datum/crafting_recipe/roguetown/structure/sharpwheel
-	name = "sherpening wheel"
+	name = "точильный круг"
 	result = /obj/structure/fluff/grindwheel
 	reqs = list(/obj/item/ingot/iron = 1,
 				/obj/item/natural/stone = 1)
@@ -146,7 +146,7 @@
 	return TRUE
 */
 /datum/crafting_recipe/roguetown/structure/stairsd
-	name = "stairs"
+	name = "лестница"
 	result = /obj/structure/stairs/d
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
@@ -175,7 +175,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/structure/fence
-	name = "palisade (s x2)"
+	name = "частокол (2 кола)"
 	result = /obj/structure/fluff/railing/fence
 	reqs = list(/obj/item/grown/log/tree/stake = 2)
 	ontile = TRUE
@@ -184,7 +184,7 @@
 	buildsame = TRUE
 
 /datum/crafting_recipe/roguetown/structure/fencealt
-	name = "palisade (l)"
+	name = "частокол (бревно)"
 	result = /obj/structure/fluff/railing/fence
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	ontile = TRUE
@@ -193,7 +193,7 @@
 	buildsame = TRUE
 
 /datum/crafting_recipe/roguetown/structure/chest
-	name = "chest"
+	name = "деревянный сундук"
 	result = /obj/structure/closet/crate/chest/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
@@ -205,7 +205,7 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/closet
-	name = "closet"
+	name = "шкаф"
 	result = /obj/structure/closet/crate/roguecloset
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	verbage = "construct"
@@ -216,21 +216,21 @@
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/campfire
-	name = "campfire"
+	name = "костёр"
 	result = /obj/machinery/light/rogue/campfire
 	reqs = list(/obj/item/grown/log/tree/stick = 2)
 	verbage = "build"
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/densefire
-	name = "greater campfire"
+	name = "большой костёр"
 	result = /obj/machinery/light/rogue/campfire/densefire
 	reqs = list(/obj/item/grown/log/tree/stick = 2,
 				/obj/item/natural/stone = 2)
 	verbage = "build"
 
 /datum/crafting_recipe/roguetown/structure/cookpit
-	name = "cookpit"
+	name = "очаг"
 	result = /obj/machinery/light/rogue/hearth
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/stone = 3)
@@ -238,14 +238,14 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/brazier
-	name = "brazier"
+	name = "жаровня"
 	result = /obj/machinery/light/rogue/firebowl/stump
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/rogueore/coal = 1)
 	verbage = "build"
 
 /datum/crafting_recipe/roguetown/structure/oven
-	name = "oven"
+	name = "печь"
 	result = /obj/machinery/light/rogue/oven
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/stone = 3)
@@ -255,14 +255,14 @@
 	wallcraft = TRUE
 
 /datum/crafting_recipe/roguetown/structure/dryingrack
-	name = "drying rack"
+	name = "сушилка"
 	result = /obj/structure/fluff/dryingrack
 	reqs = list(/obj/item/grown/log/tree/stick = 3)
 	verbage = "construct"
 	craftsound = 'sound/foley/Building-01.ogg'
 
 /datum/crafting_recipe/roguetown/structure/bed
-	name = "bed"
+	name = "кровать"
 	result = /obj/structure/bed/rogue/shit
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/fibers = 1)
@@ -271,7 +271,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/structure/nicebed
-	name = "nice bed"
+	name = "хорошая кровать"
 	result = /obj/structure/bed/rogue
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 				/obj/item/natural/cloth = 1)
@@ -282,7 +282,7 @@
 	craftdiff = 2
 
 /datum/crafting_recipe/roguetown/structure/table
-	name = "wooden table"
+	name = "деревянный стол"
 	result = /obj/structure/table/wood/crafted
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpent"
@@ -290,7 +290,7 @@
 	skillcraft = /datum/skill/craft/carpentry
 
 /datum/crafting_recipe/roguetown/structure/millstone
-	name = "millstone"
+	name = "жернов"
 	result = /obj/structure/fluff/millstone
 	reqs = list(/obj/item/natural/stone = 3)
 	verbage = "mason"
@@ -299,7 +299,7 @@
 	skillcraft = /datum/skill/craft/masonry
 
 /datum/crafting_recipe/roguetown/structure/lever
-	name = "lever"
+	name = "рычаг"
 	result = /obj/structure/lever
 	reqs = list(/obj/item/roguegear = 1)
 	verbage = "construct"
@@ -307,7 +307,7 @@
 	skillcraft = /datum/skill/craft/engineering
 
 /datum/crafting_recipe/roguetown/structure/trapdoor
-	name = "floorhatch"
+	name = "люк в полу"
 	result = /obj/structure/floordoor
 	reqs = list(/obj/item/grown/log/tree/small = 1,
 					/obj/item/roguegear = 1)
@@ -323,7 +323,7 @@
 	return ..()
 
 /datum/crafting_recipe/roguetown/structure/sign
-	name = "custom sign"
+	name = "деревянная вывеска"
 	result = /obj/structure/fluff/customsign
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
@@ -332,7 +332,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/dummy
-	name = "training dummy"
+	name = "тренировочный манекен"
 	result = /obj/structure/fluff/statue/tdummy
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "construct"
@@ -341,7 +341,7 @@
 	craftdiff = 1
 
 /datum/crafting_recipe/roguetown/structure/passage
-	name = "passage"
+	name = "решётка"
 	result = /obj/structure/bars/passage
 	reqs = list(/obj/item/ingot/iron = 1,
 					/obj/item/roguegear = 1)
@@ -359,7 +359,7 @@
 	return ..()
 
 /datum/crafting_recipe/roguetown/structure/wallladder
-	name = "wall ladder"
+	name = "настенная лестница"
 	result = /obj/structure/wallladder
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	verbage = "carpent"

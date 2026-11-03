@@ -1,7 +1,8 @@
 
 /obj/machinery/light/rogue/forge
 	icon = 'icons/roguetown/misc/forge.dmi'
-	name = "forge"
+	name = "горн"
+	desc = "Кузнечный горн для нагрева металлических заготовок."
 	icon_state = "forge0"
 	base_state = "forge"
 	density = TRUE
@@ -18,6 +19,6 @@
 			T.hott = tyme
 			addtimer(CALLBACK(T, /obj/item/rogueweapon/tongs.proc/make_unhot, tyme), 100)
 			T.update_icon()
-			user.visible_message("<span class='info'>[user] heats the bar.</span>")
+			user.visible_message("<span class='info'>[user] нагревает слиток.</span>")
 			return
 	..()

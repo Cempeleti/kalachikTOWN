@@ -4,8 +4,8 @@
 	force = 12
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/dagger/chop)
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH
-	name = "hunting knife"
-	desc = ""
+	name = "охотничий нож"
+	desc = "Острый нож с широким обухом, незаменимый для разделки добычи и самообороны."
 	icon_state = "huntingknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "bone_dagger"
@@ -86,8 +86,8 @@
 
 /obj/item/rogueweapon/huntingknife/cleaver
 	force = 15
-	name = "cleaver"
-	desc = ""
+	name = "тесак"
+	desc = "Тяжёлый мясницкий тесак, легко разрубающий мясо и хрящи."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "cleav"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -101,8 +101,8 @@
 
 /obj/item/rogueweapon/huntingknife/cleaver/combat
 	force = 16
-	name = "knife"
-	desc = ""
+	name = "боевой нож"
+	desc = "Прочный нож с толстым клинком, рассчитанный на нанесение рубящих и колющих ударов."
 	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/chop/cleaver)
 	icon_state = "combatknife"
 	icon = 'icons/roguetown/weapons/32.dmi'
@@ -150,21 +150,25 @@
 
 /obj/item/rogueweapon/huntingknife/idagger
 	possible_item_intents = list(/datum/intent/dagger/thrust,/datum/intent/dagger/cut)
-	name = "dagger"
-	desc = ""
+	name = "кинжал"
+	desc = "Короткий железный клинок для быстрых и скрытных колющих ударов."
 	icon_state = "idagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel
-	name = "dagger"
+	name = "стальной кинжал"
+	desc = "Острый кинжал из качественной стали."
 	icon_state = "sdagger"
 	smeltresult = null
 
 /obj/item/rogueweapon/huntingknife/idagger/steel/special
+	name = "украшенный кинжал"
+	desc = "Изящно сработанный кинжал с тонкой отделкой."
 	icon_state = "sdaggeralt"
 
 /obj/item/rogueweapon/huntingknife/idagger/silver
-	name = "dagger"
+	name = "серебряный кинжал"
+	desc = "Кинжал из чистого серебра. Смертельно опасен для нечисти и оборотней."
 	icon_state = "sildagger"
 	smeltresult = null
 	sellprice = 50
@@ -196,8 +200,8 @@
 
 /obj/item/rogueweapon/huntingknife/stoneknife
 	possible_item_intents = list(/datum/intent/dagger/cut,/datum/intent/dagger/chop)
-	name = "stone knife"
-	desc = ""
+	name = "каменный нож"
+	desc = "Примитивный нож с лезвием из заострённого кремня."
 	icon_state = "stone_knife"
 	smeltresult = null
 	max_integrity = 50

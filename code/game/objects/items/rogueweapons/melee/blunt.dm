@@ -3,8 +3,8 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash)
-	name = "mace"
-	desc = ""
+	name = "булава"
+	desc = "Тяжёлое железное ударное оружие с гранёным навершием."
 	icon_state = "mace"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	item_state = "mace_greyscale"
@@ -28,8 +28,8 @@
 /obj/item/rogueweapon/mace/church
 	force = 25
 	force_wielded = 30
-	name = "bell ringer"
-	desc = ""
+	name = "звонарь"
+	desc = "Тяжёлая освящённая булава, которой служители церкви вбивают покаяние в грешников."
 	icon_state = "churchmace"
 	wbalance = -1
 	smeltresult = /obj/item/ingot/steel
@@ -39,8 +39,8 @@
 /obj/item/rogueweapon/mace/steel
 	force = 30
 	force_wielded = 40
-	name = "mace"
-	desc = ""
+	name = "стальная булава"
+	desc = "Массивная булава из закалённой стали, созданная для сокрушения латных доспехов."
 	icon_state = "smace"
 	wbalance = -1
 	smeltresult = /obj/item/ingot/steel
@@ -122,8 +122,8 @@
 /obj/item/rogueweapon/mace/woodclub
 	force = 15
 	force_wielded = 18
-	name = "club"
-	desc = ""
+	name = "дубинка"
+	desc = "Увесистый суковатый кусок дерева. Просто и действенно."
 	icon_state = "club1"
 	//dropshrink = 0.75
 	wbalance = 0
@@ -149,9 +149,9 @@
 /obj/item/rogueweapon/mace/cudgel
 	force = 25
 	force_wielded = 25
-	name = "cudgel"
+	name = "короткая дубинка"
 	icon_state = "cudgel"
-	desc = "A stubby little club for brigands."
+	desc = "Короткая увесистая дубинка, излюбленное оружие разбойников."
 	gripped_intents = null
 	smeltresult = /obj/item/ash
 	wlength = WLENGTH_SHORT
@@ -172,8 +172,8 @@
 /obj/item/rogueweapon/mace/wsword
 	force = 5
 	force_wielded = 8
-	name = "wooden sword"
-	desc = ""
+	name = "деревянный меч"
+	desc = "Тренировочный деревянный меч для безопасной отработки фехтовальных навыков."
 	icon_state = "wsword"
 	//dropshrink = 0.75
 	possible_item_intents = list(/datum/intent/mace/strike/wood)
@@ -242,8 +242,8 @@
 	force_wielded = 30
 	possible_item_intents = list(/datum/intent/mace/strike)
 	gripped_intents = list(/datum/intent/mace/strike, /datum/intent/mace/smash, /datum/intent/dagger/thrust)
-	name = "warclub"
-	desc = "Good morning."
+	name = "годендаг"
+	desc = "Тяжёлая шипастая палица. «Доброе утро»."
 	icon_state = "goedendag"
 	icon = 'icons/roguetown/weapons/64.dmi'
 	sharpness = IS_BLUNT
@@ -276,15 +276,19 @@
 				return list("shrink" = 0.3,"sx" = -2,"sy" = -5,"nx" = 4,"ny" = -5,"wx" = 0,"wy" = -5,"ex" = 2,"ey" = -5,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 0,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 0,"southabove" = 1,"eastabove" = 1,"westabove" = 0)
 
 /obj/item/rogueweapon/mace/goden/steel
-	name = "grand mace"
-	desc = "Good morning, sire."
+	name = "двуручная булава"
+	desc = "«Доброе утро, милорд». Массивная стальная палица на длинной рукояти."
 	icon_state = "polemace"
 	force = 15
 	force_wielded = 35
 
 /obj/item/rogueweapon/mace/spiked
+	name = "шипастая дубинка"
+	desc = "Деревянная дубинка, утыканная острыми железными гвоздями."
 	icon_state = "spiked_club"
 
 /obj/item/rogueweapon/mace/steel/morningstar
+	name = "моргенштерн"
+	desc = "Стальное шарообразное навершие с длинными шипами на прочной рукояти."
 	icon_state = "morningstar"
 

@@ -2,8 +2,8 @@
 	force = 21
 	possible_item_intents = list(/datum/intent/mace/strike/shovel, /datum/intent/shovelscoop)
 	gripped_intents = list(/datum/intent/mace/strike/shovel, /datum/intent/shovelscoop, /datum/intent/axe/chop/stone)
-	name = "shovel"
-	desc = ""
+	name = "лопата"
+	desc = "Штыковая лопата для копания земли и могил."
 	icon_state = "shovel"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
@@ -35,7 +35,7 @@
 	hitsound = list('sound/combat/hits/blunt/shovel_hit.ogg', 'sound/combat/hits/blunt/shovel_hit2.ogg', 'sound/combat/hits/blunt/shovel_hit3.ogg')
 
 /datum/intent/shovelscoop
-	name = "scoop"
+	name = "зачерпнуть"
 	icon_state = "inscoop"
 	chargetime = 0
 	noaa = TRUE
@@ -92,7 +92,7 @@
 			update_icon()
 			return
 		if(istype(T, /turf/open/floor/rogue/grass))
-			to_chat(user, "<span class='warning'>There is grass in the way.</span>")
+			to_chat(user, "<span class='warning'>Трава мешает копать.</span>")
 			return
 		return
 	. = ..()
@@ -151,7 +151,8 @@
 
 /obj/item/rogueweapon/shovel/small
 	force = 7
-	name = "spade"
+	name = "заступ"
+	desc = "Небольшая сапёрная лопатка для земляных работ."
 	icon_state = "spade"
 	sharpness = IS_BLUNT
 	//dropshrink = 0.8
@@ -162,8 +163,8 @@
 	max_blade_int = 0
 
 /obj/item/burial_shroud
-	name = "winding sheet"
-	desc = ""
+	name = "саван"
+	desc = "Полотняный погребальный саван для усопших."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "shroud_folded"
 	w_class = WEIGHT_CLASS_SMALL
@@ -188,8 +189,8 @@
 
 
 /obj/structure/closet/burial_shroud
-	name = "winding sheet"
-	desc = ""
+	name = "саван"
+	desc = "Полотняный погребальный саван для усопших."
 	icon = 'icons/obj/bodybag.dmi'
 	icon_state = "shroud"
 	density = FALSE
@@ -232,9 +233,9 @@
 		if(!ishuman(usr))
 			return
 		if(contents.len)
-			to_chat(usr, "<span class='warning'>There are too many things inside of [src] to fold it up!</span>")
+			to_chat(usr, "<span class='warning'>Внутри [src] слишком много вещей, чтобы свернуть его!</span>")
 			return
-		visible_message("<span class='notice'>[usr] folds up [src].</span>")
+		visible_message("<span class='notice'>[usr] сворачивает [src].</span>")
 		var/obj/item/bodybag/B = foldedbag_instance || new foldedbag_path
 		usr.put_in_hands(B)
 		qdel(src)

@@ -1,8 +1,8 @@
 //Fluff structures serve no purpose and exist only for enriching the environment. They can be destroyed with a wrench.
 
 /obj/structure/well
-	name = "well"
-	desc = ""
+	name = "колодец"
+	desc = "Каменный колодец с чистой грунтовой водой."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "well"
 	anchored = TRUE
@@ -14,8 +14,8 @@
 	damage_deflection = 30
 
 /obj/structure/well/fountain
-	name = "water fountain"
-	desc = ""
+	name = "фонтан"
+	desc = "Декоративный каменный фонтан с журчащей водой."
 	icon = 'icons/roguetown/misc/64x64.dmi'
 	icon_state = "fountain"
 	layer = BELOW_MOB_LAYER
@@ -25,11 +25,11 @@
 	if(istype(I, /obj/item/reagent_containers/glass/bucket/wooden))
 		var/obj/item/reagent_containers/glass/bucket/wooden/W = I
 		if(W.reagents.holder_full())
-			to_chat(user, "<span class='warning'>[W] is full.</span>")
+			to_chat(user, "<span class='warning'>[W] полон.</span>")
 			return
 		if(do_after(user, 60, target = src))
 			var/list/waterl = list(/datum/reagent/water = 100)
 			W.reagents.add_reagent_list(waterl)
-			to_chat(user, "<span class='notice'>I fill [W] from [src].</span>")
+			to_chat(user, "<span class='notice'>Я наполняю [W] из [src].</span>")
 			return
 	else ..()

@@ -1,9 +1,9 @@
 /obj/item/clothing/cloak
-	name = "cloak"
+	name = "плащ"
 	icon = 'icons/roguetown/clothing/cloaks.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/cloaks.dmi'
 	slot_flags = ITEM_SLOT_CLOAK
-	desc = ""
+	desc = "Тканевый плащ, защищающий от непогоды."
 	edelay_type = 1
 	equip_delay_self = 10
 	bloody_icon_state = "bodyblood"
@@ -14,8 +14,8 @@
 ////////////////////////
 
 /obj/item/clothing/cloak/tabard
-	name = "tabard"
-	desc = ""
+	name = "табард"
+	desc = "Геральдическая накидка без рукавов."
 	color = null
 	icon_state = "tabard"
 	item_state = "tabard"
@@ -162,7 +162,8 @@
 ////////////////////////
 
 /obj/item/clothing/cloak/stabard
-	name = "surcoat"
+	name = "сюрко"
+	desc = "Рыцарская накидка, надеваемая поверх доспеха."
 	icon_state = "stabard"
 	alternate_worn_layer = TABARD_LAYER
 	body_parts_covered = CHEST|GROIN
@@ -210,7 +211,7 @@
 		L.update_inv_cloak()
 
 /obj/item/clothing/cloak/stabard/guard
-	desc = "A tabard with the lord's heraldic colors."
+	desc = "Табард с геральдическими цветами лорда."
 	color = CLOTHING_RED
 	detail_tag = "_spl"
 	detail_color = CLOTHING_PURPLE
@@ -291,7 +292,8 @@
 ////////////////////////
 
 /obj/item/clothing/cloak/stabard/surcoat
-	name = "jupon"
+	name = "жюпон"
+	desc = "Короткий сюрко, плотно облегающий доспех."
 	icon_state = "surcoat"
 
 /obj/item/clothing/cloak/stabard/surcoat/attack_right(mob/user)
@@ -339,7 +341,7 @@
 		add_overlay(pic)
 
 /obj/item/clothing/cloak/stabard/surcoat/guard
-	desc = "A surcoat with the lord's heraldic colors."
+	desc = "Сюрко с геральдическими цветами лорда."
 	color = CLOTHING_RED
 	detail_tag = "_quad"
 	detail_color = CLOTHING_PURPLE
@@ -389,8 +391,8 @@
 	return ..()
 
 /obj/item/clothing/cloak/lordcloak
-	name = "lordly cloak"
-	desc = "Ermine trimmed, handed down."
+	name = "господский плащ"
+	desc = "Роскошный плащ, подбитый горностаем. Передается по наследству."
 	color = null
 	icon_state = "lord_cloak"
 	item_state = "lord_cloak"
@@ -452,8 +454,8 @@
 			STR.remove_from_storage(I, get_turf(src))
 
 /obj/item/clothing/cloak/apron
-	name = "apron"
-	desc = ""
+	name = "фартук"
+	desc = "Прочный фартук для работы."
 	color = null
 	icon_state = "apron"
 	item_state = "apron"
@@ -465,8 +467,8 @@
 	color = CLOTHING_BROWN
 
 /obj/item/clothing/cloak/apron/waist
-	name = "apron"
-	desc = ""
+	name = "фартук"
+	desc = "Короткий поясной фартук."
 	color = null
 	icon_state = "waistpron"
 	item_state = "waistpron"
@@ -481,8 +483,8 @@
 
 
 /obj/item/clothing/cloak/apron/cook
-	name = "cook apron"
-	desc = ""
+	name = "фартук повара"
+	desc = "Белый кухонный фартук."
 	color = null
 	icon_state = "aproncook"
 	item_state = "aproncook"
@@ -503,8 +505,8 @@
 	return TRUE*/
 
 /obj/item/clothing/cloak/raincloak
-	name = "cloak"
-	desc = ""
+	name = "плащ"
+	desc = "Плотный плащ для защиты от дождя и ветра."
 	color = null
 	icon_state = "rain_cloak"
 	item_state = "rain_cloak"
@@ -559,8 +561,8 @@
 	color = CLOTHING_BLUE
 
 /obj/item/clothing/head/hooded/rainhood
-	name = "hood"
-	desc = ""
+	name = "капюшон"
+	desc = "Глубокий капюшон от непогоды."
 	icon_state = "rain_hood"
 	item_state = "rain_hood"
 	slot_flags = ITEM_SLOT_HEAD
@@ -579,7 +581,8 @@
 	user.update_fov_angles()
 
 /obj/item/clothing/cloak/raincloak/furcloak
-	name = "fur cloak"
+	name = "меховой плащ"
+	desc = "Теплый плащ из пушистого меха."
 	icon_state = "furgrey"
 	inhand_mod = FALSE
 	hoodtype = /obj/item/clothing/head/hooded/rainhood/furhood
@@ -600,8 +603,8 @@
 	block2add = FOV_BEHIND
 
 /obj/item/clothing/cloak/cape
-	name = "cape"
-	desc = ""
+	name = "накидка"
+	desc = "Короткая накидка на плечи."
 	color = null
 	icon_state = "cape"
 	item_state = "cape"
@@ -645,24 +648,27 @@
 	allowed_race = list("human", "tiefling", "elf", "dwarf", "aasimar")
 
 /obj/item/clothing/cloak/cape/rogue
-	name = "cape"
+	name = "накидка"
+	desc = "Короткая накидка на плечи."
 	icon_state = "roguecape"
 	item_state = "roguecape"
 
 /obj/item/clothing/cloak/cape/hood
-	name = "hooded cape"
+	name = "накидка с капюшоном"
+	desc = "Накидка с пришитым капюшоном."
 	icon_state = "hoodcape"
 	item_state = "hoodcape"
 
 /obj/item/clothing/cloak/cape/fur
-	name = "fur cape"
+	name = "меховая накидка"
+	desc = "Теплая накидка из меха."
 	icon_state = "furcape"
 	item_state = "furcape"
 	inhand_mod = TRUE
 
 /obj/item/clothing/cloak/chasuble
-	name = "chasuble"
-	desc = ""
+	name = "казула"
+	desc = "Литургическое облачение священнослужителя."
 	icon_state = "chasuble"
 	body_parts_covered = CHEST|GROIN|ARMS
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -674,8 +680,8 @@
 
 
 /obj/item/clothing/cloak/stole
-	name = "stole"
-	desc = ""
+	name = "стола"
+	desc = "Шелковая лента, элемент церковного облачения."
 	icon_state = "stole_gold"
 	sleeved = null
 	sleevetype = null
@@ -688,8 +694,8 @@
 	icon_state = "stole_purple"
 
 /obj/item/clothing/cloak/black_cloak
-	name = "fur coat"
-	desc = ""
+	name = "шуба"
+	desc = "Богатая теплая шуба из темного меха."
 	icon_state = "black_cloak"
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -701,8 +707,8 @@
 	nodismemsleeves = TRUE
 
 /obj/item/clothing/cloak/heartfelt
-	name = "red cloak"
-	desc = ""
+	name = "красный плащ"
+	desc = "Благородный красный плащ."
 	icon_state = "heartfelt_cloak"
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	sleeved = 'icons/roguetown/clothing/onmob/cloaks.dmi'
@@ -714,8 +720,8 @@
 	nodismemsleeves = TRUE
 
 /obj/item/clothing/cloak/half
-	name = "halfcloak"
-	desc = ""
+	name = "полуплащ"
+	desc = "Короткий плащ на одно плечо."
 	color = null
 	icon_state = "halfcloak"
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
@@ -739,7 +745,8 @@
 	color = CLOTHING_RED
 
 /obj/item/clothing/cloak/half/vet
-	name = "town watch cloak"
+	name = "плащ городской стражи"
+	desc = "Уставной плащ стражника."
 	icon_state = "guardcloak"
 	color = CLOTHING_RED
 	allowed_sex = list(MALE)
@@ -759,41 +766,46 @@
 
 // Dumping old black knight stuff here
 /obj/item/clothing/cloak/cape/blkknight
-	name = "blood cape"
+	name = "кровавая накидка"
+	desc = "Зловещая накидка цвета запекшейся крови."
 	icon_state = "bkcape"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/head/roguetown/helmet/heavy/blkknight
-	name = "blacksteel helmet"
+	name = "шлем из темной стали"
+	desc = "Устрашающий шлем из черненой стали."
 	icon_state = "bkhelm"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/cloak/tabard/blkknight
-	name = "blood sash"
+	name = "кровавый кушак"
+	desc = "Широкий пояс-кушак темного багрового оттенка."
 	icon_state = "bksash"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/under/roguetown/platelegs/blk
-	name = "blacksteel legs"
+	name = "поножи из темной стали"
+	desc = "Тяжелые стальные поножи черного цвета."
 	icon_state = "bklegs"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/gloves/roguetown/plate/blk
-	name = "blacksteel gaunties"
+	name = "рукавицы из темной стали"
+	desc = "Латные рукавицы из черненого металла."
 	icon_state = "bkgloves"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/neck/roguetown/blkknight
-	name = "dragonscale necklace"
-	desc = ""
+	name = "ожерелье из чешуи дракона"
+	desc = "Ожерелье с чешуей дракона."
 	icon_state = "bktrinket"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
@@ -804,7 +816,8 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/blkknight
 	slot_flags = ITEM_SLOT_ARMOR
-	name = "blacksteel plate"
+	name = "латы из темной стали"
+	desc = "Массивный доспех из черненой стали."
 	body_parts_covered = CHEST|GROIN|VITALS|ARMS
 	r_sleeve_status = SLEEVE_NOMOD
 	l_sleeve_status = SLEEVE_NOMOD
@@ -814,7 +827,8 @@
 	sleeved = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'
 
 /obj/item/clothing/shoes/roguetown/boots/armor/blkknight
-	name = "blacksteel boots"
+	name = "сапоги из темной стали"
+	desc = "Тяжелые сапоги из темной стали."
 	icon_state = "bkboots"
 	icon = 'icons/roguetown/clothing/special/blkknight.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/blkknight.dmi'

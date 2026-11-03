@@ -1,5 +1,6 @@
 /obj/item/reagent_containers/glass/cup
-	name = "metal cup"
+	name = "металлическая кружка"
+	desc = "Простая кружка из металла."
 	icon_state = "iron"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	force = 5
@@ -28,18 +29,21 @@
 		add_overlay(filling)
 
 /obj/item/reagent_containers/glass/cup/wooden
-	name = "wooden cup"
+	name = "деревянная кружка"
+	desc = "Простая кружка, выточенная из дерева."
 	resistance_flags = FLAMMABLE
 	icon_state = "wooden"
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 
 /obj/item/reagent_containers/glass/cup/steel
-	name = "goblet"
+	name = "кубок"
+	desc = "Искусно выкованный стальной кубок."
 	icon_state = "steel"
 	sellprice = 10
 
 /obj/item/reagent_containers/glass/cup/silver
-	name = "silver goblet"
+	name = "серебряный кубок"
+	desc = "Кубок из чистого серебра, смертоносный для нечисти."
 	icon_state = "silver"
 	sellprice = 30
 
@@ -68,10 +72,12 @@
 		return FALSE
 
 /obj/item/reagent_containers/glass/cup/golden
-	name = "golden goblet"
+	name = "золотой кубок"
+	desc = "Роскошный кубок из червонного золота."
 	icon_state = "golden"
 	sellprice = 50
 
 /obj/item/reagent_containers/glass/cup/skull
-	name = "skull goblet"
+	name = "кубок из черепа"
+	desc = "Жуткий кубок, искусно вырезанный из человеческого черепа."
 	icon_state = "skull"

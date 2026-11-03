@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/rogue/haunt
-	name = "haunt"
-	desc = ""
+	name = "призрак"
+	desc = "Бестелесный дух, охваченный злобой и жаждущий тепла живых."
 	icon = 'icons/roguetown/mob/monster/wraith.dmi'
 	icon_state = "haunt"
 	icon_living = "haunt"
@@ -13,8 +13,8 @@
 	gender = MALE
 	speak_chance = 0
 	turns_per_move = 5
-	response_help_continuous = "passes through"
-	response_help_simple = "pass through"
+	response_help_continuous = "проходит сквозь"
+	response_help_simple = "пройти сквозь"
 	maxHealth = 50
 	health = 50
 	layer = 16
@@ -33,7 +33,7 @@
 	dodge_sound = 'sound/combat/dodge.ogg'
 	parry_sound = "bladedmedium"
 	d_intent = INTENT_PARRY
-	speak_emote = list("growls")
+	speak_emote = list("рычит")
 	limb_destroyer = 1
 	del_on_death = TRUE
 	STALUC = 11
@@ -100,6 +100,8 @@
 	return ..()
 
 /obj/structure/bonepile
+	name = "груда костей"
+	desc = "Зловещая куча костей и черепов. От неё веет могильным холодом."
 	icon = 'icons/roguetown/mob/monster/wraith.dmi'
 	icon_state = "hauntpile"
 	max_integrity = 100
@@ -217,8 +219,8 @@
 	if(. && prob(8) && iscarbon(target))
 		var/mob/living/carbon/C = target
 		C.Immobilize(50)
-		C.visible_message("<span class='danger'>\The [src] paralyzes \the [C] in fear!</span>", \
-				"<span class='danger'>\The [src] paralyzes me!</span>")
+		C.visible_message("<span class='danger'>[src] парализует [C] от страха!</span>", \
+				"<span class='danger'>[src] парализует меня от страха!</span>")
 		emote("laugh")
 
 /datum/intent/simple/slash

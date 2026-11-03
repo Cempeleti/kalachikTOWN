@@ -6,7 +6,8 @@
 	slot_flags = ITEM_SLOT_MASK
 
 /obj/item/clothing/mask/rogue/spectacles
-	name = "spectacles"
+	name = "очки"
+	desc = "Простые очки с круглыми линзами."
 	icon_state = "glasses"
 	break_sound = "glassbreak"
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
@@ -17,7 +18,8 @@
 //	block2add = FOV_BEHIND
 
 /obj/item/clothing/mask/rogue/spectacles/golden
-	name = "golden spectacles"
+	name = "золотые очки"
+	desc = "Очки в тонкой золотой оправе."
 	icon_state = "goggles"
 	break_sound = "glassbreak"
 	attacked_sound = 'sound/combat/hits/onglass/glasshit.ogg'
@@ -44,21 +46,21 @@
 	user.update_fov_angles()
 
 /obj/item/clothing/mask/rogue/eyepatch
-	name = "eyepatch"
-	desc = "An eyepatch, fitted for the right eye."
+	name = "повязка на глаз"
+	desc = "Кожаная повязка на правый глаз."
 	icon_state = "eyepatch"
 	max_integrity = 20
 	integrity_failure = 0.5
 	block2add = FOV_RIGHT
 
 /obj/item/clothing/mask/rogue/eyepatch/left
-	desc = "An eyepatch, fitted for the left eye."
+	desc = "Кожаная повязка на левый глаз."
 	icon_state = "eyepatch_l"
 	block2add = FOV_LEFT
 
 /obj/item/clothing/mask/rogue/lordmask
-	name = "golden halfmask"
-	desc = "Half of your face turned gold."
+	name = "золотая полумаска"
+	desc = "Золотая полумаска, скрывающая половину лица."
 	icon_state = "lmask"
 	sellprice = 50
 
@@ -66,7 +68,8 @@
 	icon_state = "lmask_l"
 
 /obj/item/clothing/mask/rogue/facemask
-	name = "iron mask"
+	name = "железная маска"
+	desc = "Тяжелая железная маска, скрывающая лицо."
 	icon_state = "imask"
 	max_integrity = 100
 	blocksound = PLATEHIT
@@ -84,7 +87,8 @@
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/Initialize()
 	. = ..()
-	name = "cursed mask"
+	name = "проклятая маска"
+	desc = "Ужасающая маска, которую невозможно снять по своей воле."
 	ADD_TRAIT(src, TRAIT_NODROP, CURSED_ITEM_TRAIT)
 
 /obj/item/clothing/mask/rogue/facemask/prisoner/dropped(mob/living/carbon/human/user)
@@ -94,12 +98,14 @@
 	qdel(src)
 
 /obj/item/clothing/mask/rogue/facemask/steel
-	name = "steel mask"
+	name = "стальная маска"
+	desc = "Маска из прочной стали."
 	icon_state = "smask"
 	max_integrity = 200
 
 /obj/item/clothing/mask/rogue/shepherd
-	name = "halfmask"
+	name = "полумаска"
+	desc = "Тканевая полумаска, закрывающая нижнюю часть лица."
 	icon_state = "shepherd"
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	body_parts_covered = NECK|MOUTH

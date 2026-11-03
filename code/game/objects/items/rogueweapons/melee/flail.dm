@@ -1,8 +1,8 @@
 /obj/item/rogueweapon/flail
 	force = 12
 	possible_item_intents = list(/datum/intent/flail/strike, /datum/intent/flail/strike/smash)
-	name = "flail"
-	desc = ""
+	name = "цеп"
+	desc = "Железное грузило на цепи, прикреплённой к рукояти. Легко огибает щиты."
 	icon_state = "iflail"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	sharpness = IS_BLUNT
@@ -52,6 +52,8 @@
 
 
 /obj/item/rogueweapon/flail/sflail
+	name = "стальной цеп"
+	desc = "Тяжёлый боевой цеп из стали со шипастым грузилом."
 	force = 40
 	icon_state = "flail"
 	smeltresult = /obj/item/ingot/steel

@@ -7,7 +7,8 @@
 // multiple stair objects can be chained together; the Z level transition will happen on the final stair object in the chain
 
 /obj/structure/stairs
-	name = "stairs"
+	name = "лестница"
+	desc = "Деревянные ступени, ведущие на другой ярус."
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stairs"
 	anchored = TRUE
@@ -16,7 +17,8 @@
 	nomouseover = TRUE
 
 /obj/structure/stairs/stone
-	name = "stone stairs"
+	name = "каменная лестница"
+	desc = "Прочные каменные ступени, ведущие на другой ярус."
 	icon = 'icons/obj/stairs.dmi'
 	icon_state = "stonestairs"
 
@@ -24,6 +26,8 @@
 	//RTD animate climbing offset so this can be here
 
 /obj/structure/stairs/fancy
+	name = "богатая лестница"
+	desc = "Изысканная лестница с ковровым покрытием."
 	icon_state = "fancy_stairs"
 
 /obj/structure/stairs/fancy/c

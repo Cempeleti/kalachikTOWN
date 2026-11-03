@@ -3,8 +3,8 @@
 	force_wielded = 20
 	possible_item_intents = list(/datum/intent/lordbash, /datum/intent/lordpoint)
 	gripped_intents = list(/datum/intent/lordbash)
-	name = "master's rod"
-	desc = "Bend the knee."
+	name = "скипетр господина"
+	desc = "Склони колени."
 	icon_state = "scepter"
 	icon = 'icons/roguetown/weapons/32.dmi'
 	sharpness = IS_BLUNT
@@ -65,9 +65,9 @@
 /obj/item/rogueweapon/mace/stunmace
 	force = 15
 	force_wielded = 15
-	name = "stunmace"
+	name = "шоковая булава"
 	icon_state = "stunmace0"
-	desc = "Pain is our currency here."
+	desc = "Боль — вот наша здешняя валюта."
 	gripped_intents = null
 	w_class = WEIGHT_CLASS_NORMAL
 	possible_item_intents = list(/datum/intent/mace/strike/stunner, /datum/intent/mace/smash/stunner)

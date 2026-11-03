@@ -52,8 +52,8 @@
 	warnie = "shieldwarn"
 
 /obj/item/rogueweapon/shield/wood
-	name = "wooden shield"
-	desc = ""
+	name = "деревянный щит"
+	desc = "Простой деревянный щит, укреплённый металлическим кантом."
 	icon_state = "woodsh"
 	dropshrink = 0.8
 	wdefense = 15
@@ -85,8 +85,8 @@
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 /obj/item/rogueweapon/shield/tower
-	name = "tower shield"
-	desc = ""
+	name = "ростовой щит"
+	desc = "Массивный деревянный щит в человеческий рост, обеспечивающий отличную защиту от стрел и ударов."
 	icon_state = "shield_tower"
 	force = 15
 	throwforce = 10
@@ -109,8 +109,8 @@
 				return list("shrink" = 0.6,"sx" = 1,"sy" = 4,"nx" = 1,"ny" = 2,"wx" = 3,"wy" = 3,"ex" = 0,"ey" = 2,"nturn" = 0,"sturn" = 0,"wturn" = 0,"eturn" = 0,"nflip" = 8,"sflip" = 0,"wflip" = 0,"eflip" = 0,"northabove" = 1,"southabove" = 0,"eastabove" = 0,"westabove" = 0)
 
 /obj/item/rogueweapon/shield/tower/metal
-	name = "kite shield"
-	desc = ""
+	name = "каплевидный щит"
+	desc = "Надёжный железный щит каплевидной формы, закрывающий тело и ноги."
 	icon_state = "ironsh"
 	force = 20
 	throwforce = 10

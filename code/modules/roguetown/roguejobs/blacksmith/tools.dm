@@ -2,8 +2,8 @@
 /obj/item/rogueweapon/hammer
 	force = 21
 	possible_item_intents = list(/datum/intent/mace/strike,/datum/intent/mace/smash)
-	name = "hammer"
-	desc = ""
+	name = "кузнечный молот"
+	desc = "Тяжёлый кузнечный молот для ковки и ремонта снаряжения на наковальне."
 	icon_state = "hammer"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT
@@ -48,9 +48,9 @@
 			if(repair_percent)
 				repair_percent = repair_percent * I.max_integrity
 				I.obj_integrity = min(obj_integrity+repair_percent, I.max_integrity)
-				user.visible_message("<span class='info'>[user] repairs [I]!</span>")
+				user.visible_message("<span class='info'>[user] чинит [I]!</span>")
 			else
-				user.visible_message("<span class='warning'>[user] damages [I]!</span>")
+				user.visible_message("<span class='warning'>[user] повреждает [I]!</span>")
 				I.take_damage(5, BRUTE, "melee")
 			return
 	if(isstructure(O))
@@ -59,17 +59,19 @@
 			var/repair_percent = 0.05
 			if(user.mind)
 				if(user.mind.get_skill_level(I.hammer_repair) <= 0)
-					to_chat(user, "<span class='warning'>I don't know how to repair this..</span>")
+					to_chat(user, "<span class='warning'>Я не знаю, как это починить...</span>")
 					return
 				repair_percent = max(user.mind.get_skill_level(I.hammer_repair) * 0.05, 0.05)
 			repair_percent = repair_percent * I.max_integrity
 			I.obj_integrity = min(obj_integrity+repair_percent, I.max_integrity)
 			playsound(src,'sound/items/bsmithfail.ogg', 100, FALSE)
-			user.visible_message("<span class='info'>[user] repairs [I]!</span>")
+			user.visible_message("<span class='info'>[user] чинит [I]!</span>")
 			return
 	..()
 
 /obj/item/rogueweapon/hammer/claw
+	name = "молоток с гвоздодёром"
+	desc = "Столярный молоток с раздвоенным затыльником."
 	icon_state = "clawh"
 
 /*
@@ -124,8 +126,8 @@
 /obj/item/rogueweapon/tongs
 	force = 10
 	possible_item_intents = list(/datum/intent/mace/strike)
-	name = "tongs"
-	desc = ""
+	name = "кузнечные клещи"
+	desc = "Длинные клещи для удержания раскалённых слитков."
 	icon_state = "tongs"
 	icon = 'icons/roguetown/weapons/tools.dmi'
 	sharpness = IS_BLUNT

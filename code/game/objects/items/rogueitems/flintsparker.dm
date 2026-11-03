@@ -1,7 +1,7 @@
 /obj/item/flint
-	name = "flint"
+	name = "кремень"
 	icon_state = "flint"
-	desc = ""
+	desc = "Кусок твёрдого кремня для высекания искр."
 	gripped_intents = null
 	//dropshrink = 0.75
 	force = 0

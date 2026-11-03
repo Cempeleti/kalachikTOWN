@@ -2,8 +2,8 @@
 	force = 20
 	throwforce = 15
 	possible_item_intents = list(/datum/intent/mace/strike/shovel)
-	name = "pan"
-	desc = ""
+	name = "сковорода"
+	desc = "Тяжёлая чугунная сковорода для жарки пищи."
 	icon_state = "pan"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	lefthand_file = 'icons/mob/inhands/items_lefthand.dmi'

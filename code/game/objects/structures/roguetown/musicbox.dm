@@ -22,8 +22,8 @@
 	return 1
 
 /obj/structure/roguemachine/musicbox
-	name = "wax music device"
-	desc = "A marvelous device invented to record sermons. By feeding it the right kind of insects, it now brings us strange music from another realm."
+	name = "восковой проигрыватель"
+	desc = "Удивительное устройство, изобретённое для записи проповедей. Если скормить ему правильных насекомых, оно воспроизводит странную музыку из иного мира."
 	icon = 'icons/roguetown/misc/machines.dmi'
 	icon_state = "music0"
 	density = FALSE
@@ -52,7 +52,7 @@
 	if(playing)
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
-	var/selection = input(user, "Select a song.", "Wax Device") as null|anything in music_tracks
+	var/selection = input(user, "Выберите мелодию.", "Восковой проигрыватель") as null|anything in music_tracks
 	if(!selection)
 		return
 	if(!Adjacent(user))

@@ -1,8 +1,8 @@
 
 /obj/item/rogue/painting
-	name = "painting"
+	name = "картина"
 	icon_state = "painting"
-	desc = ""
+	desc = "Картина в раме, которую можно повесить на стену."
 	w_class = WEIGHT_CLASS_NORMAL
 	static_price = TRUE
 	sellprice = 20
@@ -12,7 +12,7 @@
 /obj/item/rogue/painting/attack_turf(turf/T, mob/living/user)
 	if(isclosedturf(T))
 		if(get_dir(T,user) in GLOB.cardinals)
-			to_chat(user, "<span class='warning'>I place [src] on the wall.</span>")
+			to_chat(user, "<span class='warning'>Я вешаю [src] на стену.</span>")
 			var/obj/structure/S = new deployed_structure(user.loc)
 			switch(get_dir(T,user))
 				if(NORTH)
@@ -28,8 +28,8 @@
 	..()
 
 /obj/structure/fluff/walldeco/painting
-	name = "painting"
-	desc = "The artist is unknown. The subject is unknown. Maybe a memorial to a corpse that was trampled on the trail to this reality."
+	name = "картина"
+	desc = "Художник неизвестен. Изображённое на ней неизвестно. Быть может, памятник погибшему страннику, павшему на тропе в эту реальность."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "painting_deployed"
 	anchored = TRUE
@@ -47,25 +47,25 @@
 	..()
 
 /obj/structure/fluff/walldeco/painting/queen
-	desc = "It's Queen Samantha I of Enigma. Her late husband would be so proud of what she has accomplished in his realm."
+	desc = "Это королева Саманта I из Энигмы. Её покойный муж гордился бы тем, чего она достигла в его владениях."
 	icon_state = "queenpainting_deployed"
 	stolen_painting = /obj/item/rogue/painting/queen
 
 /obj/item/rogue/painting/queen
 	icon_state = "queenpainting"
-	desc = "It's Queen Samantha I of Psydonia. Her late husband would be so proud of what she has accomplished in his realm. These mass-reproduced paintings are unfortunately devalued."
+	desc = "Это королева Саманта I из Псидонии. Её покойный муж гордился бы тем, чего она достигла в его владениях. Увы, массовые репродукции сильно обесценились."
 	dropshrink = 0.5
 	sellprice = 40
 	deployed_structure = /obj/structure/fluff/walldeco/painting/queen
 
 /obj/item/rogue/painting/seraphina
 	icon_state = "Seraphinapainting"
-	desc = "It's holy priest Seraphina, first of her name, blessed be her name."
+	desc = "Священная жрица Серафина, первая с этим именем, да пребудет благословенно имя её."
 	dropshrink = 0.5
 	sellprice = 40
 	deployed_structure = /obj/structure/fluff/walldeco/painting/seraphina
 
 /obj/structure/fluff/walldeco/painting/seraphina
-	desc = "It's holy priest Seraphina, first of her name, blessed be her name."
+	desc = "Священная жрица Серафина, первая с этим именем, да пребудет благословенно имя её."
 	icon_state = "seraphinapainting_deployed"
 	stolen_painting = /obj/item/rogue/painting/seraphina

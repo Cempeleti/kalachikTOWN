@@ -2,7 +2,8 @@
 	icon = 'icons/roguetown/items/food.dmi'
 	eat_effect = /datum/status_effect/debuff/uncookedfood
 	list_reagents = list(/datum/reagent/consumable/nutriment = 5)
-	name = "meat"
+	name = "сырое мясо"
+	desc = "Кусок свежего сырого мяса."
 	icon_state = "meatslab"
 	slice_batch = FALSE
 	filling_color = "#8f433a"
@@ -10,7 +11,8 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak
 	ingredient_size = 2
-	name = "steak"
+	name = "стейк"
+	desc = "Свежесрезанный сырой мясной стейк."
 	icon_state = "meatcutlet"
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
@@ -20,13 +22,14 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/steak/fried
 	eat_effect = null
 	slices_num = 0
-	name = "frysteak"
+	name = "жареный стейк"
+	desc = "Аппетитный поджаристый стейк."
 	icon_state = "friedsteak"
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 15)
-	desc = ""
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince
-	name = "mince"
+	name = "фарш"
+	desc = "Рубленое мясо."
 	icon_state = "meatmince"
 	ingredient_size = 2
 	slice_path = null
@@ -34,7 +37,8 @@
 	filling_color = "#8a0000"
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/beef
-	name = "mince"
+	name = "говяжий фарш"
+	desc = "Свежий говяжий фарш."
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/fatty //pork
 	slices_num = 4
@@ -42,8 +46,8 @@
 
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon
-	name = "bacon"
-	desc = ""
+	name = "грудинка"
+	desc = "Ломтики сырой свиной грудинки."
 	icon_state = "bacon"
 	slice_path = null
 	slices_num = 0
@@ -54,18 +58,20 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/bacon/fried
 	eat_effect = null
 	slices_num = 0
-	name = "fried bacon"
+	name = "жареная грудинка"
+	desc = "Хрустящая поджаренная грудинка."
 	icon_state = "friedbacon"
-	desc = ""
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/spider
+	name = "паучье мясо"
+	desc = "Кусок мяса гигантского паука со странным запахом."
 	icon_state = "spidermeat"
 	slices_num = 0
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry
-	name = "bird meat"
-	desc = ""
+	name = "птица"
+	desc = "Сырая разделанная тушка птицы."
 	icon_state = "halfchicken"
 	slice_path = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
 	cooked_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
@@ -76,13 +82,15 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/baked
 	eat_effect = null
 	slices_num = 0
-	name = "roast bird"
+	name = "запечённая птица"
+	desc = "Румяная запечённая птица с золотистой корочкой."
 	icon_state = "roastchicken"
 	cooked_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 20)
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet
-	name = "bird meat"
+	name = "филе птицы"
+	desc = "Нежное сырое филе птицы."
 	icon_state = "chickencutlet"
 	ingredient_size = 2
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
@@ -94,28 +102,29 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/poultry/cutlet/fried
 	eat_effect = null
 	slices_num = 0
-	name = "frybird"
+	name = "жареное филе птицы"
+	desc = "Вкусно обжаренное филе птицы."
 	icon_state = "friedchicken"
-	desc = ""
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/poultry
-	name = "mince"
-	desc = ""
+	name = "птичий фарш"
+	desc = "Фарш из мяса птицы."
 	slices_num = 0
 	icon_state = "meatmince"
 	cooked_type = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/mince/fish
-	name = "mince"
-	desc = ""
+	name = "рыбный фарш"
+	desc = "Мелко порубленный рыбный фарш."
 	slices_num = 0
 	icon_state = "meatmince"
 	cooked_type = null
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
-	name = "wiener"
+	name = "сырая колбаска"
+	desc = "Набитая мясом сырая колбаска."
 	icon_state = "rawsausage"
 	ingredient_size = 1
 	fried_type = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
@@ -126,17 +135,17 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/sausage/cooked
 	eat_effect = null
 	slices_num = 0
-	name = "sausage"
+	name = "жареная колбаска"
+	desc = "Сочная поджаренная колбаска."
 	icon_state = "sausage"
-	desc = ""
 	fried_type = null
 	bonus_reagents = list(/datum/reagent/consumable/nutriment = 5)
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami
 	eat_effect = null
-	name = "salumoi"
+	name = "салями"
+	desc = "Палка твёрдой сыровяленой салями."
 	icon_state = "salamistick5"
-	desc = ""
 	fried_type = null
 	slices_num = 5
 	bitesize = 5
@@ -168,9 +177,9 @@
 /obj/item/reagent_containers/food/snacks/rogue/meat/salami/slice
 	eat_effect = null
 	slices_num = 0
-	name = "salumoi"
+	name = "ломтик салями"
+	desc = "Тонко нарезанный ломтик салями."
 	icon_state = "salami_slice"
-	desc = ""
 	fried_type = null
 	list_reagents = list(/datum/reagent/consumable/nutriment = 2)
 	bitesize = 1
@@ -178,9 +187,9 @@
 
 /obj/item/reagent_containers/food/snacks/rogue/meat/coppiette
 	eat_effect = null
-	name = "coppiette"
+	name = "вяленые мясные палочки"
+	desc = "Пряные сушёные полоски мяса."
 	icon_state = "jerk5"
-	desc = "Dried meat sticks."
 	fried_type = null
 	slices_num = 0
 	bitesize = 5
@@ -203,9 +212,9 @@
 /obj/item/reagent_containers/food/snacks/rogue/saltfish
 	eat_effect = null
 	icon = 'icons/roguetown/misc/fish.dmi'
-	name = "saltfish"
+	name = "вяленая рыба"
 	icon_state = ""
-	desc = "Dried fish."
+	desc = "Засушенная солёная рыба."
 	fried_type = null
 	slices_num = 0
 	bitesize = 4

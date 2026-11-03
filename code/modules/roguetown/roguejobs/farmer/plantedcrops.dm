@@ -1,6 +1,6 @@
 
 /obj/machinery/crop
-	name = "tilled dirt"
+	name = "вспаханная земля"
 	desc = ""
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "blank"
@@ -28,15 +28,15 @@
 /obj/machinery/crop/examine(mob/user)
 	. = ..()
 	if(growth >= 100)
-		. += "<span class='notice'>[src] is ready for harvest!</span>"
+		. += "<span class='notice'>[src] готов к сбору урожая!</span>"
 	if(water < 25)
-		. += "<span class='info'>The ground is thirsty.</span>"
+		. += "<span class='info'>Земля хочет пить.</span>"
 	if(food < 25)
-		. += "<span class='info'>The ground is hungry.</span>"
+		. += "<span class='info'>Земле требуется удобрение.</span>"
 	if(weeds > 25)
-		. += "<span class='warning'>Weeds!</span>"
+		. += "<span class='warning'>Сорняки!</span>"
 	if(php < 25)
-		. += "<span class='warning'>Brown and dying...</span>"
+		. += "<span class='warning'>Увядает и гибнет...</span>"
 
 /obj/machinery/crop/process()
 	if(QDELETED(src))
@@ -106,7 +106,7 @@
 		if(php <= 0)
 			STOP_PROCESSING(SSmachines, src)
 			var/oldname = name
-			name = "dead [oldname]"
+			name = "погибший [oldname]"
 			needs_update = 1
 
 	if (needs_update)
@@ -156,13 +156,13 @@
 
 /obj/machinery/crop/attackby(obj/item/I, mob/user, params)
 	if(istype(I, /obj/item/seeds))
-		to_chat(user, "<span class='warning'>Something is already growing here.</span>")
+		to_chat(user, "<span class='warning'>Здесь уже что-то растёт.</span>")
 		return
 
 	if(istype(I, /obj/item/rogueweapon/sickle))
 		if(myseed)
 			if(php <= 0)
-				to_chat(user, "<span class='warning'>This crop has perished.</span>")
+				to_chat(user, "<span class='warning'>Этот урожай погиб.</span>")
 				return
 			if(growth >= 100)
 				for(var/i in 1 to myseed.yield)
@@ -175,7 +175,7 @@
 						new myseed.product(src.loc)
 						myseed.yield -= 1
 						playsound(src,"plantcross", 100, FALSE)
-						user.visible_message("<span class='notice'>[user] harvests [src] with [I].</span>")
+						user.visible_message("<span class='notice'>[user] собирает [src] с помощью [I].</span>")
 					else
 						break
 				if(myseed?.yield <= 0)
@@ -196,12 +196,12 @@
 			if(php <= 0)
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
 				new /obj/item/natural/fibers(src.loc)
-				user.visible_message("<span class='notice'>[user] rips out [src] with [I].</span>")
+				user.visible_message("<span class='notice'>[user] выдирает [src] с помощью [I].</span>")
 				qdel(src)
 				return
 			else if(weeds > 0)
 				playsound(src,'sound/items/seed.ogg', 100, FALSE)
-				user.visible_message("<span class='notice'>[user] rips out some weeds with [I].</span>")
+				user.visible_message("<span class='notice'>[user] пропалывает сорняки с помощью [I].</span>")
 				weeds = max(weeds - rand(1,50), 0)
 				update_seed_icon()
 		return
@@ -209,14 +209,14 @@
 
 	if(istype(I, /obj/item/natural/poo))
 		playsound(src,'sound/items/seed.ogg', 100, FALSE)
-		visible_message("<span class='notice'>[user] confidently fertilizes the soil with [I].</span>")
+		visible_message("<span class='notice'>[user] уверенно удобряет почву с помощью [I].</span>")
 		qdel(I)
 		user.update_inv_hands()
 		food = 100
 		return
 	if(istype(I, /obj/item/ash) || istype(I, /obj/item/trash/applecore))
 		playsound(src,'sound/items/seed.ogg', 100, FALSE)
-		visible_message("<span class='notice'>[user] confidently fertilizes the soil with [I].</span>")
+		visible_message("<span class='notice'>[user] уверенно удобряет почву с помощью [I].</span>")
 		food = min(food + 50, 100)
 		qdel(I)
 		user.update_inv_hands()
@@ -225,7 +225,7 @@
 		var/obj/item/reagent_containers/food/snacks/S = I
 		if(S.fertamount)
 			playsound(src,'sound/items/seed.ogg', 100, FALSE)
-			visible_message("<span class='notice'>[user] confidently fertilizes the soil with [I].</span>")
+			visible_message("<span class='notice'>[user] уверенно удобряет почву с помощью [I].</span>")
 			food = min(food + S.fertamount, 100)
 			qdel(I)
 			user.update_inv_hands()
@@ -241,7 +241,7 @@
 	if(php <= 0)
 		if(do_after(M,harvtime, target = src))
 			playsound(src,"plantcross", 100, FALSE)
-			M.visible_message("<span class='notice'>[M] pulls out [src].</span>")
+			M.visible_message("<span class='notice'>[M] выдёргивает [src].</span>")
 			new /obj/item/natural/fibers(src.loc)
 			qdel(src)
 			name = initial(name)
@@ -259,9 +259,9 @@
 					probbi = 100
 				if(prob(probbi))
 					new myseed.product(src.loc)
-					M.visible_message("<span class='info'>[M] harvests something from [src].</span>")
+					M.visible_message("<span class='info'>[M] собирает урожай с [src].</span>")
 				else
-					M.visible_message("<span class='warning'>[M] spoils something from [src]!</span>")
+					M.visible_message("<span class='warning'>[M] портит урожай на [src]!</span>")
 			else
 				break
 		if(myseed)
@@ -281,7 +281,7 @@
 	if(weeds > 0)
 		if(do_after(user,50, target = src)) //ROGTODO make this based on farming skill
 			playsound(src,"plantcross", 100, FALSE)
-			user.visible_message("<span class='notice'>[user] rips out some weeds.</span>")
+			user.visible_message("<span class='notice'>[user] выпалывает сорняки.</span>")
 			weeds = max(weeds - rand(1,30), 0)
 			update_seed_icon()
 		return

@@ -18,12 +18,12 @@
 
 /datum/anvil_recipe/proc/advance(mob/user)
 	if(progress == 100)
-		to_chat(user, "<span class='info'>It's ready.</span>")
-		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+		to_chat(user, "<span class='info'>Готово.</span>")
+		user.visible_message("<span class='warning'>[user] ударяет по слитку!</span>")
 		return FALSE
 	if(needed_item)
-		to_chat(user, "<span class='info'>Now it's time to add a [needed_item_text].</span>")
-		user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+		to_chat(user, "<span class='info'>Теперь пора добавить [needed_item_text].</span>")
+		user.visible_message("<span class='warning'>[user] ударяет по слитку!</span>")
 		return FALSE
 	var/moveup = 1
 	var/proab = 3
@@ -44,13 +44,13 @@
 			progress = 0
 	if(!moveup)
 		if(prob(round(proab/2)))
-			user.visible_message("<span class='warning'>[user] spoils the bar!</span>")
+			user.visible_message("<span class='warning'>[user] портит слиток!</span>")
 			if(parent)
 				var/obj/item/P = parent
 				qdel(P)
 			return FALSE
 		else
-			user.visible_message("<span class='warning'>[user] strikes the bar!</span>")
+			user.visible_message("<span class='warning'>[user] ударяет по слитку!</span>")
 			return FALSE
 	else
 		if(user.mind)
@@ -59,10 +59,10 @@
 				var/amt2raise = L.STAINT/2
 				if(amt2raise > 0)
 					user.mind.adjust_experience(appro_skill, amt2raise, FALSE)
-		user.visible_message("<span class='info'>[user] strikes the bar!</span>")
+		user.visible_message("<span class='info'>[user] ударяет по слитку!</span>")
 		return TRUE
 
 /datum/anvil_recipe/proc/item_added(mob/user)
 	needed_item = null
-	user.visible_message("<span class='info'>[user] adds [needed_item_text]</span>")
+	user.visible_message("<span class='info'>[user] добавляет [needed_item_text]</span>")
 	needed_item_text = null

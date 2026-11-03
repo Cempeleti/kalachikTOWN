@@ -2,136 +2,136 @@
 	appro_skill = /datum/skill/craft/weaponsmithing
 
 /datum/anvil_recipe/weapons/isword
-	name = "iron sword"
+	name = "железный меч"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/sword/iron
 
 /datum/anvil_recipe/weapons/idagger
-	name = "iron dagger"
+	name = "железный кинжал"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	created_item = list(/obj/item/rogueweapon/huntingknife/idagger,
 	/obj/item/rogueweapon/huntingknife/idagger)
 
 /datum/anvil_recipe/weapons/sdagger
-	name = "steel dagger"
+	name = "стальной кинжал"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = list(/obj/item/rogueweapon/huntingknife/idagger/steel,
 	/obj/item/rogueweapon/huntingknife/idagger/steel)
 
 /datum/anvil_recipe/weapons/sidagger
-	name = "silver dagger"
+	name = "серебряный кинжал"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/silver
 	created_item = /obj/item/rogueweapon/huntingknife/idagger/silver
 
 
 /datum/anvil_recipe/weapons/iflail
-	name = "iron flail"
+	name = "железный цеп"
 	req_bar = /obj/item/ingot/iron
 	created_item = /obj/item/rogueweapon/flail
 
 /datum/anvil_recipe/weapons/sflail
-	name = "steel flail"
+	name = "стальной цеп"
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/flail/sflail
 
 /datum/anvil_recipe/weapons/ssword
-	name = "steel sword"
+	name = "стальной меч"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword
 
 /datum/anvil_recipe/weapons/ssaber
-	name = "steel sabre"
+	name = "стальная сабля"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/sabre
 
 /datum/anvil_recipe/weapons/srapier
-	name = "steel rapier"
+	name = "стальная рапира"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/rapier
 
 /datum/anvil_recipe/weapons/scutlass
-	name = "steel cutlass"
+	name = "абордажная сабля"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/sword/cutlass
 
 /datum/anvil_recipe/weapons/decsword
-	name = "decorated sword (+g)"
+	name = "украшенный меч (+золото)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/gold)
 	created_item = /obj/item/rogueweapon/sword/decorated
 
 /datum/anvil_recipe/weapons/decsaber
-	name = "decorated sabre (+g)"
+	name = "украшенная сабля (+золото)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/gold)
 	created_item = /obj/item/rogueweapon/sword/sabre/dec
 
 /datum/anvil_recipe/weapons/decrapier
-	name = "decorated rapier (+g)"
+	name = "украшенная рапира (+золото)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/gold)
 	created_item = /obj/item/rogueweapon/sword/rapier/dec
 
 /datum/anvil_recipe/weapons/tsword
-	name = "bastard sword (2)"
+	name = "полуторный меч (2)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/sword/long
 
 /datum/anvil_recipe/weapons/baxe
-	name = "battle axe (2)"
+	name = "боевой топор (2)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/stoneaxe/battle
 
 /datum/anvil_recipe/weapons/saxe
-	name = "steel axe (+s)"
+	name = "стальной топор (+палка)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/stoneaxe/woodcut/steel
 
 /datum/anvil_recipe/weapons/axe
-	name = "axe (+s)"
+	name = "топор (+палка)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/stoneaxe/woodcut
 
 /datum/anvil_recipe/weapons/hknife
-	name = "hunting knife"
+	name = "охотничий нож"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/huntingknife
 
 /datum/anvil_recipe/weapons/cleaver
-	name = "cleaver"
+	name = "мясницкий секач"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	created_item = /obj/item/rogueweapon/huntingknife/cleaver
 
 /datum/anvil_recipe/weapons/mace
-	name = "mace (+s)"
+	name = "булава (+палка)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)
 	created_item = /obj/item/rogueweapon/mace
 
 /datum/anvil_recipe/weapons/smace
-	name = "steel mace (2)"
+	name = "стальная булава (2)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel)
@@ -139,14 +139,14 @@
 
 
 /datum/anvil_recipe/weapons/billhook
-	name = "billhook (+w)"
+	name = "гизарма (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/spear/billhook
 
 /datum/anvil_recipe/weapons/spear
-	name = "spear (+w)"
+	name = "копьё (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
@@ -154,14 +154,14 @@
 
 
 /datum/anvil_recipe/weapons/bardiche
-	name = "bardiche (2) (+w)"
+	name = "бердыш (2) (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/halberd/bardiche
 
 /datum/anvil_recipe/weapons/halbert
-	name = "halbert (2) (+w)"
+	name = "алебарда (2) (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
@@ -169,56 +169,56 @@
 
 
 /datum/anvil_recipe/weapons/lucerne
-	name = "lucerne (2) (+w)"
+	name = "люцернский молот (2) (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/eaglebeak/lucerne
 
 /datum/anvil_recipe/weapons/eaglebeak
-	name = "eagle's beak (2) (+w)"
+	name = "клевец (2) (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/eaglebeak
 
 /datum/anvil_recipe/weapons/polemace
-	name = "warclub (+w)"
+	name = "боевая дубина (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/mace/goden
 
 /datum/anvil_recipe/weapons/grandmace
-	name = "grand mace (+w)"
+	name = "большая булава (+дерево)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small)
 	created_item = /obj/item/rogueweapon/mace/goden/steel
 
 /datum/anvil_recipe/weapons/zweihander
-	name = "zweihander (3)"
+	name = "цвайхендер (3)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/ingot/iron, /obj/item/ingot/iron)
 	created_item = /obj/item/rogueweapon/greatsword/zwei
 
 /datum/anvil_recipe/weapons/greatsword
-	name = "greatsword (3)"
+	name = "двуручный меч (3)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel, /obj/item/ingot/steel)
 	created_item = /obj/item/rogueweapon/greatsword
 
 /datum/anvil_recipe/weapons/steelshield
-	name = "heraldic shield (2) (+h)"
+	name = "геральдический щит (2) (+шкура)"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/ingot/steel,/obj/item/natural/hide)
 	created_item = /obj/item/rogueweapon/shield/tower/metal
 
 /datum/anvil_recipe/weapons/ironshield
-	name = "tower shield (+w)"
+	name = "ростовой щит (+дерево)"
 	appro_skill = /datum/skill/craft/armorsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/small)
@@ -226,14 +226,14 @@
 
 
 /datum/anvil_recipe/weapons/xbow
-	name = "crossbow (+w) (+f)"
+	name = "арбалет (+дерево) (+волокно)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/steel
 	additional_items = list(/obj/item/grown/log/tree/small, /obj/item/natural/fibers)
 	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
 
 /datum/anvil_recipe/weapons/bolts
-	name = "crossbow bolts (+s)"
+	name = "арбалетные болты (+палка)"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
 	additional_items = list(/obj/item/grown/log/tree/stick)

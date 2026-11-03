@@ -40,8 +40,8 @@
 #endif
 
 /obj/item/clothing/under/roguetown/tights
-	name = "tights"
-	desc = ""
+	name = "шоссы"
+	desc = "Облегающие чулки-шоссы из плотной ткани."
 	gender = PLURAL
 	icon_state = "tights"
 	item_state = "tights"
@@ -55,7 +55,7 @@
 	color = CLOTHING_BLACK
 
 /obj/item/clothing/under/roguetown/tights/jester
-	desc = "Funny tights!"
+	desc = "Забавные разноцветные шоссы!"
 	color = "#1E3B20"
 
 /obj/item/clothing/under/roguetown/tights/lord
@@ -75,12 +75,13 @@
 	..()
 
 /obj/item/clothing/under/roguetown/tights/sailor
-	name = "pants"
+	name = "штаны"
+	desc = "Просторные матросские штаны."
 	icon_state = "sailorpants"
 
 /obj/item/clothing/under/roguetown/trou
-	name = "work trousers"
-	desc = ""
+	name = "рабочие штаны"
+	desc = "Прочные штаны из грубого сукна для повседневной работы."
 	gender = PLURAL
 	icon_state = "trou"
 	item_state = "trou"
@@ -94,17 +95,19 @@
 	l_sleeve_status = SLEEVE_NORMAL
 
 /obj/item/clothing/under/roguetown/trou/leather
-	name = "leather trousers"
+	name = "кожаные штаны"
+	desc = "Плотные штаны из дубленой кожи."
 	icon_state = "leathertrou"
 
 /obj/item/clothing/under/roguetown/trou/leather/mourning
-	name = "mourning trousers"
+	name = "траурные штаны"
+	desc = "Штаны глубокого черного цвета."
 	icon_state = "leathertrou"
 	color = "#151615"
 
 /obj/item/clothing/under/roguetown/chainlegs
-	name = "chain chausses"
-	desc = ""
+	name = "кольчужные шоссы"
+	desc = "Кольчужные чулки, защищающие ноги от ударов и порезов."
 	gender = PLURAL
 	icon_state = "chain_legs"
 	item_state = "chain_legs"
@@ -123,8 +126,8 @@
 	icon_state = "ichain_legs"
 
 /obj/item/clothing/under/roguetown/platelegs
-	name = "plated chausses"
-	desc = ""
+	name = "латные шоссы"
+	desc = "Латная защита для ног с шарнирными наколенниками."
 	gender = PLURAL
 	icon_state = "chain_legs"
 	item_state = "chain_legs"
@@ -140,8 +143,8 @@
 	l_sleeve_status = SLEEVE_NOMOD
 
 /obj/item/clothing/under/roguetown/loincloth
-	name = "loincloth"
-	desc = ""
+	name = "набедренная повязка"
+	desc = "Простая полоска ткани, прикрывающая пах."
 	icon_state = "loincloth"
 	item_state = "loincloth"
 //	adjustable = CAN_CADJUST

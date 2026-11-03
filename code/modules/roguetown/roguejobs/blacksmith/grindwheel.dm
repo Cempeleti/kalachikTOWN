@@ -1,6 +1,6 @@
 /obj/structure/fluff/grindwheel
-	name = "grind wheel"
-	desc = ""
+	name = "точильный круг"
+	desc = "Тяжёлый каменный круг для заточки и правки лезвий."
 	icon = 'icons/roguetown/misc/forge.dmi'
 	icon_state = "grindwheel"
 	density = TRUE

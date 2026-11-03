@@ -3,8 +3,9 @@
 	var/list/fishloot = null
 
 /obj/item/natural/worms
-	name = "worm"
-	desc = ""
+	name = "дождевой червь"
+	desc = "Извивающийся земляной червь, отличная наживка для рыбы."
+	var/plural_name = "дождевые черви"
 	icon_state = "worm1"
 	throwforce = 10
 	baitchance = 75
@@ -19,12 +20,14 @@
 /obj/item/natural/worms/update_icon()
 	icon_state = "worm[amt]"
 	if(amt > 1)
-		name = "[initial(name)]s"
+		name = plural_name
 	else
 		name = initial(name)
 
 /obj/item/natural/worms/leeches
-	name = "leech"
+	name = "пиявка"
+	desc = "Кровососущая пиявка, применяемая в медицине и рыбалке."
+	plural_name = "пиявки"
 	baitchance = 100
 	color = "#472783"
 	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 5,
@@ -34,8 +37,6 @@
 
 /obj/item/natural/worms/leeches/update_icon()
 	..()
-	if(amt > 1)
-		name = "[initial(name)]es"
 
 
 /obj/item/natural/worms/leeches/attack(mob/living/M, mob/user)
@@ -45,7 +46,7 @@
 		if(!affecting)
 			return
 		if(!get_location_accessible(H, check_zone(user.zone_selected)))
-			to_chat(user, "<span class='warning'>Something in the way.</span>")
+			to_chat(user, "<span class='warning'>Что-то мешает.</span>")
 			return
 		var/used_time = 70 - (H.mind.get_skill_level(/datum/skill/misc/medicine) * 10)
 		if(!do_mob(user, H, used_time))
@@ -56,9 +57,9 @@
 		src.forceMove(H)
 		affecting.embedded_objects |= src
 		if(M == user)
-			user.visible_message("<span class='notice'>[user] places a leech on [user.p_their()] [affecting].</span>", "<span class='notice'>I place a leech on my [affecting].</span>")
+			user.visible_message("<span class='notice'>[user] прикладывает пиявку к [affecting].</span>", "<span class='notice'>Я прикладываю пиявку к [affecting].</span>")
 		else
-			user.visible_message("<span class='notice'>[user] places a leech on [M]'s [affecting].</span>", "<span class='notice'>I place a leech on [M]'s [affecting].</span>")
+			user.visible_message("<span class='notice'>[user] прикладывает пиявку к [affecting] [M].</span>", "<span class='notice'>Я прикладываю пиявку к [affecting] [M].</span>")
 
 /obj/item/natural/worms/leeches/on_embed_life(mob/living/user)
 	if(!user)
@@ -95,7 +96,9 @@
 
 
 /obj/item/natural/worms/grubs
-	name = "grub"
+	name = "личинка"
+	desc = "Толстая белая личинка, отличная приманка для рыбы."
+	plural_name = "личинки"
 	baitchance = 100
 	color = null
 	fishloot = list(/obj/item/reagent_containers/food/snacks/fish/carp = 5,

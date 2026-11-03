@@ -1,7 +1,7 @@
 
 
 /datum/crafting_recipe/roguetown/turfs/woodfloor
-	name = "wooden floor"
+	name = "деревянный пол"
 	result = /turf/open/floor/rogue/ruinedwood
 	reqs = list(/obj/item/grown/log/tree/small = 1)
 	skillcraft = /datum/skill/craft/carpentry
@@ -17,7 +17,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/woodwall
-	name = "wooden wall"
+	name = "деревянная стена"
 	result = /turf/closed/wall/mineral/rogue/wood
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	skillcraft = /datum/skill/craft/carpentry
@@ -30,7 +30,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/woodwindow
-	name = "wooden murder hole"
+	name = "деревянная бойница"
 	result = /turf/closed/wall/mineral/rogue/wood/window
 	reqs = list(/obj/item/grown/log/tree/small = 2)
 	skillcraft = /datum/skill/craft/carpentry
@@ -43,7 +43,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/stonefloor
-	name = "stone floor"
+	name = "каменный пол"
 	result = /turf/open/floor/rogue/blocks
 	reqs = list(/obj/item/natural/stone = 1)
 	skillcraft = /datum/skill/craft/masonry
@@ -59,7 +59,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/stonewall
-	name = "stone wall"
+	name = "каменная стена"
 	result = /turf/closed/wall/mineral/rogue/stone
 	reqs = list(/obj/item/natural/stone = 2)
 	skillcraft = /datum/skill/craft/masonry
@@ -72,7 +72,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/stonewindow
-	name = "stone murder hole"
+	name = "каменная бойница"
 	result = /turf/closed/wall/mineral/rogue/stone/window
 	reqs = list(/obj/item/natural/stone = 2)
 	skillcraft = /datum/skill/craft/masonry
@@ -87,7 +87,7 @@
 /// TWIG AND TENT
 
 /datum/crafting_recipe/roguetown/turfs/twig
-	name = "twig floor"
+	name = "настил из веток"
 	result = /turf/open/floor/rogue/twig
 	reqs = list(/obj/item/grown/log/tree/stick = 2)
 	skillcraft = /datum/skill/craft/crafting
@@ -103,7 +103,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/tentwall
-	name = "tent wall"
+	name = "тканевая стена шатра"
 	result = /turf/closed/wall/mineral/rogue/tent
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/cloth = 1)
@@ -118,7 +118,7 @@
 	return TRUE
 
 /datum/crafting_recipe/roguetown/turfs/tentdoor
-	name = "tent door"
+	name = "полог шатра"
 	result = /obj/structure/roguetent
 	reqs = list(/obj/item/grown/log/tree/stick = 1,
 				/obj/item/natural/cloth = 1)

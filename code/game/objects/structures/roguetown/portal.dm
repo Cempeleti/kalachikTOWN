@@ -1,7 +1,7 @@
 
 /obj/structure/portal
-	name = "gate"
-	desc = ""
+	name = "врата"
+	desc = "Таинственные древние врата, ведущие в неизведанное."
 	icon = 'icons/roguetown/misc/portal.dmi'
 	icon_state = "portal"
 	density = TRUE

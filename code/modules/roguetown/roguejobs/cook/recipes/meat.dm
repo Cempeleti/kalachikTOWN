@@ -1,5 +1,5 @@
 /datum/crafting_recipe/roguetown/cooking/sausage
-	name = "sausage (mm)"
+	name = "колбаска (фарш+фарш)"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 2)
 	result = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
@@ -8,7 +8,7 @@
 	subtype_reqs = TRUE
 
 /datum/crafting_recipe/roguetown/cooking/sausage/mf
-	name = "sausage (mf)"
+	name = "колбаска (фарш+жир)"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/mince = 1,
 		/obj/item/reagent_containers/food/snacks/fat = 1)
@@ -16,14 +16,14 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/sausage/bb
-	name = "sausage (bb)"
+	name = "колбаска (грудинка+грудинка)"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/bacon = 2)
 	result = /obj/item/reagent_containers/food/snacks/rogue/meat/sausage
 
 
 /datum/crafting_recipe/roguetown/cooking/sausage/fb
-	name = "sausage (fb)"
+	name = "колбаска (грудинка+жир)"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/bacon = 1,
 		/obj/item/reagent_containers/food/snacks/fat = 1)
@@ -31,7 +31,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/salami
-	name = "salumoi"
+	name = "салями"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/sausage = 1,
 		/obj/item/reagent_containers/powder/flour/salt = 1)
@@ -41,7 +41,7 @@
 	craftdiff = 0
 
 /datum/crafting_recipe/roguetown/cooking/coppiette
-	name = "coppiette"
+	name = "вяленые мясные палочки"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/rogue/meat/steak = 1,
 		/obj/item/reagent_containers/powder/flour/salt = 1)
@@ -52,7 +52,7 @@
 
 
 /datum/crafting_recipe/roguetown/cooking/salo
-	name = "salo"
+	name = "солёное сало"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/fat = 1,
 		/obj/item/reagent_containers/powder/flour/salt = 1)
@@ -62,7 +62,7 @@
 	req_table = TRUE
 
 /datum/crafting_recipe/roguetown/cooking/saltfish
-	name = "saltfish"
+	name = "вяленая рыба"
 	reqs = list(
 		/obj/item/reagent_containers/food/snacks/fish = 1,
 		/obj/item/reagent_containers/powder/flour/salt = 1)

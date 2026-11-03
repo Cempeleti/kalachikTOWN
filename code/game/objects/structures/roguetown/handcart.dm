@@ -1,6 +1,6 @@
 /obj/structure/handcart
-	name = "cart"
-	desc = ""
+	name = "тележка"
+	desc = "Деревянная ручная тележка для перевозки грузов."
 	icon = 'icons/roguetown/misc/structure.dmi'
 	icon_state = "cart-empty"
 	density = TRUE
@@ -113,7 +113,7 @@
 			AM.forceMove(T)
 		stuff_shit = list()
 		total_capacity = 0
-		visible_message("<span class='info'>[user] dumps out [src]!</span>")
+		visible_message("<span class='info'>[user] вываливает всё из [src]!</span>")
 		playsound(loc, 'sound/foley/cartdump.ogg', 100, FALSE, -1)
 	update_icon()
 

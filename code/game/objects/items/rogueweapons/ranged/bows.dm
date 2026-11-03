@@ -1,7 +1,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow
-	name = "bow"
-	desc = ""
+	name = "лук"
+	desc = "Простой деревянный лук с тетивой из кручёных жил."
 	icon = 'icons/roguetown/weapons/32.dmi'
 	icon_state = "bow"
 	item_state = "bow"
