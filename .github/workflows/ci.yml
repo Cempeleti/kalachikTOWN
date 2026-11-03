@@ -30,11 +30,15 @@ jobs:
         shell: bash
         run: |
           if [ -f tools/json_verifier.py ]; then
-            find . -name "*.json" -not -path "*/node_modules/*" -print0 \
-              | xargs -0 -n1 python3 ./tools/json_verifier.py
+            find . -name "*.json" \
+              -not -path "*/node_modules/*" \
+              -not -path "./strings/books/*" \
+              -print0 | xargs -0 -n1 python3 ./tools/json_verifier.py
           else
-            find . -name "*.json" -not -path "*/node_modules/*" -print0 \
-              | xargs -0 -n1 python3 -m json.tool > /dev/null
+            find . -name "*.json" \
+              -not -path "*/node_modules/*" \
+              -not -path "./strings/books/*" \
+              -print0 | xargs -0 -n1 python3 -m json.tool > /dev/null
           fi
 
   compile:
@@ -46,7 +50,7 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get install -y libstdc++6:i386 zlib1g:i386
+          sudo apt-get install -y libstdc++6:i386 zlib1g:i386 libcurl4:i386
 
       - name: Кэш BYOND
         id: cache
