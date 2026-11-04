@@ -70,8 +70,9 @@
 				break
 
 	holder?.key_down(_key, src)
-	mob.focus?.key_down(_key, src)
-	mob.update_mouse_pointer()
+	if(mob)
+		mob.focus?.key_down(_key, src)
+		mob.update_mouse_pointer()
 
 /client/verb/keyUp(_key as text)
 	set instant = TRUE
@@ -94,8 +95,9 @@
 			if(kb.up(src))
 				break
 	holder?.key_up(_key, src)
-	mob.focus?.key_up(_key, src)
-	mob.update_mouse_pointer()
+	if(mob)
+		mob.focus?.key_up(_key, src)
+		mob.update_mouse_pointer()
 
 // Called every game tick
 /client/keyLoop()

@@ -46,6 +46,19 @@
 	if(test_img.glide_size != 5)
 		Fail("set_glide_size failed to update hidden_images glide_size: got [test_img.glide_size], expected 5")
 
+	MC.hidden_images += null
+	L.set_glide_size(8)
+	if(test_img.glide_size != 8)
+		Fail("set_glide_size failed with null image in hidden_images")
+
+	L.setDir(EAST)
+	L.update_vision_cone()
+
+	var/datum/preferences/test_pref = new /datum/preferences(null)
+	if(!test_pref)
+		Fail("Failed to instantiate preferences without client")
+	qdel(test_pref)
+
 	L.client = null
 	qdel(test_img)
 	qdel(MC)

@@ -166,7 +166,9 @@
 	. = ..()
 
 	move_delay += add_delay
-	if(.) // If mob is null here, we deserve the runtime
+	if(!mob)
+		return .
+	if(.)
 		if(mob.throwing)
 			mob.throwing.finalize(FALSE)
 
