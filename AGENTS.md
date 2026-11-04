@@ -7,9 +7,17 @@ SS13-based codebase for HalalTown running at 60 FPS.
 
 | Команда | Что делает |
 |---------|------------|
-| `BUILD.bat` или `dm.exe roguetown.dme` | Скомпилировать roguetown.dme |
-| `dm.exe -DUNIT_TESTS roguetown.dme` | Скомпилировать roguetown.dme с юнит-тестами |
-| `DreamDaemon.exe roguetown.dmb [port] -trusted -safe` | Запустить сервер |
+| `BUILD.bat` | Быстрая сборка (`-DFASTBUILD`); пропускает компиляцию, если исходники не менялись |
+| `BUILD.bat run` | Быстрая сборка + запуск сервера |
+| `BUILD.bat force` | Быстрая сборка с принудительной пересборкой |
+| `BUILD.bat full` | Полный релизный билд: `DEBUG`, полная карта, `PRELOAD_RSC 2` |
+| `RUN.bat` | Запуск сервера без пересборки (`-map-threads` по числу ядер только в fast-режиме) |
+| `RUN.bat -MapThreads 4` | Явно задать потоки загрузки карты (`0` — по умолчанию BYOND) |
+| `RUN.bat -NoInit` | Мгновенный старт без инициализации подсистем |
+| `dm.exe -DUNIT_TESTS roguetown.dme` | Сборка с юнит-тестами |
+| `BUILD.bat help` | Справка по режимам |
+
+`FASTBUILD` задаётся дефайном `-DFASTBUILD` (`roguetown.dme`, `code/_compile_options.dm`, `code/testing.dm`): без `DEBUG mode`, `PRELOAD_RSC 1` вместо 2, `LOWMEMORYMODE` и лёгкая карта `_maps/roguetest.json`. Полный билд без дефайна остаётся прежним. Логика сборки и запуска — `tools/fastbuild.ps1`.
 
 ## Архитектура частоты кадров и движения (60 FPS)
 

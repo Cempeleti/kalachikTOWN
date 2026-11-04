@@ -62,4 +62,21 @@
 	L.client = null
 	qdel(test_img)
 	qdel(MC)
+	if(Master && Master.sleep_delta != 1)
+		Fail("Master.sleep_delta is [Master.sleep_delta], expected 1")
+
+	var/list/test_keys_held = list()
+	test_keys_held["W"] = world.time
+	test_keys_held["Ctrl"] = world.time
+	if(!test_keys_held["Ctrl"])
+		Fail("test_keys_held Ctrl should be truthy when set")
+	test_keys_held["Ctrl"] = FALSE
+	test_keys_held -= "Ctrl"
+	if(test_keys_held["Ctrl"])
+		Fail("test_keys_held Ctrl should be falsy after release")
+	test_keys_held["W"] = FALSE
+	test_keys_held -= "W"
+	if(test_keys_held.len != 0)
+		Fail("test_keys_held len should be 0 after releasing all keys, got [test_keys_held.len]")
+
 	qdel(L)
