@@ -4,11 +4,7 @@
 #define FILE_DIR .
 // END_FILE_DIR
 // BEGIN_PREFERENCES
-// FASTBUILD (dm.exe -DFASTBUILD roguetown.dme) компилируется без DEBUG mode:
-// быстрее, меньше .dmb, но без отладочной информации в рантаймах.
-#ifndef FASTBUILD
 #define DEBUG
-#endif
 // END_PREFERENCES
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"

@@ -256,8 +256,17 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 	// Sort subsystems by display setting for easy access.
 	sortTim(subsystems, /proc/cmp_subsystem_display)
-	// Set world options.
-	world.change_fps(CONFIG_GET(number/fps))
+	// Set world options. Keep config/config.txt (FPS/TICKLAG) in sync with
+	// world.fps: a mismatch silently changes the tickrate at runtime and
+	// desyncs SS_TICKER input, movement delays, glide_size and timers.
+	var/configured_fps = CONFIG_GET(number/fps)
+	// BYOND quantizes tick_lag to 0.01, so FPS 60 really runs at
+	// tick_lag 0.16 (~62.5 FPS, reported as 63). Compare tick_lag, not world.fps.
+	var/tick_diff = world.tick_lag - (10 / configured_fps)
+	if(tick_diff > 0.02 || tick_diff < -0.02)
+		log_world("WARNING: config number/fps ([configured_fps]) does not match world tickrate ([world.fps] FPS, tick_lag [world.tick_lag]). Check FPS/TICKLAG in config/config.txt; applying configured value.")
+	world.change_fps(configured_fps)
+	log_world("MC tickrate: [world.fps] FPS (tick_lag [world.tick_lag]), configured [configured_fps] FPS.")
 	var/initialized_tod = REALTIMEOFDAY
 
 	if(sleep_offline_after_initializations)
@@ -362,11 +371,12 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			continue
 
 		//Anti-tick-contention heuristics:
-		//At 60 FPS, Master must fire every single tick to service SS_TICKER (SSinput, SSincone)
-		if (starting_tick_usage > TICK_LIMIT_MC) //if there isn't enough time to bother doing anything this tick, sleep a bit.
+		//At 60 FPS, Master must fire every single tick to service SS_TICKER
+		//(SSinput, SSincone, SStimer). Skipping a whole MC tick makes held
+		//movement keys stutter, so on a busy tick we only halve the budget for
+		//heavier subsystems instead of sleeping through the tick entirely.
+		if (starting_tick_usage > TICK_LIMIT_MC)
 			current_ticklimit = TICK_LIMIT_RUNNING * 0.5
-			sleep(world.tick_lag * processing)
-			continue
 
 
 		//debug
