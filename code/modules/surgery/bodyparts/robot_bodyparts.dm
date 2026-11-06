@@ -236,9 +236,7 @@
 	if(!flash1 && !flash2)
 		. += "<span class='info'>Здесь два пустых разъёма для <b>вспышек</b>.</span>"
 	else
-		var/single_flash = FALSE
 		if(!flash1 || !flash2)
-			single_flash = TRUE
 			. += {"Один из разъёмов занят вспышкой.\n
 			<span class='info'>Второй разъём пуст и готов для ещё одной <b>вспышки</b>.</span>"}
 		else

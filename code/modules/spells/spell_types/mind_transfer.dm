@@ -32,8 +32,6 @@ Also, you never added distance checking after target is selected. I've went ahea
 
 	var/mob/living/target = targets[1]
 
-	var/t_He = target.p_they(TRUE)
-	var/t_is = target.p_are()
 
 	if(!(target in oview(range)) && !distanceoverride)//If they are not in overview after selection. Do note that !() is necessary for in to work because ! takes precedence over it.
 		if(!silent)

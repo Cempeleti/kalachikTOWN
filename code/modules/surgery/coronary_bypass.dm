@@ -38,7 +38,7 @@
 /datum/surgery_step/incise_heart/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-	display_results(user, target, "<span class='warning'>Ты совершаешь ошибку, слишком глубоко надрезав сердце!</span>",
+		display_results(user, target, "<span class='warning'>Ты совершаешь ошибку, слишком глубоко надрезав сердце!</span>",
 			"<span class='warning'>[user] совершает ошибку, и из груди [H] хлещет кровь!</span>",
 			"<span class='warning'>[user] совершает ошибку, и из груди [H] хлещет кровь!</span>")
 		H.bleed_rate += 20
@@ -69,7 +69,7 @@
 /datum/surgery_step/coronary_bypass/failure(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(ishuman(target))
 		var/mob/living/carbon/human/H = target
-	display_results(user, target, "<span class='warning'>Ты совершаешь ошибку при установке шунта, и он отрывается, повреждая сердце!</span>",
+		display_results(user, target, "<span class='warning'>Ты совершаешь ошибку при установке шунта, и он отрывается, повреждая сердце!</span>",
 			"<span class='warning'>[user] совершает ошибку, и из груди [H] ручьём хлещет кровь!</span>",
 			"<span class='warning'>[user] совершает ошибку, и из груди [H] ручьём хлещет кровь!</span>")
 		H.adjustOrganLoss(ORGAN_SLOT_HEART, 20)

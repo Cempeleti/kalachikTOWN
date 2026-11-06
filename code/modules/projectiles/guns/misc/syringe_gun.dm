@@ -36,7 +36,7 @@
 
 /obj/item/gun/syringe/examine(mob/user)
 	. = ..()
-	. += "Вместимость: [max_syringes] шприц\а. Осталось: [syringes.len]."
+	. += "Вместимость: [max_syringes] шприцев. Осталось: [syringes.len]."
 
 /obj/item/gun/syringe/attack_self(mob/living/user)
 	if(!syringes.len)

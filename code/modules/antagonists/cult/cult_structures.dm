@@ -36,8 +36,6 @@
 
 /obj/structure/destructible/cult/examine_status(mob/user)
 	if(iscultist(user) || isobserver(user))
-		var/t_It = p_they(TRUE)
-		var/t_is = p_are()
 		return "<span class='cult'>Целостность [src]: <b>[round(obj_integrity * 100 / max_integrity)]%</b>.</span>"
 	return ..()
 

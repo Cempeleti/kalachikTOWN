@@ -17,7 +17,7 @@
 		I = O
 		break
 	if(I)
-	display_results(user, target, "<span class='notice'>Ты начинаешь извлекать [I] из [target_zone] [target]...</span>",
+		display_results(user, target, "<span class='notice'>Ты начинаешь извлекать [I] из [target_zone] [target]...</span>",
 			"<span class='notice'>[user] начинает извлекать [I] из [target_zone] [target].</span>",
 			"<span class='notice'>[user] начинает что-то извлекать из [target_zone] [target].</span>")
 	else
@@ -27,7 +27,7 @@
 
 /datum/surgery_step/extract_implant/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(I)
-	display_results(user, target, "<span class='notice'>Ты успешно извлекаешь [I] из [target_zone] [target].</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно извлекаешь [I] из [target_zone] [target].</span>",
 			"<span class='notice'>[user] успешно извлекает [I] из [target_zone] [target]!</span>",
 			"<span class='notice'>[user] успешно извлекает что-то из [target_zone] [target]!</span>")
 		I.removed(target)

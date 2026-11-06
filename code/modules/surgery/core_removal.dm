@@ -26,7 +26,7 @@
 	var/mob/living/simple_animal/slime/slime = target
 	if(slime.cores > 0)
 		slime.cores--
-	display_results(user, target, "<span class='notice'>Ты успешно извлекаешь ядро из [target]. Осталось ядер: [slime.cores].</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно извлекаешь ядро из [target]. Осталось ядер: [slime.cores].</span>",
 			"<span class='notice'>[user] успешно извлекает ядро из [target]!</span>",
 			"<span class='notice'>[user] успешно извлекает ядро из [target]!</span>")
 

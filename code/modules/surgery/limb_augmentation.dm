@@ -34,7 +34,7 @@
 		return -1
 	L = surgery.operated_bodypart
 	if(L)
-	display_results(user, target, "<span class='notice'>Ты начинаешь устанавливать аугмент на [parse_zone(user.zone_selected)] [target]...</span>",
+		display_results(user, target, "<span class='notice'>Ты начинаешь устанавливать аугмент на [parse_zone(user.zone_selected)] [target]...</span>",
 			"<span class='notice'>[user] начинает устанавливать [aug] на [parse_zone(user.zone_selected)] [target].</span>",
 			"<span class='notice'>[user] начинает устанавливать аугмент на [parse_zone(user.zone_selected)] [target].</span>")
 	else
@@ -61,7 +61,7 @@
 			tool = tool.contents[1]
 		if(istype(tool) && user.temporarilyRemoveItemFromInventory(tool))
 			tool.replace_limb(target, TRUE)
-	display_results(user, target, "<span class='notice'>Ты успешно завершаешь установку аугмента на [parse_zone(target_zone)] [target].</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно завершаешь установку аугмента на [parse_zone(target_zone)] [target].</span>",
 			"<span class='notice'>[user] успешно устанавливает [tool] на [parse_zone(target_zone)] [target]!</span>",
 			"<span class='notice'>[user] успешно завершает установку аугмента на [parse_zone(target_zone)] [target]!</span>")
 		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] INTENT: [uppertext(user.a_intent)]")

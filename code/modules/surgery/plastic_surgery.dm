@@ -18,7 +18,7 @@
 /datum/surgery_step/reshape_face/success(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	if(HAS_TRAIT_FROM(target, TRAIT_DISFIGURED, TRAIT_GENERIC))
 		REMOVE_TRAIT(target, TRAIT_DISFIGURED, TRAIT_GENERIC)
-	display_results(user, target, "<span class='notice'>Ты успешно восстанавливаешь внешность [target].</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно восстанавливаешь внешность [target].</span>",
 			"<span class='notice'>[user] успешно восстанавливает внешность [target]!</span>",
 			"<span class='notice'>[user] завершает операцию на лице [target].</span>")
 	else
@@ -36,7 +36,7 @@
 		var/oldname = target.real_name
 		target.real_name = chosen_name
 		var/newname = target.real_name	//something about how the code handles names required that I use this instead of target.real_name
-	display_results(user, target, "<span class='notice'>Ты полностью меняешь облик [oldname], теперь это [newname].</span>",
+		display_results(user, target, "<span class='notice'>Ты полностью меняешь облик [oldname], теперь это [newname].</span>",
 			"<span class='notice'>[user] полностью меняет облик [oldname], теперь это [newname]!</span>",
 			"<span class='notice'>[user] завершает операцию на лице [target].</span>")
 	if(ishuman(target))

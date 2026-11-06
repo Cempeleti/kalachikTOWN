@@ -138,7 +138,7 @@
 			I = tool
 		user.temporarilyRemoveItemFromInventory(I, TRUE)
 		I.Insert(target)
-	display_results(user, target, "<span class='notice'>Ты помещаешь [tool] в [parse_zone(target_zone)] [target].</span>",
+		display_results(user, target, "<span class='notice'>Ты помещаешь [tool] в [parse_zone(target_zone)] [target].</span>",
 			"<span class='notice'>[user] помещает [tool] в [parse_zone(target_zone)] [target]!</span>",
 			"<span class='notice'>[user] помещает что-то в [parse_zone(target_zone)] [target]!</span>")
 

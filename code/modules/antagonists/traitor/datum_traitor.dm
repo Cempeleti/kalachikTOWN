@@ -380,9 +380,6 @@
 		result += contractor_item_icons
 	result += "<br>"
 	if (completed_contracts > 0)
-		var/pluralCheck = "contract"
-		if (completed_contracts > 1)
-			pluralCheck = "contracts"
 
 		result += "Выполнено контрактов: <span class='greentext'>[completed_contracts]</span> на сумму \
 					<span class='greentext'>[tc_total] ТК</span>![contractor_support_unit]<br>"

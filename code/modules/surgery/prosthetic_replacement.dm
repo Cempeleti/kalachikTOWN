@@ -73,7 +73,7 @@
 		L.attach_limb(target)
 		if(organ_rejection_dam)
 			target.adjustToxLoss(organ_rejection_dam)
-	display_results(user, target, "<span class='notice'>Ты успешно заменяешь [parse_zone(target_zone)] [target].</span>",
+		display_results(user, target, "<span class='notice'>Ты успешно заменяешь [parse_zone(target_zone)] [target].</span>",
 			"<span class='notice'>[user] успешно заменяет [parse_zone(target_zone)] [target] на [tool]!</span>",
 			"<span class='notice'>[user] успешно заменяет [parse_zone(target_zone)] [target]!</span>")
 		return 1
@@ -82,7 +82,7 @@
 		L.is_pseudopart = TRUE
 		L.attach_limb(target)
 		user.visible_message("<span class='notice'>[user] заканчивает прикреплять [tool]!</span>", "<span class='notice'>Ты прикрепляешь [tool].</span>")
-	display_results(user, target, "<span class='notice'>Ты прикрепляешь [tool].</span>",
+		display_results(user, target, "<span class='notice'>Ты прикрепляешь [tool].</span>",
 			"<span class='notice'>[user] заканчивает прикреплять [tool]!</span>",
 			"<span class='notice'>[user] завершает установку протеза!</span>")
 		qdel(tool)

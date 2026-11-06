@@ -23,11 +23,11 @@
 	var/obj/item/bodypart/chest/CH = target.get_bodypart(BODY_ZONE_CHEST)
 	IC = CH.cavity_item
 	if(tool)
-	display_results(user, target, "<span class='notice'>Ты начинаешь помещать [tool] в [target_zone] [target]...</span>",
+		display_results(user, target, "<span class='notice'>Ты начинаешь помещать [tool] в [target_zone] [target]...</span>",
 			"<span class='notice'>[user] начинает помещать [tool] в [target_zone] [target].</span>",
 			"<span class='notice'>[user] начинает помещать [tool.w_class > WEIGHT_CLASS_SMALL ? tool : "что-то"] в [target_zone] [target].</span>")
 	else
-	display_results(user, target, "<span class='notice'>Ты осматриваешь [target_zone] [target] на наличие предметов...</span>",
+		display_results(user, target, "<span class='notice'>Ты осматриваешь [target_zone] [target] на наличие предметов...</span>",
 			"<span class='notice'>[user] осматривает [target_zone] [target] на наличие предметов.</span>",
 			"<span class='notice'>[user] ищет что-то в [target_zone] [target].</span>")
 
